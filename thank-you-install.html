@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're In! | Done-For-You Self-Booking System Install</title>
+  <meta name="description" content="Your Done-For-You Self-Booking System Install is confirmed. Here's what happens next." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NQPFQDNQ');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Meta Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1825521284560570'); fbq('track', 'PageView'); </script> <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1" /></noscript> <!-- End Meta Pixel Code -->
+
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ===== THANK YOU PAGE STYLES ===== */
+    .ty-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--blush) 40%, var(--ivory) 100%);
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .ty-logo { margin-bottom: 40px; }
+    .ty-logo img { height: 36px; }
+
+    .ty-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: white;
+      background: var(--soft-green-icon);
+      padding: 8px 24px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 28px;
+    }
+
+    .ty-page h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .ty-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      max-width: 520px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
+    }
+
+    /* Next Steps Card */
+    .ty-card {
+      background: var(--warm-white);
+      border: 1px solid var(--taupe-200);
+      border-radius: var(--radius);
+      padding: 44px 40px;
+      max-width: 580px;
+      width: 100%;
+      box-shadow: var(--shadow-card);
+      text-align: left;
+      margin-bottom: 40px;
+    }
+    .ty-card h2 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .ty-step {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--taupe-100);
+    }
+    .ty-step:first-of-type { padding-top: 0; }
+    .ty-step:last-of-type { border-bottom: none; padding-bottom: 0; }
+
+    .ty-step-num {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--accent-light);
+      border: 2px solid var(--accent);
+      font-family: var(--serif);
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .ty-step-text h3 {
+      font-size: .97rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .ty-step-text p {
+      font-size: .9rem;
+      color: var(--text-soft);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Bree note */
+    .ty-note {
+      max-width: 580px;
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: var(--warm-white);
+      border: 1px solid var(--taupe-200);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-soft);
+      text-align: left;
+      margin-bottom: 40px;
+    }
+    .ty-note-photo {
+      flex-shrink: 0;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--accent-light);
+    }
+    .ty-note-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .ty-note-body p {
+      font-size: .93rem;
+      color: var(--text-soft);
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+    .ty-note-body p:last-child { margin-bottom: 0; }
+    .ty-note-body strong { color: var(--text); }
+
+    /* Checklist */
+    .ty-checklist {
+      max-width: 580px;
+      width: 100%;
+      background: var(--accent-light);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+    .ty-checklist h3 {
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .ty-checklist ul {
+      list-style: none;
+    }
+    .ty-checklist li {
+      position: relative;
+      padding: 6px 0 6px 28px;
+      font-size: .9rem;
+      color: var(--text-soft);
+    }
+    .ty-checklist li::before {
+      content: '\2610';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    .ty-footer {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .ty-footer p {
+      font-size: .82rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .ty-footer a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 600px) {
+      .ty-page { padding: 40px 16px; }
+      .ty-card { padding: 28px 24px; }
+      .ty-note { flex-direction: column; align-items: center; text-align: center; padding: 28px 24px; }
+      .ty-checklist { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQPFQDNQ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="ty-page">
+
+    <div class="ty-logo">
+      <img src="logo.png" alt="Perfectly Made Marketing" />
+    </div>
+
+    <span class="ty-badge">Purchase confirmed</span>
+
+    <h1>You made the<br /><em>best decision.</em></h1>
+
+    <p class="ty-subtitle">Your Done-For-You Self-Booking System Install is confirmed. We're about to build something incredible for your business. Here's what happens next.</p>
+
+    <!-- Next Steps Card -->
+    <div class="ty-card">
+      <h2>Your next <em>3 steps</em></h2>
+
+      <div class="ty-step">
+        <div class="ty-step-num">1</div>
+        <div class="ty-step-text">
+          <h3>Check your inbox</h3>
+          <p>You'll receive a confirmation email with your receipt, course access details, and your onboarding form. Please complete the onboarding form as soon as possible so we can start your build.</p>
+        </div>
+      </div>
+
+      <div class="ty-step">
+        <div class="ty-step-num">2</div>
+        <div class="ty-step-text">
+          <h3>Complete your onboarding form</h3>
+          <p>This short form helps us understand your offer, audience, and goals. The more detail you give us, the better your system will be. Expect it to take about 15-20 minutes.</p>
+        </div>
+      </div>
+
+      <div class="ty-step">
+        <div class="ty-step-num">3</div>
+        <div class="ty-step-text">
+          <h3>Book your kickoff call</h3>
+          <p>A link will be in your welcome email. This 30-minute call is where we align on your strategy, messaging, and booking flow before we start building.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bree's personal note -->
+    <div class="ty-note">
+      <div class="ty-note-photo">
+        <img src="images/Photo of Bree.jpg" alt="Bree" />
+      </div>
+      <div class="ty-note-body">
+        <p><strong>A quick note from Bree:</strong></p>
+        <p>I am so excited to work with you. My team and I are going to take such good care of your business over the next 30 days. Fill out that onboarding form, book your call, and let us handle the rest. You're in great hands.</p>
+      </div>
+    </div>
+
+    <!-- Quick Checklist -->
+    <div class="ty-checklist">
+      <h3>Before we begin, make sure you have:</h3>
+      <ul>
+        <li>Access to your email platform (Mailchimp, Kit, ActiveCampaign, etc.)</li>
+        <li>Access to your booking tool (Calendly, Acuity, etc.)</li>
+        <li>A Meta Business Suite account with an active ad account</li>
+        <li>A payment method connected to your Meta ad account</li>
+        <li>Your brand colors, logo, and any existing assets ready to share</li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="ty-footer">
+      <p>Questions before we get started? Reach out anytime.</p>
+      <p><a href="mailto:hello@perfectlymademarketing.com">hello@perfectlymademarketing.com</a></p>
+      <p style="margin-top: 20px;">&copy; 2026 Perfectly Made Marketing. All rights reserved.</p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+  <!-- Meta Pixel Purchase Event — DFY Install purchased ($1,350) -->
+  <script>
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Purchase', { value: 1350.00, currency: 'USD' });
+    }
+  </script>
+</body>
+</html>

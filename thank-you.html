@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You! | The Self-Booking System</title>
+  <meta name="description" content="Your purchase is confirmed. Check your email for course access details." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NQPFQDNQ');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Meta Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1825521284560570'); fbq('track', 'PageView'); </script> <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1" /></noscript> <!-- End Meta Pixel Code -->
+
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .ty-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--blush) 40%, var(--ivory) 100%);
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .ty-logo { margin-bottom: 40px; }
+    .ty-logo img { height: 36px; }
+
+    .ty-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: white;
+      background: var(--soft-green-icon);
+      padding: 8px 24px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 28px;
+    }
+
+    .ty-page h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .ty-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      max-width: 480px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
+    }
+
+    .ty-card {
+      background: var(--warm-white);
+      border: 1px solid var(--taupe-200);
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 40px;
+    }
+    .ty-card h2 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .ty-card p {
+      font-size: .93rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .ty-card p:last-child { margin-bottom: 0; }
+    .ty-card strong { color: var(--text); }
+
+    .ty-footer {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .ty-footer p {
+      font-size: .82rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .ty-footer a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 600px) {
+      .ty-page { padding: 40px 16px; }
+      .ty-card { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQPFQDNQ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="ty-page">
+
+    <div class="ty-logo">
+      <img src="logo.png" alt="Perfectly Made Marketing" />
+    </div>
+
+    <span class="ty-badge">You're all set</span>
+
+    <h1>Thank you for<br /><em>your purchase!</em></h1>
+
+    <p class="ty-subtitle">Your course access details are on their way to your inbox right now. Check your email (and your spam folder, just in case) for everything you need to get started.</p>
+
+    <div class="ty-card">
+      <h2>What to do <em>next</em></h2>
+      <p><strong>Step 1:</strong> Check your email for your login and course access link.</p>
+      <p><strong>Step 2:</strong> Log in and start with the Welcome Video. It'll walk you through everything you need to know before diving into the modules.</p>
+      <p><strong>Step 3:</strong> Take action as you learn. The system works when you implement it, not just when you watch it.</p>
+    </div>
+
+    <div class="ty-footer">
+      <p>Questions? We're here to help.</p>
+      <p><a href="mailto:hello@perfectlymademarketing.com">hello@perfectlymademarketing.com</a></p>
+      <p style="margin-top: 20px;">&copy; 2026 Perfectly Made Marketing. All rights reserved.</p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
