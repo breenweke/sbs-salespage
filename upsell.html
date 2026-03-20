@@ -21,6 +21,44 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="upsell-styles.css" />
   <style>
+    .upsell-sticky-nav {
+      position: fixed;
+      top: -64px;
+      left: 0; right: 0;
+      z-index: 100;
+      background: rgba(253,251,247,.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--taupe-200);
+      padding: 12px 24px;
+      transition: top .4s var(--ease);
+    }
+    .upsell-sticky-nav.visible { top: 0; }
+    .upsell-sticky-nav .nav-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .upsell-sticky-nav .nav-logo { height: 28px; width: auto; }
+    .upsell-sticky-nav .nav-btn {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 24px;
+      background: var(--accent);
+      color: white;
+      border-radius: var(--radius-pill);
+      transition: all .25s var(--ease);
+    }
+    .upsell-sticky-nav .nav-btn:hover {
+      background: var(--accent-hover);
+      color: white;
+      transform: translateY(-1px);
+    }
+    @media (max-width: 900px) {
+      .upsell-sticky-nav .nav-logo { height: 22px; }
+    }
+
     .strategy-cta {
       background: var(--ivory);
       border: 2px solid var(--accent);
@@ -51,6 +89,13 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQPFQDNQ"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
+  <nav class="upsell-sticky-nav" id="upsellNav">
+    <div class="nav-inner">
+      <img src="logo.png" alt="Perfectly Made Marketing" class="nav-logo" />
+      <a href="#upgrade" class="nav-btn">Upgrade Now, $1,350</a>
+    </div>
+  </nav>
 
   <!-- ======================== ANNOUNCEMENT BAR ======================== -->
   <div class="announcement-bar">
@@ -701,6 +746,20 @@
 
   <script src="script.js"></script>
   <script type="text/javascript" src="https://app.kartra.com/js/build/front/embed/pay.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const upsellNav = document.getElementById('upsellNav');
+      const hero = document.querySelector('.upsell-hero');
+
+      if (upsellNav && hero) {
+        const navObserver = new IntersectionObserver(([entry]) => {
+          upsellNav.classList.toggle('visible', !entry.isIntersecting);
+        }, { threshold: 0 });
+        navObserver.observe(hero);
+      }
+    });
+  </script>
 
   <!-- Meta Pixel Purchase Event — visitor purchased the $97 course -->
   <script>
