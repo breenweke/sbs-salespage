@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join the Waitlist — DFY Self-Booking System Install | Perfectly Made Marketing</title>
+  <meta name="description" content="The Done-For-You Self-Booking System Install is currently closed. Join the waitlist to be the first to know when spots open." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NQPFQDNQ');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Meta Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1825521284560570'); fbq('track', 'PageView'); </script> <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1" /></noscript> <!-- End Meta Pixel Code -->
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="upsell-styles.css" />
+
+  <style>
+    /* ---------- INSTALL WAITLIST PAGE STYLES ---------- */
+
+    /* Scroll offset for sticky nav */
+    html { scroll-padding-top: 80px; }
+
+    /* Sticky nav */
+    .install-nav {
+      position: fixed;
+      top: -64px;
+      left: 0; right: 0;
+      z-index: 100;
+      background: rgba(253,251,247,.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--taupe-200);
+      padding: 12px 24px;
+      transition: top .4s var(--ease);
+    }
+    .install-nav.visible { top: 0; }
+    .install-nav .nav-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .install-nav .nav-logo { height: 28px; width: auto; }
+    .install-nav .nav-btn {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 24px;
+      background: var(--accent);
+      color: white;
+      border-radius: var(--radius-pill);
+      transition: all .25s var(--ease);
+    }
+    .install-nav .nav-btn:hover {
+      background: var(--accent-hover);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    /* Hero */
+    .install-hero {
+      background: linear-gradient(180deg, var(--cream) 0%, var(--blush) 50%, var(--ivory) 100%);
+      padding: 48px 24px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .install-hero h1 { margin-bottom: 24px; }
+    .install-hero .hero-logo { margin-bottom: 32px; }
+    .install-hero-copy {
+      margin: 0 auto 28px;
+    }
+    .install-hero-copy p {
+      color: var(--text-soft);
+      margin-bottom: 14px;
+      font-size: .97rem;
+    }
+    .install-hero-copy p:last-child { margin-bottom: 0; }
+
+    /* Spots badge */
+    .spots-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 28px;
+      padding: 10px 24px;
+      background: var(--soft-red-bg);
+      border: 1px solid var(--soft-red-border);
+      border-radius: var(--radius-pill);
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--soft-red-icon);
+    }
+    .spots-badge svg { flex-shrink: 0; stroke: var(--soft-red-icon); }
+
+    /* Waitlist-specific: closed badge */
+    .closed-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 28px;
+      padding: 10px 24px;
+      background: var(--accent-light);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius-pill);
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+    .closed-badge svg { flex-shrink: 0; stroke: var(--accent); }
+
+    /* Pain list */
+    .install-pain-list {
+      list-style: none;
+      max-width: 500px;
+      margin: 24px auto 32px;
+      text-align: left;
+    }
+    .install-pain-list li {
+      position: relative;
+      padding: 6px 0 6px 28px;
+      font-size: .95rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+    .install-pain-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Proof screenshots before/after layout */
+    .proof-before-after {
+      max-width: 700px;
+      margin: 36px auto;
+    }
+    .proof-row-label {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding-left: 4px;
+    }
+    .proof-row-label--before { color: var(--soft-red-icon); }
+    .proof-row-label--after { color: var(--soft-green-icon); }
+
+    .proof-row-before {
+      margin-bottom: 28px;
+    }
+    .proof-row-after {
+      margin-top: 0;
+    }
+
+    .proof-single {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid var(--soft-red-border);
+      box-shadow: var(--shadow-card);
+      background: var(--warm-white);
+      max-width: 480px;
+    }
+    .proof-single img {
+      width: 100%;
+      display: block;
+    }
+
+    .proof-after-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+    .proof-after-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid var(--soft-green-border);
+      box-shadow: var(--shadow-card);
+      background: var(--warm-white);
+    }
+    .proof-after-item img {
+      width: 100%;
+      display: block;
+    }
+    .proof-after-caption {
+      padding: 10px 14px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--soft-green-icon);
+      background: var(--soft-green-bg);
+      text-align: center;
+      border-top: 1px solid var(--soft-green-border);
+    }
+
+    /* Arrow between before/after */
+    .proof-arrow {
+      text-align: center;
+      margin: 16px 0;
+      color: var(--accent);
+    }
+    .proof-arrow svg {
+      transform: rotate(90deg);
+    }
+
+    /* Proof card */
+    .proof-card {
+      background: rgba(255,255,255,.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--taupe-200);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      max-width: 560px;
+      margin: 32px auto;
+      box-shadow: var(--shadow-card);
+    }
+    .proof-card p {
+      margin-bottom: 12px;
+      font-size: .95rem;
+      color: var(--text-soft);
+    }
+    .proof-card p:last-child { margin-bottom: 0; }
+    .proof-before {
+      color: var(--soft-red-icon) !important;
+      font-weight: 600;
+    }
+    .proof-after {
+      color: var(--soft-green-icon) !important;
+      font-weight: 600;
+    }
+
+    /* Don't need / Get instead lists */
+    .dont-need-list,
+    .get-instead-list {
+      list-style: none;
+      max-width: 480px;
+      margin: 20px auto;
+    }
+    .dont-need-list li,
+    .get-instead-list li {
+      position: relative;
+      padding: 8px 0 8px 28px;
+      font-size: .97rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+    .dont-need-list li::before {
+      content: '✕';
+      position: absolute;
+      left: 0;
+      color: var(--soft-red-icon);
+      font-weight: 700;
+      font-size: .85rem;
+    }
+    .get-instead-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--soft-green-icon);
+      font-weight: 700;
+      font-size: .85rem;
+    }
+
+    /* Capacity bar */
+    .capacity-bar {
+      background: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 16px 24px;
+      font-size: .93rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .capacity-bar strong { color: var(--lime); }
+
+    /* Waitlist form section */
+    .waitlist-form-wrapper {
+      background: var(--ivory);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 48px 44px;
+      max-width: 600px;
+      margin: 36px auto 0;
+      text-align: center;
+      box-shadow: 0 4px 24px var(--accent-glow);
+      position: relative;
+      overflow: hidden;
+    }
+    .waitlist-form-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--lime));
+    }
+    .waitlist-form-wrapper h3 {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      margin-bottom: 12px;
+    }
+    .waitlist-form-wrapper p {
+      font-size: .93rem;
+      color: var(--text-soft);
+      margin-bottom: 24px;
+    }
+
+    /* Kartra form placeholder */
+    .waitlist-embed {
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cream);
+      border: 2px dashed var(--taupe-200);
+      border-radius: var(--radius-sm);
+      padding: 32px 24px;
+      color: var(--text-muted);
+      font-size: .9rem;
+      margin-bottom: 16px;
+    }
+
+    /* Thank you message (shown after form submit) */
+    .waitlist-thankyou {
+      display: none;
+      text-align: center;
+      padding: 36px 24px;
+    }
+    .waitlist-thankyou.visible {
+      display: block;
+    }
+    .waitlist-thankyou h3 {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .waitlist-thankyou p {
+      color: var(--text-soft);
+      font-size: .95rem;
+    }
+
+    @media (max-width: 900px) {
+      .install-hero { padding: 40px 20px 0; }
+      .install-nav .nav-logo { height: 22px; }
+      .proof-after-grid { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; }
+    }
+    @media (max-width: 600px) {
+      html { scroll-padding-top: 120px; }
+      .install-hero { padding: 40px 16px 0; }
+      .proof-card { padding: 24px; }
+      .waitlist-form-wrapper { padding: 32px 24px; }
+      .spots-badge, .closed-badge { font-size: .82rem; padding: 8px 16px; }
+      .proof-single { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQPFQDNQ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- ======================== STICKY NAV ======================== -->
+  <nav class="install-nav" id="installNav">
+    <div class="nav-inner">
+      <img src="logo.png" alt="Perfectly Made Marketing" class="nav-logo" />
+      <a href="#waitlist" class="nav-btn">Join the Waitlist</a>
+    </div>
+  </nav>
+
+  <!-- ======================== ANNOUNCEMENT BAR ======================== -->
+  <div class="announcement-bar">
+    The DFY Install is <strong>currently closed</strong>. Join the waitlist to be first in line when spots open.
+  </div>
+
+  <!-- ======================== 1. HERO ======================== -->
+  <section class="install-hero">
+    <div class="container text-center">
+      <img src="logo.png" alt="Perfectly Made Marketing" class="hero-logo anim" />
+
+      <h1 class="anim">We're currently <em>fully booked.</em><br />But you can be next.</h1>
+
+      <div class="install-hero-copy narrow anim">
+        <p>The Done-For-You Self-Booking System Install is closed right now. We only take 3&ndash;5 clients at a time, and every spot for this round has been claimed.</p>
+        <p>But we open new spots regularly, and <strong>waitlist members hear about it first</strong> before we announce it anywhere else.</p>
+      </div>
+
+      <div class="install-hero-copy narrow anim">
+        <p>If you're a service provider who wants your entire booking system (ads, funnel, emails, booking flow) <strong>built and installed for you in 30 days</strong>, join the waitlist so you don't miss the next opening.</p>
+      </div>
+
+      <div class="closed-badge anim">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Currently closed &mdash; join the waitlist below</span>
+      </div>
+
+      <div class="cta-row anim" style="margin-top: 16px; margin-bottom: 48px;">
+        <a href="#waitlist" class="btn btn--lg btn--lime">Join the Waitlist</a>
+        <p class="micro">Be the first to know when spots open. Keep scrolling to see exactly what's included.</p>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,40 C360,100 1080,0 1440,60 L1440,100 L0,100 Z" fill="#ffffff"/></svg>
+    </div>
+  </section>
+
+  <!-- ======================== 2. SOUND FAMILIAR ======================== -->
+  <section class="section">
+    <div class="container narrow">
+      <p class="eyebrow anim">Sound familiar?</p>
+      <h2 class="anim">You know you need a system.<br /><em>You just don't want to build it yourself.</em></h2>
+
+      <p class="anim">You're a coach, consultant, or service provider. You're good at what you do. Your clients get real results. But your calendar doesn't reflect the quality of your work.</p>
+
+      <p class="anim">You've probably thought about:</p>
+
+      <ul class="install-pain-list anim">
+        <li>Running Meta ads but not knowing how to set them up properly</li>
+        <li>Building a funnel but getting overwhelmed by the tech</li>
+        <li>Writing follow-up emails but never getting around to it</li>
+        <li>Setting up a booking system that actually qualifies people before they get on your calendar</li>
+        <li>Figuring out how all the pieces connect so leads don't fall through the cracks</li>
+      </ul>
+
+      <p class="anim">And then life happens. Client work takes over. The "marketing setup" project keeps getting pushed to next week. Next month. Next quarter.</p>
+
+      <div class="highlight-card anim">
+        The truth is: you don't need to learn how to do this. You need someone who already knows how to do it for you.
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 3. MEET BREE ======================== -->
+  <section class="section section--blush">
+    <div class="container narrow">
+      <div class="meet-bree anim">
+        <div class="bree-photo">
+          <img src="images/Photo of Bree.jpg" alt="Bree, Perfectly Made Marketing" />
+        </div>
+        <div class="bree-text">
+          <p class="eyebrow">Meet your strategist</p>
+          <h2>Hi, I'm <em>Bree.</em></h2>
+          <p>I'm the founder of Perfectly Made Marketing, and I built the Self-Booking System after learning an expensive lesson.</p>
+          <p>I spent $544 on lead ads. Brought in 244 leads at $2.23 each. On paper, the ads were "working." But booked calls? <strong>Zero. Not one.</strong></p>
+          <p>The ads weren't the problem. 244 people opted in. What was broken was everything between the click and the calendar: the landing page, the follow-up, the path from "interested" to "booked."</p>
+          <p>Once I figured out how to connect those pieces, everything changed. <strong>86 leads. 16 booked calls. $2 per lead. In two weeks.</strong></p>
+          <p>Now I install that same system, called <strong>The Self-Booking System</strong>, for service providers who don't want to figure it out themselves. I'm personally involved in every build. My team and I treat your business like it's ours for 30 days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 4. PROOF SECTION ======================== -->
+  <section class="section text-center">
+    <div class="container narrow">
+      <p class="eyebrow anim" style="text-align:center">Real results</p>
+      <h2 class="anim">This isn't theory.<br /><em>Here's the proof.</em></h2>
+
+      <p class="anim">Here's what $544 in wasted ad spend looked like and what happened after I built the system:</p>
+
+      <!-- Before/After Screenshots -->
+      <div class="proof-before-after anim">
+        <!-- BEFORE -->
+        <p class="proof-row-label proof-row-label--before">Before: $544 spent zero calls booked</p>
+        <div class="proof-row-before">
+          <div class="proof-single">
+            <img src="images/544.png" alt="Ads Manager showing 244 leads at $2.23 each, $544.92 spent, zero booked calls" />
+          </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="proof-arrow">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+
+        <!-- AFTER -->
+        <p class="proof-row-label proof-row-label--after">After: 86 leads, 16 booked calls $2/lead</p>
+        <div class="proof-row-after">
+          <div class="proof-after-grid">
+            <div class="proof-after-item">
+              <img src="images/86 leads on email list .jpg" alt="Ads Manager showing 86 website leads at $2.00 per lead" />
+              <div class="proof-after-caption">86 leads at $2/each</div>
+            </div>
+            <div class="proof-after-item">
+              <img src="images/16 booked calls without posting.jpg" alt="Calendar showing 30 visitors and 16 booked registrations" />
+              <div class="proof-after-caption">16 calls booked</div>
+            </div>
+            <div class="proof-after-item">
+              <img src="images/Booked calls without posting.jpg" alt="Calendar showing real booked consultation calls with names and dates" />
+              <div class="proof-after-caption">Real booked calls</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card anim">
+        <p><strong>Same platform. Same budget range. Completely different result.</strong></p>
+        <p>The only thing that changed was what happened between the ad and the calendar. That's the system. And that's exactly what we build for you.</p>
+      </div>
+
+      <p class="anim" style="margin-top: 36px;">The Self-Booking System is built on a simple framework:</p>
+
+      <div class="pillar-row anim" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+        <div class="pillar-card">
+          <span class="pillar-label">Seen</span>
+          <p><strong>Paid ads</strong> put you in front of the right people daily.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-label">Booked</span>
+          <p><strong>Your funnel</strong> turns that attention into booked calls.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-label">Paid</span>
+          <p><strong>Automated follow-up</strong> nurtures leads into clients.</p>
+        </div>
+      </div>
+
+      <p class="anim">Instead of you building this from scratch, <strong>my team and I install the entire system for you in 30 days.</strong></p>
+
+      <div class="cta-row anim">
+        <a href="#waitlist" class="btn">Join the Waitlist</a>
+        <p class="micro">Be the first to know when we open spots.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 5. WHAT YOU DON'T NEED ======================== -->
+  <section class="section section--ivory">
+    <div class="container narrow">
+      <h2 class="anim">Here's what you<br /><em>don't</em> need to do.</h2>
+
+      <ul class="dont-need-list anim">
+        <li>Learn how to run Meta ads</li>
+        <li>Figure out landing page software</li>
+        <li>Write email sequences from scratch</li>
+        <li>Set up tracking pixels and conversion events</li>
+        <li>Build a booking flow that pre-qualifies leads</li>
+        <li>Connect all the pieces and hope they work together</li>
+      </ul>
+
+      <p class="accent-line anim">We do all of that for you.</p>
+
+      <p class="anim" style="text-align:center">Here's what you get instead:</p>
+
+      <ul class="get-instead-list anim">
+        <li>A complete, custom Self-Booking System built for your business</li>
+        <li>Lead magnet and opt-in page that grows your email list daily</li>
+        <li>Booking flow that gets qualified leads on your calendar automatically</li>
+        <li>Automated email follow-up and nurture sequences</li>
+        <li>Meta ads built, launched, and monitored on a $15&ndash;$30/day budget</li>
+        <li>A full Loom walkthrough so you understand exactly how your system works</li>
+      </ul>
+
+      <div class="inset-card anim">
+        <p>You don't have to become a marketer. <strong>You just need a system built by one.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 6. CLIENT SPOTLIGHT ======================== -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <p class="eyebrow anim" style="text-align:center">Client spotlight</p>
+        <h2 class="anim" style="text-align:center">What a DFY install<br /><em>actually looks like</em></h2>
+        <p class="section-sub anim" style="text-align:center; max-width:560px; margin-left:auto; margin-right:auto; margin-bottom:44px;">Here's a real look inside one client's Self-Booking System, from the assets we built to the results she saw within 5 days of going live.</p>
+      </div>
+
+      <!-- Results Stats -->
+      <div class="spotlight-stats anim">
+        <div class="spotlight-stat">
+          <span class="spotlight-stat-label">Cost per lead before</span>
+          <span class="spotlight-stat-num spotlight-stat-num--before">$13</span>
+        </div>
+        <div class="spotlight-stat-arrow">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="spotlight-stat">
+          <span class="spotlight-stat-label">Cost per lead after</span>
+          <span class="spotlight-stat-num spotlight-stat-num--after">$3</span>
+        </div>
+        <div class="spotlight-divider"></div>
+        <div class="spotlight-stat">
+          <span class="spotlight-stat-label">New leads</span>
+          <span class="spotlight-stat-num spotlight-stat-num--after">22</span>
+        </div>
+        <div class="spotlight-divider"></div>
+        <div class="spotlight-stat">
+          <span class="spotlight-stat-label">Calls booked in 5 days</span>
+          <span class="spotlight-stat-num spotlight-stat-num--after">3</span>
+        </div>
+      </div>
+
+      <p class="text-center anim" style="color: var(--text-soft); max-width: 480px; margin: 0 auto 36px; font-size: .93rem;">All on autopilot while they focused on serving their existing clients.</p>
+
+      <!-- Visual Story: 4 images -->
+      <div class="spotlight-story anim">
+        <div class="spotlight-story-item">
+          <div class="spotlight-story-step">What we built</div>
+          <div class="spotlight-label">Her opt-in page</div>
+          <img src="images/Client Results/Her opt in page.png" alt="Client opt-in page we built" loading="lazy" />
+        </div>
+        <div class="spotlight-story-item">
+          <div class="spotlight-story-step">What we built</div>
+          <div class="spotlight-label">Her booking page</div>
+          <img src="images/Client Results/Her book a call page.png" alt="Client booking page we built" loading="lazy" />
+        </div>
+        <div class="spotlight-story-item">
+          <div class="spotlight-story-step">What we launched</div>
+          <div class="spotlight-label">Her ad creative</div>
+          <img src="images/Client Results/Ad 1.png" alt="Ad creative designed for client" loading="lazy" />
+        </div>
+        <div class="spotlight-story-item">
+          <div class="spotlight-story-step">The results</div>
+          <div class="spotlight-label">Calls started booking</div>
+          <img src="images/Client Results/Screenshot of her calendar.png" alt="Booked calls appearing on calendar" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="highlight-card anim" style="max-width: 620px; margin: 36px auto;">
+        Not a template. Not a DIY tutorial. A fully custom system, built for her business, and running within days.
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 7. IS THIS FOR YOU ======================== -->
+  <section class="section section--blush">
+    <div class="container narrow">
+      <h2 class="anim">Is the DFY Install<br /><em>right for you?</em></h2>
+
+      <div class="two-cards anim">
+        <div class="mini-card mini-card--soft-green">
+          <h3>This is perfect for you if:</h3>
+          <ul class="icon-list icon-list--check">
+            <li>You have a proven offer that sells, you just need more people seeing it</li>
+            <li>You're too busy serving clients to sit down and build a funnel</li>
+            <li>You believe in ads and automation you just want it done right, the first time</li>
+            <li>You want a system that runs in the background and keeps your calendar full</li>
+            <li>You'd rather invest in having it built than spend weeks learning how</li>
+          </ul>
+        </div>
+        <div class="mini-card mini-card--soft-red">
+          <h3>This is not for you if:</h3>
+          <ul class="icon-list icon-list--x">
+            <li>You're still figuring out your offer or haven't worked with clients yet</li>
+            <li>You don't have client results to point to</li>
+            <li>You're not ready to invest $15&ndash;$30/day in ads after the build</li>
+            <li>You want to DIY everything and learn at your own pace</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="inset-card anim">
+        <p>If your offer is already proven and you just need visibility + a system that converts... <strong>this is the shortcut that actually works.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 8. TIMELINE ======================== -->
+  <section class="section section--ivory">
+    <div class="container">
+      <div class="text-center">
+        <p class="eyebrow anim" style="text-align:center">The 30-day build</p>
+        <h2 class="anim" style="text-align:center">Here is what we will accomplish,<br /><em>together.</em></h2>
+      </div>
+
+      <div class="timeline">
+        <!-- WEEK 1 -->
+        <div class="timeline-card anim">
+          <div class="timeline-week-badge">Week 1</div>
+          <div class="timeline-tag">Done for you</div>
+          <h3>Your Message, Lead Magnet & Funnel Foundations</h3>
+          <p class="muted">We start here because your system can't convert if the foundation is weak.</p>
+          <p class="timeline-gets"><strong>You'll get:</strong></p>
+          <ul class="icon-list icon-list--check">
+            <li>Lead magnet refinement (or creation if needed)</li>
+            <li>Opt-in page set up + connected to your email platform</li>
+            <li>Your booking pathway chosen (direct booking OR application to booking)</li>
+            <li>Messaging aligned to attract ready-to-invest clients, not freebie hunters</li>
+            <li>Strategic kickoff call (optional if needed)</li>
+          </ul>
+          <div class="timeline-result">
+            <strong>By the end of Week 1</strong>
+            <p>Your funnel foundation is built, aligned, and connected.</p>
+          </div>
+        </div>
+
+        <!-- WEEK 2 -->
+        <div class="timeline-card anim">
+          <div class="timeline-week-badge">Week 2</div>
+          <div class="timeline-tag">Done for you</div>
+          <h3>Your Booking System Installed</h3>
+          <p class="muted">This is where we build the part that actually gets you clients.</p>
+          <p class="timeline-gets"><strong>You'll get:</strong></p>
+          <ul class="icon-list icon-list--check">
+            <li>High-converting booking page built for your offer</li>
+            <li>Application/intake questions added (if needed)</li>
+            <li>VSL script created if your booking flow needs it</li>
+            <li>Booking confirmation + reminder emails set up inside your CRM (Calendly/Acuity/etc.)</li>
+            <li>Follow-up message templates added</li>
+          </ul>
+          <div class="timeline-result">
+            <strong>By the end of Week 2</strong>
+            <p>Your entire booking flow is live, ready for leads to book automatically.</p>
+          </div>
+        </div>
+
+        <!-- WEEK 3 -->
+        <div class="timeline-card timeline-card--featured anim">
+          <div class="timeline-week-badge timeline-week-badge--featured">Week 3</div>
+          <div class="timeline-tag">Done for you</div>
+          <h3>Your Traffic System & Visibility Engine Go Live</h3>
+          <p class="muted">Now that your funnel + booking system are ready, it's time to turn on the visibility.</p>
+          <p class="timeline-gets"><strong>You'll get:</strong></p>
+          <ul class="icon-list icon-list--check">
+            <li>Ads built using the $15&ndash;$30/day system</li>
+            <li>2&ndash;4 custom creatives + 1&ndash;2 audiences tested</li>
+            <li>Pixel + events installed correctly for tracking</li>
+            <li>Ads launched and monitored</li>
+            <li>Your 30-day nurture + conversion content plan created</li>
+          </ul>
+          <div class="timeline-result">
+            <strong>By the end of Week 3</strong>
+            <p>Your system is actively pulling in new aligned leads daily.</p>
+          </div>
+        </div>
+
+        <!-- WEEK 4 -->
+        <div class="timeline-card anim">
+          <div class="timeline-week-badge">Week 4</div>
+          <div class="timeline-tag">Done for you</div>
+          <h3>Optimization, Tracking, and Bookings On Autopilot</h3>
+          <p class="muted">This week is all about refinement and momentum.</p>
+          <p class="timeline-gets"><strong>You'll get:</strong></p>
+          <ul class="icon-list icon-list--check">
+            <li>Light tracking on cost per lead + booking conversion</li>
+            <li>Audience insights + performance notes</li>
+            <li>Final system walkthrough via Loom</li>
+            <li>Personalized next-step recommendations to keep the system working long-term</li>
+          </ul>
+          <div class="timeline-result">
+            <strong>By the end of Week 4</strong>
+            <p>You have a fully built, fully functioning client-booking ecosystem installed, and running.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-row anim" style="text-align:center">
+        <a href="#waitlist" class="btn btn--lg">Join the Waitlist</a>
+        <p class="micro">Be the first to know when we open new spots.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 9. WAITLIST (replaces pricing) ======================== -->
+  <section class="section" id="waitlist">
+    <div class="container text-center">
+      <p class="eyebrow anim" style="text-align:center">Be the first to know</p>
+      <h2 class="anim">Join the <em>Waitlist</em></h2>
+
+      <p class="anim" style="max-width: 540px; margin: 0 auto 12px; color: var(--text-soft); font-size: .95rem;">We only open the DFY Install to 3&ndash;5 clients at a time to keep every build personal. Spots fill fast and we're currently closed.</p>
+      <p class="anim" style="max-width: 540px; margin: 0 auto 24px; color: var(--text-soft); font-size: .95rem;">Drop your info below and you'll be the first to know when we open new spots, before we announce it anywhere else.</p>
+
+      <div class="waitlist-form-wrapper anim" id="waitlistFormWrapper">
+        <h3>Get on the list</h3>
+        <p>We'll email you as soon as spots open. No spam, just early access.</p>
+
+        <!-- ========== KARTRA FORM EMBED: Replace the placeholder below with your Kartra embed code ========== -->
+        <div class="waitlist-embed" id="waitlistEmbed">
+          <!-- PASTE YOUR KARTRA FORM EMBED CODE HERE -->
+          <span>Kartra form will appear here</span>
+        </div>
+        <!-- ========== END KARTRA FORM EMBED ========== -->
+      </div>
+
+      <!-- Thank-you message (show this after form submit) -->
+      <div class="waitlist-thankyou" id="waitlistThankyou">
+        <h3>You're on the list!</h3>
+        <p>We'll email you the moment spots open. Keep an eye on your inbox.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 10. HOW IT WORKS ======================== -->
+  <section class="section section--ivory">
+    <div class="container narrow">
+      <div class="text-center">
+        <p class="eyebrow anim" style="text-align:center">What happens next</p>
+        <h2 class="anim" style="text-align:center">Here's exactly how<br /><em>it works</em></h2>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step anim">
+          <div class="process-num">1</div>
+          <div class="process-content">
+            <h3>Join the Waitlist</h3>
+            <p>Drop your info above. When spots open, you'll get an email with a link to secure your spot before anyone else.</p>
+          </div>
+        </div>
+
+        <div class="process-step anim">
+          <div class="process-num">2</div>
+          <div class="process-content">
+            <h3>Secure Your Spot</h3>
+            <p>Choose pay-in-full or the payment plan. You'll receive a confirmation email with next steps immediately. We only take 3&ndash;5 clients per month, so once spots are filled, the next available start date is the following month.</p>
+          </div>
+        </div>
+
+        <div class="process-step anim">
+          <div class="process-num">3</div>
+          <div class="process-content">
+            <h3>Onboarding & Strategy</h3>
+            <p>You'll receive an onboarding form + a link to schedule your kickoff call so we can review your offer, audience, and goals. This is where we map out your entire system.</p>
+          </div>
+        </div>
+
+        <div class="process-step anim">
+          <div class="process-num">4</div>
+          <div class="process-content">
+            <h3>We Build Your System in 30 Days</h3>
+            <p>My team and I install your full Self-Booking System (funnel, nurture, booking flow, and ads) and send you Loom videos walking through everything we've built.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 11. GUARANTEE ======================== -->
+  <section class="section">
+    <div class="container">
+      <div class="guarantee-card anim">
+        <div class="text-center">
+          <p class="eyebrow anim" style="text-align:center">Our promise</p>
+          <h2>The Build-It-Right<br /><em>Guarantee</em></h2>
+        </div>
+        <div class="guarantee-body">
+          <p>If at any point during your 30-day build, something we create doesn't align with your brand, your voice, or your vision, <strong>we'll revise it until it does.</strong> No extra charge. No pushback.</p>
+          <p>You'll also receive a complete Loom walkthrough of everything we've built, so you understand how your system works and can manage it confidently going forward. You own 100% of everything we create.</p>
+          <p>This isn't a "hope it works" situation. We've done this before, and we'll make sure your system is built to the same standard we'd build for ourselves.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 12. TESTIMONIALS ======================== -->
+  <section class="section section--ivory">
+    <div class="container">
+      <div class="text-center">
+        <p class="eyebrow anim" style="text-align:center">What clients say</p>
+        <h2 class="anim" style="text-align:center">Real words from<br /><em>real clients</em></h2>
+      </div>
+
+      <div class="upsell-testimonial anim" style="max-width: 620px; margin: 36px auto 0;">
+        <div class="upsell-testimonial-inner">
+          <svg class="upsell-quote-mark" width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="var(--accent)" opacity=".12"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="var(--accent)" opacity=".12"/></svg>
+          <blockquote>I was running ads on my own and spending $13 per lead with barely any bookings. Bree's team rebuilt everything. My funnel, my ads, my booking flow. And within 5 days of going live I had 22 new leads at $3 each and 3 calls on my calendar. I didn't touch a thing.</blockquote>
+          <cite class="testimonial-cite">DFY Install Client</cite>
+        </div>
+      </div>
+
+      <div class="testimonial-grid testimonial-grid--upsell anim">
+        <div class="testimonial-img"><img src="images/Testimonials/Screenshot 2025-11-13 085101.png" alt="Client testimonial" loading="lazy" /></div>
+        <div class="testimonial-img"><img src="images/Testimonials/Screenshot 2025-11-13 085112.png" alt="Client testimonial" loading="lazy" /></div>
+        <div class="testimonial-img"><img src="images/Testimonials/Screenshot 2025-11-13 085148.png" alt="Client testimonial" loading="lazy" /></div>
+        <div class="testimonial-img"><img src="images/Testimonials/Pam.png" alt="Client testimonial" loading="lazy" /></div>
+        <div class="testimonial-img"><img src="images/Testimonials/Screenshot 2025-11-13 085219.png" alt="Client testimonial" loading="lazy" /></div>
+        <div class="testimonial-img"><img src="images/Testimonials/Screenshot 2025-11-13 085137.png" alt="Client testimonial" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 13. FAQ ======================== -->
+  <section class="section section--blush">
+    <div class="container narrow">
+      <div class="text-center">
+        <p class="eyebrow anim" style="text-align:center">Questions</p>
+        <h2 class="anim" style="text-align:center">Before you<br /><em>decide</em></h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq anim">
+          <summary>
+            <span>How many clients do you take per month?</span>
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-body">
+            <p>We only take 3&ndash;5 clients per month. Because I'm personally involved in every build, we keep it intentionally small so nothing is rushed and every system gets the attention it deserves. Once spots are filled for the month, the next available start date is the following month.</p>
+          </div>
+        </details>
+
+        <details class="faq anim">
+          <summary>
+            <span>What if I already have some of this set up (landing page, email list, etc.)?</span>
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-body">
+            <p>We'll work with what you have. During your kickoff call, we'll audit your existing setup and only rebuild what needs to be improved. If your landing page is already converting well, we'll keep it. This isn't about starting from scratch. It's about making sure every piece of your system is working together.</p>
+          </div>
+        </details>
+
+        <details class="faq anim">
+          <summary>
+            <span>What CRM / email platform do you work with?</span>
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-body">
+            <p>We work with most major platforms: Mailchimp, Kit (ConvertKit), ActiveCampaign, Flodesk, Kartra, GHL, and more. For booking, we support Calendly, Acuity, and similar tools. If you're not sure whether your setup is compatible, just reach out and ask before purchasing.</p>
+          </div>
+        </details>
+
+        <details class="faq anim">
+          <summary>
+            <span>Do I own everything you build for me?</span>
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-body">
+            <p>Yes, 100%. Every page, email sequence, ad creative, and automation we build lives in your accounts and belongs to you. Nothing is locked behind our access. When the 30 days are done, you have full control.</p>
+          </div>
+        </details>
+
+        <details class="faq anim">
+          <summary>
+            <span>What happens after the 30 days? Am I on my own?</span>
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-body">
+            <p>You'll receive a detailed Loom walkthrough of your entire system plus personalized recommendations for what to do next. The system is designed to run on its own. If you want ongoing support after that, we offer monthly retainer packages, but they're completely optional.</p>
+          </div>
+        </details>
+
+        <details class="faq anim">
+          <summary>
+            <span>How much should I budget for ads on top of this?</span>
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-body">
+            <p>We build your ad system around a $15&ndash;$30/day budget, which comes out to roughly $450&ndash;$900/month. That's separate from the install cost. You'll need an active Meta Ads account with a payment method connected before we launch in Week 3.</p>
+          </div>
+        </details>
+
+        <details class="faq anim">
+          <summary>
+            <span>Can I talk to someone before deciding?</span>
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-body">
+            <p>Yes. If you're seriously considering the install and want to talk it through, <a href="https://www.perfectlymademarketing.com/strategysessioncalendar" target="_blank">book a free strategy call</a>. We'll review your business, answer your questions, and make sure this is the right fit. This call is specifically for people considering the DFY Install, not a general consulting session.</p>
+          </div>
+        </details>
+
+        <details class="faq anim">
+          <summary>
+            <span>What's the difference between this and the Self-Booking System Course?</span>
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-body">
+            <p>The course ($97) teaches you how to build the system yourself, step by step. The DFY Install means my team and I build the entire system for you (ads, funnel, emails, booking flow, everything) in 30 days. Same system, different path. The course is for people who want to learn and build at their own pace. The install is for people who want it done and running as fast as possible.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 14. FINAL CTA ======================== -->
+  <section class="section text-center">
+    <div class="container narrow">
+      <h2 class="anim">You don't need to figure this out.<br /><em>You need it built.</em></h2>
+
+      <div class="final-copy anim">
+        <p>You started your business because you're great at what you do, not because you wanted to learn funnels, ads, and email automation.</p>
+        <p>Your clients get results. Your offer is proven. The only thing missing is a system that consistently puts qualified people on your calendar.</p>
+        <p><strong>We're currently closed, but spots open regularly.</strong> Join the waitlist so you don't miss the next round.</p>
+      </div>
+
+      <div class="closed-badge anim" style="margin-bottom: 16px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Currently closed &mdash; join the waitlist</span>
+      </div>
+
+      <div class="cta-row anim" style="margin-top: 16px;">
+        <a href="#waitlist" class="btn btn--lg btn--lime">Join the Waitlist</a>
+        <p class="micro">Be the first to know when new spots open.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== DISCLAIMER ======================== -->
+  <div class="disclaimer-bar">
+    <div class="container">
+      <p><strong>Disclaimer:</strong> Results shared on this page are from real clients but are not guaranteed. Individual results vary based on offer, audience, ad spend, and market conditions. The Self-Booking System Install provides the strategy, setup, and tools, but we cannot guarantee specific revenue, leads, or bookings. By purchasing, you acknowledge that results depend on many factors unique to your business.</p>
+    </div>
+  </div>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer">
+    <div class="container text-center">
+      <img src="logo.png" alt="Perfectly Made Marketing" class="footer-logo" />
+      <p>&copy; 2026 Perfectly Made Marketing. All rights reserved.</p>
+      <p>Questions? <a href="mailto:hello@perfectlymademarketing.com">hello@perfectlymademarketing.com</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Sticky nav for install-waitlist page -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const installNav = document.getElementById('installNav');
+      const hero = document.querySelector('.install-hero');
+
+      if (installNav && hero) {
+        const navObserver = new IntersectionObserver(([entry]) => {
+          installNav.classList.toggle('visible', !entry.isIntersecting);
+        }, { threshold: 0 });
+        navObserver.observe(hero);
+      }
+    });
+  </script>
+</body>
+</html>
