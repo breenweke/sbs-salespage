@@ -187,6 +187,10 @@
         grid-template-columns: 1fr;
         max-width: 400px;
       }
+      .proof-screenshots {
+        grid-template-columns: 1fr !important;
+        max-width: 340px !important;
+      }
       .inside-card { padding: 24px; }
       .offer-box { padding: 36px 24px; }
       .proof-card { padding: 24px; }
@@ -210,7 +214,9 @@
     <div class="container text-center">
       <img src="logo.png" alt="Perfectly Made Marketing" class="hero-logo anim" />
 
-      <h1 class="anim">When leads come in but calls don't &mdash;<br />this is almost always <em>why.</em></h1>
+      <img src="images/checklist-mockup.svg" alt="The Self-Booking System Checklist" class="anim" style="max-width: 220px; margin: 0 auto 36px; display: block; filter: drop-shadow(0 8px 24px rgba(61,54,49,.1));" />
+
+      <h1 class="anim" style="margin-bottom: 32px;">When leads come in but calls don't &mdash;<br />this is almost always <em>why.</em></h1>
 
       <div class="narrow anim" style="margin-bottom: 28px;">
         <p>You just opted in because something in that ad described your situation. Leads coming in. Calendar not filling up. You're doing the marketing part. The results aren't matching the effort.</p>
@@ -323,7 +329,7 @@
         <h3>Your lead magnet, ad creative, ad copy, and CTA</h3>
         <p>Everything that determines whether the right person stops scrolling, clicks your ad, and opts in. Most people think they have this stage handled. Most people are wrong about at least two pieces.</p>
         <div class="inside-insight">
-          <strong>The gap most people miss:</strong> The lead magnet is attracting curious people instead of ready-to-act people &mdash; because the topic is broad enough for everyone, which means it's specific enough for no one. That one shift alone changes the quality of every lead that enters the funnel.
+          <strong>The gap most people miss:</strong> Their lead magnet is attracting curious people instead of ready-to-act people &mdash; because the topic is broad enough for everyone, which means it's specific enough for no one. That one shift alone changes the quality of every lead that enters the funnel.
         </div>
       </div>
 
@@ -384,6 +390,18 @@
       </div>
 
       <p class="anim" style="color: var(--text-soft); max-width: 480px; margin: 0 auto 28px; font-size: .93rem;">Without posting. Without chasing anyone. Without touching a thing after it went live.</p>
+
+      <!-- Client result screenshots -->
+      <div class="anim proof-screenshots" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 560px; margin: 0 auto 32px;">
+        <div style="border-radius: var(--radius); overflow: hidden; border: 2px solid var(--soft-green-border); box-shadow: var(--shadow-card); background: var(--warm-white);">
+          <img src="images/Client Results/Her opt in page.png" alt="Client opt-in page we built" style="width: 100%; display: block;" loading="lazy" />
+          <div style="padding: 10px 14px; font-size: .78rem; font-weight: 600; color: var(--soft-green-icon); background: var(--soft-green-bg); text-align: center; border-top: 1px solid var(--soft-green-border);">Her opt-in page</div>
+        </div>
+        <div style="border-radius: var(--radius); overflow: hidden; border: 2px solid var(--soft-green-border); box-shadow: var(--shadow-card); background: var(--warm-white);">
+          <img src="images/Client Results/Screenshot of her calendar.png" alt="Booked calls appearing on calendar" style="width: 100%; display: block;" loading="lazy" />
+          <div style="padding: 10px 14px; font-size: .78rem; font-weight: 600; color: var(--soft-green-icon); background: var(--soft-green-bg); text-align: center; border-top: 1px solid var(--soft-green-border);">Calls started booking</div>
+        </div>
+      </div>
 
       <div class="proof-card anim">
         <p><strong>The difference wasn't her offer. It wasn't her niche. It wasn't even her ad.</strong></p>
@@ -458,10 +476,8 @@
   </section>
 
   <!-- ======================== DISCLAIMER ======================== -->
-  <div class="disclaimer-bar">
-    <div class="container">
-      <p><strong>Disclaimer:</strong> Results shared on this page are from real clients but are not guaranteed. Individual results vary based on offer, audience, ad spend, and market conditions. The Self-Booking System Checklist provides clarity on what pieces your system needs &mdash; but we cannot guarantee specific revenue, leads, or bookings. By purchasing, you acknowledge that results depend on many factors unique to your business.</p>
-    </div>
+  <div style="text-align: center; padding: 20px 24px; font-size: .72rem; color: var(--text-muted); line-height: 1.5;">
+    <p>Results vary. Nothing on this page is a guarantee of specific outcomes.</p>
   </div>
 
   <!-- ======================== FOOTER ======================== -->
