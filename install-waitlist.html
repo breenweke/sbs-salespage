@@ -309,19 +309,51 @@
       margin-bottom: 24px;
     }
 
-    /* Kartra form placeholder */
-    .waitlist-embed {
-      min-height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--cream);
-      border: 2px dashed var(--taupe-200);
+    /* Kartra form styling */
+    .waitlist-form-wrapper .form_class_ab817c9349cf9c4f6877e1894a1faa00 {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .waitlist-form-wrapper input[type="text"] {
+      width: 100%;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      border: 1px solid var(--taupe-200);
       border-radius: var(--radius-sm);
-      padding: 32px 24px;
+      font-family: var(--font);
+      font-size: .95rem;
+      color: var(--text);
+      background: var(--warm-white);
+      transition: border-color .2s var(--ease);
+      box-sizing: border-box;
+    }
+    .waitlist-form-wrapper input[type="text"]:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .waitlist-form-wrapper input[type="text"]::placeholder {
       color: var(--text-muted);
-      font-size: .9rem;
-      margin-bottom: 16px;
+    }
+    .waitlist-form-wrapper button[type="submit"] {
+      width: 100%;
+      padding: 16px 36px;
+      background: var(--lime);
+      color: #1a1a1a;
+      font-family: var(--font);
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all .25s var(--ease);
+      box-shadow: 0 4px 16px var(--lime-glow);
+      margin-top: 4px;
+    }
+    .waitlist-form-wrapper button[type="submit"]:hover {
+      background: #d4f044;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px var(--lime-glow);
     }
 
     /* Thank you message (shown after form submit) */
@@ -771,10 +803,15 @@
         <h3>Get on the list</h3>
         <p>We'll email you as soon as spots open. No spam, just early access.</p>
 
-        <!-- ========== KARTRA FORM EMBED: Replace the placeholder below with your Kartra embed code ========== -->
-        <div class="waitlist-embed" id="waitlistEmbed">
-          <!-- PASTE YOUR KARTRA FORM EMBED CODE HERE -->
-          <span>Kartra form will appear here</span>
+        <!-- ========== KARTRA FORM EMBED ========== -->
+        <div class="form_class_ab817c9349cf9c4f6877e1894a1faa00" data-form_id="ab817c9349cf9c4f6877e1894a1faa00">
+          <form method="post" action="https://app.kartra.com/process/add_lead/13KiVap2wRa4" target="_top" class="form_class_13KiVap2wRa4 js_kartra_trackable_object" data-kt-type="optin" data-kt-value="13KiVap2wRa4" data-kt-owner="7kzAqVxg" accept-charset="UTF-8">
+            <input type="text" class="" placeholder="" name="aaddress_url" value="" style="display: none; position: absolute; left: -9999px;" aria-hidden="true" tabindex="-1">
+            <input type="text" class="js_kartra_santitation" data-santitation-type="front_name" placeholder="First name..." name="first_name" value="">
+            <input type="text" class="js_kartra_santitation" data-santitation-type="email" placeholder="Email..." name="email" value="">
+            <div class="js_captcha_wrapper"></div>
+            <button class='submit_button_ab817c9349cf9c4f6877e1894a1faa00' onclick="var element = this; element.form.submit(); element.setAttribute('disabled', true); setTimeout(function(){element.removeAttribute('disabled');}, 1000);" type="submit">Join the Waitlist</button>
+          </form>
         </div>
         <!-- ========== END KARTRA FORM EMBED ========== -->
       </div>
@@ -1007,6 +1044,11 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- Kartra form scripts -->
+  <script>window.jQuery || document.write('<script src="https://app.kartra.com/js/node_modules/kartra-jquery/jquery-1.11.3/jquery-1.11.3.min.js"><\/script>')</script>
+  <script src="https://app.kartra.com/resources/js/analytics/7kzAqVxg"></script>
+  <script src="https://app.kartra.com//resources/js/optin_front_javascript?form_id=ab817c9349cf9c4f6877e1894a1faa00&optin_hash=13KiVap2wRa4&khoi=7kzAqVxg"></script>
 
   <!-- Sticky nav for install-waitlist page -->
   <script>
