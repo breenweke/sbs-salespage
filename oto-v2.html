@@ -368,16 +368,16 @@
       <!-- Client result screenshots -->
       <div class="anim proof-screenshots" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 560px; margin: 0 auto 12px;">
         <div>
+          <p style="font-size: .82rem; color: var(--text-soft); margin-bottom: 12px; line-height: 1.55; text-align: left;">Her cost per lead dropped from <strong style="color: var(--soft-red-icon);">$13.13</strong> to <strong style="color: var(--soft-green-icon);">$3.21</strong> once every piece of the system was connected.</p>
           <div style="border-radius: var(--radius); overflow: hidden; border: 2px solid var(--taupe-200); box-shadow: var(--shadow-card); background: var(--warm-white);">
             <img src="images/Client Results/Meta ads manager screenshot.png" alt="Meta Ads Manager showing $13.13 per lead before and $3.21 per lead after" style="width: 100%; display: block;" loading="lazy" />
           </div>
-          <p style="font-size: .82rem; color: var(--text-soft); margin-top: 12px; line-height: 1.55; text-align: left;">Her cost per lead dropped from <strong style="color: var(--soft-red-icon);">$13.13</strong> to <strong style="color: var(--soft-green-icon);">$3.21</strong> once every piece of the system was connected.</p>
         </div>
         <div>
+          <p style="font-size: .82rem; color: var(--text-soft); margin-bottom: 12px; line-height: 1.55; text-align: left;">Within 5 days of going live, <strong style="color: var(--soft-green-icon);">3 calls appeared on her calendar</strong> &mdash; booked automatically by the system.</p>
           <div style="border-radius: var(--radius); overflow: hidden; border: 2px solid var(--soft-green-border); box-shadow: var(--shadow-card); background: var(--warm-white);">
             <img src="images/Client Results/Screenshot of her calendar.png" alt="Booked calls appearing on calendar" style="width: 100%; display: block;" loading="lazy" />
           </div>
-          <p style="font-size: .82rem; color: var(--text-soft); margin-top: 12px; line-height: 1.55; text-align: left;">Within 5 days of going live, <strong style="color: var(--soft-green-icon);">3 calls appeared on her calendar</strong> &mdash; booked automatically by the system.</p>
         </div>
       </div>
 
@@ -472,5 +472,12 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- Meta Pixel Lead Event — visitor opted in for the lead magnet -->
+  <script>
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead');
+    }
+  </script>
 </body>
 </html>
