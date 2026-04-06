@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One-Time Offer | The Self-Booking System Course | Perfectly Made Marketing</title>
+  <meta name="description" content="Get the full Self-Booking System Course for $57 (normally $97). One-time offer for new subscribers only." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NQPFQDNQ');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Meta Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1825521284560570'); fbq('track', 'PageView'); </script> <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1" /></noscript> <!-- End Meta Pixel Code -->
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="upsell-styles.css" />
+  <style>
+    /* ── OTO V3 SPECIFIC STYLES ── */
+
+    /* Transition strip */
+    .oto-transition {
+      background: var(--accent-light);
+      border-bottom: 1px solid var(--taupe-200);
+      padding: 20px 24px;
+      text-align: center;
+      font-size: .93rem;
+      color: var(--text-soft);
+      line-height: 1.65;
+    }
+
+    /* Felt problem quote style */
+    .felt-scenario {
+      background: var(--cream);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 24px 28px;
+      margin: 24px 0;
+      font-style: italic;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+    .felt-scenario p {
+      margin-bottom: 10px;
+      font-size: .95rem;
+    }
+    .felt-scenario p:last-child { margin-bottom: 0; }
+
+    /* Diagnosis stage cards */
+    .diagnosis-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 600px;
+      margin: 28px auto;
+    }
+    .diagnosis-card {
+      background: var(--warm-white);
+      border: 1px solid var(--taupe-200);
+      border-radius: var(--radius);
+      padding: 28px 28px;
+      box-shadow: var(--shadow-soft);
+    }
+    .diagnosis-card h3 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+    .diagnosis-card p {
+      font-size: .9rem;
+      color: var(--text-soft);
+      line-height: 1.65;
+    }
+
+    /* Build list items */
+    .build-list {
+      list-style: none;
+      max-width: 560px;
+      margin: 24px auto;
+    }
+    .build-list li {
+      position: relative;
+      padding: 14px 0 14px 28px;
+      font-size: .95rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+      border-bottom: 1px solid var(--taupe-100);
+    }
+    .build-list li:last-child { border-bottom: none; }
+    .build-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 10px;
+      height: 10px;
+      background: var(--lime);
+      border-radius: 50%;
+    }
+    .build-list li strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* Proof screenshots */
+    .proof-before-after {
+      max-width: 700px;
+      margin: 36px auto;
+    }
+    .proof-row-label {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding-left: 4px;
+    }
+    .proof-row-label--before { color: var(--soft-red-icon); }
+    .proof-row-label--after { color: var(--soft-green-icon); }
+    .proof-row-before { margin-bottom: 28px; }
+    .proof-single {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid var(--soft-red-border);
+      box-shadow: var(--shadow-card);
+      background: var(--warm-white);
+      max-width: 480px;
+    }
+    .proof-single img { width: 100%; display: block; }
+    .proof-after-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+    .proof-after-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid var(--soft-green-border);
+      box-shadow: var(--shadow-card);
+      background: var(--warm-white);
+    }
+    .proof-after-item img { width: 100%; display: block; }
+    .proof-after-caption {
+      padding: 10px 14px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--soft-green-icon);
+      background: var(--soft-green-bg);
+      text-align: center;
+      border-top: 1px solid var(--soft-green-border);
+    }
+    .proof-arrow {
+      text-align: center;
+      margin: 16px 0;
+      color: var(--accent);
+    }
+    .proof-arrow svg { transform: rotate(90deg); }
+
+    /* Offer box */
+    .offer-box {
+      background: var(--warm-white);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 48px 44px;
+      max-width: 620px;
+      margin: 36px auto 0;
+      text-align: center;
+      box-shadow: 0 4px 24px var(--accent-glow);
+      position: relative;
+      overflow: hidden;
+    }
+    .offer-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--lime));
+    }
+    .offer-box h3 {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+      margin-bottom: 12px;
+    }
+    .offer-box > p {
+      font-size: .93rem;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+      line-height: 1.65;
+    }
+    .offer-box .icon-list {
+      text-align: left;
+      max-width: 480px;
+      margin: 0 auto 24px;
+    }
+    .offer-price {
+      margin: 24px 0;
+    }
+    .offer-price-old {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      margin-right: 12px;
+    }
+    .offer-price-new {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .offer-savings {
+      display: inline-block;
+      background: var(--soft-green-bg);
+      border: 1px solid var(--soft-green-border);
+      color: var(--soft-green-icon);
+      font-size: .82rem;
+      font-weight: 600;
+      padding: 4px 16px;
+      border-radius: var(--radius-pill);
+      margin-top: 8px;
+    }
+    .offer-urgency {
+      font-size: .88rem;
+      color: var(--soft-red-icon);
+      font-weight: 500;
+      margin: 16px 0 8px;
+    }
+
+    /* No thanks link */
+    .no-thanks {
+      display: block;
+      text-align: center;
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-decoration: underline;
+      cursor: pointer;
+      font-family: var(--font);
+    }
+    .no-thanks:hover {
+      color: var(--text-soft);
+    }
+
+    /* One-insight block */
+    .insight-block {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .insight-block p {
+      font-size: .93rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .insight-block p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 600px) {
+      .proof-after-grid { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; }
+      .proof-single { max-width: 100%; }
+      .offer-box { padding: 36px 24px; }
+      .felt-scenario { padding: 20px 22px; }
+      .diagnosis-card { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQPFQDNQ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- ======================== ANNOUNCEMENT BAR ======================== -->
+  <div class="announcement-bar">
+    Your free guide is on its way to your inbox. Before you go &mdash; <strong>this is a one-time offer exclusively for you.</strong>
+  </div>
+
+  <!-- ======================== TRANSITION STRIP ======================== -->
+  <div class="oto-transition">
+    You now have your 4 Simple Fixes guide sorted &mdash; yay!! And to help with the next stage in your journey to consistent booked calls without posting daily or chasing leads, we'd love to offer you something to help at a <strong>very special one-time price.</strong>
+  </div>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="section" style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush) 50%, var(--ivory) 100%); padding-top: 48px; position: relative; overflow: hidden;">
+    <div class="container text-center">
+      <img src="logo.png" alt="Perfectly Made Marketing" class="hero-logo anim" />
+
+      <h1 class="anim" style="margin-bottom: 32px;">You're getting clicks.<br />So why isn't your calendar <em>filling up?</em></h1>
+
+      <div class="narrow anim" style="margin-bottom: 28px;">
+        <p>You just opted in because something in that ad described your life right now.</p>
+        <p>You're running ads &mdash; or you're about to. People are clicking. Some are even opting in. But the calendar isn't filling up the way the effort deserves. And somewhere in the back of your mind you're wondering if it's your offer, your niche, your targeting, or just you.</p>
+        <p><strong>It's none of those things.</strong></p>
+      </div>
+
+      <div class="highlight-card anim" style="max-width: 560px; margin: 0 auto 32px;">
+        Most service providers running Meta ads are only running the first stage of a <strong>three-stage system.</strong> They get visibility. But they don't have the structure that converts that visibility into booked calls &mdash; automatically, without chasing anyone. That missing structure is why leads disappear between the click and the calendar.
+      </div>
+
+      <div class="cta-row anim" style="margin-bottom: 48px;">
+        <a href="#offer" class="btn btn--lg btn--lime">Get the Self-Booking System Course &mdash; $57</a>
+        <p class="micro">One-time offer. $97 everywhere else. This page will not be shown again.</p>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,40 C360,100 1080,0 1440,60 L1440,100 L0,100 Z" fill="#ffffff"/></svg>
+    </div>
+  </section>
+
+  <!-- ======================== THE FELT PROBLEM ======================== -->
+  <section class="section">
+    <div class="container narrow">
+      <p class="eyebrow anim">Sound familiar?</p>
+      <h2 class="anim">Think about the last time<br />you checked your <em>Ads Manager.</em></h2>
+
+      <div class="felt-scenario anim">
+        <p>The leads were there. The cost per lead looked reasonable. You thought &mdash; okay, this is working.</p>
+        <p>Then you checked your calendar.</p>
+        <p><strong>Nothing.</strong></p>
+        <p>Or maybe one call. Booked from someone who knew you before the ad. And you're left wondering whether the ad actually did anything at all.</p>
+      </div>
+
+      <p class="anim"><strong>Here's what that gap actually is:</strong></p>
+      <p class="anim">Someone clicked your ad. They felt something. They raised their hand. They gave you their email.</p>
+      <p class="anim">And then nothing intentional happened.</p>
+      <p class="anim">No page that spoke to why they were really there. No immediate next step while they were still warm and paying attention. No follow-up that kept them warm when they got distracted and moved on with their day.</p>
+      <p class="anim">That lead &mdash; the one you paid to attract &mdash; <strong>had nowhere to go.</strong></p>
+
+      <div class="highlight-card anim">
+        That's not an ad problem. That's a <strong>system problem.</strong> And here's the thing nobody tells you: most service providers don't know which pieces of the system they're missing because they don't know what the full system is supposed to look like.
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== THE DIAGNOSIS ======================== -->
+  <section class="section section--blush">
+    <div class="container">
+      <div class="text-center">
+        <p class="eyebrow anim" style="text-align:center">The three-stage system</p>
+        <h2 class="anim" style="text-align:center">Between the click and the calendar,<br /><em>three things need to be in place.</em></h2>
+      </div>
+
+      <div class="diagnosis-cards">
+        <div class="diagnosis-card anim">
+          <span class="pillar-label">Getting Seen</span>
+          <h3>The right person finds you and raises their hand</h3>
+          <p>Your lead magnet speaks directly to a problem they're actively trying to solve. Your ad attracts the buyer, not the browser. Your copy makes the right person stop scrolling and think "this is exactly what I need."</p>
+        </div>
+        <div class="diagnosis-card anim">
+          <span class="pillar-label">Getting Booked</span>
+          <h3>That lead moves from "interested" to "booked" without you involved</h3>
+          <p>Your opt-in page continues the conversation the ad started. Your booking page doesn't just say "schedule a call" &mdash; it speaks to the real reason they showed up, the problem underneath the freebie, the thing they were actually hoping to solve. That's the piece almost nobody has in place. And it's the reason people opt in and never book.</p>
+        </div>
+        <div class="diagnosis-card anim">
+          <span class="pillar-label">Getting Paid</span>
+          <h3>The leads who didn't book immediately stay warm and come back</h3>
+          <p>Your email sequence doesn't just deliver the freebie &mdash; it builds the belief that your solution is the answer to the problem they've been sitting with. Your follow-up does the work you don't have time to do manually.</p>
+        </div>
+      </div>
+
+      <div class="inset-card anim" style="max-width: 580px; margin: 0 auto;">
+        <p>Most service providers have pieces of one stage. Some have pieces of two. Almost nobody has all three built, connected, and running automatically. <strong>Which is exactly why the calendar doesn't fill the way the effort deserves.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== THE BRIDGE ======================== -->
+  <section class="section">
+    <div class="container narrow text-center">
+      <p class="eyebrow anim" style="text-align:center">I've been exactly here</p>
+      <h2 class="anim" style="text-align:center">I spent $544 on Meta ads.<br /><em>Zero booked calls.</em></h2>
+
+      <div class="anim" style="text-align: left; max-width: 540px; margin: 0 auto 28px;">
+        <p>I spent $544 on Meta ads. Got 244 leads at $2.23 each. Booked zero calls. Not one.</p>
+        <p>The ads were working. People were clicking. But I had no idea what needed to happen between the click and the calendar. Some pieces were in place. Most weren't. And I had no way of knowing which pieces mattered most &mdash; because I didn't know what the full system was supposed to look like.</p>
+        <p>Once I learned what every piece was and built them in the right order:</p>
+        <p><strong>86 leads. 16 booked calls. 2 weeks. $2 per lead.</strong></p>
+      </div>
+
+      <!-- Before/After Screenshots -->
+      <div class="proof-before-after anim">
+        <!-- BEFORE -->
+        <p class="proof-row-label proof-row-label--before">Before: $544 spent, zero calls booked</p>
+        <div class="proof-row-before">
+          <div class="proof-single">
+            <img src="images/544.png" alt="Ads Manager showing 244 leads at $2.23 each, $544.92 spent, zero booked calls" />
+          </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="proof-arrow">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+
+        <!-- AFTER -->
+        <p class="proof-row-label proof-row-label--after">After: 86 leads, 16 booked calls, $2/lead</p>
+        <div class="proof-row-after">
+          <div class="proof-after-grid">
+            <div class="proof-after-item">
+              <img src="images/86 leads on email list .jpg" alt="Ads Manager showing 86 website leads at $2.00 per lead" />
+              <div class="proof-after-caption">86 leads at $2/each</div>
+            </div>
+            <div class="proof-after-item">
+              <img src="images/16 booked calls without posting.jpg" alt="Calendar showing 30 visitors and 16 booked registrations" />
+              <div class="proof-after-caption">16 calls booked</div>
+            </div>
+            <div class="proof-after-item">
+              <img src="images/Booked calls without posting.jpg" alt="Calendar showing real booked consultation calls" />
+              <div class="proof-after-caption">Real booked calls</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-card anim" style="max-width: 560px; margin: 0 auto;">
+        Same platform. Same budget range. <strong>The only thing that changed was having a complete system &mdash; not just an ad.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== THE OFFER ======================== -->
+  <section class="section section--ivory">
+    <div class="container narrow">
+      <p class="eyebrow anim">The guide vs. the course</p>
+      <h2 class="anim">Your free guide is the diagnosis.<br /><em>The course is the installation.</em></h2>
+
+      <p class="anim">Your free guide &mdash; the one on its way to your inbox right now &mdash; shows you the four places the system breaks down and why leads disappear before they ever reach your calendar.</p>
+      <p class="anim">But the guide is the diagnosis. Not the installation.</p>
+      <p class="anim"><strong>The Self-Booking System Course is the installation.</strong></p>
+      <p class="anim">Every template. Every walkthrough. Every ad setup, email sequence, opt-in page, and booking flow &mdash; built step by step so you're not just understanding the problem, you're fixing it this week.</p>
+
+      <div class="insight-block anim">
+        <p><strong>Here's one thing you'll learn inside that most service providers have never considered:</strong></p>
+        <p>Your booking page's job is not to say "schedule a call." Its job is to speak to the real reason someone downloaded your lead magnet &mdash; not the surface-level topic of the freebie, but the problem underneath it. The thing they were actually hoping to solve when they clicked your ad.</p>
+        <p>When your booking page names that problem out loud, the people who book are the people who are genuinely ready. Your show rate goes up. Your close rate goes up. Most booking pages skip this entirely &mdash; which is why people opt in, see a Calendly link, and disappear.</p>
+        <p><strong>That's one piece. There are twelve more in the checklist &mdash; and the course walks you through building every single one.</strong></p>
+      </div>
+
+      <div class="cta-row anim">
+        <a href="#offer" class="btn">Get the course &mdash; $57</a>
+        <p class="micro">$97 after you leave this page.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== WHAT YOU'LL BUILD ======================== -->
+  <section class="section">
+    <div class="container narrow">
+      <div class="text-center">
+        <p class="eyebrow anim" style="text-align:center">What you'll build</p>
+        <h2 class="anim" style="text-align:center">Set this up once.<br /><em>It works in the background for you.</em></h2>
+      </div>
+
+      <ul class="build-list anim">
+        <li>
+          <strong>The foundation</strong>
+          Your online presence optimized so when people find you, they immediately understand who you help, what you offer, and what to do next.
+        </li>
+        <li>
+          <strong>The lead capture system</strong>
+          A simple lead magnet that attracts ready-to-invest leads, an opt-in page that grows your list, and a booking flow that moves the right people to your calendar without chasing.
+        </li>
+        <li>
+          <strong>The visibility engine</strong>
+          Simple $10&ndash;$15/day Meta ads that bring the right people into your world consistently. No advanced strategies. No tech headaches. No guessing.
+        </li>
+        <li>
+          <strong>The follow-up that closes</strong>
+          Automated email sequences that keep warm leads warm, bring back the ones who didn't book immediately, and create predictable income that doesn't depend on how visible you were that week.
+        </li>
+        <li>
+          <strong>The optimization layer</strong>
+          How to read what's working, what isn't, and how to keep the system steady over time without constantly tinkering.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================== IS THIS FOR YOU ======================== -->
+  <section class="section section--blush">
+    <div class="container narrow">
+      <h2 class="anim">Is the Self-Booking System Course<br /><em>right for you?</em></h2>
+
+      <div class="two-cards anim">
+        <div class="mini-card mini-card--soft-green">
+          <h3>This is for you if:</h3>
+          <ul class="icon-list icon-list--check">
+            <li>You already have a service that gets results</li>
+            <li>Your clients get real value when they work with you</li>
+            <li>The problem isn't your offer &mdash; it's that you don't have a reliable, automated way to keep your calendar full</li>
+            <li>You're tired of relying on daily posting, referrals, or manual follow-up</li>
+          </ul>
+        </div>
+        <div class="mini-card mini-card--soft-red">
+          <h3>This is probably not for you if:</h3>
+          <ul class="icon-list icon-list--x">
+            <li>You're still figuring out your offer</li>
+            <li>You're looking for a get-rich-quick strategy</li>
+            <li>You're not willing to invest $10&ndash;$15/day in ads to run the system</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== TESTIMONIALS ======================== -->
+  <section class="section section--ivory">
+    <div class="container">
+      <div class="text-center">
+        <p class="eyebrow anim" style="text-align:center">What others are saying</p>
+        <h2 class="anim" style="text-align:center">Real words from<br /><em>real clients</em></h2>
+      </div>
+
+      <div class="testimonial-grid testimonial-grid--upsell anim">
+        <div class="testimonial-img"><img src="images/Testimonials/Screenshot 2025-11-13 085101.png" alt="Client testimonial" loading="lazy" /></div>
+        <div class="testimonial-img"><img src="images/Testimonials/Screenshot 2025-11-13 085112.png" alt="Client testimonial" loading="lazy" /></div>
+        <div class="testimonial-img"><img src="images/Testimonials/Screenshot 2025-11-13 085148.png" alt="Client testimonial" loading="lazy" /></div>
+        <div class="testimonial-img"><img src="images/Testimonials/Pam.png" alt="Client testimonial" loading="lazy" /></div>
+        <div class="testimonial-img"><img src="images/Testimonials/Screenshot 2025-11-13 085219.png" alt="Client testimonial" loading="lazy" /></div>
+        <div class="testimonial-img"><img src="images/Testimonials/Screenshot 2025-11-13 085137.png" alt="Client testimonial" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== GUARANTEE ======================== -->
+  <section class="section">
+    <div class="container">
+      <div class="guarantee-card anim">
+        <div class="text-center">
+          <p class="eyebrow anim" style="text-align:center">Risk-free</p>
+          <h2>14-Day Money-Back<br /><em>Guarantee</em></h2>
+        </div>
+        <div class="guarantee-body">
+          <p>If you go through the materials, implement what you learn, reach out for help, and don't receive a single booked call &mdash; you can request a full refund within 14 days of purchasing.</p>
+          <p><strong>No hoops. No back-and-forth. No hard feelings.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== OFFER BOX ======================== -->
+  <section class="section section--ivory" id="offer">
+    <div class="container text-center">
+      <div class="offer-box anim">
+        <h3>The Self-Booking System Course</h3>
+
+        <p style="max-width: 500px; margin-left: auto; margin-right: auto;">The complete step-by-step system for getting seen by the right people, turning that visibility into booked calls, and creating predictable income &mdash; without posting daily, chasing referrals, or depending on platforms you don't control.</p>
+
+        <ul class="icon-list icon-list--check">
+          <li>6 modules with step-by-step walkthroughs</li>
+          <li>Plug-and-play copy templates &mdash; bios, opt-in pages, booking pages, email sequences</li>
+          <li>Ad copy and creative examples with ChatGPT prompts included</li>
+          <li>Calendar setup, confirmations, and reminder sequences</li>
+          <li>Audience targeting, ad setup, and launch walkthrough</li>
+          <li>Support when you get stuck &mdash; you're not doing this alone</li>
+          <li>14-day money-back guarantee</li>
+        </ul>
+
+        <div class="offer-price">
+          <span class="offer-price-old">$97</span>
+          <span class="offer-price-new">$57</span>
+          <br />
+          <span class="offer-savings">$40 off &mdash; this page only</span>
+        </div>
+
+        <p class="offer-urgency">This price doesn't come back. Not tomorrow. Not through a coupon code. Not if you email us.<br />This is the only time you'll see it at $57.</p>
+
+        <!-- ========== KARTRA PAYMENT EMBED: Replace with your Kartra embed code ========== -->
+        <a href="javascript:void(0);" class="btn btn--lg btn--lime js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="SwhxfycEDdoQ" data-kt-owner="7kzAqVxg">Get the Self-Booking System Course &mdash; $57</a>
+        <!-- ========== END KARTRA PAYMENT EMBED ========== -->
+
+        <p style="font-size: .78rem; color: var(--text-muted); margin-top: 14px;">14-day money-back guarantee. Immediate access.</p>
+      </div>
+
+      <a href="thank-you-guide.html" class="no-thanks">No thanks &mdash; I'll use the free guide on my own</a>
+    </div>
+  </section>
+
+  <!-- ======================== CLOSING ======================== -->
+  <section class="section text-center">
+    <div class="container narrow">
+      <h2 class="anim">The guide shows you what's broken.<br /><em>This shows you how to fix it.</em></h2>
+
+      <div class="final-copy anim">
+        <p>Every piece, in the right order, with every template included so you're never starting from scratch.</p>
+        <p><strong>$57 today. $97 everywhere else. Always.</strong></p>
+      </div>
+
+      <div class="cta-row anim" style="margin-top: 24px;">
+        <a href="javascript:void(0);" class="btn btn--lg btn--lime js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="SwhxfycEDdoQ" data-kt-owner="7kzAqVxg">Get the Self-Booking System Course &mdash; $57</a>
+        <p class="micro">14-day money-back guarantee. Immediate access.</p>
+      </div>
+
+      <a href="thank-you-guide.html" class="no-thanks" style="margin-top: 20px;">No thanks &mdash; I'll use the free guide on my own</a>
+    </div>
+  </section>
+
+  <!-- ======================== DISCLAIMER ======================== -->
+  <div style="background: var(--cream); color: var(--text-soft); font-size: .72rem; padding: 16px 24px; line-height: 1.6;">
+    <div class="container">
+      <p><strong>Disclaimer:</strong> Results shared on this page are from real clients but are not guaranteed. Individual results vary based on offer, audience, ad spend, and market conditions. The Self-Booking System Course provides the strategy, setup, and tools &mdash; but we cannot guarantee specific revenue, leads, or bookings. By purchasing, you acknowledge that results depend on many factors unique to your business.</p>
+    </div>
+  </div>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer">
+    <div class="container text-center">
+      <img src="logo.png" alt="Perfectly Made Marketing" class="footer-logo" />
+      <p>&copy; 2026 Perfectly Made Marketing. All rights reserved.</p>
+      <p>Questions? <a href="mailto:hello@perfectlymademarketing.com">hello@perfectlymademarketing.com</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script type="text/javascript" src="https://app.kartra.com/js/build/front/embed/pay.js"></script>
+
+  <!-- Meta Pixel Lead Event — visitor opted in for the lead magnet -->
+  <script>
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead');
+    }
+  </script>
+</body>
+</html>
