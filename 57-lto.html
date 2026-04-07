@@ -251,12 +251,66 @@
     }
     .insight-block p:last-child { margin-bottom: 0; }
 
+    /* Sticky countdown header */
+    .sticky-timer {
+      position: fixed;
+      top: 0;
+      left: 0; right: 0;
+      z-index: 9999;
+      background: #1a1a1a;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 20px;
+      font-family: var(--font);
+      font-size: 0.82rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    .sticky-timer-time {
+      background: var(--lime);
+      color: #1a1a1a;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 4px;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.04em;
+      font-size: 0.85rem;
+    }
+    .sticky-timer-btn {
+      background: var(--lime);
+      color: #1a1a1a;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-family: var(--font);
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .sticky-timer-btn:hover { opacity: 0.85; }
+
+    /* Push body content below sticky header */
+    body { padding-top: 42px; }
+
     @media (max-width: 600px) {
       .proof-after-grid { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; }
       .proof-single { max-width: 100%; }
       .offer-box { padding: 36px 24px; }
       .felt-scenario { padding: 20px 22px; }
       .diagnosis-card { padding: 22px; }
+      .sticky-timer {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px 16px;
+        font-size: 0.72rem;
+      }
+      .sticky-timer-time { font-size: 0.78rem; padding: 3px 10px; }
+      .sticky-timer-btn { font-size: 0.72rem; padding: 8px 16px; }
     }
   </style>
 </head>
@@ -267,10 +321,29 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
+  <!-- ======================== STICKY COUNTDOWN HEADER ======================== -->
+  <div class="sticky-timer" id="stickyTimer">
+    <span>This exclusive offer expires in</span>
+    <span class="sticky-timer-time" id="sticky-countdown"></span>
+    <a href="javascript:void(0);" class="sticky-timer-btn js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="0FWd93zBKGrK" data-kt-owner="7kzAqVxg">Get the Course - $57</a>
+  </div>
+
   <!-- ======================== HERO ======================== -->
   <section class="section" style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush) 50%, var(--ivory) 100%); padding-top: 48px; position: relative; overflow: hidden;">
     <div class="container text-center">
       <img src="logo.png" alt="Perfectly Made Marketing" class="hero-logo anim" />
+
+      <!-- Course mockup -->
+      <div style="display: flex; justify-content: center; margin: 0 auto 36px;">
+        <div class="device device--laptop" style="transform: scale(.7);">
+          <div class="device__bezel">
+            <div class="device__screen">
+              <img src="laptop image mockup.png" alt="Self-Booking System Course Dashboard" class="screen-img" />
+            </div>
+          </div>
+          <div class="device__base"></div>
+        </div>
+      </div>
 
       <h1 class="anim" style="margin-bottom: 32px;">You read the guide. You know what's broken.<br /><em>Here's how to fix all of it.</em></h1>
 
@@ -613,11 +686,11 @@
   <script src="script.js"></script>
   <script type="text/javascript" src="https://app.kartra.com/js/build/front/embed/pay.js"></script>
 
-  <!-- 24-hour countdown timer with redirect on expiry -->
+  <!-- 22-hour countdown timer with redirect on expiry -->
   <script>
     (function() {
       var STORAGE_KEY = 'lto_57_timer_start';
-      var DURATION = 24 * 60 * 60 * 1000; // 24 hours in ms
+      var DURATION = 22 * 60 * 60 * 1000; // 22 hours in ms
       var EXPIRED_URL = 'oto-expired.html';
 
       // Get or set the start time
@@ -635,8 +708,15 @@
         return;
       }
 
-      var display = document.getElementById('countdown-display');
-      if (!display) return;
+      var offerDisplay = document.getElementById('countdown-display');
+      var stickyDisplay = document.getElementById('sticky-countdown');
+
+      function formatTime(remaining) {
+        var hours = Math.floor(remaining / (1000 * 60 * 60));
+        var mins = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+        var secs = Math.floor((remaining % (1000 * 60)) / 1000);
+        return hours + 'h ' + (mins < 10 ? '0' : '') + mins + 'm ' + (secs < 10 ? '0' : '') + secs + 's';
+      }
 
       function update() {
         var elapsed = Date.now() - startTime;
@@ -647,11 +727,9 @@
           return;
         }
 
-        var hours = Math.floor(remaining / (1000 * 60 * 60));
-        var mins = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
-        var secs = Math.floor((remaining % (1000 * 60)) / 1000);
-
-        display.textContent = hours + 'h ' + (mins < 10 ? '0' : '') + mins + 'm ' + (secs < 10 ? '0' : '') + secs + 's';
+        var timeStr = formatTime(remaining);
+        if (offerDisplay) offerDisplay.textContent = timeStr;
+        if (stickyDisplay) stickyDisplay.textContent = timeStr;
         requestAnimationFrame(update);
       }
 
