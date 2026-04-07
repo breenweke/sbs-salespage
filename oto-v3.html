@@ -624,11 +624,12 @@
   <script src="script.js"></script>
   <script type="text/javascript" src="https://app.kartra.com/js/build/front/embed/pay.js"></script>
 
-  <!-- 24-hour countdown timer -->
+  <!-- 24-hour countdown timer with redirect on expiry -->
   <script>
     (function() {
       var STORAGE_KEY = 'oto_v3_timer_start';
       var DURATION = 24 * 60 * 60 * 1000; // 24 hours in ms
+      var EXPIRED_URL = 'oto-expired.html';
 
       // Get or set the start time
       var startTime = localStorage.getItem(STORAGE_KEY);
@@ -639,6 +640,12 @@
         startTime = parseInt(startTime, 10);
       }
 
+      // If already expired, redirect immediately
+      if (Date.now() - startTime >= DURATION) {
+        window.location.href = EXPIRED_URL;
+        return;
+      }
+
       var display = document.getElementById('countdown-display');
       if (!display) return;
 
@@ -647,8 +654,7 @@
         var remaining = DURATION - elapsed;
 
         if (remaining <= 0) {
-          display.textContent = 'Offer expired';
-          display.style.color = '#d4715a';
+          window.location.href = EXPIRED_URL;
           return;
         }
 
