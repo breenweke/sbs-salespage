@@ -251,12 +251,44 @@
     }
     .insight-block p:last-child { margin-bottom: 0; }
 
+    /* Sticky countdown header (timer only, no button) */
+    .sticky-timer {
+      position: fixed;
+      top: 0;
+      left: 0; right: 0;
+      z-index: 9999;
+      background: #1a1a1a;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 20px;
+      font-family: var(--font);
+      font-size: 0.82rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .sticky-timer-time {
+      background: var(--lime);
+      color: #1a1a1a;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 4px;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.04em;
+      font-size: 0.85rem;
+    }
+    body { padding-top: 42px; }
+
     @media (max-width: 600px) {
       .proof-after-grid { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; }
       .proof-single { max-width: 100%; }
       .offer-box { padding: 36px 24px; }
       .felt-scenario { padding: 20px 22px; }
       .diagnosis-card { padding: 22px; }
+      .sticky-timer { font-size: 0.72rem; padding: 10px 16px; }
+      .sticky-timer-time { font-size: 0.78rem; padding: 3px 10px; }
     }
   </style>
 </head>
@@ -266,6 +298,12 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQPFQDNQ"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
+  <!-- ======================== STICKY COUNTDOWN HEADER ======================== -->
+  <div class="sticky-timer">
+    <span>This exclusive offer expires in</span>
+    <span class="sticky-timer-time" id="sticky-countdown"></span>
+  </div>
 
   <!-- ======================== ANNOUNCEMENT BAR ======================== -->
   <div class="announcement-bar" style="line-height: 1.7;">
@@ -646,8 +684,15 @@
         return;
       }
 
-      var display = document.getElementById('countdown-display');
-      if (!display) return;
+      var offerDisplay = document.getElementById('countdown-display');
+      var stickyDisplay = document.getElementById('sticky-countdown');
+
+      function formatTime(remaining) {
+        var hours = Math.floor(remaining / (1000 * 60 * 60));
+        var mins = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+        var secs = Math.floor((remaining % (1000 * 60)) / 1000);
+        return hours + 'h ' + (mins < 10 ? '0' : '') + mins + 'm ' + (secs < 10 ? '0' : '') + secs + 's';
+      }
 
       function update() {
         var elapsed = Date.now() - startTime;
@@ -658,11 +703,9 @@
           return;
         }
 
-        var hours = Math.floor(remaining / (1000 * 60 * 60));
-        var mins = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
-        var secs = Math.floor((remaining % (1000 * 60)) / 1000);
-
-        display.textContent = hours + 'h ' + (mins < 10 ? '0' : '') + mins + 'm ' + (secs < 10 ? '0' : '') + secs + 's';
+        var timeStr = formatTime(remaining);
+        if (offerDisplay) offerDisplay.textContent = timeStr;
+        if (stickyDisplay) stickyDisplay.textContent = timeStr;
         requestAnimationFrame(update);
       }
 
