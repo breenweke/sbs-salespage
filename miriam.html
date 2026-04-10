@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Self-Booking System Install - Proposal for Miriam | Perfectly Made Marketing</title>
+  <meta name="description" content="A personalized proposal for Miriam outlining the Self-Booking System Install for her life insurance business." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── MIRIAM PROPOSAL PAGE STYLES ── */
+
+    /* Proposal header */
+    .proposal-header {
+      background: linear-gradient(180deg, var(--cream) 0%, var(--blush) 60%, var(--ivory) 100%);
+      padding: 64px 24px 48px;
+      text-align: center;
+      position: relative;
+    }
+    .proposal-header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--lime));
+    }
+    .proposal-badge {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 24px;
+    }
+    .proposal-header h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    .proposal-header h1 em {
+      color: var(--accent);
+      font-style: italic;
+    }
+    .proposal-subtitle {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+    }
+    .proposal-prepared {
+      font-size: .85rem;
+      color: var(--text-muted);
+      letter-spacing: .04em;
+    }
+
+    /* Section content */
+    .proposal-section {
+      padding: 64px 24px;
+    }
+    .proposal-section--cream { background: var(--cream); }
+    .proposal-section--ivory { background: var(--ivory); }
+    .proposal-section--blush { background: var(--blush); }
+
+    .proposal-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+    .proposal-section h2 em {
+      color: var(--accent);
+      font-style: italic;
+    }
+    .proposal-section h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .proposal-section p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-soft);
+      margin-bottom: 18px;
+    }
+    .proposal-section p:last-child { margin-bottom: 0; }
+    .proposal-section strong { color: var(--text); }
+
+    /* Cost breakdown cards */
+    .cost-breakdown {
+      max-width: 680px;
+      margin: 32px auto;
+    }
+    .cost-item {
+      background: var(--warm-white);
+      border: 1px solid var(--taupe-200);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+    .cost-item-label {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .cost-item-amount {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .cost-item p {
+      font-size: .9rem;
+      color: var(--text-soft);
+      line-height: 1.65;
+      margin-bottom: 0;
+    }
+    .cost-total {
+      background: var(--accent-light);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-top: 24px;
+      text-align: center;
+      box-shadow: 0 4px 24px var(--accent-glow);
+    }
+    .cost-total-label {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .cost-total-amount {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .cost-total-note {
+      font-size: .85rem;
+      color: var(--text-soft);
+    }
+
+    /* Weekly timeline */
+    .week-card {
+      background: var(--warm-white);
+      border: 1px solid var(--taupe-200);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+    .week-badge {
+      display: inline-block;
+      background: var(--lime);
+      color: var(--text);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 12px;
+    }
+    .week-card h3 {
+      margin-top: 0;
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+
+    /* Offer box (same as existing) */
+    .offer-box {
+      background: var(--warm-white);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 48px 44px;
+      max-width: 620px;
+      margin: 36px auto 0;
+      text-align: center;
+      box-shadow: 0 4px 24px var(--accent-glow);
+      position: relative;
+      overflow: hidden;
+    }
+    .offer-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--lime));
+    }
+    .offer-box h3 {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+      margin-bottom: 12px;
+      margin-top: 0;
+    }
+    .offer-box > p {
+      font-size: .93rem;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+      line-height: 1.65;
+    }
+    .offer-box .icon-list {
+      text-align: left;
+      max-width: 480px;
+      margin: 0 auto 24px;
+    }
+    .offer-price {
+      margin: 24px 0;
+    }
+    .offer-price-old {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      margin-right: 12px;
+    }
+    .offer-price-new {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .offer-savings {
+      display: inline-block;
+      background: var(--soft-green-bg);
+      border: 1px solid var(--soft-green-border);
+      color: var(--soft-green-icon);
+      font-size: .82rem;
+      font-weight: 600;
+      padding: 4px 16px;
+      border-radius: var(--radius-pill);
+      margin-top: 8px;
+    }
+    .offer-options {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .offer-option {
+      flex: 1;
+      min-width: 180px;
+      background: var(--cream);
+      border: 1px solid var(--taupe-200);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      text-align: center;
+    }
+    .offer-option-label {
+      display: block;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .offer-option-amount {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .offer-option-note {
+      display: block;
+      font-size: .78rem;
+      color: var(--text-soft);
+    }
+
+    /* Proof section */
+    .proof-card {
+      background: var(--warm-white);
+      border: 1px solid var(--taupe-200);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      max-width: 600px;
+      margin: 32px auto;
+      box-shadow: var(--shadow-card);
+    }
+    .proof-stats {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 24px 0;
+      padding: 20px;
+      background: var(--accent-light);
+      border-radius: var(--radius-sm);
+    }
+    .proof-stat {
+      text-align: center;
+    }
+    .proof-stat-num {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .proof-stat-label {
+      display: block;
+      font-size: .75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-top: 2px;
+    }
+
+    /* Highlight block */
+    .proposal-highlight {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 28px 32px;
+      margin: 32px auto;
+      max-width: 680px;
+    }
+    .proposal-highlight p {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .proposal-highlight p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 600px) {
+      .proposal-header { padding: 48px 20px 36px; }
+      .proposal-section { padding: 48px 20px; }
+      .cost-item, .week-card { padding: 22px 22px; }
+      .offer-box { padding: 36px 24px; }
+      .offer-options { flex-direction: column; gap: 12px; }
+      .proof-card { padding: 24px; }
+      .proposal-highlight { padding: 22px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================== PROPOSAL HEADER ======================== -->
+  <section class="proposal-header">
+    <div class="container narrow">
+      <span class="proposal-badge">Personal Proposal</span>
+      <h1>The Self-Booking<br />System <em>Install</em></h1>
+      <p class="proposal-subtitle">A Proposal for Miriam</p>
+      <p class="proposal-prepared">Prepared by Bree Nweke  |  Perfectly Made Marketing</p>
+    </div>
+  </section>
+
+  <!-- ======================== WHAT THIS DOCUMENT IS ======================== -->
+  <section class="proposal-section">
+    <div class="container narrow">
+      <p class="eyebrow">What this document is</p>
+      <h2>Everything you need to know,<br /><em>in one place.</em></h2>
+      <p>This proposal covers everything you need to know about the Self-Booking System Install - what it is, what it includes, what it costs in total, and why it works. It's written so that you and your husband can read it together, ask any questions you have, and make a decision you both feel confident about.</p>
+    </div>
+  </section>
+
+  <!-- ======================== THE OPPORTUNITY ======================== -->
+  <section class="proposal-section proposal-section--blush">
+    <div class="container narrow">
+      <p class="eyebrow">The opportunity</p>
+      <h2>There are people in your market<br /><em>searching for you right now.</em></h2>
+
+      <p>New parents who just realized their family isn't protected. Couples who just bought a home. People who recently lost someone and finally decided to get their own coverage in place. Ghanaian and West African families in the US who are responsible for relatives back home and need the right coverage to protect everyone who depends on them.</p>
+
+      <p><strong>Right now, those people don't know you exist.</strong></p>
+
+      <p>Not because you haven't worked hard enough, but because the way you're currently finding clients requires you to go out and find them manually, one by one, every single day. And that means your business only grows when you are personally driving it. When life gets busy, when you have more clients to serve, when you need to step back, the leads stop.</p>
+
+      <p>The Self-Booking System changes that. It puts you in front of the right people automatically, captures their information, builds a relationship with them over time, and books them on your calendar for a virtual appointment, without you having to manually reach out to a single person.</p>
+    </div>
+  </section>
+
+  <!-- ======================== THE COMPLETE PICTURE ======================== -->
+  <section class="proposal-section proposal-section--ivory">
+    <div class="container narrow">
+      <p class="eyebrow">Everything you will invest</p>
+      <h2>The complete picture.<br /><em>No hidden costs.</em></h2>
+
+      <p>Before we go any further, here is a clear breakdown of every cost involved so there are no surprises:</p>
+
+      <div class="cost-breakdown">
+        <div class="cost-item">
+          <div class="cost-item-label">One-time install fee <span class="cost-item-amount">- $1,350</span></div>
+          <p>Referral rate. Standard price is $1,575. You are receiving a $225 discount as a client referral. Payment in full is available at checkout. A payment plan is also available for those who need it: $675 today + $675 in 14 days. Please note that the full $1,350 is owed regardless of which option you choose, the payment plan simply splits it across two payments two weeks apart.</p>
+        </div>
+
+        <div class="cost-item">
+          <div class="cost-item-label">Monthly platform fee (GoHighLevel) <span class="cost-item-amount">- ~$97/month</span></div>
+          <p>This is the software the system runs inside: your email list, your automated follow-up, your funnel pages. Paid directly by you to GoHighLevel. This is separate from the install fee.</p>
+        </div>
+
+        <div class="cost-item">
+          <div class="cost-item-label">Domain name <span class="cost-item-amount">- ~$15-$20/year</span></div>
+          <p>If you don't already have a domain for your business, you will need one. We will help you set this up during the install.</p>
+        </div>
+
+        <div class="cost-item">
+          <div class="cost-item-label">Monthly ad spend <span class="cost-item-amount">- $15-$30/day ($450-$900/month)</span></div>
+          <p>This is what you pay directly to Meta (Facebook/Instagram) to run your ads. This is not paid to us, it goes directly to the platform. You control the budget and can start at the lower end.</p>
+        </div>
+
+        <div class="cost-total">
+          <div class="cost-total-label">Estimated Total First-Month Investment</div>
+          <div class="cost-total-amount">~$1,462</div>
+          <div class="cost-total-note">Install fee ($1,350) + GoHighLevel ($97) + Domain ($15). Ad spend begins in Week 4 when your ads go live.</div>
+        </div>
+      </div>
+
+      <p style="text-align: center; font-style: italic; margin-top: 24px;">This is the complete picture. No hidden costs. No surprises mid-way through.</p>
+    </div>
+  </section>
+
+  <!-- ======================== WHAT THE SYSTEM IS ======================== -->
+  <section class="proposal-section">
+    <div class="container narrow">
+      <p class="eyebrow">The system, explained</p>
+      <h2>What the Self-Booking<br /><em>System is.</em></h2>
+
+      <h3>A Lead Magnet</h3>
+      <p>A lead magnet is a free resource that gives someone who is already curious about life insurance a reason to share their name and email address with you. Something like: "5 Things Every Family Should Have in Place Before Something Goes Wrong" or "A Simple Checklist for Protecting Your Family's Future."</p>
+      <p>It gives the right person a reason to raise their hand and say "yes, I want that." And in doing so, they give you permission to follow up with them.</p>
+
+      <h3>An Opt-In Page</h3>
+      <p>This is a simple webpage, one page, one purpose, where someone enters their name and email to receive the free resource. Every person who submits that form is a warm lead who has voluntarily raised their hand for what you offer.</p>
+
+      <h3>An Email List, and Why It's One of the Most Valuable Assets in Your Business</h3>
+      <p>Every person who opts in gets added to your email list. This is a list you own and control. Not a social media following that disappears if a platform changes its rules or shuts down. Your email list belongs to you permanently, and for a life insurance agent, it is the equivalent of a book of warm contacts who have already shown interest in protecting their family.</p>
+      <p>Over time, consistent follow-up emails build the trust that makes people choose you when they're ready to buy.</p>
+
+      <h3>Meta Ads, Including Your Unique Targeting Advantage</h3>
+      <p>Meta ads run on Facebook and Instagram. You set a daily budget, starting at around $15/day, and the ads show your free resource to people who match a very specific profile.</p>
+      <p>For life insurance, that means people who are new parents, recently married, new homeowners, between certain ages, and who have shown interest in financial protection and family planning. These are people already thinking about the conversation you're trained to have.</p>
+
+      <div class="proposal-highlight">
+        <p><strong>But here is an advantage you have that most life insurance agents don't:</strong></p>
+        <p>You are Ghanaian. And the Ghanaian and West African community in the United States is one of the most underserved markets in the life insurance space, and one of the most motivated. These are families who are responsible for relatives back home. Families where one income supports people across two countries. Families who understand loss and responsibility in a very specific way.</p>
+        <p>Meta ads allow you to target people specifically by cultural background, language, country of origin, and community interests. That means your ads can be placed directly in front of Ghanaian-American families, West African immigrants, and diaspora communities across the United States, people who will see your name, recognize your background, and trust you in a way they would never trust a stranger.</p>
+        <p><strong>That is a competitive advantage that is unique to you and it is something we will build directly into your targeting strategy.</strong></p>
+      </div>
+
+      <p>You are not posting every day and hoping the algorithm shows your content to the right people. You are paying a small daily amount to be placed directly in front of the people most likely to need what you offer. The ads run 24 hours a day, 7 days a week, without you touching them.</p>
+
+      <h3>The Booking System</h3>
+      <p>After someone opts in, an automated email sequence goes out over the following days. These emails introduce you, build trust, and invite them to book a virtual call with you. When they book, automatic confirmation and reminder emails go out so they actually show up.</p>
+      <p>All calls are conducted virtually, no travel, no in-person meetings, no logistics. Someone books a time, receives everything they need to join automatically, and shows up to a video call ready to talk. By the time that call happens, they've already received multiple emails from you, they know what you offer, and they chose to get on your calendar. That is a fundamentally different conversation than a cold outreach on social media.</p>
+    </div>
+  </section>
+
+  <!-- ======================== WEEK BY WEEK ======================== -->
+  <section class="proposal-section proposal-section--ivory">
+    <div class="container narrow">
+      <p class="eyebrow">The 30-day build</p>
+      <h2>What we will build<br /><em>together.</em></h2>
+
+      <div class="week-card">
+        <span class="week-badge">Week 1</span>
+        <h3>Your Foundation</h3>
+        <p>We build your lead magnet, your opt-in page, and the messaging that speaks directly to the person most likely to need life insurance and be ready to have that conversation, including your Ghanaian and West African audience. We set up your GoHighLevel account, connect your domain, and map out your booking pathway.</p>
+      </div>
+
+      <div class="week-card">
+        <span class="week-badge">Week 2</span>
+        <h3>Your Booking System</h3>
+        <p>We build your booking page, set up your calendar, and create your confirmation and reminder emails. We add your follow-up message templates. By the end of this week, when someone books a virtual call, the entire process, confirmation, reminders, follow-up, happens automatically without you touching a thing.</p>
+      </div>
+
+      <div class="week-card">
+        <span class="week-badge">Week 3</span>
+        <h3>Your Ads Go Live</h3>
+        <p>With your funnel and booking system in place, we build and launch your Meta ads. We create 2-4 custom ad creatives and test 1-2 audiences, including your Ghanaian and West African targeting, to find what's working. We install your tracking pixel so we know exactly how many people are seeing your ad, clicking it, and opting in. Your system goes live and leads begin coming in.</p>
+      </div>
+
+      <div class="week-card">
+        <span class="week-badge">Week 4</span>
+        <h3>Optimization and Handoff</h3>
+        <p>We review your early results, record a full video walkthrough of everything we built so you understand your entire system, and give you a written recommendations guide covering what to monitor weekly, when to refresh your ads, and how to keep the system running smoothly long-term.</p>
+      </div>
+
+      <div class="proposal-highlight" style="margin-top: 32px;">
+        <p><strong>What you have at the end of 30 days:</strong> A fully built, fully connected system, your ads, your funnel, your email follow-up, and your booking flow all working together. New leads are finding you, raising their hand, and booking virtual calls on your calendar automatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PLATFORM ======================== -->
+  <section class="proposal-section">
+    <div class="container narrow">
+      <p class="eyebrow">The platform</p>
+      <h2>GoHighLevel: where your<br /><em>system lives.</em></h2>
+
+      <p>GoHighLevel is the software your entire system lives inside. It handles your email list, your automated email sequences, your funnel pages, and your booking flow, all in one place.</p>
+
+      <p>Think of it the way you think about any other tool your business runs on, like your phone or your calendar. It is the infrastructure the Self-Booking System runs on and it is what we build inside for every client.</p>
+
+      <p><strong>Cost:</strong> approximately $97/month, paid directly to GoHighLevel. We will help you get set up, connect everything, and walk you through how it works.</p>
+
+      <p>You will also need a domain, a web address for your business like yourname.com. If you don't have one, we will help you register one during the install. <strong>Cost:</strong> approximately $15-$20/year.</p>
+    </div>
+  </section>
+
+  <!-- ======================== PROOF ======================== -->
+  <section class="proposal-section proposal-section--blush">
+    <div class="container narrow">
+      <p class="eyebrow">Proof this works</p>
+      <h2>The client who referred you<br /><em>lived this transformation.</em></h2>
+
+      <p>The person who referred you is a client I worked with recently. Before we built her system, she was spending $13 per lead with no automated system in place, manually trying to generate leads and booking calls inconsistently.</p>
+
+      <p>After we installed her complete Self-Booking System, her cost per lead dropped from $13 to $3. She generated 22 new leads and booked 3 calls within the first 5 days of going live. Without posting. Without manual outreach. Without touching anything after the system went live.</p>
+
+      <div class="proof-stats">
+        <div class="proof-stat">
+          <span class="proof-stat-num">$13 &rarr; $3</span>
+          <span class="proof-stat-label">Cost per lead</span>
+        </div>
+        <div class="proof-stat">
+          <span class="proof-stat-num">22</span>
+          <span class="proof-stat-label">New leads</span>
+        </div>
+        <div class="proof-stat">
+          <span class="proof-stat-num">3</span>
+          <span class="proof-stat-label">Calls in 5 days</span>
+        </div>
+      </div>
+
+      <p><strong>She referred you because she experienced the difference firsthand.</strong></p>
+
+      <h3>What this system delivers</h3>
+      <p>Think about the difference between calling someone who has never heard of you versus calling someone who reached out to you, received several emails from you, read about what you do, and then chose to get on your calendar themselves.</p>
+      <p>That second conversation is a completely different experience. The person already knows who you are. They've already decided they want to talk. They showed up because the system walked them there, not because you hunted them down.</p>
+      <p>As a life insurance agent, you have the skill to close that conversation. What this system does is make sure the people you're talking to are already interested, already warmed up, and already sold on why they need to hear from you. That is the environment this system creates for every virtual call that gets booked.</p>
+    </div>
+  </section>
+
+  <!-- ======================== THIS IS DIFFERENT ======================== -->
+  <section class="proposal-section proposal-section--ivory">
+    <div class="container narrow">
+      <p class="eyebrow">This is different</p>
+      <h2>Not the same as what<br /><em>hasn't worked before.</em></h2>
+
+      <p>If money has been spent on social media management in the past without results, that makes complete sense, because social media management and the Self-Booking System are not the same thing.</p>
+
+      <p>Social media management is about creating content and growing a following. It depends on the platform showing your content to the right people, which is never guaranteed. It is a long-term brand strategy that does not directly produce booked calls.</p>
+
+      <div class="proposal-highlight">
+        <p><strong>The Self-Booking System is built for one outcome:</strong> qualified people on your virtual calendar. It uses paid ads to target the right person specifically, captures their information so you own the relationship, and automates the follow-up so nothing falls through the cracks. Everything built is in your accounts and belongs to you, whether you continue working with us or not.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== INVESTMENT ======================== -->
+  <section class="proposal-section">
+    <div class="container narrow text-center">
+      <p class="eyebrow" style="text-align:center">The investment</p>
+      <h2>$1,350 <em>referral rate.</em></h2>
+      <p style="max-width: 560px; margin-left: auto; margin-right: auto;">Standard price is $1,575. You are receiving a $225 discount as a referral from a current client.</p>
+
+      <p style="max-width: 600px; margin: 24px auto; text-align: left;"><strong>What this covers:</strong> Four weeks of custom, done-for-you work including strategy, lead magnet creation, funnel build, email sequences, ad creative, ad launch, pixel and tracking setup, Ghanaian and West African audience targeting, optimization, full video walkthrough, and a written recommendations guide.</p>
+
+      <p style="max-width: 600px; margin: 24px auto; text-align: left;"><em>This is your system, built specifically for your life insurance business, your audience, and your community. Not a template. Not a course. Every piece built for you.</em></p>
+
+      <div class="proposal-highlight" style="text-align: left;">
+        <p><strong>On the investment:</strong></p>
+        <p>I understand this is a significant decision, especially when past investments haven't delivered what was promised. That hesitation is reasonable and I respect it completely.</p>
+        <p>The referral rate of $1,350 is the final price for this install. It already reflects a meaningful discount from the standard rate as a courtesy to someone who came through a client I care about. The price reflects four weeks of custom work, and this system only works when every piece is built correctly and connected properly.</p>
+        <p><strong>This is a decision worth making once and getting right.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== WHAT LIFE LOOKS LIKE ======================== -->
+  <section class="proposal-section proposal-section--blush">
+    <div class="container narrow">
+      <p class="eyebrow">After 30 days</p>
+      <h2>What life looks like<br /><em>once it's running.</em></h2>
+
+      <p>Once the system is built and running:</p>
+
+      <p>People who are already interested in life insurance, including Ghanaian and West African families who will recognize and trust you immediately, are finding your lead magnet every day through your ads without you having to reach out to a single person manually. Your email list grows steadily in the background, a list you own and that compounds in value over time. Virtual calls are being booked on your calendar by people who have already been introduced to you and chosen to talk. You have a video walkthrough and a written guide so you know exactly what to watch each week and what to adjust when something needs attention. Everything built belongs to you permanently.</p>
+
+      <div class="proposal-highlight">
+        <p><strong>You stop spending hours hunting for leads on social media. The system finds them, warms them up, and puts them on your virtual calendar.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== READY TO MOVE FORWARD / OFFER BOX ======================== -->
+  <section class="proposal-section proposal-section--ivory">
+    <div class="container text-center">
+      <p class="eyebrow" style="text-align:center">Ready to move forward?</p>
+      <h2>Let's build your<br /><em>Self-Booking System.</em></h2>
+      <p style="max-width: 560px; margin: 0 auto 16px;">To get started, click the button below to complete your payment. You'll receive your onboarding form and a link to schedule your kickoff call within 48 business hours.</p>
+
+      <div class="offer-box">
+        <h3>The Self-Booking System Install</h3>
+
+        <p style="max-width: 500px; margin-left: auto; margin-right: auto;">A fully built, fully connected system: your ads, your funnel, your email follow-up, and your booking flow all working together in 30 days.</p>
+
+        <ul class="icon-list icon-list--check">
+          <li>Custom lead magnet built for your audience</li>
+          <li>Opt-in page + booking page written for life insurance</li>
+          <li>GoHighLevel account setup and email sequences</li>
+          <li>2-4 custom Meta ad creatives launched and monitored</li>
+          <li>Ghanaian and West African audience targeting built in</li>
+          <li>Tracking pixel, confirmations, and reminder emails</li>
+          <li>Full video walkthrough + written recommendations guide</li>
+        </ul>
+
+        <div class="offer-price">
+          <span class="offer-price-old">$1,575</span>
+          <span class="offer-price-new">$1,350</span>
+          <br />
+          <span class="offer-savings">$225 off - referral rate</span>
+        </div>
+
+        <div class="offer-options">
+          <div class="offer-option">
+            <span class="offer-option-label">Pay in full</span>
+            <span class="offer-option-amount">$1,350</span>
+            <span class="offer-option-note">One-time payment</span>
+          </div>
+          <div class="offer-option">
+            <span class="offer-option-label">Payment plan</span>
+            <span class="offer-option-amount">2 &times; $675</span>
+            <span class="offer-option-note">Half today, half in 14 days</span>
+          </div>
+        </div>
+
+        <!-- ========== KARTRA PAYMENT EMBED ========== -->
+        <a href="javascript:void(0);" class="btn btn--lg btn--lime js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="WLiDAbIYE29c" data-kt-owner="7kzAqVxg">Get Started - $1,350</a>
+        <!-- ========== END KARTRA PAYMENT EMBED ========== -->
+
+        <p style="font-size: .78rem; color: var(--text-muted); margin-top: 14px;">Secure checkout. Onboarding begins immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== DISCLAIMER ======================== -->
+  <div style="background: var(--cream); color: var(--text-soft); font-size: .72rem; padding: 16px 24px; line-height: 1.6;">
+    <div class="container">
+      <p><strong>Disclaimer:</strong> Results shared in this proposal are from a real client but are not guaranteed. Individual results vary based on offer, audience, ad spend, and market conditions. The Self-Booking System Install provides the strategy, setup, and tools, but we cannot guarantee specific revenue, leads, or bookings. By purchasing, you acknowledge that results depend on many factors unique to your business.</p>
+    </div>
+  </div>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer">
+    <div class="container text-center">
+      <img src="logo.png" alt="Perfectly Made Marketing" class="footer-logo" />
+      <p>&copy; 2026 Perfectly Made Marketing. All rights reserved.</p>
+      <p>Questions? <a href="mailto:hello@perfectlymademarketing.com">hello@perfectlymademarketing.com</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script type="text/javascript" src="https://app.kartra.com/js/build/front/embed/pay.js"></script>
+</body>
+</html>
