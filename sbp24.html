@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Seen Booked Paid Diagnostic — Steps 2–4 — Perfectly Made Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #fdfbf7;
+  --ivory: #f9f6f0;
+  --blush: #fdf5f0;
+  --text: #2c2a27;
+  --text-muted: #706e68;
+  --border: #e8e2d9;
+  --border-light: #f0ece5;
+  --periwinkle: #6b66e9;
+  --periwinkle-50: #eeedfe;
+  --periwinkle-800: #3c3489;
+  --teal: #1d9e75;
+  --teal-50: #e1f5ee;
+  --teal-800: #085041;
+  --coral: #c8552a;
+  --coral-50: #faece7;
+  --coral-800: #6b2714;
+  --lime: #deff55;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: var(--text);
+  padding: 2.5rem 1.25rem 4rem;
+  min-height: 100vh;
+}
+.wrap { max-width: 700px; margin: 0 auto; }
+
+/* Header */
+.header { text-align: center; margin-bottom: 2rem; }
+.eyebrow {
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--periwinkle); margin-bottom: 0.6rem;
+}
+h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.7rem, 4vw, 2.2rem);
+  font-weight: 500; line-height: 1.2;
+  margin-bottom: 0.5rem; color: var(--text);
+}
+.header-sub { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+
+/* Accent bar */
+.accent-bar {
+  height: 3px; background: var(--lime);
+  border-radius: 2px; width: 40px;
+  margin: 0 auto 2rem;
+}
+
+/* Step indicator */
+.step-indicator {
+  display: flex; align-items: center;
+  justify-content: center; gap: 8px;
+  margin-bottom: 2rem;
+}
+.step-pip { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+.step-pip.done { background: var(--teal); }
+.step-pip.active { background: var(--periwinkle); }
+.step-label {
+  font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Progress bar */
+.progress-wrap { margin-bottom: 2rem; }
+.progress-header {
+  display: flex; justify-content: space-between;
+  align-items: center; margin-bottom: 0.5rem;
+}
+.progress-stage { font-size: 0.8rem; font-weight: 500; }
+.progress-stage.seen   { color: var(--periwinkle); }
+.progress-stage.booked { color: var(--teal); }
+.progress-stage.paid   { color: var(--coral); }
+.progress-count { font-size: 0.78rem; color: var(--text-muted); }
+.progress-track {
+  height: 4px; background: var(--border);
+  border-radius: 2px; overflow: hidden;
+}
+.progress-fill { height: 100%; border-radius: 2px; transition: width 0.35s ease; }
+.progress-fill.seen   { background: var(--periwinkle); }
+.progress-fill.booked { background: var(--teal); }
+.progress-fill.paid   { background: var(--coral); }
+
+/* Stage intro card */
+.stage-intro {
+  background: var(--ivory);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.75rem;
+  display: flex; gap: 1rem; align-items: flex-start;
+}
+.stage-badge {
+  width: 40px; height: 40px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  flex-shrink: 0;
+}
+.stage-badge.seen   { background: var(--periwinkle-50); color: var(--periwinkle-800); }
+.stage-badge.booked { background: var(--teal-50);       color: var(--teal-800); }
+.stage-badge.paid   { background: var(--coral-50);       color: var(--coral-800); }
+.stage-intro-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem; font-weight: 500; margin-bottom: 0.3rem;
+}
+.stage-intro-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+
+/* Questions */
+.questions-list { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 2rem; }
+.question-item {
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem;
+  transition: border-color 0.15s, background 0.15s;
+}
+.question-item.ans-yes { border-color: #9dd4c0; background: #fbfffe; }
+.question-item.ans-no  { border-color: #e8c0b0; background: #fdfaf9; }
+.question-piece {
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 0.45rem;
+}
+.question-text {
+  font-size: 0.92rem; line-height: 1.68;
+  color: var(--text); margin-bottom: 1rem;
+}
+.question-buttons { display: flex; gap: 0.6rem; }
+.q-btn {
+  flex: 1; padding: 0.55rem 0.75rem;
+  border-radius: 8px; border: 1.5px solid var(--border);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem; font-weight: 500;
+  cursor: pointer; transition: all 0.14s;
+  background: white; color: var(--text-muted);
+}
+.q-btn:hover { border-color: #bbb7af; color: var(--text); }
+.q-btn.sel-yes { background: var(--teal-50); border-color: var(--teal); color: var(--teal-800); }
+.q-btn.sel-no  { background: var(--coral-50); border-color: var(--coral); color: var(--coral-800); }
+
+/* Continue button */
+.stage-nav { display: flex; justify-content: flex-end; margin-bottom: 2rem; }
+.btn-next {
+  background: var(--periwinkle); color: white;
+  border: none; border-radius: 10px;
+  padding: 0.75rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem; font-weight: 500;
+  cursor: pointer; transition: opacity 0.15s;
+  opacity: 0.32; pointer-events: none;
+}
+.btn-next.ready { opacity: 1; pointer-events: all; }
+.btn-next.ready:hover { opacity: 0.88; }
+
+/* Screens */
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* ── RESULTS ── */
+.results-header { text-align: center; margin-bottom: 2rem; }
+.results-header h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.7rem; font-weight: 500; margin-bottom: 0.5rem;
+}
+.results-header p { font-size: 0.88rem; color: var(--text-muted); }
+
+/* Score bars */
+.scores { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 2rem; }
+.score-row {
+  background: white; border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.2rem 1.4rem;
+}
+.score-row-header {
+  display: flex; justify-content: space-between;
+  align-items: center; margin-bottom: 0.75rem;
+}
+.score-row-label {
+  font-size: 0.78rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.09em;
+}
+.score-row-label.seen   { color: var(--periwinkle); }
+.score-row-label.booked { color: var(--teal); }
+.score-row-label.paid   { color: var(--coral); }
+.score-row-pct {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem; font-weight: 500;
+}
+.score-track {
+  height: 8px; background: var(--border-light);
+  border-radius: 4px; overflow: hidden; margin-bottom: 0.45rem;
+}
+.score-bar { height: 100%; border-radius: 4px; transition: width 0.9s ease; }
+.score-bar.seen   { background: var(--periwinkle); }
+.score-bar.booked { background: var(--teal); }
+.score-bar.paid   { background: var(--coral); }
+.score-note { font-size: 0.78rem; color: var(--text-muted); }
+
+/* Gap card */
+.gap-card {
+  border-radius: 16px; padding: 1.75rem;
+  margin-bottom: 1.5rem; border: 1.5px solid;
+}
+.gap-card.seen     { background: var(--periwinkle-50); border-color: #b5b0e6; }
+.gap-card.booked   { background: var(--teal-50);       border-color: #9dd4be; }
+.gap-card.paid     { background: var(--coral-50);       border-color: #e0a898; }
+.gap-card.multiple { background: var(--ivory);          border-color: var(--border); }
+.gap-eyebrow {
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.gap-card.seen .gap-eyebrow     { color: var(--periwinkle-800); }
+.gap-card.booked .gap-eyebrow   { color: var(--teal-800); }
+.gap-card.paid .gap-eyebrow     { color: var(--coral-800); }
+.gap-card.multiple .gap-eyebrow { color: var(--text-muted); }
+.gap-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem; font-weight: 500;
+  margin-bottom: 0.85rem; color: var(--text);
+}
+.gap-body { font-size: 0.9rem; line-height: 1.8; color: #3d3b37; }
+.gap-body p + p { margin-top: 0.75rem; }
+
+/* Fix first */
+.fix-first {
+  background: white; border: 1px solid var(--border);
+  border-radius: 16px; padding: 1.75rem; margin-bottom: 2rem;
+}
+.fix-label {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 1rem;
+}
+.fix-dot { width: 10px; height: 10px; background: var(--lime); border-radius: 50%; flex-shrink: 0; }
+.fix-label-text {
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-muted);
+}
+.fix-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 500;
+  margin-bottom: 0.75rem; color: var(--text);
+}
+.fix-action { font-size: 0.9rem; line-height: 1.8; color: #3d3b37; }
+
+/* Next step */
+.next-step {
+  background: var(--ivory); border: 1px solid var(--border);
+  border-radius: 16px; padding: 1.5rem 1.75rem; margin-bottom: 2rem;
+}
+.next-step-eyebrow {
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 0.35rem;
+}
+.next-step-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem; font-weight: 500;
+  color: var(--text); margin-bottom: 0.35rem;
+}
+.next-step-desc { font-size: 0.84rem; color: var(--text-muted); line-height: 1.65; }
+
+/* Footer */
+.footer { text-align: center; font-size: 0.78rem; color: var(--text-muted); padding-top: 1rem; }
+.footer a { color: var(--periwinkle); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div class="eyebrow">Perfectly Made Marketing</div>
+  <h1>The Seen Booked Paid Diagnostic</h1>
+  <p class="header-sub">Answer 30 questions. Find out exactly where your system is broken.</p>
+</div>
+<div class="accent-bar"></div>
+
+<div class="step-indicator">
+  <span class="step-pip done"></span>
+  <span class="step-pip active" id="pip2"></span>
+  <span class="step-pip active" id="pip3"></span>
+  <span class="step-pip active" id="pip4"></span>
+  <span class="step-pip"></span>
+  <span class="step-label" id="step-label">Steps 2-4 of 5 - The diagnostic, the gap, and what to fix first</span>
+</div>
+
+<!-- ── SCREEN: SEEN ── -->
+<div id="screen-seen" class="screen active">
+  <div class="progress-wrap">
+    <div class="progress-header">
+      <span class="progress-stage seen">Stage 1 - Seen</span>
+      <span class="progress-count" id="seen-count">0 of 10 answered</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill seen" id="seen-fill" style="width:0%"></div>
+    </div>
+  </div>
+  <div class="stage-intro">
+    <div class="stage-badge seen">01</div>
+    <div>
+      <div class="stage-intro-title">Seen - Getting the right person to find you</div>
+      <div class="stage-intro-desc">This stage covers your profile, your ad, your lead magnet, and your targeting. Answer honestly for each one - if you are not sure, go with your gut.</div>
+    </div>
+  </div>
+  <div class="questions-list" id="seen-questions"></div>
+  <div class="stage-nav">
+    <button class="btn-next" id="btn-to-booked" onclick="goToStage('booked')">Continue to Booked &rarr;</button>
+  </div>
+</div>
+
+<!-- ── SCREEN: BOOKED ── -->
+<div id="screen-booked" class="screen">
+  <div class="progress-wrap">
+    <div class="progress-header">
+      <span class="progress-stage booked">Stage 2 - Booked</span>
+      <span class="progress-count" id="booked-count">0 of 10 answered</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill booked" id="booked-fill" style="width:0%"></div>
+    </div>
+  </div>
+  <div class="stage-intro">
+    <div class="stage-badge booked">02</div>
+    <div>
+      <div class="stage-intro-title">Booked - From opted-in to on the calendar</div>
+      <div class="stage-intro-desc">This is the stage where most people getting leads but no calls will find their primary gap. It covers everything that happens after someone opts in - the pathway that is supposed to move them from "interested" to "booked" without you involved.</div>
+    </div>
+  </div>
+  <div class="questions-list" id="booked-questions"></div>
+  <div class="stage-nav">
+    <button class="btn-next" id="btn-to-paid" onclick="goToStage('paid')">Continue to Paid &rarr;</button>
+  </div>
+</div>
+
+<!-- ── SCREEN: PAID ── -->
+<div id="screen-paid" class="screen">
+  <div class="progress-wrap">
+    <div class="progress-header">
+      <span class="progress-stage paid">Stage 3 - Paid</span>
+      <span class="progress-count" id="paid-count">0 of 10 answered</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill paid" id="paid-fill" style="width:0%"></div>
+    </div>
+  </div>
+  <div class="stage-intro">
+    <div class="stage-badge paid">03</div>
+    <div>
+      <div class="stage-intro-title">Paid - Nurturing leads who didn't book yet</div>
+      <div class="stage-intro-desc">This stage covers what happens to leads after the initial follow-up window closes. Most service providers do not have this stage built at all. If most of these are a no, that is completely normal - and it tells you exactly where to focus next.</div>
+    </div>
+  </div>
+  <div class="questions-list" id="paid-questions"></div>
+  <div class="stage-nav">
+    <button class="btn-next" id="btn-to-results" onclick="showResults()">See my results &rarr;</button>
+  </div>
+</div>
+
+<!-- ── SCREEN: RESULTS ── -->
+<div id="screen-results" class="screen">
+  <div class="results-header">
+    <h2>Your diagnostic results</h2>
+    <p>Here is exactly where your system is breaking down - and what to fix first.</p>
+  </div>
+
+  <div class="scores">
+    <div class="score-row">
+      <div class="score-row-header">
+        <span class="score-row-label seen">01 - Seen</span>
+        <span class="score-row-pct" id="seen-pct">-</span>
+      </div>
+      <div class="score-track"><div class="score-bar seen" id="seen-bar" style="width:0%"></div></div>
+      <div class="score-note" id="seen-note"></div>
+    </div>
+    <div class="score-row">
+      <div class="score-row-header">
+        <span class="score-row-label booked">02 - Booked</span>
+        <span class="score-row-pct" id="booked-pct">-</span>
+      </div>
+      <div class="score-track"><div class="score-bar booked" id="booked-bar" style="width:0%"></div></div>
+      <div class="score-note" id="booked-note"></div>
+    </div>
+    <div class="score-row">
+      <div class="score-row-header">
+        <span class="score-row-label paid">03 - Paid</span>
+        <span class="score-row-pct" id="paid-pct">-</span>
+      </div>
+      <div class="score-track"><div class="score-bar paid" id="paid-bar" style="width:0%"></div></div>
+      <div class="score-note" id="paid-note"></div>
+    </div>
+  </div>
+
+  <div class="gap-card" id="gap-card">
+    <div class="gap-eyebrow" id="gap-eyebrow"></div>
+    <div class="gap-title" id="gap-title"></div>
+    <div class="gap-body" id="gap-body"></div>
+  </div>
+
+  <div class="fix-first">
+    <div class="fix-label">
+      <span class="fix-dot"></span>
+      <span class="fix-label-text">Fix this first</span>
+    </div>
+    <div class="fix-title" id="fix-title"></div>
+    <div class="fix-action" id="fix-action"></div>
+  </div>
+
+  <div class="next-step">
+    <div class="next-step-eyebrow">Up next - Step 5 of 5</div>
+    <div class="next-step-title">Bree's Walkthrough Video</div>
+    <div class="next-step-desc">Now that you know exactly where your gap is, Bree walks you through what a working version of that stage looks like - and the most common paths forward for someone in your specific situation.</div>
+  </div>
+
+  <div class="footer">
+    <p>Perfectly Made Marketing &nbsp;&middot;&nbsp; <a href="https://perfectlymademarketing.com" target="_blank">perfectlymademarketing.com</a></p>
+  </div>
+</div>
+
+</div><!-- end .wrap -->
+
+<script>
+// ── PIECE LABELS ──────────────────────────────────────────────────────────
+
+var pieceLabels = {
+  profile: 'Optimized profile', creative: 'Ad creative', copy: 'Ad copy + hook',
+  magnet: 'Lead magnet', targeting: 'Audience targeting', optin: 'Opt-in page',
+  thankyou: 'Thank you page', booking: 'Booking page', appointment: 'Appointment setup',
+  followup: 'Follow-up emails', welcome: 'Welcome sequence', nurture: 'Nurture emails',
+  reengage: 'Re-engagement', reminders: 'Call reminders', discovery: 'Discovery call'
+};
+
+// ── QUESTIONS ─────────────────────────────────────────────────────────────
+
+var questions = {
+  seen: [
+    { piece: 'profile',    text: 'Does your Facebook or Instagram bio speak directly to the problem your ideal client is experiencing right now - not just describe what you offer?' },
+    { piece: 'profile',    text: 'Does the link in your bio go directly to your lead magnet or a Linktree with your lead magnet linked? (not your website homepage)' },
+    { piece: 'creative',   text: 'Are you running a real Meta lead ad campaign - not just a boosted post or an on-Facebook lead form?' },
+    { piece: 'creative',   text: 'Does your ad lead with your ideal client\'s problem or situation - rather than your name, credentials, or offer?' },
+    { piece: 'copy',       text: 'Does your ad hook (the very first line) name the specific situation your ideal client is already living?' },
+    { piece: 'copy',       text: 'Does your ad tell people exactly what to click and what they will receive when they do?' },
+    { piece: 'magnet',     text: 'Do you have a lead magnet that your ad drives traffic to - not a booking link, sales page, or general website?' },
+    { piece: 'magnet',     text: 'Is your lead magnet titled specifically for the exact problem your ideal client is experiencing right now - not a generic guide or broad topic?' },
+    { piece: 'targeting',  text: 'Is your Meta pixel installed and actively firing on your opt-in page?' },
+    { piece: 'targeting',  text: 'In addition to targeting cold audiences, do you have at least one warm custom audience you are building from your own data - such as your email list, website visitors, or social media engagers?' }
+  ],
+  booked: [
+    { piece: 'optin',       text: 'Do you have a dedicated opt-in landing page that your ad sends people to?' },
+    { piece: 'optin',       text: 'Does your opt-in page headline mirror the language in your ad - so people feel like they landed in exactly the right place?' },
+    { piece: 'thankyou',    text: 'After someone opts in, do they land on a page that confirms their download and immediately invites them to book a call - not just a generic screen that says check your email?' },
+    { piece: 'thankyou',    text: 'Does your thank you page include a booking link or calendar embed so leads can schedule a call while they are at peak interest?' },
+    { piece: 'booking',     text: 'Does your booking page give context about the call - who it is for, what will happen, and what they will walk away with - rather than just a bare calendar link?' },
+    { piece: 'booking',     text: 'Does your booking page speak to the real reason someone opted in - the problem underneath the freebie - rather than just saying "book a call"?' },
+    { piece: 'appointment', text: 'Does your calendar automatically send a confirmation email immediately after someone books?' },
+    { piece: 'appointment', text: 'Do you have automated reminder emails that go out before the call - at least 48 hours in advance, 24 hours in advance, and again 1 hour before?' },
+    { piece: 'followup',    text: 'Do you have an automated email that goes out within 30 minutes of someone opting in?' },
+    { piece: 'followup',    text: 'Do you have a sequence of at least 3 automated emails within the first 24-48 hours of opt-in - with at least one direct invitation to book a call?' }
+  ],
+  paid: [
+    { piece: 'welcome',   text: 'Do you have an automated welcome sequence that picks up after your initial follow-up period ends - continuing the relationship beyond the first 48 hours?' },
+    { piece: 'welcome',   text: 'Does your welcome sequence include your personal proof story - a specific before and after showing you have solved this problem yourself?' },
+    { piece: 'nurture',   text: 'Are you sending regular emails to your list beyond the initial sequences - at least once per week?' },
+    { piece: 'nurture',   text: 'Do your regular emails deliver value, tell stories, or share proof - rather than only appearing when you have something to promote?' },
+    { piece: 'reengage',  text: 'Have you ever sent a dedicated re-engagement campaign to leads who have gone quiet - people who opted in but stopped opening your emails?' },
+    { piece: 'reengage',  text: 'Do you have any process for identifying and specifically reaching out to leads who have been on your list for 60 or more days without booking a call?' },
+    { piece: 'reminders', text: 'Does your email sequence include at least one email specifically designed to invite leads to book a call with you - with a direct calendar link in the email?' },
+    { piece: 'reminders', text: 'Do you send periodic booking invitation emails to your list outside of launches or promotions - making it easy for warm leads to book whenever the timing is right for them or when you need to fill your calendar?' },
+    { piece: 'discovery', text: 'Do you have an intake form or pre-call questionnaire that leads complete before getting on a call with you?' },
+    { piece: 'discovery', text: 'Do most leads who book a call already know who you are and understand what you do - without you needing to re-establish your credibility from scratch during the call itself?' }
+  ]
+};
+
+// ── FIX FIRST RECOMMENDATIONS ─────────────────────────────────────────────
+
+var fixFirst = {
+  seen: {
+    magnet:    { title: 'Create or rename your lead magnet around a specific problem', action: 'If you have no lead magnet, build one before running another dollar of ads. If you have one, look at the title honestly. It should name the exact problem your ideal client is experiencing right now - not a general topic. The more specific the title, the more valuable the list it builds. Run ads to something generic and you will get generic leads. Run ads to something specific and the right person will feel like you wrote it for them.' },
+    creative:  { title: 'Build a purpose-built ad - not a boosted post', action: 'Record a simple direct-to-camera video this week. In the first three seconds, name the exact situation your ideal client is already in - not your offer, not your name, not your credentials. The symptom first. Everything else second. A 60-second video filmed on your phone that names the right problem will outperform a polished graphic that leads with your business name almost every time.' },
+    copy:      { title: 'Rewrite your ad hook to name the specific situation your ideal client is already in', action: 'Your first line should stop the right person mid-scroll because it described their morning. Rewrite it until it names the specific situation they are already living - not the solution you offer. Test it by asking: would someone who is not my ideal client recognize themselves in this hook? If yes, it is still too broad. Go more specific until only the right person stops.' },
+    targeting: { title: 'Install your pixel and build at least one warm custom audience', action: 'Install your Meta pixel on your opt-in page today and verify it is firing correctly. Then create a custom audience from your email list and from your Instagram or Facebook page engagers. These are the warmest people available to you and they should be the first audience your ads reach. Cold interest audiences require more budget and more testing - warm audiences give you the fastest signal about what is working.' },
+    profile:   { title: 'Update your profile so it functions as a conversion tool', action: 'Rewrite your Facebook and Instagram bio so the first line speaks directly to the problem your ideal client is experiencing right now. Change your profile link to go directly to your lead magnet. Tap on your own profile as if you were a stranger who just saw your ad and ask honestly: does this confirm I am in the right place? If not, fix it before spending more on ads.' }
+  },
+  booked: {
+    followup:    { title: 'Build an automated follow-up sequence that starts within 30 minutes of opt-in', action: 'This is the most important piece in the entire Booked stage. The probability of a lead booking drops dramatically within 30 minutes of silence after opt-in. Build a sequence of at least 3 automated emails that runs within the first 24-48 hours. Email 1: deliver the lead magnet and reframe the real problem. Email 2: your proof story - the before and the after. Email 3: a direct, specific invitation to book a call with your calendar link clearly visible.' },
+    optin:       { title: 'Build a dedicated opt-in page before running more ads', action: 'If you do not have a dedicated opt-in page, every dollar you are spending on ads is going to a page that was not designed to convert that traffic. Build one page with one goal - the email address. The headline must mirror the language in your ad. No navigation. No other links. One message, one action. This is the foundation that everything else in the Booked stage is built on.' },
+    thankyou:    { title: 'Add a booking link to your thank you page today', action: 'This is the highest-leverage single change you can make to an existing funnel and it takes about 20 minutes. After someone opts in, they land at their peak interest. Put a booking link on that page. Frame it naturally - while you wait for the guide, the fastest way to get your specific questions answered is to book a quick call. A percentage of every opt-in cohort will book directly from this page. You are currently losing all of them.' },
+    booking:     { title: 'Create a dedicated booking page with context around the call', action: 'Replace your bare calendar link with a page that tells people who the call is for, what will happen during it, and what they will walk away with. A blank Calendly page with "30 Minute Meeting" as the description does not convert cold traffic. A page that speaks directly to the person who just opted in, confirms they are in the right place, and makes the call feel specifically relevant to their situation - that converts.' },
+    appointment: { title: 'Set up automated confirmation and reminder emails today', action: 'A booked call that does not show up is identical in outcome to a call that was never booked. Set up an automated confirmation email that goes out immediately after booking, a reminder 24 hours before the call, and a reminder 1 hour before. Your show-up rate will improve. The leads who would have forgotten will remember. This is a one-time setup with compounding returns on every call you ever book from this system.' }
+  },
+  paid: {
+    welcome:   { title: 'Build a welcome sequence that picks up where your follow-up ends', action: 'Your follow-up sequence runs for 24-48 hours. After that, if nothing else is set up, your list goes completely silent. Build a welcome sequence of 5-7 emails that continues the relationship over the following week. Include your proof story. Share what your clients have achieved. Close with an invitation to book a call. This is the automated pathway that converts leads who were not ready in the first 48 hours into booked calls weeks later.' },
+    reminders: { title: 'Add a dedicated booking invitation email to your email sequence', action: 'Most service providers nurture their list but never directly invite people to book a call. Add at least one email to your sequence specifically written to say: here is what a call looks like, here is who it is for, and here is the link to book one. Make the calendar link prominent and easy to find. One direct invitation, delivered at the right moment in the nurture journey, will produce more bookings than ten value emails that never make a clear ask.' },
+    nurture:   { title: 'Commit to one email per week to your list starting this week', action: 'Pick one day. Send one email. Not a sales email - a relationship email. Value, story, or proof. The leads who opted in last month are still there. They have not unsubscribed. They are waiting to hear from you. Your list compounds in value over time as people get to know you, trust you, and see your proof accumulate. The bookings you receive three months from now are being created by the nurture you start today.' },
+    reengage:  { title: 'Send a re-engagement email to your dormant leads this week', action: 'Find everyone who has not opened an email in 60 days or more. Send one email with one direct question: "Are you still dealing with [the specific problem they opted in about], or has that been solved?" You will be surprised how many reply. A meaningful number of those replies will turn into booked calls - from leads that looked completely dead. Re-engagement costs nothing except the email and produces bookings from leads you have already paid to generate.' },
+    discovery: { title: 'Build a simple pre-call intake form', action: 'Before your next call, build a short intake form with 3-5 questions and make it required before booking. Ask about their current situation, what they have already tried, and what outcome they are looking for. You will show up prepared. You will pre-qualify leads before they get on the call. And you will stop spending the first 20 minutes of every call establishing context that could have been collected in writing - which means more time actually solving the problem they came to talk about.' }
+  }
+};
+
+// Fix first for multiple-stage gaps - determined dynamically
+var multipleFix = null; // Will be set in showResults based on scores
+
+// Gap identifier copy
+var gapCopy = {
+  seen: {
+    title: 'Your primary gap is in the Seen stage',
+    body: '<p>People are either not finding you, or the wrong people are finding you. The problem does not start in the follow-up sequence or the booking page - it starts before anyone ever opts in.</p><p>When the Seen stage has significant gaps, the leads you do get tend to be unqualified, unresponsive, or confused about what you actually do. You can have a perfectly built opt-in page and a brilliant automated sequence, but if the ad is attracting browsers instead of buyers, nothing downstream converts.</p><p>The good news is that fixing the Seen stage usually comes down to one or two specific pieces - the lead magnet title, the ad hook, or the targeting setup. The fix first recommendation below tells you exactly where to start.</p>'
+  },
+  booked: {
+    title: 'Your primary gap is in the Booked stage',
+    body: '<p>People are raising their hand and opting in. The top of the system is working. But there is nothing waiting to take them from interested to booked automatically - and so they disappear into silence.</p><p>This is the most common gap for service providers running Meta ads. You are getting leads. You are just not getting calls. The reason is that the pathway between the opt-in and the calendar is broken, incomplete, or missing entirely. Every lead who disappears after opting in was interested enough to give you their email address. They did not change their mind. Nothing followed up fast enough, clearly enough, or specifically enough to move them from "I just opted in" to "I just booked a call."</p><p>The fix first recommendation below shows you exactly where to start closing that gap.</p>'
+  },
+  paid: {
+    title: 'Your primary gap is in the Paid stage',
+    body: '<p>Your system is bringing leads in. People are opting in and some are booking calls. But the leads who did not book in the first 48 hours are being abandoned - and they represent your biggest untapped opportunity.</p><p>Most service providers treat the Paid stage as optional. It is not. The people on your list right now who have not booked yet are not gone. They opted in because the problem was real. They were just not ready the first time. A working Paid stage nurtures those leads, re-engages the ones who went quiet, and converts them into calls over time - without requiring a single new dollar of ad spend.</p><p>The fix first recommendation below tells you the highest-leverage place to start building your Paid stage based on where your specific gaps are.</p>'
+  },
+  multiple: {
+    title: 'Your system needs to be built across all three stages',
+    body: '<p>Gaps across multiple stages means there is no single fix that will solve this. But there is a right order to build - and starting in the wrong place wastes time and money.</p><p>The most important thing to understand is that every stage depends on the one before it. Seen is the foundation. If the wrong people are finding you, nothing downstream can fix that. If Seen is already your strongest stage, move to Booked - that is the pathway that turns visibility into calls. Paid comes last because it only works when the first two stages are solid.</p><p>The fix first recommendation below starts you at the right place in the chain based on your specific scores.</p>'
+  }
+};
+
+// ── STATE ──────────────────────────────────────────────────────────────────
+
+var answers = { seen: {}, booked: {}, paid: {} };
+
+// ── BUILD QUESTION HTML ───────────────────────────────────────────────────
+
+function buildQuestions(stage) {
+  var container = document.getElementById(stage + '-questions');
+  var qs = questions[stage];
+  var html = '';
+  for (var i = 0; i < qs.length; i++) {
+    var q = qs[i];
+    var label = pieceLabels[q.piece] || q.piece;
+    html += '<div class="question-item" id="q-' + stage + '-' + i + '">' +
+      '<div class="question-piece">' + label + '</div>' +
+      '<div class="question-text">' + q.text + '</div>' +
+      '<div class="question-buttons">' +
+        '<button class="q-btn" id="q-' + stage + '-' + i + '-yes" onclick="answer(\'' + stage + '\',' + i + ',true)">Yes</button>' +
+        '<button class="q-btn" id="q-' + stage + '-' + i + '-no"  onclick="answer(\'' + stage + '\',' + i + ',false)">No</button>' +
+      '</div>' +
+    '</div>';
+  }
+  container.innerHTML = html;
+}
+
+buildQuestions('seen');
+buildQuestions('booked');
+buildQuestions('paid');
+
+// ── ANSWER HANDLER ────────────────────────────────────────────────────────
+
+function answer(stage, idx, val) {
+  answers[stage][idx] = val;
+
+  var item = document.getElementById('q-' + stage + '-' + idx);
+  item.classList.remove('ans-yes', 'ans-no');
+  item.classList.add(val ? 'ans-yes' : 'ans-no');
+
+  var yesBtn = document.getElementById('q-' + stage + '-' + idx + '-yes');
+  var noBtn  = document.getElementById('q-' + stage + '-' + idx + '-no');
+  yesBtn.classList.toggle('sel-yes', val === true);
+  yesBtn.classList.toggle('sel-no', false);
+  noBtn.classList.toggle('sel-no', val === false);
+  noBtn.classList.toggle('sel-yes', false);
+
+  updateProgress(stage);
+}
+
+function updateProgress(stage) {
+  var total    = questions[stage].length;
+  var answered = Object.keys(answers[stage]).length;
+  var pct      = Math.round((answered / total) * 100);
+
+  document.getElementById(stage + '-count').textContent = answered + ' of ' + total + ' answered';
+  document.getElementById(stage + '-fill').style.width  = pct + '%';
+
+  var nextBtnId = stage === 'seen' ? 'btn-to-booked' :
+                  stage === 'booked' ? 'btn-to-paid' : 'btn-to-results';
+  var btn = document.getElementById(nextBtnId);
+  if (answered === total) btn.classList.add('ready');
+  else btn.classList.remove('ready');
+}
+
+// ── NAVIGATION ────────────────────────────────────────────────────────────
+
+function goToStage(stage) {
+  document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+  document.getElementById('screen-' + stage).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── SCORING ───────────────────────────────────────────────────────────────
+
+function calcScore(stage) {
+  var qs = questions[stage];
+  var yes = 0;
+  for (var i = 0; i < qs.length; i++) {
+    if (answers[stage][i] === true) yes++;
+  }
+  return Math.round((yes / qs.length) * 100);
+}
+
+function getPrimaryGap(ss, bs, ps) {
+  var min = Math.min(ss, bs, ps);
+  var max = Math.max(ss, bs, ps);
+  // If spread is narrow and all are low, it is multiple
+  if (max - min <= 20 && max < 70) return 'multiple';
+  if (bs === min) return 'booked'; // Booked wins tiebreaks — most impactful
+  if (ss === min) return 'seen';
+  return 'paid';
+}
+
+function getWeakestPiece(stage) {
+  var qs = questions[stage];
+  // Count no answers per piece
+  var pieceCounts = {};
+  for (var i = 0; i < qs.length; i++) {
+    var p = qs[i].piece;
+    if (!pieceCounts[p]) pieceCounts[p] = 0;
+    if (answers[stage][i] === false) pieceCounts[p]++;
+  }
+  // Priority order — if tied, earlier in this array wins
+  var priority = {
+    seen:   ['magnet', 'creative', 'copy', 'targeting', 'profile'],
+    booked: ['followup', 'optin', 'thankyou', 'booking', 'appointment'],
+    paid:   ['welcome', 'reminders', 'nurture', 'reengage', 'discovery']
+  };
+  var pr = priority[stage];
+  var weakest = pr[pr.length - 1];
+  var mostNos = -1;
+  for (var j = 0; j < pr.length; j++) {
+    var cnt = pieceCounts[pr[j]] || 0;
+    if (cnt > mostNos) { mostNos = cnt; weakest = pr[j]; }
+  }
+  return weakest;
+}
+
+function scoreNote(stage, score) {
+  var notes = {
+    seen: {
+      high: 'Your Seen stage is mostly in place. The right people are likely finding you - focus your attention downstream.',
+      mid:  'Your Seen stage has gaps that may be attracting the wrong leads or producing unqualified opt-ins.',
+      low:  'Your Seen stage needs significant work. Before spending more on ads, fix the foundation that traffic lands on.',
+      none: 'Your Seen stage is largely missing. Every ad dollar you spend right now is going into a system that was not built to receive it.'
+    },
+    booked: {
+      high: 'Your Booked stage is largely in place. Leads have a complete pathway from opt-in to calendar.',
+      mid:  'Your Booked stage has meaningful gaps. Leads are opting in but the pathway to a booked call is incomplete.',
+      low:  'Your Booked stage needs significant work. This is almost certainly where your leads are disappearing.',
+      none: 'Your Booked stage is mostly missing. You are getting leads with nowhere automated to go - which explains why nobody is booking.'
+    },
+    paid: {
+      high: 'Your Paid stage is largely in place. Leads who did not book immediately have a system continuing to nurture them.',
+      mid:  'Your Paid stage has gaps. Leads who did not book in the first 48 hours are likely going quiet without a structured pathway to re-engage them.',
+      low:  'Your Paid stage needs significant work. The leads on your list right now who have not booked yet are being abandoned.',
+      none: 'Your Paid stage is mostly missing. Every lead who did not book in the first 48 hours is currently receiving nothing from you - which means most of your list is sitting unused.'
+    }
+  };
+  var tier = score >= 80 ? 'high' : score >= 60 ? 'mid' : score >= 30 ? 'low' : 'none';
+  return notes[stage][tier];
+}
+
+// ── SHOW RESULTS ──────────────────────────────────────────────────────────
+
+function showResults() {
+  var ss = calcScore('seen');
+  var bs = calcScore('booked');
+  var ps = calcScore('paid');
+  var primary = getPrimaryGap(ss, bs, ps);
+
+  goToStage('results');
+
+  // Animate bars after paint
+  setTimeout(function() {
+    document.getElementById('seen-pct').textContent   = ss + '%';
+    document.getElementById('booked-pct').textContent = bs + '%';
+    document.getElementById('paid-pct').textContent   = ps + '%';
+    document.getElementById('seen-bar').style.width   = ss + '%';
+    document.getElementById('booked-bar').style.width = bs + '%';
+    document.getElementById('paid-bar').style.width   = ps + '%';
+    document.getElementById('seen-note').textContent   = scoreNote('seen', ss);
+    document.getElementById('booked-note').textContent = scoreNote('booked', bs);
+    document.getElementById('paid-note').textContent   = scoreNote('paid', ps);
+  }, 120);
+
+  // Gap card
+  var gap = gapCopy[primary];
+  var card = document.getElementById('gap-card');
+  card.className = 'gap-card ' + primary;
+
+  var eyebrowMap = {
+    seen: 'Primary gap identified - Seen stage',
+    booked: 'Primary gap identified - Booked stage',
+    paid: 'Primary gap identified - Paid stage',
+    multiple: 'Multiple stage gaps identified'
+  };
+  document.getElementById('gap-eyebrow').textContent = eyebrowMap[primary];
+  document.getElementById('gap-title').textContent = gap.title;
+  document.getElementById('gap-body').innerHTML = gap.body;
+
+  // Fix first
+  var fix;
+  if (primary === 'multiple') {
+    // Multiple gaps: fix from top down. If Seen is the weakest or tied, start there.
+    // If Seen is the strongest of the three, move to Booked.
+    var multiStage;
+    if (ss <= bs && ss <= ps) {
+      multiStage = 'seen';
+    } else if (bs <= ps) {
+      multiStage = 'booked';
+    } else {
+      multiStage = 'paid';
+    }
+    var weakPiece = getWeakestPiece(multiStage);
+    fix = fixFirst[multiStage][weakPiece];
+  } else {
+    var weakPiece = getWeakestPiece(primary);
+    fix = fixFirst[primary][weakPiece];
+  }
+  document.getElementById('fix-title').textContent  = fix.title;
+  document.getElementById('fix-action').textContent = fix.action;
+}
+</script>
+</body>
+</html>
