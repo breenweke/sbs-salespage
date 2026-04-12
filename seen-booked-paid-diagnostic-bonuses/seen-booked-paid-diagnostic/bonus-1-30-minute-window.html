@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 30 Minute Window Guide — Perfectly Made Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #fdfbf7;
+  --ivory: #f9f6f0;
+  --blush: #fdf5f0;
+  --text: #2c2a27;
+  --text-muted: #706e68;
+  --border: #e8e2d9;
+  --border-light: #f0ece5;
+  --periwinkle: #6b66e9;
+  --periwinkle-50: #eeedfe;
+  --periwinkle-100: #d5d2f8;
+  --periwinkle-800: #3c3489;
+  --teal: #1d9e75;
+  --teal-50: #e1f5ee;
+  --teal-800: #085041;
+  --coral: #c8552a;
+  --coral-50: #faece7;
+  --coral-800: #6b2714;
+  --lime: #deff55;
+  --amber: #f5a623;
+  --amber-50: #fef8ec;
+  --amber-800: #7a4d08;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: var(--text);
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* ── PRINT ── */
+@media print {
+  body { background: white; padding: 0; }
+  .no-print { display: none !important; }
+  .wrap { max-width: 100%; padding: 0 1.5rem; }
+  .page-header { padding: 2rem 1.5rem; }
+  .step-block { break-inside: avoid; }
+  .timeline-line { display: none; }
+}
+
+/* ── LAYOUT ── */
+.page-header {
+  background: var(--text);
+  padding: 3rem 2rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--lime);
+}
+.header-eyebrow {
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: #9d96e8; margin-bottom: 0.75rem;
+}
+.header-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 500; line-height: 1.15;
+  color: white; margin-bottom: 0.75rem;
+}
+.header-sub {
+  font-size: 0.9rem; color: #b8b4a8;
+  line-height: 1.65; max-width: 520px;
+  margin: 0 auto 1.5rem;
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(222,255,85,0.12);
+  border: 1px solid rgba(222,255,85,0.3);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.78rem; color: var(--lime);
+  letter-spacing: 0.04em;
+}
+.badge-dot {
+  width: 6px; height: 6px;
+  background: var(--lime); border-radius: 50%;
+  animation: pulse 2.2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ── WHY THIS MATTERS ── */
+.why-section {
+  padding: 2.5rem 0 0;
+}
+.why-card {
+  background: var(--blush);
+  border: 1px solid #f0e4db;
+  border-radius: 18px;
+  padding: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+.why-card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 500;
+  margin-bottom: 0.85rem; color: var(--text);
+}
+.why-card p {
+  font-size: 0.9rem; line-height: 1.82;
+  color: #4a4844;
+}
+.why-card p + p { margin-top: 0.75rem; }
+.why-card strong { font-weight: 500; color: var(--text); }
+
+/* ── SECTION HEADING ── */
+.section-heading {
+  margin-bottom: 1.5rem;
+}
+.section-eyebrow {
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 0.4rem;
+}
+.section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem; font-weight: 500;
+  color: var(--text); line-height: 1.25;
+}
+
+/* ── TIMELINE ── */
+.timeline {
+  position: relative;
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+}
+.timeline-line {
+  position: absolute;
+  left: 28px; top: 28px; bottom: 0;
+  width: 1.5px;
+  background: linear-gradient(to bottom, var(--periwinkle-100), var(--border-light));
+}
+
+/* ── STEP BLOCKS ── */
+.step-block {
+  display: flex; gap: 1.25rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+.step-marker {
+  flex-shrink: 0;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 0;
+}
+.step-number {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: flex; align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.2rem; font-weight: 500;
+  flex-shrink: 0; position: relative; z-index: 1;
+}
+.step-number.t0    { background: var(--periwinkle); color: white; }
+.step-number.t2    { background: #7b76ec; color: white; }
+.step-number.t5    { background: var(--teal); color: white; }
+.step-number.t15   { background: #3a9070; color: white; }
+.step-number.t30   { background: var(--coral); color: white; }
+.step-number.bonus { background: var(--amber-50); color: var(--amber-800); border: 1.5px solid #f5c96a; }
+
+.step-time-tag {
+  font-size: 0.66rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-muted); margin-top: 5px;
+  text-align: center; white-space: nowrap;
+}
+
+.step-content {
+  flex: 1; min-width: 0;
+  padding-top: 4px;
+}
+.step-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem; font-weight: 500;
+  margin-bottom: 0.5rem; color: var(--text);
+  line-height: 1.3;
+}
+.step-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 0.75rem;
+}
+.step-card-label {
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 0.6rem;
+}
+.step-card p {
+  font-size: 0.88rem; line-height: 1.78;
+  color: #3d3b37;
+}
+.step-card p + p { margin-top: 0.65rem; }
+.step-card strong { font-weight: 500; color: var(--text); }
+
+/* Highlight cards */
+.step-card.highlight-periwinkle {
+  background: var(--periwinkle-50);
+  border-color: var(--periwinkle-100);
+}
+.step-card.highlight-teal {
+  background: var(--teal-50);
+  border-color: #9dd4be;
+}
+.step-card.highlight-coral {
+  background: var(--coral-50);
+  border-color: #e8c0b0;
+}
+.step-card.highlight-amber {
+  background: var(--amber-50);
+  border-color: #f5c96a;
+}
+
+/* Copy example boxes */
+.copy-example {
+  background: var(--ivory);
+  border-left: 3px solid var(--periwinkle);
+  border-radius: 0 10px 10px 0;
+  padding: 1rem 1.2rem;
+  margin-top: 0.75rem;
+}
+.copy-example-label {
+  font-size: 0.65rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--periwinkle-800); margin-bottom: 0.5rem;
+}
+.copy-example p {
+  font-size: 0.86rem; line-height: 1.7;
+  color: #3d3b37; font-style: italic;
+}
+.copy-example strong { font-weight: 500; font-style: normal; color: var(--text); }
+
+/* Checklist */
+.checklist {
+  list-style: none;
+  display: flex; flex-direction: column;
+  gap: 0.55rem; margin-top: 0.75rem;
+}
+.checklist li {
+  display: flex; align-items: flex-start; gap: 0.65rem;
+  font-size: 0.88rem; line-height: 1.65; color: #3d3b37;
+}
+.check-icon {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--teal-50);
+  border: 1.5px solid var(--teal);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px;
+}
+.check-icon svg { display: block; }
+
+/* Warning box */
+.warning-box {
+  background: #fff8f0;
+  border: 1px solid #f5c96a;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-top: 0.75rem;
+  display: flex; gap: 0.75rem; align-items: flex-start;
+}
+.warning-icon {
+  font-size: 1rem; flex-shrink: 0; margin-top: 1px;
+}
+.warning-text {
+  font-size: 0.85rem; line-height: 1.7;
+  color: #5a4010;
+}
+.warning-text strong { font-weight: 500; }
+
+/* ── THE GOAL SECTION ── */
+.goal-section {
+  margin-bottom: 2.5rem;
+}
+.goal-card {
+  background: var(--text);
+  border-radius: 18px;
+  padding: 2rem;
+  color: white;
+}
+.goal-card-eyebrow {
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: #9d96e8; margin-bottom: 0.6rem;
+}
+.goal-card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem; font-weight: 500;
+  margin-bottom: 1.1rem; color: white;
+  line-height: 1.3;
+}
+.goal-card p {
+  font-size: 0.9rem; line-height: 1.82;
+  color: #c2bfb8;
+}
+.goal-card p + p { margin-top: 0.75rem; }
+.goal-card strong { color: white; font-weight: 500; }
+.goal-highlight {
+  margin-top: 1.25rem;
+  background: rgba(222,255,85,0.1);
+  border: 1px solid rgba(222,255,85,0.25);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+.goal-highlight p {
+  font-size: 0.88rem; line-height: 1.7;
+  color: #e8e4dc;
+}
+.goal-highlight strong { color: var(--lime); }
+
+/* ── QUICK REFERENCE TABLE ── */
+.ref-section {
+  margin-bottom: 2.5rem;
+}
+.ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.ref-table th {
+  background: var(--ivory);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+.ref-table td {
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem; line-height: 1.6;
+  color: #3d3b37;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: top;
+}
+.ref-table tr:last-child td { border-bottom: none; }
+.ref-table tr:nth-child(even) td { background: #fdfcfa; }
+.time-cell {
+  font-weight: 500; color: var(--text);
+  white-space: nowrap; width: 90px;
+}
+.action-cell { font-weight: 500; }
+.goal-cell { color: var(--text-muted); font-size: 0.82rem; }
+
+/* ── NEXT STEP ── */
+.next-step {
+  background: var(--ivory);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2.5rem;
+}
+.next-step-eyebrow {
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 0.35rem;
+}
+.next-step-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem; font-weight: 500;
+  color: var(--text); margin-bottom: 0.35rem;
+}
+.next-step-desc {
+  font-size: 0.84rem; color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ── PRINT BUTTON ── */
+.print-bar {
+  text-align: center;
+  padding: 0 0 1rem;
+  margin-bottom: 1rem;
+}
+.btn-print {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 1.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem; color: var(--text-muted);
+  cursor: pointer; transition: all 0.15s;
+}
+.btn-print:hover {
+  border-color: #ccc8c0;
+  color: var(--text);
+  background: var(--ivory);
+}
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center;
+  padding: 1rem 0 3rem;
+  font-size: 0.78rem; color: var(--text-muted);
+}
+.footer a { color: var(--periwinkle); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* ── DIVIDER ── */
+.section-divider {
+  height: 1px;
+  background: var(--border-light);
+  margin: 2.5rem 0;
+}
+</style>
+</head>
+<body>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="header-eyebrow">Perfectly Made Marketing — Bonus Resource</div>
+  <div class="header-title">The 30 Minute Window Guide</div>
+  <div class="header-sub">You got the opt-in. Then nothing happened. Here is exactly what was supposed to — and the fill-in-the-blank templates to build it today.</div>
+  <div class="header-badge">
+    <span class="badge-dot"></span>
+    Keep this open while you build
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- WHY THIS MATTERS -->
+<div class="why-section">
+  <div class="why-card">
+    <div class="why-card-title">The window most service providers leave completely empty</div>
+    <p>Every time someone opts in, a window opens. For the next 30 minutes they are more interested in what you do than they will ever be again. They just raised their hand. They just gave you their email address. The system needs to respond immediately — not in ten minutes, not in an hour. Immediately.</p>
+    <p>Most service providers leave that window empty. The lead gets a confirmation email — if that — and then silence. By the time anything else arrives, the moment has passed. They moved on. The interest that was real and present is now lukewarm at best. <strong>This guide shows you exactly what should happen in that window — and gives you the templates to build it.</strong></p>
+  </div>
+</div>
+
+<!-- DIAGNOSTIC CONNECTION — EARLY -->
+<div class="next-step" style="margin-bottom:2rem;">
+  <div class="next-step-eyebrow">Connect this to your diagnostic results</div>
+  <div class="next-step-title">If your Booked stage score was below 60%</div>
+  <div class="next-step-desc">The 30-minute window is almost certainly where your primary gap is. Use this guide to build the thank you page and Email 1 first. Those two pieces alone — built and connected — will produce a measurable difference in your booking rate within the first week they are live. Do not move to Email 2 until Email 1 is confirmed triggering correctly.</div>
+</div>
+
+<!-- QUICK REFERENCE TABLE — MOVED TO TOP -->
+<div class="ref-section">
+  <div class="section-heading">
+    <div class="section-eyebrow">The complete sequence at a glance</div>
+    <div class="section-title">What happens — and when</div>
+  </div>
+  <table class="ref-table">
+    <thead>
+      <tr>
+        <th>When</th>
+        <th>What happens</th>
+        <th>The goal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="time-cell">0:00 — Instant</td>
+        <td class="action-cell">They submit the opt-in form</td>
+        <td class="goal-cell">System triggers immediately — no delay</td>
+      </tr>
+      <tr>
+        <td class="time-cell">0:00 — Instant</td>
+        <td class="action-cell">Thank you page loads with booking link</td>
+        <td class="goal-cell">Capture the highest-interest moment before the email even arrives</td>
+      </tr>
+      <tr>
+        <td class="time-cell">~2 min</td>
+        <td class="action-cell">Email 1 — lead magnet delivery + reframe</td>
+        <td class="goal-cell">Deliver what was promised, reframe the problem, plant the discovery call seed</td>
+      </tr>
+      <tr>
+        <td class="time-cell">~24 hours</td>
+        <td class="action-cell">Email 2 — proof story + booking invitation</td>
+        <td class="goal-cell">Build belief through your before and after, make the direct ask</td>
+      </tr>
+      <tr>
+        <td class="time-cell">~48 hours</td>
+        <td class="action-cell">Email 3 — short close, direct calendar link</td>
+        <td class="goal-cell">Final invitation before the immediate window ends, low pressure, clear action</td>
+      </tr>
+      <tr>
+        <td class="time-cell">Day 3 onward</td>
+        <td class="action-cell">Welcome sequence begins</td>
+        <td class="goal-cell">Continue nurturing leads who did not book in the first 48 hours</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section-divider"></div>
+<div class="section-heading">
+  <div class="section-eyebrow">Step by step</div>
+  <div class="section-title">What to build — and exactly what it should say</div>
+</div>
+
+<div class="timeline">
+  <div class="timeline-line"></div>
+
+  <!-- T: 0 -->
+  <div class="step-block">
+    <div class="step-marker">
+      <div class="step-number t0">0</div>
+      <div class="step-time-tag">Instant</div>
+    </div>
+    <div class="step-content">
+      <div class="step-title">They submit the opt-in form</div>
+      <div class="step-card">
+        <div class="step-card-label">What just happened</div>
+        <p>Someone clicked your ad, read your opt-in page, and gave you their email. This is the highest-interest moment in their entire journey with you. The system needs to respond immediately. Not in ten minutes. Not in an hour. The moment they hit submit, the window opens — and it starts closing just as fast.</p>
+        <div class="warning-box">
+          <div class="warning-icon">⚡</div>
+          <div class="warning-text"><strong>Why this matters:</strong> Every service provider who has built this window correctly reports the same thing — leads who would have gone cold start booking. Not because the content is better. Because something was actually there to meet them when their interest was at its highest. An empty window is an invisible leak. You cannot see the bookings you are not getting.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- T: 0 THANK YOU PAGE -->
+  <div class="step-block">
+    <div class="step-marker">
+      <div class="step-number t0">0</div>
+      <div class="step-time-tag">Instant</div>
+    </div>
+    <div class="step-content">
+      <div class="step-title">They land on your thank you page</div>
+      <div class="step-card">
+        <div class="step-card-label">What this page needs to do</div>
+        <p>The thank you page is the first thing they see after opting in. Most people use it to say "check your email for your download." That is the most expensive mistake in the entire funnel. This is your warmest possible moment and you are using it to tell someone to go somewhere else.</p>
+        <p>The thank you page has one job beyond confirming the opt-in: <strong>introduce the possibility of a discovery call before the email sequence even begins.</strong> Not as a hard sell. As a natural next step framed around getting their specific questions answered faster.</p>
+      </div>
+      <div class="step-card highlight-periwinkle">
+        <div class="step-card-label">Thank you page copy — fill in the blanks</div>
+        <p>Confirm the opt-in in one sentence. Then pivot immediately to the discovery call framed as the fastest way to get their specific question answered.</p>
+        <div class="copy-example">
+          <div class="copy-example-label">Template — replace the brackets with your details</div>
+          <p>"You are in. Your [name of lead magnet] is on its way to your inbox right now. <strong>While you wait —</strong> if you want to find out exactly which of [the fixes / the steps / the strategies] inside applies to your specific situation, I have a few [discovery calls / strategy sessions / consultations] open this week. It is free. It is [X] minutes. And you will leave knowing exactly [the specific outcome they will get]."</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-card-label">What to include on this page</div>
+        <ul class="checklist">
+          <li>
+            <span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6L8 1" stroke="#1d9e75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            One sentence confirming their opt-in and what is coming to their inbox
+          </li>
+          <li>
+            <span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6L8 1" stroke="#1d9e75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            A natural bridge to the discovery call — framed as speed, not pressure
+          </li>
+          <li>
+            <span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6L8 1" stroke="#1d9e75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Your booking calendar embedded directly on the page — not a link to another page
+          </li>
+          <li>
+            <span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6L8 1" stroke="#1d9e75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            No navigation, no other links, no distractions — one possible action only
+          </li>
+          <li>
+            <span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6L8 1" stroke="#1d9e75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Mobile-friendly layout — most opt-ins happen on a phone
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- T: 2 MINS -->
+  <div class="step-block">
+    <div class="step-marker">
+      <div class="step-number t2">2</div>
+      <div class="step-time-tag">~2 min</div>
+    </div>
+    <div class="step-content">
+      <div class="step-title">Email 1 lands in their inbox — the delivery email</div>
+      <div class="step-card">
+        <div class="step-card-label">What this email needs to do</div>
+        <p>Deliver the lead magnet. That is the primary job. But it should do two more things immediately after: reframe what they are about to read, and plant the first seed of a discovery call. Do not pitch the call directly. Simply make sure the first email they receive from you does more than hand over a PDF.</p>
+      </div>
+      <div class="step-card highlight-periwinkle">
+        <div class="step-card-label">Email 1 — fill in the blanks</div>
+        <p><strong>Subject template:</strong> Your [name of lead magnet] is here — plus one thing to know before you read it</p>
+        <div class="copy-example">
+          <div class="copy-example-label">Body template — replace the brackets with your details</div>
+          <p>"Hey [first name] — your [lead magnet name] is [attached / linked below]. Before you open it, one thing worth knowing: the [number] [fixes / steps / strategies] inside are the most common gaps I see. But there is always one that matters most for your specific situation.</p>
+          <p>When I [your before — describe what you were experiencing before you solved this], the problem turned out to be one specific piece — not [the number]. This [guide / resource] will help you see the picture. [If you have a next step — diagnostic, video, etc. — name it here] will tell you which piece is yours.</p>
+          <p>Go through it. I will be back in a few hours with something that goes deeper.<br><strong>[Your name]</strong></p>
+          <p>P.S. If you want to skip straight to finding your specific [gap / issue / problem], reply to this email with the word READY and I will send you [the next step] now."</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-card-label">Why the P.S. matters</div>
+        <p>The P.S. creates a self-selection moment. The leads who are most ready — the ones who have been sitting with this problem the longest — will reply. Those are your warmest leads and this gives them a way to raise their hand again before the automated sequence even gets to them. Respond to every reply personally.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- T: 30 MINS -->
+  <div class="step-block">
+    <div class="step-marker">
+      <div class="step-number t30">30</div>
+      <div class="step-time-tag">~30 min</div>
+    </div>
+    <div class="step-content">
+      <div class="step-title">The window is closing — but the sequence continues</div>
+      <div class="step-card">
+        <div class="step-card-label">What happens after 30 minutes</div>
+        <p>The 30-minute window closing does not mean the lead is lost. It means the highest-interest moment has passed and you are now working with a lead who needs more trust and more exposure before they will book. This is exactly what the follow-up sequence — and the Paid stage — are built to handle.</p>
+        <p>A lead who did not book in the first 30 minutes can still book in hour 2, day 2, or week 6. The system keeps them moving. <strong>But none of that compounds without getting the 30-minute window right first.</strong> Everything downstream is built on what you do in these first 30 minutes.</p>
+      </div>
+      <div class="step-card highlight-coral">
+        <div class="step-card-label">The most common mistake at this point</div>
+        <p>Turning on ads before this window is built. If leads are opting in and there is no thank you page with a booking link, no immediate delivery email, and no follow-up sequence queued — you are running a campaign that fills a lead list and nothing else. Every dollar spent on ads before this window exists is a dollar generating leads with nowhere to go.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BONUS: DAYS 1-2 -->
+  <div class="step-block">
+    <div class="step-marker">
+      <div class="step-number bonus">+</div>
+      <div class="step-time-tag">Days 1–2</div>
+    </div>
+    <div class="step-content">
+      <div class="step-title">What comes after — the 48-hour follow-up window</div>
+      <div class="step-card">
+        <div class="step-card-label">Email 2 — 24 hours after opt-in</div>
+        <p>This email picks up naturally from Email 1. Its job is to move from the general problem to the specific solution — and to give them one more direct opportunity to book a call. This is where your proof story lives. Your before and your after. The specific numbers. The specific result. Not to impress them — to show them that what they want is real and you have produced it.</p>
+        <div class="copy-example">
+          <div class="copy-example-label">Subject line template — replace the brackets</div>
+          <p>"[Your before in plain numbers or plain language]. Here is what I found." — Lead with the before, not the solution. Your ideal client should read the subject line and think: that is describing my exact situation right now.</p>
+          <p><strong>Example structure:</strong> [What you were experiencing before] → [What changed] → [The specific result]. Keep it to 2–3 sentences. Close with a direct calendar link and one sentence framing the call.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-card-label">Email 3 — 48 hours after opt-in</div>
+        <p>The final email in the immediate window. This one is short. It reminds them that everything from Email 1 is still available. One clear call to action. One visible calendar link. No new content. A clean, specific, low-pressure close.</p>
+        <div class="copy-example">
+          <div class="copy-example-label">Subject line template — replace the brackets</div>
+          <p>"One more thing before we move on" — or any version that signals this is the close of the immediate sequence while keeping the relationship open. Body should be 3–4 sentences maximum. Restate the problem in one sentence. Restate the invitation in one sentence. Link. Done.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end timeline -->
+
+<!-- ONE THING TO REMEMBER -->
+<div class="goal-section">
+  <div class="goal-card">
+    <div class="goal-card-eyebrow">The one thing to remember</div>
+    <div class="goal-card-title">The window does not only book more calls. It builds the belief that makes people want to book.</div>
+    <div class="goal-highlight">
+      <p>When the thank you page speaks to why they opted in and the first email reframes the problem in a way that makes them think <strong>"yes, that is exactly what I mean"</strong> — something shifts. They stop seeing you as someone who has a product and start seeing you as someone who has the answer. Build the window and the bookings follow. Leave it empty and leads keep disappearing — not because they were not interested, but because nothing was there to meet them.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- PRINT BUTTON -->
+<div class="print-bar no-print">
+  <button class="btn-print" onclick="triggerPrint()">Print or save as PDF ↓</button>
+  <p style="font-size:0.73rem;color:var(--text-muted);margin-top:0.5rem;">If the button does not open a print dialog, use <strong>Ctrl+P</strong> (Windows) or <strong>Cmd+P</strong> (Mac) — or right-click and choose Print. Make sure to open this file directly in your browser for the best result.</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>Perfectly Made Marketing &nbsp;·&nbsp; <a href="https://perfectlymademarketing.com" target="_blank">perfectlymademarketing.com</a></p>
+  <p style="margin-top:0.4rem;">Part of the Seen Booked Paid Diagnostic — Bonus 1 of 3</p>
+</div>
+
+</div><!-- end .wrap -->
+<script>
+function triggerPrint() {
+  try {
+    window.print();
+  } catch(e) {
+    alert('To save as PDF: use Ctrl+P (Windows) or Cmd+P (Mac) and choose "Save as PDF" as your printer.');
+  }
+}
+</script>
+</body>
+</html>

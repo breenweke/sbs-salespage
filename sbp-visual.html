@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Seen Booked Paid Diagnostic — Perfectly Made Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #fdfbf7;
+  --ivory: #f9f6f0;
+  --blush: #fdf5f0;
+  --text: #2c2a27;
+  --text-muted: #706e68;
+  --border: #e8e2d9;
+  --border-light: #f0ece5;
+  --periwinkle: #6b66e9;
+  --periwinkle-50: #eeedfe;
+  --periwinkle-800: #3c3489;
+  --teal: #1d9e75;
+  --teal-50: #e1f5ee;
+  --teal-800: #085041;
+  --coral: #c8552a;
+  --coral-50: #faece7;
+  --coral-800: #6b2714;
+  --lime: #deff55;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: var(--text);
+  padding: 2.5rem 1.25rem 4rem;
+  min-height: 100vh;
+}
+.wrap { max-width: 880px; margin: 0 auto; }
+
+/* Header */
+.header { text-align: center; margin-bottom: 2.5rem; }
+.header .eyebrow {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--periwinkle);
+  margin-bottom: 0.6rem;
+}
+.header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.55rem;
+  color: var(--text);
+}
+.header p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+
+/* Diagram card */
+.diagram-card {
+  background: var(--ivory);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.75rem 1.5rem;
+  margin-bottom: 0.6rem;
+  overflow-x: auto;
+}
+.diagram-card svg { width: 100%; min-width: 560px; height: auto; display: block; }
+
+/* Hint */
+.hint {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.hint-dot {
+  width: 6px; height: 6px;
+  background: var(--periwinkle);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* Explanation panel */
+.explanation {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem 2rem 2.25rem;
+  margin-bottom: 2rem;
+  display: none;
+}
+.explanation.open {
+  display: block;
+  animation: fadeUp 0.22s ease;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.exp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.exp-meta { flex: 1; min-width: 0; }
+.exp-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+.exp-tag.seen   { background: var(--periwinkle-50); color: var(--periwinkle-800); }
+.exp-tag.booked { background: var(--teal-50);       color: var(--teal-800); }
+.exp-tag.paid   { background: var(--coral-50);       color: var(--coral-800); }
+.exp-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--text);
+}
+.exp-close {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 14px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.exp-close:hover { background: var(--ivory); border-color: #ccc8c0; }
+.exp-divider { height: 1px; background: var(--border-light); margin-bottom: 1.25rem; }
+.exp-body { font-size: 0.91rem; line-height: 1.82; color: #3d3b37; }
+.exp-body p + p { margin-top: 0.85rem; }
+
+/* Item hover states via CSS */
+.item-group { cursor: pointer; }
+.item-group:hover .item-rect { opacity: 0.78; }
+.item-group.active .item-rect {
+  stroke-width: 2.5 !important;
+  filter: drop-shadow(0 0 4px rgba(107,102,233,0.18));
+}
+.stage-head { cursor: pointer; }
+.stage-head:hover rect { opacity: 0.88; }
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.footer a { color: var(--periwinkle); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* Accent bar */
+.accent-bar {
+  height: 3px;
+  background: var(--lime);
+  border-radius: 2px;
+  width: 40px;
+  margin: 0 auto 2rem;
+}
+
+/* Step indicator */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+.step-pip {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background 0.2s;
+}
+.step-pip.active { background: var(--periwinkle); }
+.step-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Intro card */
+.intro-card {
+  background: var(--blush);
+  border: 1px solid #f0e8e0;
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+}
+.intro-card p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #4a4844;
+}
+.intro-card p + p { margin-top: 0.7rem; }
+.intro-card strong { font-weight: 500; color: var(--text); }
+
+/* Broken callout inside explanations */
+.broken-callout {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: #fdf9f5;
+  border-left: 3px solid var(--lime);
+  border-radius: 0 8px 8px 0;
+}
+.broken-callout-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.45rem;
+}
+.broken-callout p {
+  font-size: 0.87rem;
+  line-height: 1.7;
+  color: #4a4844;
+  margin-top: 0 !important;
+}
+
+/* Next step section */
+.next-step {
+  background: var(--ivory);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.next-step-text {}
+.next-step-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.35rem;
+}
+.next-step-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+.next-step-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="eyebrow">Perfectly Made Marketing</div>
+    <h1>The Seen Booked Paid Diagnostic</h1>
+    <p>Step 1 of 5 — The complete picture</p>
+  </div>
+  <div class="accent-bar"></div>
+
+  <div class="step-indicator">
+    <span class="step-pip active"></span>
+    <span class="step-pip"></span>
+    <span class="step-pip"></span>
+    <span class="step-pip"></span>
+    <span class="step-pip"></span>
+    <span class="step-label">Step 1 of 5</span>
+  </div>
+
+  <div class="intro-card">
+    <p>Before you can find where your system is broken, you need to see what a complete system actually looks like. Most service providers have never had this. Pieces from a course here, advice from a YouTube video there — but never the whole picture in one place.</p>
+    <p><strong>This is the complete Self-Booking System.</strong> Every piece across all three stages, in the exact order they connect. Study it. When you move through the diagnostic in the next step, you will know exactly what you are looking for — and exactly what is missing from your own system.</p>
+    <p>Tap any element to see what it does, what it looks like when it is built correctly, and the most common signs that it is broken or missing in your funnel.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg" style="font-family:'DM Sans',system-ui,sans-serif;">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#aaa69e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="arr-main" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#706e68" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <!-- Title -->
+      <text x="340" y="33" text-anchor="middle" font-size="15.5" font-weight="500" fill="#2c2a27" font-family="'Playfair Display',Georgia,serif">The Self-Booking System</text>
+      <text x="340" y="51" text-anchor="middle" font-size="11" fill="#706e68">Every piece. In order. Connected.</text>
+
+      <!-- Container outlines -->
+      <rect x="45" y="64" width="160" height="302" rx="10" fill="none" stroke="#e8e2d9" stroke-width="0.5"/>
+      <rect x="255" y="64" width="160" height="302" rx="10" fill="none" stroke="#e8e2d9" stroke-width="0.5"/>
+      <rect x="465" y="64" width="160" height="302" rx="10" fill="none" stroke="#e8e2d9" stroke-width="0.5"/>
+
+      <!-- ── SEEN header ── -->
+      <g class="stage-head" onclick="showPanel('seen-stage',this)">
+        <rect x="45" y="64" width="160" height="40" rx="10" fill="#6b66e9" stroke="none"/>
+        <rect x="45" y="93" width="160" height="11" fill="#6b66e9" stroke="none"/>
+        <text x="125" y="85" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="white">01 — Seen</text>
+      </g>
+      <line x1="53" y1="104" x2="197" y2="104" stroke="#e8e2d9" stroke-width="0.5"/>
+
+      <!-- SEEN items (5 — unchanged) -->
+      <g class="item-group" onclick="showPanel('profile',this)">
+        <rect class="item-rect" x="53" y="112" width="144" height="34" rx="6" fill="#eeedfe" stroke="#6b66e9" stroke-width="0.6"/>
+        <text x="125" y="129" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#3c3489">Optimized profile</text>
+      </g>
+      <line x1="125" y1="146" x2="125" y2="154" stroke="#ccc8c0" stroke-width="0.5" marker-end="url(#arr)"/>
+
+      <g class="item-group" onclick="showPanel('creative',this)">
+        <rect class="item-rect" x="53" y="155" width="144" height="34" rx="6" fill="#eeedfe" stroke="#6b66e9" stroke-width="0.6"/>
+        <text x="125" y="172" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#3c3489">Ad creative</text>
+      </g>
+      <line x1="125" y1="189" x2="125" y2="197" stroke="#ccc8c0" stroke-width="0.5" marker-end="url(#arr)"/>
+
+      <g class="item-group" onclick="showPanel('copy',this)">
+        <rect class="item-rect" x="53" y="198" width="144" height="34" rx="6" fill="#eeedfe" stroke="#6b66e9" stroke-width="0.6"/>
+        <text x="125" y="215" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#3c3489">Ad copy + hook</text>
+      </g>
+      <line x1="125" y1="232" x2="125" y2="240" stroke="#ccc8c0" stroke-width="0.5" marker-end="url(#arr)"/>
+
+      <g class="item-group" onclick="showPanel('magnet',this)">
+        <rect class="item-rect" x="53" y="241" width="144" height="34" rx="6" fill="#eeedfe" stroke="#6b66e9" stroke-width="0.6"/>
+        <text x="125" y="258" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#3c3489">Lead magnet</text>
+      </g>
+      <line x1="125" y1="275" x2="125" y2="283" stroke="#ccc8c0" stroke-width="0.5" marker-end="url(#arr)"/>
+
+      <g class="item-group" onclick="showPanel('targeting',this)">
+        <rect class="item-rect" x="53" y="284" width="144" height="34" rx="6" fill="#eeedfe" stroke="#6b66e9" stroke-width="0.6"/>
+        <text x="125" y="301" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#3c3489">Audience targeting</text>
+      </g>
+      <text x="125" y="347" text-anchor="middle" font-size="10" fill="#aaa69e" font-style="italic">Lead raises hand</text>
+
+      <!-- SEEN → BOOKED arrow -->
+      <line x1="205" y1="218" x2="245" y2="218" stroke="#706e68" stroke-width="1.5" marker-end="url(#arr-main)"/>
+
+      <!-- ── BOOKED header ── -->
+      <g class="stage-head" onclick="showPanel('booked-stage',this)">
+        <rect x="255" y="64" width="160" height="40" rx="10" fill="#1d9e75" stroke="none"/>
+        <rect x="255" y="93" width="160" height="11" fill="#1d9e75" stroke="none"/>
+        <text x="335" y="85" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="white">02 — Booked</text>
+      </g>
+      <line x1="263" y1="104" x2="407" y2="104" stroke="#e8e2d9" stroke-width="0.5"/>
+
+      <!-- BOOKED items (3 — optin normal, thankyou+booking tall, followup+welcome tall) -->
+      <g class="item-group" onclick="showPanel('optin',this)">
+        <rect class="item-rect" x="263" y="112" width="144" height="34" rx="6" fill="#e1f5ee" stroke="#1d9e75" stroke-width="0.6"/>
+        <text x="335" y="129" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#085041">Opt-in page</text>
+      </g>
+      <line x1="335" y1="146" x2="335" y2="154" stroke="#ccc8c0" stroke-width="0.5" marker-end="url(#arr)"/>
+
+      <!-- Thank you + Booking page (combined tall box) -->
+      <g class="item-group" onclick="showPanel('thankyou',this)">
+        <rect class="item-rect" x="263" y="155" width="144" height="77" rx="6" fill="#e1f5ee" stroke="#1d9e75" stroke-width="0.6"/>
+        <text x="335" y="187" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#085041">Thank you +</text>
+        <text x="335" y="201" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#085041">Booking page</text>
+      </g>
+      <line x1="335" y1="232" x2="335" y2="241" stroke="#ccc8c0" stroke-width="0.5" marker-end="url(#arr)"/>
+
+      <!-- Follow-up + Welcome Sequence (combined tall box) -->
+      <g class="item-group" onclick="showPanel('followup',this)">
+        <rect class="item-rect" x="263" y="241" width="144" height="77" rx="6" fill="#e1f5ee" stroke="#1d9e75" stroke-width="0.6"/>
+        <text x="335" y="273" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#085041">Follow-up +</text>
+        <text x="335" y="287" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#085041">Welcome Sequence</text>
+      </g>
+      <text x="335" y="347" text-anchor="middle" font-size="10" fill="#aaa69e" font-style="italic">Call on calendar</text>
+
+      <!-- BOOKED → PAID arrow -->
+      <line x1="415" y1="218" x2="455" y2="218" stroke="#706e68" stroke-width="1.5" marker-end="url(#arr-main)"/>
+
+      <!-- ── PAID header ── -->
+      <g class="stage-head" onclick="showPanel('paid-stage',this)">
+        <rect x="465" y="64" width="160" height="40" rx="10" fill="#c8552a" stroke="none"/>
+        <rect x="465" y="93" width="160" height="11" fill="#c8552a" stroke="none"/>
+        <text x="545" y="85" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="white">03 — Paid</text>
+      </g>
+      <line x1="473" y1="104" x2="617" y2="104" stroke="#e8e2d9" stroke-width="0.5"/>
+
+      <!-- PAID items (4 — nurture, reengage, appt+reminders tall, sales call) -->
+      <g class="item-group" onclick="showPanel('nurture',this)">
+        <rect class="item-rect" x="473" y="112" width="144" height="34" rx="6" fill="#faece7" stroke="#c8552a" stroke-width="0.6"/>
+        <text x="545" y="129" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#6b2714">Nurture emails</text>
+      </g>
+      <line x1="545" y1="146" x2="545" y2="154" stroke="#ccc8c0" stroke-width="0.5" marker-end="url(#arr)"/>
+
+      <g class="item-group" onclick="showPanel('reengage',this)">
+        <rect class="item-rect" x="473" y="155" width="144" height="34" rx="6" fill="#faece7" stroke="#c8552a" stroke-width="0.6"/>
+        <text x="545" y="172" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#6b2714">Re-engagement</text>
+      </g>
+      <line x1="545" y1="189" x2="545" y2="197" stroke="#ccc8c0" stroke-width="0.5" marker-end="url(#arr)"/>
+
+      <!-- Appointment Setup + Reminders (combined tall box) -->
+      <g class="item-group" onclick="showPanel('reminders',this)">
+        <rect class="item-rect" x="473" y="198" width="144" height="77" rx="6" fill="#faece7" stroke="#c8552a" stroke-width="0.6"/>
+        <text x="545" y="230" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#6b2714">Appointment Setup</text>
+        <text x="545" y="244" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#6b2714">+ Reminders</text>
+      </g>
+      <line x1="545" y1="275" x2="545" y2="283" stroke="#ccc8c0" stroke-width="0.5" marker-end="url(#arr)"/>
+
+      <g class="item-group" onclick="showPanel('salescall',this)">
+        <rect class="item-rect" x="473" y="284" width="144" height="34" rx="6" fill="#faece7" stroke="#c8552a" stroke-width="0.6"/>
+        <text x="545" y="301" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#6b2714">Your sales call</text>
+      </g>
+      <text x="545" y="347" text-anchor="middle" font-size="10" fill="#aaa69e" font-style="italic">Lead becomes client</text>
+
+      <!-- Bottom caption -->
+      <text x="340" y="393" text-anchor="middle" font-size="10.5" fill="#aaa69e">Meta ad click → opt-in → booked call — all running automatically</text>
+    </svg>
+  </div>
+
+  <div class="hint">
+    <span class="hint-dot"></span>
+    Tap any element to see what it looks like when it is working — and the most common signs it is broken in your system
+  </div>
+
+  <div class="explanation" id="explanation">
+    <div class="exp-header">
+      <div class="exp-meta">
+        <div class="exp-tag" id="exp-tag"></div>
+        <div class="exp-title" id="exp-title"></div>
+      </div>
+      <button class="exp-close" onclick="closePanel()">close ×</button>
+    </div>
+    <div class="exp-divider"></div>
+    <div class="exp-body" id="exp-body"></div>
+  </div>
+
+  <div class="next-step">
+    <div class="next-step-text">
+      <div class="next-step-eyebrow">Up next — Step 2 of 5</div>
+      <div class="next-step-title">The Stage by Stage Diagnostic</div>
+      <div class="next-step-desc">Now that you have seen the complete system, you will move through a yes/no diagnostic for every piece across all three stages. In about 20 minutes you will know exactly which pieces you have, which are missing, and which are connected incorrectly.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Perfectly Made Marketing &nbsp;·&nbsp; <a href="https://perfectlymademarketing.com" target="_blank">perfectlymademarketing.com</a></p>
+  </div>
+
+</div>
+
+<script>
+var activeEl = null;
+
+var data = {
+  'seen-stage': {
+    stage: 'seen',
+    title: '01 — The Seen stage',
+    body: '<p>The Seen stage is where the right person finds you and raises their hand. Every piece in this stage exists to attract the buyer — not the browser. The goal is not a large lead list. The goal is a list full of the right people.</p><p>If your system has leads coming in but nobody booking, the problem may start here or it may start downstream in Booked or Paid. The Seen Booked Paid Diagnostic will show you exactly where your specific leak is.</p><p>Most service providers running Meta ads have some version of a Seen stage built. What they are often missing is the specificity. A lead magnet that speaks to anyone converts for no one. An ad that targets broadly produces cheap leads that go nowhere. The Seen stage works when every piece is calibrated to attract one specific person with one specific problem — and repel everyone else.</p><div class="broken-callout"><div class="broken-callout-label">Common signs your Seen stage has a gap</div><p>You are getting leads but they feel unqualified or unresponsive. Your cost per lead keeps rising without a corresponding rise in bookings. Your lead volume is low even with a reasonable budget. People opt in but seem confused about what you actually do when they get on a call.</p></div>'
+  },
+  'profile': {
+    stage: 'seen',
+    title: 'Optimized profile',
+    body: '<p>Your Facebook and Instagram profile is the first place someone goes after seeing your ad. If your profile does not immediately confirm that you understand their problem and can solve it, warm leads go cold before they ever opt in.</p><p>An optimized profile includes a clear bio that speaks directly to your ideal client\'s exact situation, a link that goes straight to your lead magnet rather than a general homepage, and pinned content that demonstrates you understand the problem they are already living.</p><p>The most common mistake is treating the profile as a personal introduction rather than a conversion tool. The person who found you through your ad is not looking for your backstory. They are looking for confirmation that you are the right person to solve their specific problem. Your profile should answer that question in under ten seconds — or they are gone.</p><div class="broken-callout"><div class="broken-callout-label">Common signs this piece is broken or missing</div><p>Your profile link goes to your website homepage rather than your lead magnet. Your bio describes what you do without speaking to the problem your ideal client is actively experiencing. Your pinned posts are about you rather than about them. Someone could visit your profile after seeing your ad and have no idea what to do next.</p></div>'
+  },
+  'creative': {
+    stage: 'seen',
+    title: 'Ad creative',
+    body: '<p>The creative is what stops the scroll. The creative that works almost always leads with the symptom your ideal client is already experiencing — not the solution you offer. When someone sees themselves in your ad before you have even explained what you do, they stop.</p><p>A direct-to-camera video where you name the specific problem your ideal client is living will outperform a polished graphic almost every time. It does not need to be long. It does not need to be produced. It needs to make the right person think: that is describing exactly what I am going through. That recognition is what earns the click.</p><p>The creative does not close the deal. It earns the click. Everything downstream converts the click into a booked call. A strong creative feeding a broken system still produces an empty calendar — which is exactly what the diagnostic is designed to identify.</p><div class="broken-callout"><div class="broken-callout-label">Common signs this piece is broken or missing</div><p>Your click-through rate is low relative to your impressions. Your ad leads with your credentials or offer rather than your ideal client\'s problem. You are using a boosted post rather than a purpose-built ad campaign. Your creative has been running for months without a refresh and your CPL is climbing. You are sending people directly to a booking page or sales page without a lead magnet in between.</p></div>'
+  },
+  'copy': {
+    stage: 'seen',
+    title: 'Ad copy + hook',
+    body: '<p>The hook is the first line of your ad — and the first line is the only line most people read before deciding whether to keep reading or keep scrolling. Your hook needs to name the specific situation your ideal client is already in. Not the solution. Not the benefit. The situation they woke up in this morning.</p><p>Think about the exact words your ideal client would use to describe their problem to a friend. The frustration they feel. The thing they have already tried that did not work. Lead with that. When someone reads your hook and thinks "that is exactly what I mean" — they click. When they read a hook that could apply to anyone — they scroll.</p><p>The body copy does two things: it explains why the problem exists and tells them exactly what to click to start solving it. One clear call to action. One specific next step. Nothing else.</p><div class="broken-callout"><div class="broken-callout-label">Common signs this piece is broken or missing</div><p>Your hook leads with your credentials or your offer rather than your ideal client\'s situation. Your body copy describes what you do rather than what they are experiencing. You have no clear call to action telling them exactly what to click and what they will get. Your copy could apply to almost any business — it is not specific enough to make the right person feel like you wrote it for them.</p></div>'
+  },
+  'magnet': {
+    stage: 'seen',
+    title: 'Lead magnet',
+    body: '<p>The lead magnet is the offer your ad promotes — a free guide, checklist, training, or resource that solves one specific problem your ideal client is experiencing right now. For this to work it needs to do one thing: attract the buyer and repel the browser. The more specific the title, the more valuable the list it builds.</p><p>A lead magnet also does something that sending people directly to a booking page never can: it builds your email list. When someone opts in for your lead magnet, you own that relationship. They are on your list. You can stay in front of them, nurture them, and invite them to book a call when they are ready — even if they are not ready today.</p><p>If you send cold traffic directly to a booking page, the people who are not ready to book in that moment are gone forever. You paid for that click and got nothing from it. With a lead magnet, every opt-in becomes an asset on your list. Some will book immediately. The ones who do not are still in your world — and your follow-up sequence keeps them warm until they are ready, instead of losing them to a competitor who was easier to find.</p><p>A lead magnet also consistently lowers your cost per lead and cost per booked call. It is a lower-commitment first step than booking a call, which means more people say yes to it — and your ad spend goes further.</p><div class="broken-callout"><div class="broken-callout-label">Common signs this piece is broken or missing</div><p>You have no lead magnet and are sending cold traffic straight to a booking page or sales page. Your lead magnet title is generic enough that almost anyone might download it. Your lead magnet solves a problem adjacent to but not exactly the same as the problem your service solves — meaning the people who opt in are not the people who will book. You opted in for your own lead magnet recently and it did not feel urgently relevant.</p></div>'
+  },
+  'targeting': {
+    stage: 'seen',
+    title: 'Audience targeting',
+    body: '<p>Your targeting tells Meta who to show the ad to. When you are starting out — or when your warm audience is too small to scale — cold interest-based targeting is where you begin. This is how you get in front of new people who do not already know you but are already experiencing the problem you solve. Cold audiences are how you grow.</p><p>Cold targeting works by selecting interests, behaviors, and demographics that align with your ideal client. The key is specificity — the more precisely you can describe who you are trying to reach, the more efficiently your ad spend works. Broad cold audiences can work, but they require more testing and produce more unqualified leads before the algorithm learns who is most likely to act.</p><p>Once you have enough data — enough opt-ins, enough pixel events, enough people who have engaged with your content — you can layer in warm retargeting audiences. Website visitors, email list, social media engagers, video viewers. These people already have some exposure to you and convert at a higher rate. But you need volume first. Cold audiences build that volume.</p><div class="broken-callout"><div class="broken-callout-label">Common signs this piece is broken or missing</div><p>Your pixel is not installed or not firing correctly on your opt-in page. Your targeting is so broad that leads arrive with no connection to the specific problem your service solves. You have never defined your ideal client specifically enough to build a targeted audience around them. Your cost per lead is high with no clear signal about which audience segment is producing the best results.</p></div>'
+  },
+  'booked-stage': {
+    stage: 'booked',
+    title: '02 — The Booked stage',
+    body: '<p>The Booked stage is the most underbuilt part of most service provider funnels. This is everything that happens between the moment someone opts in and the moment they appear on your calendar as a booked call.</p><p>Most people have one or two pieces of this stage. Almost nobody has all of it built, connected, and running automatically. This is where leads are disappearing — not because they were not interested, but because there was no complete pathway designed to take them from interested to booked without anyone manually chasing them.</p><p>The Booked stage is the core of the Self-Booking System. Get it right and leads who opted in at 11pm on a Tuesday show up on your calendar by Wednesday morning without you doing anything. Get it wrong and you have a list of names that never becomes a calendar of calls. This is the stage that most courses and agencies skip almost entirely.</p><div class="broken-callout"><div class="broken-callout-label">Common signs your Booked stage has a gap</div><p>You are getting leads but your calendar is empty or only filling from manual outreach. You have a booking link somewhere but it is not embedded in an automated pathway. Leads opt in, receive the lead magnet, and then you never hear from them again. You do not have an automated sequence that runs the moment someone opts in. Your opt-in confirmation page just says "thank you, check your email."</p></div>'
+  },
+  'optin': {
+    stage: 'booked',
+    title: 'Opt-in page',
+    body: '<p>The opt-in page has one job: convert the ad click into an email address. Every element on this page should exist to earn that exchange and nothing else.</p><p>A clear headline that names the specific outcome, a brief description of what they get, and a simple form. No navigation. No extra links. No distractions. One goal. The headline should echo the ad creative closely enough that the person who clicked feels like they landed exactly where they expected to land.</p><p>The most common mistake is message mismatch — the ad says one thing and the opt-in page says something slightly different. That disconnect creates friction even when it is subtle. When someone clicks an ad and lands on something that does not feel like a natural continuation of what they just read, they hesitate. Hesitation kills conversions. Every step in the pathway should feel like the obvious next step after the one before it.</p><div class="broken-callout"><div class="broken-callout-label">Common signs this piece is broken or missing</div><p>You do not have a dedicated opt-in page — you are sending people to an on-Facebook lead form, your calendar, or a general website page. Your opt-in page headline does not match the language in your ad. Your page has navigation links that let people wander away from the form. Your conversion rate is below 20% on traffic from your ads. You have not tested your opt-in page recently by going through it yourself as if you were a stranger.</p></div>'
+  },
+  'thankyou': {
+    stage: 'booked',
+    title: 'Thank you + Booking page',
+    body: '<p>The thank you page and the booking page are the same thing. The moment someone opts in, they land on a page that confirms their opt-in and immediately gives them the opportunity to book a call with you. This is not two separate steps — it is one page doing two jobs at the highest-interest moment in the entire lead\'s journey.</p><p>Most people use the thank you page only to say "check your email for your download." That is a waste. The person who just opted in is at peak interest. They clicked an ad, they read a page, they gave you their email. The thank you page should immediately direct them to the next step — booking a call with you. Not in a pushy way. In a natural "while you wait for your resource, here is the fastest way to get your specific questions answered" way.</p><p>A meaningful percentage of leads will book directly from this page without ever needing the follow-up sequence. Every funnel that uses this page only to confirm the download is leaving booked calls on the table before the automated system even begins.</p><div class="broken-callout"><div class="broken-callout-label">Common signs this piece is broken or missing</div><p>There is no mention of booking a call or any invitation to take the next step. Your confirmation page only says "thanks for signing up, check your email." You have never added a booking link or calendar embed to your thank you page. Your calendar is a bare link with no surrounding context about who the call is for or what will happen — a generic meeting title does not convert cold traffic.</p></div>'
+  },
+  'followup': {
+    stage: 'booked',
+    title: 'Follow-up + Welcome Sequence',
+    body: '<p>The follow-up sequence and the welcome sequence are the same thing — one continuous automated email journey that begins the moment someone opts in and continues until they book a call or move into your ongoing nurture. This is the piece that replaces manual follow-up entirely.</p><p>If you have been manually following up with every lead — sending individual emails, DMing people, checking in one by one — you already know how exhausting that is. This sequence does that work automatically, at the right time, with the right message, for every single person who opts in. You set it up once and it runs forever.</p><p>The sequence starts within 30 minutes of opt-in with a delivery email for the lead magnet. Over the following days it introduces who you are, shares your proof story — the specific before and after that demonstrates you have actually solved the problem they are experiencing — and builds toward a direct invitation to book a call. By the end of it, the lead feels like they know you, trust you, and understand exactly what working with you looks like. The booking invitation at that point lands on warm ground.</p><div class="broken-callout"><div class="broken-callout-label">Common signs this piece is broken or missing</div><p>You have no automated email sequence that triggers the moment someone opts in. Your first email goes out hours or days after opt-in rather than within 30 minutes. You are manually following up with leads individually — which means your follow-up is inconsistent and exhausting. Leads opt in and then go completely silent because nothing is reaching out to them automatically.</p></div>'
+  },
+  'paid-stage': {
+    stage: 'paid',
+    title: '03 — The Paid stage',
+    body: '<p>The Paid stage is about the long game. Not every lead who opts in is ready to book immediately. Some need more time. More trust. More exposure to who you are and what you do before they feel ready to get on a call. The Paid stage is designed for exactly those people.</p><p>It keeps your list warm, re-engages leads who went quiet, and makes sure that every call that finally happens converts. This is the difference between a lead list that goes cold after 48 hours and a pipeline that keeps producing booked calls weeks and months after someone first opted in.</p><p>Most service providers do not have a Paid stage at all. They have a follow-up sequence and then silence. Every lead who did not book in the first 48 hours is effectively abandoned. The Paid stage turns those abandoned leads into a long-term asset that keeps producing without requiring any additional ad spend to generate new leads.</p><div class="broken-callout"><div class="broken-callout-label">Common signs your Paid stage has a gap</div><p>Your email communication with leads stops after the initial sequence ends. Leads who did not book immediately are never heard from again — by you or by any automated system. Your list is growing but you have no consistent way of converting older leads into booked calls. You are only booking calls from fresh opt-ins, never from leads who have been on your list for weeks or months.</p></div>'
+  },
+  'nurture': {
+    stage: 'paid',
+    title: 'Nurture emails',
+    body: '<p>Nurture emails are the ongoing communication with your list after your initial sequence ends. They are relationship emails — value, story, insight, proof — that keep your name in front of people who are not yet ready to book but have not moved on. Some of them should also be sales emails. A well-timed email to a warm list can fill your calendar without running a single new ad.</p><p>This is the part most service providers miss: your email list is an asset you own. Your ads can be paused, your social accounts can be restricted, but your list is yours. When you nurture it consistently, you build a pipeline of people who know you, trust you, and think of you first when they are finally ready to move. Send one email to your list and bookings follow — because you have been showing up consistently while everyone else has gone quiet.</p><p>How often you send is up to you. At minimum, aim for one email per week. Personally, I email my list every single day — but that is my preference and it is not required. What matters is consistency. A list that hears from you regularly converts. A list that hears from you only when you have something to sell converts much less.</p><div class="broken-callout"><div class="broken-callout-label">Common signs this piece is broken or missing</div><p>Your email communication stops after the initial sequence ends. Your open rates are declining because leads have not heard from you in weeks. You have a list of people who opted in months ago and have received nothing since. The only emails you send are occasional promotional announcements — your list does not feel like a relationship, it feels like a mailing list.</p></div>'
+  },
+  'reengage': {
+    stage: 'paid',
+    title: 'Re-engagement',
+    body: '<p>Not everyone stays active on your list. Some leads go quiet — they stop opening emails, stop clicking, stop engaging. Re-engagement is the process of identifying those leads and sending them a specific sequence designed to either re-activate their interest or let them exit cleanly.</p><p>A simple re-engagement email that asks whether they are still dealing with the problem they originally opted in about — or whether it has since been solved — often produces a wave of responses and bookings from leads that looked completely dead. Because the problem is frequently still unsolved. They were simply waiting for the right moment to do something about it, and your email arrived at exactly that moment.</p><p>Re-engagement is one of the highest-ROI activities in the entire Paid stage because it costs nothing beyond the email itself. It monetizes leads already on the list rather than requiring new ad spend to generate new ones. A single re-engagement campaign can produce booked calls from leads who have been silent for six months or more.</p><div class="broken-callout"><div class="broken-callout-label">Common signs this piece is broken or missing</div><p>You have never sent a dedicated re-engagement campaign to inactive leads. You do not segment your list by engagement level. Your open rates are below 20% and declining because a large portion of your list has gone dormant. You have no process for identifying who has stopped engaging and reaching out to them specifically.</p></div>'
+  },
+  'reminders': {
+    stage: 'paid',
+    title: 'Appointment Setup + Reminders',
+    body: '<p>This piece covers two connected things: the infrastructure that confirms and protects a call after someone books, and the ongoing email invitations that prompt leads who have not yet booked to take that step.</p><p>Once someone books a call, your system should automatically send a confirmation email immediately — confirming the date, time, meeting link, and what to expect. Then a reminder at 48 hours before the call. Another at 24 hours. A final one at 1 hour before. Show-up rates are directly tied to the quality of this reminder sequence. A booked call that does not show up is identical in outcome to a call that was never booked.</p><p>The second part — call invitations — are emails sent to leads on your list who have not yet booked. These are direct, specific invitations to schedule a call, sent periodically as part of your nurture strategy. They reference the problem the lead originally opted in about, acknowledge that the timing may not have been right before, and make it easy to book now with a visible calendar link. One well-timed invitation to a warm list can produce a wave of bookings with no additional ad spend.</p><div class="broken-callout"><div class="broken-callout-label">Common signs this piece is broken or missing</div><p>You have no automated confirmation email that goes out after someone books. Your reminder sequence does not include a 48-hour reminder — only a 24-hour or day-of reminder. Your no-show rate is above 30%. Your nurture emails deliver value but never make a direct ask. Leads have been on your list for months without ever receiving a specific invitation to book a call.</p></div>'
+  },
+  'salescall': {
+    stage: 'paid',
+    title: 'Your sales call',
+    body: '<p>Whatever you call it — a discovery call, a strategy session, a consultation, an intro call — this is the moment the system hands off to you personally. By the time someone shows up on this call from a working Self-Booking System, they have seen your ad, received your lead magnet, read your emails, and decided they want to talk. They are not cold. They are not strangers you have to win over from scratch.</p><p>They are warm, pre-educated people who have already self-selected as someone with the problem you solve and who believes you might be the right person to help them. Your job on the call is to confirm the fit and invite them to move forward — not to spend the first twenty minutes explaining who you are and what you do. The system already did that.</p><p>This shift in how your calls feel is one of the most tangible results of a working Self-Booking System. When the Seen stage attracts the right people, when the Booked stage converts them automatically, and when the Paid stage keeps them warm until they are ready — the calls you get on are different. Warmer. More qualified. More likely to convert. Because the system did the trust-building before they ever picked up the phone.</p><div class="broken-callout"><div class="broken-callout-label">Common signs this piece is broken or missing</div><p>Every call feels like starting from scratch — you spend most of it explaining who you are and what you do. Your close rate on calls is low because leads arrive cold and unqualified. You have no intake form or pre-call questions that help you prepare and qualify before the call begins. Calls are booking but not converting — which may mean the system is delivering the wrong leads, or the earlier stages need attention first.</p></div>'
+  }
+};
+function showPanel(key, el) {
+  var d = data[key];
+  if (!d) return;
+
+  var labels = { seen: '01 — Seen', booked: '02 — Booked', paid: '03 — Paid' };
+  var tag = document.getElementById('exp-tag');
+  tag.className = 'exp-tag ' + d.stage;
+  tag.textContent = labels[d.stage];
+  document.getElementById('exp-title').textContent = d.title;
+  document.getElementById('exp-body').innerHTML = d.body;
+
+  var panel = document.getElementById('explanation');
+  panel.classList.add('open');
+
+  if (activeEl) activeEl.classList.remove('active');
+  if (el) { el.classList.add('active'); activeEl = el; }
+
+  setTimeout(function() {
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 60);
+}
+
+function closePanel() {
+  document.getElementById('explanation').classList.remove('open');
+  if (activeEl) { activeEl.classList.remove('active'); activeEl = null; }
+}
+</script>
+</body>
+</html>

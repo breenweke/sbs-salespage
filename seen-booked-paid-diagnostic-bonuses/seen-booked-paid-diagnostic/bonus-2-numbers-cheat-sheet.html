@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Numbers That Matter Cheat Sheet — Perfectly Made Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #fdfbf7;
+  --ivory: #f9f6f0;
+  --blush: #fdf5f0;
+  --text: #2c2a27;
+  --text-muted: #706e68;
+  --border: #e8e2d9;
+  --border-light: #f0ece5;
+  --periwinkle: #6b66e9;
+  --periwinkle-50: #eeedfe;
+  --periwinkle-800: #3c3489;
+  --teal: #1d9e75;
+  --teal-50: #e1f5ee;
+  --teal-800: #085041;
+  --coral: #c8552a;
+  --coral-50: #faece7;
+  --coral-800: #6b2714;
+  --lime: #deff55;
+  --amber: #f5a623;
+  --amber-50: #fef8ec;
+  --amber-800: #7a4d08;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: var(--text);
+  padding: 0;
+  min-height: 100vh;
+}
+
+@media print {
+  body { background: white; font-size: 11px; }
+  .no-print { display: none !important; }
+  .page-header { padding: 1rem 1.5rem; }
+  .wrap { padding: 0 1rem; }
+  .metric-row { break-inside: avoid; }
+  .section-block { break-inside: avoid; }
+  .context-strip { display: none; }
+}
+
+/* ── HEADER ── */
+.page-header {
+  background: var(--text);
+  padding: 2.25rem 2rem 2rem;
+  text-align: center;
+  position: relative;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--lime);
+}
+.header-eyebrow {
+  font-size: 0.67rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: #9d96e8; margin-bottom: 0.6rem;
+}
+.header-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 500; line-height: 1.15;
+  color: white; margin-bottom: 0.5rem;
+}
+.header-sub {
+  font-size: 0.85rem; color: #b8b4a8;
+  line-height: 1.6; max-width: 480px; margin: 0 auto;
+}
+
+/* ── LAYOUT ── */
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ── CONTEXT NOTE ── */
+.context-strip {
+  background: var(--blush);
+  border: 1px solid #f0e4db;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1.75rem 0 1.5rem;
+  font-size: 0.83rem;
+  line-height: 1.7;
+  color: #4a4844;
+}
+.context-strip strong { font-weight: 500; color: var(--text); }
+
+/* ── HOW TO USE ── */
+.how-to-use {
+  display: flex; gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+.legend-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.76rem; color: var(--text-muted);
+}
+.legend-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+.legend-dot.good   { background: var(--teal); }
+.legend-dot.ok     { background: var(--amber); }
+.legend-dot.low    { background: var(--coral); }
+.legend-sep {
+  color: var(--border);
+  font-size: 0.9rem;
+  margin: 0 0.25rem;
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-size: 0.66rem; font-weight: 500;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.35rem 0 0.65rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+/* ── METRIC TABLE ── */
+.metric-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.metric-row {
+  border-bottom: 1px solid var(--border-light);
+}
+.metric-row:last-child {
+  border-bottom: none;
+}
+.metric-row td {
+  padding: 0.85rem 0.75rem;
+  vertical-align: top;
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+.metric-row td:first-child { padding-left: 0; }
+.metric-row td:last-child  { padding-right: 0; }
+
+/* Column widths */
+.col-metric   { width: 22%; }
+.col-aim      { width: 23%; }
+.col-signal   { width: 28%; }
+.col-action   { width: 27%; }
+
+/* Metric name */
+.metric-name {
+  font-weight: 500; color: var(--text);
+  font-size: 0.83rem;
+  display: block; margin-bottom: 3px;
+}
+.metric-where {
+  font-size: 0.71rem; color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Benchmark pills */
+.benchmark-list {
+  display: flex; flex-direction: column; gap: 5px;
+}
+.bench {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.8rem;
+}
+.bench-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+.bench-dot.good { background: var(--teal); }
+.bench-dot.ok   { background: var(--amber); }
+.bench-dot.low  { background: var(--coral); }
+.bench-range { font-weight: 500; color: var(--text); }
+.bench-label { font-size: 0.71rem; color: var(--text-muted); }
+
+/* Context note on benchmark */
+.bench-context {
+  font-size: 0.71rem; color: var(--text-muted);
+  margin-top: 6px; line-height: 1.5;
+  font-style: italic;
+}
+
+/* Signal and action text */
+.signal-text { font-size: 0.83rem; color: #3d3b37; line-height: 1.6; }
+.action-text { font-size: 0.83rem; color: #3d3b37; line-height: 1.6; }
+.action-text strong { font-weight: 500; color: var(--text); }
+
+/* Section spacer */
+.section-spacer { height: 0.5rem; }
+
+/* ── BOTTOM NOTE ── */
+.bottom-note {
+  background: var(--ivory);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--lime);
+  border-radius: 0 12px 12px 0;
+  padding: 1.1rem 1.35rem;
+  margin-bottom: 1.75rem;
+  font-size: 0.84rem;
+  line-height: 1.72;
+  color: #3d3b37;
+}
+.bottom-note strong { font-weight: 500; color: var(--text); }
+
+/* ── PRINT BAR ── */
+.print-bar {
+  text-align: center;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.btn-print {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.55rem 1.4rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem; color: var(--text-muted);
+  cursor: pointer; transition: all 0.15s;
+}
+.btn-print:hover { border-color: #ccc8c0; color: var(--text); background: var(--ivory); }
+.print-note {
+  font-size: 0.72rem; color: var(--text-muted); margin-top: 0.4rem;
+}
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center;
+  padding: 0.25rem 0 3rem;
+  font-size: 0.76rem; color: var(--text-muted);
+}
+.footer a { color: var(--periwinkle); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 580px) {
+  .metric-table { display: block; }
+  .metric-table thead { display: none; }
+  .metric-table tbody { display: block; }
+  .metric-row { display: block; padding: 0.9rem 0; border-bottom: 1px solid var(--border-light); }
+  .metric-row td { display: block; width: 100% !important; padding: 0.2rem 0; }
+  .metric-row td::before {
+    content: attr(data-label);
+    font-size: 0.65rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-muted); display: block; margin-bottom: 3px;
+  }
+  .col-aim { margin: 0.4rem 0; }
+  .how-to-use { gap: 0.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="header-eyebrow">Perfectly Made Marketing — Bonus Resource</div>
+  <div class="header-title">The Numbers That Matter</div>
+  <div class="header-sub">What to aim for, what it means when it is off, and the one thing to check first.</div>
+</div>
+
+<div class="wrap">
+
+<!-- CONTEXT NOTE -->
+<div class="context-strip">
+  <strong>Before you read these benchmarks:</strong> every number below is a general guide — not a verdict on your business. A $12 CPL for a $5,000 service is excellent. The same CPL for a $97 offer is a problem. Use these ranges to spot when something is worth investigating, not to grade yourself. <strong>Context always wins over benchmarks.</strong>
+</div>
+
+<!-- LEGEND -->
+<div class="how-to-use">
+  <div class="legend-item"><span class="legend-dot good"></span> Healthy range</div>
+  <span class="legend-sep">·</span>
+  <div class="legend-item"><span class="legend-dot ok"></span> Worth watching</div>
+  <span class="legend-sep">·</span>
+  <div class="legend-item"><span class="legend-dot low"></span> Investigate now</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     SECTION 1: ADS MANAGER
+════════════════════════════════════ -->
+<div class="section-label">Meta Ads Manager</div>
+<table class="metric-table">
+  <thead>
+    <tr>
+      <td class="col-metric" style="font-size:0.66rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);padding:0.6rem 0.75rem 0.6rem 0;">Metric</td>
+      <td class="col-aim"    style="font-size:0.66rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);padding:0.6rem 0.75rem;">What to aim for</td>
+      <td class="col-signal" style="font-size:0.66rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);padding:0.6rem 0.75rem;">When it is off — the signal</td>
+      <td class="col-action" style="font-size:0.66rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);padding:0.6rem 0.75rem 0.6rem 0;">First thing to check</td>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- CPL -->
+    <tr class="metric-row">
+      <td class="col-metric" data-label="Metric">
+        <span class="metric-name">Cost Per Lead</span>
+        <span class="metric-where">Ads Manager → Results column</span>
+      </td>
+      <td class="col-aim" data-label="What to aim for">
+        <div class="benchmark-list">
+          <div class="bench"><span class="bench-dot good"></span><span class="bench-range">$2–$8</span><span class="bench-label">Healthy</span></div>
+          <div class="bench"><span class="bench-dot ok"></span><span class="bench-range">$8–$15</span><span class="bench-label">Watch it</span></div>
+          <div class="bench"><span class="bench-dot low"></span><span class="bench-range">$15+</span><span class="bench-label">Investigate</span></div>
+        </div>
+        <div class="bench-context">Lower ranges for broad audiences. Higher CPL is acceptable with a high-ticket offer or very warm targeting.</div>
+      </td>
+      <td class="col-signal" data-label="When it is off">
+        <span class="signal-text">Leads getting more expensive without a corresponding improvement in booking rate. Often appears alongside rising frequency.</span>
+      </td>
+      <td class="col-action" data-label="First thing to check">
+        <span class="action-text"><strong>Check frequency first.</strong> If above 3.0 your audience has seen the ad enough times — refresh the creative before adjusting budget or targeting.</span>
+      </td>
+    </tr>
+
+    <!-- CTR -->
+    <tr class="metric-row">
+      <td class="col-metric" data-label="Metric">
+        <span class="metric-name">Click-Through Rate</span>
+        <span class="metric-where">Ads Manager → CTR (link click-through rate)</span>
+      </td>
+      <td class="col-aim" data-label="What to aim for">
+        <div class="benchmark-list">
+          <div class="bench"><span class="bench-dot good"></span><span class="bench-range">1.5%+</span><span class="bench-label">Strong</span></div>
+          <div class="bench"><span class="bench-dot ok"></span><span class="bench-range">0.8–1.5%</span><span class="bench-label">Acceptable</span></div>
+          <div class="bench"><span class="bench-dot low"></span><span class="bench-range">Under 0.8%</span><span class="bench-label">Hook issue</span></div>
+        </div>
+        <div class="bench-context">Cold traffic often runs 0.5–1%. Do not panic below 1.5% if your CPL and booking rate are healthy.</div>
+      </td>
+      <td class="col-signal" data-label="When it is off">
+        <span class="signal-text">People see the ad but do not click. The impression count is climbing but leads are not. The ad is visible but not stopping anyone.</span>
+      </td>
+      <td class="col-action" data-label="First thing to check">
+        <span class="action-text"><strong>Rewrite the first line.</strong> The hook needs to name the exact situation your ideal client is already in — not the solution you offer. Test one new hook before changing anything else.</span>
+      </td>
+    </tr>
+
+    <!-- OPT-IN RATE -->
+    <tr class="metric-row">
+      <td class="col-metric" data-label="Metric">
+        <span class="metric-name">Opt-In Rate</span>
+        <span class="metric-where">Ads Manager → Landing page views vs. leads</span>
+      </td>
+      <td class="col-aim" data-label="What to aim for">
+        <div class="benchmark-list">
+          <div class="bench"><span class="bench-dot good"></span><span class="bench-range">30%+</span><span class="bench-label">Strong</span></div>
+          <div class="bench"><span class="bench-dot ok"></span><span class="bench-range">20–30%</span><span class="bench-label">Acceptable</span></div>
+          <div class="bench"><span class="bench-dot low"></span><span class="bench-range">Under 20%</span><span class="bench-label">Page issue</span></div>
+        </div>
+        <div class="bench-context">Warm traffic converts higher. Cold traffic at 25–30% is genuinely strong.</div>
+      </td>
+      <td class="col-signal" data-label="When it is off">
+        <span class="signal-text">CTR is healthy — people are clicking — but they land on the page and leave without opting in. The ad earned the click but the page lost the lead.</span>
+      </td>
+      <td class="col-action" data-label="First thing to check">
+        <span class="action-text"><strong>Check message match.</strong> Does your page headline mirror the exact language in your ad? Any disconnect between ad and page creates hesitation that kills conversions.</span>
+      </td>
+    </tr>
+
+    <!-- FREQUENCY -->
+    <tr class="metric-row">
+      <td class="col-metric" data-label="Metric">
+        <span class="metric-name">Frequency</span>
+        <span class="metric-where">Ads Manager → Frequency column (may need to add)</span>
+      </td>
+      <td class="col-aim" data-label="What to aim for">
+        <div class="benchmark-list">
+          <div class="bench"><span class="bench-dot good"></span><span class="bench-range">1.5–2.5</span><span class="bench-label">Healthy</span></div>
+          <div class="bench"><span class="bench-dot ok"></span><span class="bench-range">2.5–4.0</span><span class="bench-label">Watch it</span></div>
+          <div class="bench"><span class="bench-dot low"></span><span class="bench-range">4.0+</span><span class="bench-label">Refresh creative</span></div>
+        </div>
+        <div class="bench-context">Average times each person has seen your ad. Rising frequency alongside rising CPL = creative fatigue.</div>
+      </td>
+      <td class="col-signal" data-label="When it is off">
+        <span class="signal-text">CPL starts rising even though nothing in the campaign changed. The same people keep seeing the same ad and have already decided whether to act on it.</span>
+      </td>
+      <td class="col-action" data-label="First thing to check">
+        <span class="action-text"><strong>Introduce a new creative alongside the existing one</strong> — do not turn the original off. Test the new version at a lower budget first. If it outperforms, scale it up and pause the original.</span>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<div class="section-spacer"></div>
+
+<!-- ═══════════════════════════════════
+     SECTION 2: BOOKING
+════════════════════════════════════ -->
+<div class="section-label">Booking platform — Calendly, GHL, Kartra, etc.</div>
+<table class="metric-table">
+  <thead>
+    <tr>
+      <td class="col-metric" style="font-size:0.66rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);padding:0.6rem 0.75rem 0.6rem 0;">Metric</td>
+      <td class="col-aim"    style="font-size:0.66rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);padding:0.6rem 0.75rem;">What to aim for</td>
+      <td class="col-signal" style="font-size:0.66rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);padding:0.6rem 0.75rem;">When it is off — the signal</td>
+      <td class="col-action" style="font-size:0.66rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);padding:0.6rem 0.75rem 0.6rem 0;">First thing to check</td>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- BOOKING RATE -->
+    <tr class="metric-row">
+      <td class="col-metric" data-label="Metric">
+        <span class="metric-name">Booking Rate</span>
+        <span class="metric-where">Calls booked ÷ total leads × 100 — calculated manually</span>
+      </td>
+      <td class="col-aim" data-label="What to aim for">
+        <div class="benchmark-list">
+          <div class="bench"><span class="bench-dot good"></span><span class="bench-range">15%+</span><span class="bench-label">Strong</span></div>
+          <div class="bench"><span class="bench-dot ok"></span><span class="bench-range">8–15%</span><span class="bench-label">Developing</span></div>
+          <div class="bench"><span class="bench-dot low"></span><span class="bench-range">Under 8%</span><span class="bench-label">Booked stage gap</span></div>
+        </div>
+        <div class="bench-context">This is the most important number in your funnel. A healthy booking rate with a high CPL is still a working system. A low booking rate with a great CPL is not.</div>
+      </td>
+      <td class="col-signal" data-label="When it is off">
+        <span class="signal-text">Leads are opting in consistently but the calendar is empty or filling only from people you manually reached out to. The top of the funnel is working. The middle is not.</span>
+      </td>
+      <td class="col-action" data-label="First thing to check">
+        <span class="action-text"><strong>Check Email 1.</strong> Is it triggering automatically within 30 minutes of opt-in? If not — or if you do not have one — this is why. Build the follow-up sequence before touching anything else.</span>
+      </td>
+    </tr>
+
+    <!-- SHOW-UP RATE -->
+    <tr class="metric-row">
+      <td class="col-metric" data-label="Metric">
+        <span class="metric-name">Show-Up Rate</span>
+        <span class="metric-where">Calls completed ÷ calls booked × 100 — track manually or in CRM</span>
+      </td>
+      <td class="col-aim" data-label="What to aim for">
+        <div class="benchmark-list">
+          <div class="bench"><span class="bench-dot good"></span><span class="bench-range">70%+</span><span class="bench-label">Strong</span></div>
+          <div class="bench"><span class="bench-dot ok"></span><span class="bench-range">55–70%</span><span class="bench-label">Acceptable</span></div>
+          <div class="bench"><span class="bench-dot low"></span><span class="bench-range">Under 55%</span><span class="bench-label">Fix reminders</span></div>
+        </div>
+        <div class="bench-context">Cold traffic show-up rates of 55–65% are normal. Warm audience show-up rates should be 75%+. Do not compare cold and warm traffic show-up rates.</div>
+      </td>
+      <td class="col-signal" data-label="When it is off">
+        <span class="signal-text">People book calls and then do not show up. You sit in the Zoom room and wait. The booking happened — the infrastructure to protect it did not.</span>
+      </td>
+      <td class="col-action" data-label="First thing to check">
+        <span class="action-text"><strong>Check your reminder emails.</strong> Does a confirmation go out immediately after booking? Does a reminder go out 24 hours before? If either is missing, set them up before the next call is booked.</span>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<div class="section-spacer"></div>
+
+<!-- ═══════════════════════════════════
+     SECTION 3: EMAIL
+════════════════════════════════════ -->
+<div class="section-label">Email platform — Kartra, ActiveCampaign, Mailchimp, etc.</div>
+<table class="metric-table">
+  <thead>
+    <tr>
+      <td class="col-metric" style="font-size:0.66rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);padding:0.6rem 0.75rem 0.6rem 0;">Metric</td>
+      <td class="col-aim"    style="font-size:0.66rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);padding:0.6rem 0.75rem;">What to aim for</td>
+      <td class="col-signal" style="font-size:0.66rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);padding:0.6rem 0.75rem;">When it is off — the signal</td>
+      <td class="col-action" style="font-size:0.66rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);padding:0.6rem 0.75rem 0.6rem 0;">First thing to check</td>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- OPEN RATE -->
+    <tr class="metric-row">
+      <td class="col-metric" data-label="Metric">
+        <span class="metric-name">Open Rate</span>
+        <span class="metric-where">Email platform → campaign or sequence reports</span>
+      </td>
+      <td class="col-aim" data-label="What to aim for">
+        <div class="benchmark-list">
+          <div class="bench"><span class="bench-dot good"></span><span class="bench-range">35%+</span><span class="bench-label">Strong</span></div>
+          <div class="bench"><span class="bench-dot ok"></span><span class="bench-range">20–35%</span><span class="bench-label">Acceptable</span></div>
+          <div class="bench"><span class="bench-dot low"></span><span class="bench-range">Under 20%</span><span class="bench-label">Subject line issue</span></div>
+        </div>
+        <div class="bench-context">New subscriber sequences typically open higher. Broadcast emails to cold lists run lower. Compare sequences to sequences and broadcasts to broadcasts.</div>
+      </td>
+      <td class="col-signal" data-label="When it is off">
+        <span class="signal-text">Emails are being delivered but not opened. Your name is being recognized but your subject line is not earning the click. Or your emails are landing in spam or promotions.</span>
+      </td>
+      <td class="col-action" data-label="First thing to check">
+        <span class="action-text"><strong>Send a test to yourself.</strong> Does it land in spam or promotions? If not — rewrite the subject line to name a specific situation rather than a general topic. Test one change at a time.</span>
+      </td>
+    </tr>
+
+    <!-- CLICK RATE -->
+    <tr class="metric-row">
+      <td class="col-metric" data-label="Metric">
+        <span class="metric-name">Click Rate</span>
+        <span class="metric-where">Email platform → clicks ÷ opens (sometimes called CTOR)</span>
+      </td>
+      <td class="col-aim" data-label="What to aim for">
+        <div class="benchmark-list">
+          <div class="bench"><span class="bench-dot good"></span><span class="bench-range">10%+</span><span class="bench-label">Strong</span></div>
+          <div class="bench"><span class="bench-dot ok"></span><span class="bench-range">5–10%</span><span class="bench-label">Acceptable</span></div>
+          <div class="bench"><span class="bench-dot low"></span><span class="bench-range">Under 5%</span><span class="bench-label">CTA issue</span></div>
+        </div>
+        <div class="bench-context">Only applies to emails that contain a link or ask people to take action. Purely value emails with no CTA will naturally show low click rates — that is expected.</div>
+      </td>
+      <td class="col-signal" data-label="When it is off">
+        <span class="signal-text">People open the email but do not click through. The subject line worked — the body did not convert the open into action. Usually a CTA problem, not a content problem.</span>
+      </td>
+      <td class="col-action" data-label="First thing to check">
+        <span class="action-text"><strong>Find your CTA and move it up.</strong> Most people never scroll far enough to see it. One link. One action. Visible without scrolling. Remove any competing links in the same email.</span>
+      </td>
+    </tr>
+
+    <!-- UNSUBSCRIBE RATE -->
+    <tr class="metric-row">
+      <td class="col-metric" data-label="Metric">
+        <span class="metric-name">Unsubscribe Rate</span>
+        <span class="metric-where">Email platform → unsubscribes ÷ delivered × 100</span>
+      </td>
+      <td class="col-aim" data-label="What to aim for">
+        <div class="benchmark-list">
+          <div class="bench"><span class="bench-dot good"></span><span class="bench-range">Under 0.3%</span><span class="bench-label">Healthy</span></div>
+          <div class="bench"><span class="bench-dot ok"></span><span class="bench-range">0.3–0.5%</span><span class="bench-label">Watch it</span></div>
+          <div class="bench"><span class="bench-dot low"></span><span class="bench-range">0.5%+</span><span class="bench-label">Relevance issue</span></div>
+        </div>
+        <div class="bench-context">Some unsubscribes after every email are healthy — self-selection keeps the list clean. A spike after one specific email almost always points to that email as the cause.</div>
+      </td>
+      <td class="col-signal" data-label="When it is off">
+        <span class="signal-text">More people are opting out than expected after a specific email or campaign. The content felt misaligned with why people signed up in the first place.</span>
+      </td>
+      <td class="col-action" data-label="First thing to check">
+        <span class="action-text"><strong>Identify which email caused the spike.</strong> Review its content against the promise of your lead magnet. If the email veered from that problem, realign. Consistent relevance holds lists together.</span>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- BOTTOM NOTE -->
+<div class="bottom-note">
+  <strong>If your Booked stage diagnostic score was below 60%:</strong> the booking rate is the only number worth focusing on right now. Everything else is secondary until leads are converting to calls. Fix the stage first — then use this cheat sheet to optimize within it.
+</div>
+
+<!-- PRINT BAR -->
+<div class="print-bar no-print">
+  <button class="btn-print" onclick="triggerPrint()">Print or save as PDF ↓</button>
+  <p class="print-note">Use <strong>Ctrl+P</strong> (Windows) or <strong>Cmd+P</strong> (Mac) if the button does not respond. Open this file directly in your browser for best results.</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>Perfectly Made Marketing &nbsp;·&nbsp; <a href="https://perfectlymademarketing.com" target="_blank">perfectlymademarketing.com</a></p>
+  <p style="margin-top:0.35rem;">Part of the Seen Booked Paid Diagnostic — Bonus 2 of 3</p>
+</div>
+
+</div><!-- end .wrap -->
+
+<script>
+function triggerPrint() {
+  try { window.print(); }
+  catch(e) { alert('To save as PDF: use Ctrl+P (Windows) or Cmd+P (Mac) and choose Save as PDF.'); }
+}
+</script>
+</body>
+</html>
