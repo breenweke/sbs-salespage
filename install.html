@@ -24,6 +24,32 @@
   <style>
     /* ---------- INSTALL PAGE STYLES ---------- */
 
+    /* Doors open pill */
+    .doors-open-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: var(--soft-green-bg);
+      border: 1px solid var(--soft-green-border);
+      border-radius: var(--radius-pill);
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--soft-green-icon);
+      margin-bottom: 24px;
+    }
+    .doors-open-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--soft-green-icon);
+      border-radius: 50%;
+      animation: pulse-dot 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(90, 158, 107, 0.5); }
+      50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(90, 158, 107, 0); }
+    }
+
     /* Scroll offset for sticky nav */
     html { scroll-padding-top: 80px; }
 
@@ -327,6 +353,11 @@
   <section class="install-hero">
     <div class="container text-center">
       <img src="logo.png" alt="Perfectly Made Marketing" class="hero-logo anim" />
+
+      <div class="doors-open-pill anim">
+        <span class="doors-open-dot"></span>
+        <span>Doors are currently open</span>
+      </div>
 
       <h1 class="anim">You're getting leads.<br />But no one's <em>booking.</em></h1>
 
