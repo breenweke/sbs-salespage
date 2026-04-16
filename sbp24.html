@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
 :root {
   --cream: #fdfbf7;
@@ -756,7 +757,7 @@ function showResults() {
   document.getElementById('fix-action').textContent = fix.action;
 }
 
-// ── DOWNLOAD RESULTS ──────────────────────────────────────────────────────
+// ── DOWNLOAD RESULTS AS PDF ──────────────────────────────────────────────
 
 function downloadResults() {
   var ss = calcScore('seen');
@@ -789,49 +790,205 @@ function downloadResults() {
 
   var date = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
-  var txt = 'THE SEEN BOOKED PAID DIAGNOSTIC\n';
-  txt += 'Your Results - ' + date + '\n';
-  txt += 'Perfectly Made Marketing\n';
-  txt += '================================================================\n\n';
+  // Create PDF using jsPDF
+  var jsPDF = window.jspdf.jsPDF;
+  var doc = new jsPDF({ unit: 'pt', format: 'letter' });
 
-  txt += 'YOUR SCORES\n';
-  txt += '----------------------------------------------------------------\n';
-  txt += '01 - Seen:   ' + ss + '%  - ' + scoreNote('seen', ss) + '\n\n';
-  txt += '02 - Booked: ' + bs + '%  - ' + scoreNote('booked', bs) + '\n\n';
-  txt += '03 - Paid:   ' + ps + '%  - ' + scoreNote('paid', ps) + '\n\n';
+  var pageW = doc.internal.pageSize.getWidth();
+  var pageH = doc.internal.pageSize.getHeight();
+  var margin = 54;
+  var contentW = pageW - (margin * 2);
+  var y = margin;
 
-  txt += '================================================================\n\n';
-  txt += eyebrowMap[primary].toUpperCase() + '\n';
-  txt += '----------------------------------------------------------------\n';
-  txt += gap.title + '\n\n';
-  txt += gapBodyText + '\n\n';
+  // Colors
+  var accent = [107, 102, 233];
+  var textDark = [44, 42, 39];
+  var textMuted = [112, 110, 104];
+  var seen = [107, 102, 233];
+  var booked = [29, 158, 117];
+  var paid = [200, 85, 42];
+  var lime = [222, 255, 85];
 
-  txt += '================================================================\n\n';
-  txt += 'FIX THIS FIRST\n';
-  txt += '----------------------------------------------------------------\n';
-  txt += fix.title + '\n\n';
-  txt += fix.action + '\n\n';
+  function checkPageBreak(spaceNeeded) {
+    if (y + spaceNeeded > pageH - margin) {
+      doc.addPage();
+      y = margin;
+    }
+  }
 
-  txt += '================================================================\n\n';
-  txt += 'NEXT STEP\n';
-  txt += '----------------------------------------------------------------\n';
-  txt += 'You now know exactly where your system is broken and what to fix first.\n';
-  txt += 'The Self-Booking System Course walks you through installing every\n';
-  txt += 'piece - step by step, in the right order.\n\n';
-  txt += 'Get the Course: https://offer.perfectlymademarketing.com/\n\n';
+  function addWrappedText(text, fontSize, color, fontStyle, lineSpacing) {
+    doc.setFontSize(fontSize);
+    doc.setTextColor(color[0], color[1], color[2]);
+    doc.setFont('helvetica', fontStyle || 'normal');
+    var lines = doc.splitTextToSize(text, contentW);
+    var lineH = fontSize * (lineSpacing || 1.4);
+    for (var i = 0; i < lines.length; i++) {
+      checkPageBreak(lineH);
+      doc.text(lines[i], margin, y);
+      y += lineH;
+    }
+  }
 
-  txt += '================================================================\n';
-  txt += '(c) Perfectly Made Marketing  |  perfectlymademarketing.com\n';
+  // Top gradient bar
+  doc.setFillColor(accent[0], accent[1], accent[2]);
+  doc.rect(0, 0, pageW / 2, 6, 'F');
+  doc.setFillColor(lime[0], lime[1], lime[2]);
+  doc.rect(pageW / 2, 0, pageW / 2, 6, 'F');
 
-  var blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
-  var url = URL.createObjectURL(blob);
-  var a = document.createElement('a');
-  a.href = url;
-  a.download = 'SBP-Diagnostic-Results.txt';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+  y = margin + 10;
+
+  // Brand
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(9);
+  doc.setTextColor(accent[0], accent[1], accent[2]);
+  doc.text('PERFECTLY MADE MARKETING', margin, y);
+  y += 28;
+
+  // Title
+  doc.setFont('times', 'normal');
+  doc.setFontSize(26);
+  doc.setTextColor(textDark[0], textDark[1], textDark[2]);
+  doc.text('The Seen Booked Paid', margin, y);
+  y += 30;
+  doc.text('Diagnostic - Your Results', margin, y);
+  y += 24;
+
+  // Date
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10);
+  doc.setTextColor(textMuted[0], textMuted[1], textMuted[2]);
+  doc.text(date, margin, y);
+  y += 28;
+
+  // Divider
+  doc.setDrawColor(232, 226, 217);
+  doc.setLineWidth(0.5);
+  doc.line(margin, y, pageW - margin, y);
+  y += 28;
+
+  // ── SCORES ──
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(11);
+  doc.setTextColor(textMuted[0], textMuted[1], textMuted[2]);
+  doc.text('YOUR SCORES', margin, y);
+  y += 22;
+
+  function drawScoreBar(label, score, color, note) {
+    checkPageBreak(70);
+    // Label + score
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(11);
+    doc.setTextColor(color[0], color[1], color[2]);
+    doc.text(label, margin, y);
+    doc.setFont('times', 'normal');
+    doc.setFontSize(16);
+    doc.setTextColor(textDark[0], textDark[1], textDark[2]);
+    doc.text(score + '%', pageW - margin - 40, y);
+    y += 10;
+    // Bar background
+    doc.setFillColor(240, 236, 229);
+    doc.roundedRect(margin, y, contentW, 8, 4, 4, 'F');
+    // Bar fill
+    var fillW = (contentW * score) / 100;
+    if (fillW > 0) {
+      doc.setFillColor(color[0], color[1], color[2]);
+      doc.roundedRect(margin, y, fillW, 8, 4, 4, 'F');
+    }
+    y += 18;
+    // Note
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9.5);
+    doc.setTextColor(textMuted[0], textMuted[1], textMuted[2]);
+    var noteLines = doc.splitTextToSize(note, contentW);
+    for (var i = 0; i < noteLines.length; i++) {
+      doc.text(noteLines[i], margin, y);
+      y += 13;
+    }
+    y += 10;
+  }
+
+  drawScoreBar('01 - SEEN', ss, seen, scoreNote('seen', ss));
+  drawScoreBar('02 - BOOKED', bs, booked, scoreNote('booked', bs));
+  drawScoreBar('03 - PAID', ps, paid, scoreNote('paid', ps));
+
+  y += 10;
+
+  // ── PRIMARY GAP ──
+  checkPageBreak(80);
+  var gapColor = primary === 'seen' ? seen : primary === 'booked' ? booked : primary === 'paid' ? paid : textMuted;
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(9);
+  doc.setTextColor(gapColor[0], gapColor[1], gapColor[2]);
+  doc.text(eyebrowMap[primary].toUpperCase(), margin, y);
+  y += 20;
+
+  doc.setFont('times', 'normal');
+  doc.setFontSize(16);
+  doc.setTextColor(textDark[0], textDark[1], textDark[2]);
+  var titleLines = doc.splitTextToSize(gap.title, contentW);
+  for (var i = 0; i < titleLines.length; i++) {
+    checkPageBreak(22);
+    doc.text(titleLines[i], margin, y);
+    y += 22;
+  }
+  y += 6;
+
+  addWrappedText(gapBodyText, 10.5, [61, 59, 55], 'normal', 1.5);
+  y += 16;
+
+  // ── FIX THIS FIRST ──
+  checkPageBreak(100);
+  // Lime dot
+  doc.setFillColor(lime[0], lime[1], lime[2]);
+  doc.circle(margin + 5, y - 4, 5, 'F');
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(9);
+  doc.setTextColor(textMuted[0], textMuted[1], textMuted[2]);
+  doc.text('FIX THIS FIRST', margin + 16, y);
+  y += 20;
+
+  doc.setFont('times', 'normal');
+  doc.setFontSize(14);
+  doc.setTextColor(textDark[0], textDark[1], textDark[2]);
+  var fixTitleLines = doc.splitTextToSize(fix.title, contentW);
+  for (var i = 0; i < fixTitleLines.length; i++) {
+    checkPageBreak(20);
+    doc.text(fixTitleLines[i], margin, y);
+    y += 20;
+  }
+  y += 6;
+
+  addWrappedText(fix.action, 10.5, [61, 59, 55], 'normal', 1.5);
+  y += 20;
+
+  // ── NEXT STEP ──
+  checkPageBreak(80);
+  doc.setFillColor(249, 246, 240);
+  doc.roundedRect(margin, y, contentW, 70, 8, 8, 'F');
+  y += 20;
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(9);
+  doc.setTextColor(booked[0], booked[1], booked[2]);
+  doc.text('NEXT STEP', margin + 16, y);
+  y += 16;
+  doc.setFont('times', 'normal');
+  doc.setFontSize(11);
+  doc.setTextColor(textDark[0], textDark[1], textDark[2]);
+  doc.text('Install what you just learned', margin + 16, y);
+  y += 14;
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.setTextColor(accent[0], accent[1], accent[2]);
+  doc.textWithLink('https://offer.perfectlymademarketing.com/', margin + 16, y, { url: 'https://offer.perfectlymademarketing.com/' });
+  y += 20;
+
+  // ── FOOTER on last page ──
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(8);
+  doc.setTextColor(textMuted[0], textMuted[1], textMuted[2]);
+  doc.text('(c) Perfectly Made Marketing  |  perfectlymademarketing.com', pageW / 2, pageH - 30, { align: 'center' });
+
+  doc.save('SBP-Diagnostic-Results.pdf');
 }
 </script>
 </body>
