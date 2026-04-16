@@ -417,6 +417,7 @@ body {
   .poster-tagline { text-align: left; max-width: 100%; }
   .flow-bar { flex-wrap: wrap; gap: 0.4rem; }
   .flow-arrow { margin: 0 0.35rem; }
+  .install-options-grid { grid-template-columns: 1fr !important; }
 }
 </style>
 
@@ -643,6 +644,33 @@ body {
   </div>
 
 </div><!-- end .poster -->
+
+<!-- INSTALL OPTIONS (hidden on print) -->
+<div class="screen-controls" style="max-width:1400px; margin:2.5rem auto 3rem; padding:0 1.25rem;">
+  <div style="text-align:center; margin-bottom:1.75rem;">
+    <div style="font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#6b66e9; margin-bottom:0.6rem;">Now you see the whole system</div>
+    <h2 style="font-family:'Playfair Display', Georgia, serif; font-size:clamp(1.4rem, 3vw, 1.8rem); font-weight:500; color:#2c2a27; margin:0 0 0.6rem;">Ready to install it?</h2>
+    <p style="font-size:0.92rem; color:#706e68; max-width:560px; margin:0 auto; line-height:1.65;">You have two paths forward - build it yourself with the full course, or have my team build it for you.</p>
+  </div>
+
+  <div class="install-options-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; max-width:900px; margin:0 auto;">
+    <!-- DIY Course -->
+    <div style="background:#fdfbf7; border:1.5px solid #e8e2d9; border-radius:14px; padding:1.75rem 1.5rem; text-align:center;">
+      <div style="font-size:0.68rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#6b66e9; margin-bottom:0.5rem;">Do it yourself</div>
+      <div style="font-family:'Playfair Display', Georgia, serif; font-size:1.15rem; font-weight:500; margin-bottom:0.75rem; color:#2c2a27;">The Self-Booking System Course</div>
+      <p style="font-size:0.85rem; color:#706e68; line-height:1.65; margin:0 0 1.25rem;">Step-by-step walkthroughs, plug-and-play templates, and every setup you need to install the full system yourself.</p>
+      <a href="https://offer.perfectlymademarketing.com/" target="_blank" style="display:inline-block; background:#6b66e9; color:white; padding:0.7rem 1.5rem; border-radius:8px; font-family:'DM Sans', sans-serif; font-size:0.85rem; font-weight:500; text-decoration:none; transition:opacity 0.15s;" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">Get the full course →</a>
+    </div>
+
+    <!-- DFY Install -->
+    <div style="background:#fdfbf7; border:1.5px solid #e8e2d9; border-radius:14px; padding:1.75rem 1.5rem; text-align:center;">
+      <div style="font-size:0.68rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#1d9e75; margin-bottom:0.5rem;">Done for you</div>
+      <div style="font-family:'Playfair Display', Georgia, serif; font-size:1.15rem; font-weight:500; margin-bottom:0.75rem; color:#2c2a27;">The Self-Booking System Install</div>
+      <p style="font-size:0.85rem; color:#706e68; line-height:1.65; margin:0 0 1.25rem;">My team builds every piece for you in 30 days. You show up to the calls. We handle everything else.</p>
+      <a href="https://offer.perfectlymademarketing.com/install" target="_blank" style="display:inline-block; background:#1d9e75; color:white; padding:0.7rem 1.5rem; border-radius:8px; font-family:'DM Sans', sans-serif; font-size:0.85rem; font-weight:500; text-decoration:none; transition:opacity 0.15s;" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">Tell me more →</a>
+    </div>
+  </div>
+</div>
 
 <script>
 function triggerPrint() {
