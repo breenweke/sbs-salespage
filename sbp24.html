@@ -835,53 +835,55 @@ function downloadResults() {
   doc.setFillColor(lime[0], lime[1], lime[2]);
   doc.rect(pageW / 2, 0, pageW / 2, 6, 'F');
 
-  y = margin + 8;
+  y = margin + 14;
 
   // Brand
   doc.setFont('helvetica', 'bold');
-  doc.setFontSize(8);
+  doc.setFontSize(8.5);
   doc.setTextColor(accent[0], accent[1], accent[2]);
   doc.text('PERFECTLY MADE MARKETING', margin, y);
-  y += 18;
+  y += 22;
 
   // Title
   doc.setFont('times', 'normal');
-  doc.setFontSize(20);
+  doc.setFontSize(22);
   doc.setTextColor(textDark[0], textDark[1], textDark[2]);
-  doc.text('The Seen Booked Paid Diagnostic - Your Results', margin, y);
-  y += 18;
+  doc.text('The Seen Booked Paid Diagnostic', margin, y);
+  y += 22;
+  doc.text('Your Results', margin, y);
+  y += 20;
 
   // Date
   doc.setFont('helvetica', 'normal');
-  doc.setFontSize(9);
+  doc.setFontSize(9.5);
   doc.setTextColor(textMuted[0], textMuted[1], textMuted[2]);
   doc.text(date, margin, y);
-  y += 14;
+  y += 18;
 
   // Divider
   doc.setDrawColor(232, 226, 217);
   doc.setLineWidth(0.5);
   doc.line(margin, y, pageW - margin, y);
-  y += 16;
+  y += 22;
 
   // ── SCORES ──
   doc.setFont('helvetica', 'bold');
-  doc.setFontSize(9);
+  doc.setFontSize(9.5);
   doc.setTextColor(textMuted[0], textMuted[1], textMuted[2]);
   doc.text('YOUR SCORES', margin, y);
-  y += 14;
+  y += 18;
 
   function drawScoreBar(label, score, color, note) {
     // Label + score
     doc.setFont('helvetica', 'bold');
-    doc.setFontSize(9.5);
+    doc.setFontSize(10);
     doc.setTextColor(color[0], color[1], color[2]);
     doc.text(label, margin, y);
     doc.setFont('times', 'normal');
-    doc.setFontSize(13);
+    doc.setFontSize(14);
     doc.setTextColor(textDark[0], textDark[1], textDark[2]);
-    doc.text(score + '%', pageW - margin - 32, y);
-    y += 7;
+    doc.text(score + '%', pageW - margin - 34, y);
+    y += 8;
     // Bar background
     doc.setFillColor(240, 236, 229);
     doc.roundedRect(margin, y, contentW, 6, 3, 3, 'F');
@@ -891,108 +893,109 @@ function downloadResults() {
       doc.setFillColor(color[0], color[1], color[2]);
       doc.roundedRect(margin, y, fillW, 6, 3, 3, 'F');
     }
-    y += 12;
+    y += 16;
     // Note
     doc.setFont('helvetica', 'normal');
-    doc.setFontSize(8.5);
+    doc.setFontSize(9);
     doc.setTextColor(textMuted[0], textMuted[1], textMuted[2]);
     var noteLines = doc.splitTextToSize(note, contentW);
     for (var i = 0; i < noteLines.length; i++) {
       doc.text(noteLines[i], margin, y);
-      y += 11;
+      y += 12;
     }
-    y += 6;
+    y += 14;
   }
 
   drawScoreBar('01 - SEEN', ss, seen, scoreNote('seen', ss));
   drawScoreBar('02 - BOOKED', bs, booked, scoreNote('booked', bs));
   drawScoreBar('03 - PAID', ps, paid, scoreNote('paid', ps));
 
-  y += 4;
+  y += 6;
 
   // ── PRIMARY GAP ──
   var gapColor = primary === 'seen' ? seen : primary === 'booked' ? booked : primary === 'paid' ? paid : textMuted;
   doc.setFont('helvetica', 'bold');
-  doc.setFontSize(8);
+  doc.setFontSize(8.5);
   doc.setTextColor(gapColor[0], gapColor[1], gapColor[2]);
   doc.text(eyebrowMap[primary].toUpperCase(), margin, y);
-  y += 13;
+  y += 16;
 
   doc.setFont('times', 'normal');
-  doc.setFontSize(13);
+  doc.setFontSize(14);
   doc.setTextColor(textDark[0], textDark[1], textDark[2]);
   var titleLines = doc.splitTextToSize(gap.title, contentW);
   for (var i = 0; i < titleLines.length; i++) {
     doc.text(titleLines[i], margin, y);
-    y += 15;
+    y += 17;
   }
-  y += 2;
+  y += 10;
 
-  // Body text (tighter)
+  // Body text
   doc.setFont('helvetica', 'normal');
-  doc.setFontSize(9);
+  doc.setFontSize(9.5);
   doc.setTextColor(61, 59, 55);
   var gapLines = doc.splitTextToSize(gapBodyText, contentW);
   for (var i = 0; i < gapLines.length; i++) {
     doc.text(gapLines[i], margin, y);
-    y += 11.5;
+    y += 13;
   }
-  y += 10;
+  y += 20;
 
   // ── FIX THIS FIRST ──
   // Lime dot
   doc.setFillColor(lime[0], lime[1], lime[2]);
-  doc.circle(margin + 4, y - 3, 4, 'F');
+  doc.circle(margin + 4, y - 3, 4.5, 'F');
   doc.setFont('helvetica', 'bold');
-  doc.setFontSize(8);
+  doc.setFontSize(8.5);
   doc.setTextColor(textMuted[0], textMuted[1], textMuted[2]);
-  doc.text('FIX THIS FIRST', margin + 13, y);
-  y += 13;
+  doc.text('FIX THIS FIRST', margin + 14, y);
+  y += 16;
 
   doc.setFont('times', 'normal');
-  doc.setFontSize(12);
+  doc.setFontSize(13);
   doc.setTextColor(textDark[0], textDark[1], textDark[2]);
   var fixTitleLines = doc.splitTextToSize(fix.title, contentW);
   for (var i = 0; i < fixTitleLines.length; i++) {
     doc.text(fixTitleLines[i], margin, y);
-    y += 14;
+    y += 16;
   }
-  y += 2;
+  y += 8;
 
   doc.setFont('helvetica', 'normal');
-  doc.setFontSize(9);
+  doc.setFontSize(9.5);
   doc.setTextColor(61, 59, 55);
   var fixLines = doc.splitTextToSize(fix.action, contentW);
   for (var i = 0; i < fixLines.length; i++) {
     doc.text(fixLines[i], margin, y);
-    y += 11.5;
+    y += 13;
   }
-  y += 10;
+  y += 20;
 
   // ── NEXT STEP ──
+  var cardH = 62;
   doc.setFillColor(249, 246, 240);
-  doc.roundedRect(margin, y, contentW, 52, 6, 6, 'F');
-  var cardY = y + 14;
+  doc.roundedRect(margin, y, contentW, cardH, 8, 8, 'F');
+  var cardY = y + 18;
   doc.setFont('helvetica', 'bold');
-  doc.setFontSize(8);
-  doc.setTextColor(booked[0], booked[1], booked[2]);
-  doc.text('NEXT STEP', margin + 14, cardY);
-  cardY += 12;
-  doc.setFont('times', 'normal');
-  doc.setFontSize(10.5);
-  doc.setTextColor(textDark[0], textDark[1], textDark[2]);
-  doc.text('Install what you just learned', margin + 14, cardY);
-  cardY += 12;
-  doc.setFont('helvetica', 'normal');
   doc.setFontSize(8.5);
+  doc.setTextColor(booked[0], booked[1], booked[2]);
+  doc.text('NEXT STEP', margin + 16, cardY);
+  cardY += 14;
+  doc.setFont('times', 'normal');
+  doc.setFontSize(11.5);
+  doc.setTextColor(textDark[0], textDark[1], textDark[2]);
+  doc.text('Install what you just learned', margin + 16, cardY);
+  cardY += 14;
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
   doc.setTextColor(accent[0], accent[1], accent[2]);
-  doc.textWithLink('https://offer.perfectlymademarketing.com/', margin + 14, cardY, { url: 'https://offer.perfectlymademarketing.com/' });
+  doc.textWithLink('https://offer.perfectlymademarketing.com/', margin + 16, cardY, { url: 'https://offer.perfectlymademarketing.com/' });
 
   // ── FOOTER ──
   doc.setFont('helvetica', 'normal');
-  doc.setFontSize(7.5);
+  doc.setFontSize(8);
   doc.setTextColor(textMuted[0], textMuted[1], textMuted[2]);
-  doc.text('(c) Perfectly Made Marketing  |  perfectlymademarketing.com', pageW / 2, pageH - 22, { align: 'center' });
+  doc.text('(c) Perfectly Made Marketing  |  perfectlymademarketing.com', pageW / 2, pageH - 24, { align: 'center' });
 
   doc.save('SBP-Diagnostic-Results.pdf');
 }
