@@ -723,10 +723,10 @@
     })();
   </script>
 
-  <!-- Meta Pixel Lead Event — visitor opted in for the lead magnet -->
+  <!-- Meta Pixel Purchase Event — visitor just bought the $27 diagnostic -->
   <script>
     if (typeof fbq !== 'undefined') {
-      fbq('track', 'Lead');
+      fbq('track', 'Purchase', { value: 27.00, currency: 'USD' });
     }
   </script>
 </body>
