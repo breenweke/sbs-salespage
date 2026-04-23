@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Strategy Call | Perfectly Made Marketing</title>
+  <meta name="description" content="Your 4 Simple Fixes Guide is on its way. Book a 20-minute strategy call with Bree to turn those fixes into your plan — specific to your offer, your price point, your audience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NQPFQDNQ');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Meta Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1825521284560570'); fbq('track', 'PageView'); </script> <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1" /></noscript> <!-- End Meta Pixel Code -->
+
+  <!-- Microsoft Clarity Analytics -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wcsjkjhldk");
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ==========================================================
+       BOOK A CALL V2 — Warm Editorial Hospitality
+       Built on the client-template outline + Bree-specific sections
+       ========================================================== */
+
+    html { scroll-behavior: smooth; }
+
+    /* ==========================================================
+       PROGRESS BAR
+       ========================================================== */
+    .v2-progress {
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--taupe-200);
+      padding: 28px 24px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .v2-progress-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .v2-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      flex: 0 0 auto;
+    }
+    .v2-step-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font);
+      font-size: .92rem;
+      font-weight: 700;
+      transition: all .25s var(--ease);
+    }
+    .v2-step--done .v2-step-circle {
+      background: var(--lime);
+      color: var(--text);
+      box-shadow: 0 2px 8px rgba(222,255,85,.5);
+    }
+    .v2-step--active .v2-step-circle {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 4px 14px var(--accent-glow);
+      animation: v2-pulse 2s ease-in-out infinite;
+    }
+    .v2-step--pending .v2-step-circle {
+      background: var(--warm-white);
+      color: var(--text-muted);
+      border: 1.5px solid var(--taupe-200);
+    }
+    @keyframes v2-pulse {
+      0%, 100% { box-shadow: 0 4px 14px var(--accent-glow); }
+      50%      { box-shadow: 0 4px 22px rgba(107,102,233,.5); }
+    }
+    .v2-step-label {
+      font-family: var(--font);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      color: var(--text-soft);
+      text-align: center;
+      max-width: 140px;
+      line-height: 1.3;
+    }
+    .v2-step--active .v2-step-label { color: var(--accent); }
+    .v2-step--done .v2-step-label { color: var(--text); }
+    .v2-step-line {
+      flex: 1 1 auto;
+      height: 2px;
+      background: var(--taupe-200);
+      margin: 0 4px 28px;
+      min-width: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .v2-step-line--filled {
+      background: linear-gradient(90deg, var(--lime), var(--accent));
+    }
+
+    /* ==========================================================
+       GUIDE CONFIRMATION BANNER
+       ========================================================== */
+    .v2-confirm-banner {
+      background: var(--soft-green-bg);
+      border-bottom: 1px solid var(--soft-green-border);
+      padding: 18px 24px;
+      text-align: center;
+    }
+    .v2-confirm-banner-inner {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--font);
+      font-size: .95rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .v2-confirm-banner-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--soft-green-icon);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .v2-confirm-banner strong { color: var(--text); font-weight: 600; }
+
+    /* ==========================================================
+       HERO — 2-col with sticky booking card
+       ========================================================== */
+    .v2-hero {
+      padding: 72px 24px 96px;
+      background: linear-gradient(180deg, #fdf5f0 0%, #fdfbf7 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .v2-hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -140px;
+      width: 460px; height: 460px;
+      background: radial-gradient(circle, #fdd8c8 0%, transparent 70%);
+      filter: blur(60px);
+      opacity: .45;
+      pointer-events: none;
+    }
+    .v2-hero-grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 64px;
+      align-items: flex-start;
+      position: relative;
+      z-index: 1;
+    }
+    .v2-hero-copy {
+      max-width: 560px;
+    }
+    .v2-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .v2-eyebrow .line { width: 28px; height: 1px; background: var(--accent); }
+    .v2-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4.2vw, 3.2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+    .v2-hero h1 em { color: var(--accent); font-style: italic; }
+    .v2-hero-copy p {
+      font-size: 1.02rem;
+      color: var(--text-soft);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .v2-hero-copy p strong { color: var(--text); }
+    .v2-hero-copy p em { color: var(--accent); font-style: italic; }
+
+    /* Sticky booking card */
+    .v2-booking-card {
+      position: sticky;
+      top: 120px;
+      background: var(--warm-white);
+      border: 1px solid var(--taupe-200);
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: 0 24px 60px rgba(61,54,49,.12);
+    }
+    .v2-booking-card::before {
+      content: '';
+      display: block;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--lime));
+      border-radius: 3px 3px 0 0;
+      margin: -28px -24px 24px;
+    }
+    .v2-booking-card-header {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+    .v2-booking-card-header h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .v2-booking-card-header p {
+      font-size: .85rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+    .v2-booking-calendar {
+      margin: 0 -8px 18px;
+    }
+    .v2-booking-calendar .js_kt_asset_embed { width: 100%; }
+
+    .v2-booking-meta {
+      border-top: 1px solid var(--taupe-100);
+      padding-top: 18px;
+    }
+    .v2-booking-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 0;
+      font-size: .88rem;
+      color: var(--text);
+    }
+    .v2-booking-meta-row svg {
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+    .v2-booking-meta-row strong { color: var(--text); font-weight: 600; }
+    .v2-booking-meta-row .muted { color: var(--text-soft); }
+
+    .v2-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--taupe-100);
+    }
+    .v2-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      background: var(--cream);
+      border: 1px solid var(--taupe-200);
+      border-radius: var(--radius-pill);
+      font-family: var(--font);
+      font-size: .76rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: .02em;
+    }
+    .v2-pill-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--lime);
+    }
+    .v2-pill--scarcity .v2-pill-dot { background: var(--accent); }
+
+    /* ==========================================================
+       HONEST SECTION — what the guide will / can't do
+       ========================================================== */
+    .v2-honest {
+      padding: 96px 24px;
+      background: var(--warm-white);
+    }
+    .v2-honest-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .v2-honest h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+    }
+    .v2-honest h2 em { color: var(--accent); font-style: italic; }
+    .v2-honest p {
+      font-size: 1.02rem;
+      color: var(--text-soft);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .v2-honest p strong { color: var(--text); }
+    .v2-honest p em { color: var(--accent); font-style: italic; }
+
+    .v2-cant-list {
+      list-style: none;
+      margin: 24px 0 30px;
+      padding: 24px 28px;
+      background: var(--blush);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .v2-cant-list li {
+      position: relative;
+      padding: 10px 0 10px 34px;
+      font-size: .98rem;
+      color: var(--text);
+      line-height: 1.65;
+      border-bottom: 1px solid rgba(61,54,49,.08);
+    }
+    .v2-cant-list li:last-child { border-bottom: none; }
+    .v2-cant-list li::before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 18px;
+      width: 18px; height: 2px;
+      background: var(--soft-red-icon);
+      border-radius: 2px;
+    }
+
+    .v2-bridge-quote {
+      margin-top: 36px;
+      padding: 28px 32px;
+      background: var(--accent-light);
+      border-radius: var(--radius);
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.18rem;
+      line-height: 1.55;
+      color: var(--text);
+      text-align: center;
+    }
+    .v2-bridge-quote strong {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    /* ==========================================================
+       SOLUTION — what actually solves this (SBS intro)
+       ========================================================== */
+    .v2-solution { padding: 96px 24px; background: var(--blush); position: relative; overflow: hidden; }
+    .v2-solution::before { content: ''; position: absolute; top: -120px; right: -120px; width: 400px; height: 400px; background: radial-gradient(circle, #c0bcf0 0%, transparent 70%); filter: blur(60px); opacity: .35; }
+    .v2-solution-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+    .v2-solution-header { text-align: center; max-width: 680px; margin: 0 auto 44px; }
+    .v2-solution-header h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3.4vw, 2.4rem); line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 18px; }
+    .v2-solution-header h2 em { color: var(--accent); font-style: italic; }
+    .v2-solution-header p { font-size: 1rem; color: var(--text-soft); line-height: 1.8; }
+    .v2-solution-header p strong { color: var(--text); }
+    .v2-pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .v2-pillar { background: var(--warm-white); border: 1px solid var(--taupe-200); border-radius: 14px; padding: 32px 24px 28px; text-align: center; box-shadow: var(--shadow-soft); }
+    .v2-pillar-num { display: inline-block; font-family: var(--serif); font-style: italic; font-size: .95rem; color: var(--accent); margin-bottom: 4px; }
+    .v2-pillar-stage {
+      display: inline-block;
+      font-family: var(--font);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--text);
+      padding: 4px 14px;
+      background: var(--lime);
+      border-radius: var(--radius-pill);
+      margin: 4px 0 14px;
+    }
+    .v2-pillar h3 { font-family: var(--serif); font-size: 1.1rem; line-height: 1.3; margin-bottom: 12px; color: var(--text); }
+    .v2-pillar p { font-size: .92rem; color: var(--text-soft); line-height: 1.65; margin: 0; }
+
+    /* ==========================================================
+       PROOF — Linda full story + Bree transformation
+       ========================================================== */
+    .v2-proof { padding: 96px 24px; background: var(--warm-white); }
+    .v2-proof-inner { max-width: 960px; margin: 0 auto; }
+    .v2-proof-header { text-align: center; max-width: 680px; margin: 0 auto 40px; }
+    .v2-proof-header h2 { font-family: var(--serif); font-size: clamp(1.9rem, 3.6vw, 2.6rem); line-height: 1.2; letter-spacing: -0.01em; }
+    .v2-proof-header h2 em { color: var(--accent); font-style: italic; }
+
+    /* Linda full story block */
+    .v2-linda-story { max-width: 680px; margin: 0 auto 40px; }
+    .v2-linda-story p { font-size: 1.02rem; color: var(--text-soft); line-height: 1.85; margin-bottom: 18px; }
+    .v2-linda-story p strong { color: var(--text); }
+    .v2-linda-story p em { color: var(--accent); font-style: italic; }
+
+    .v2-linda-proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 860px; margin: 0 auto 32px; }
+    .v2-linda-proof-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid var(--soft-green-border);
+      box-shadow: var(--shadow-card);
+      background: var(--warm-white);
+    }
+    .v2-linda-proof-item img { width: 100%; display: block; }
+    .v2-linda-proof-caption {
+      padding: 10px 14px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--soft-green-icon);
+      background: var(--soft-green-bg);
+      text-align: center;
+      border-top: 1px solid var(--soft-green-border);
+    }
+
+    .v2-linda-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      background: var(--accent-light);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      max-width: 620px;
+      margin: 0 auto 32px;
+    }
+    .v2-linda-stat { text-align: center; }
+    .v2-linda-stat-num {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .v2-linda-stat-num .strike { text-decoration: line-through; color: var(--text-muted); font-size: .7em; margin-right: 6px; }
+    .v2-linda-stat-label { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); }
+
+    .v2-linda-closing {
+      max-width: 620px;
+      margin: 0 auto 56px;
+      padding: 24px 28px;
+      background: var(--warm-white);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.02rem;
+      line-height: 1.6;
+      color: var(--text);
+      box-shadow: var(--shadow-soft);
+    }
+    .v2-linda-closing strong { color: var(--accent); font-style: normal; }
+
+    /* Bree own story card (compact) */
+    .v2-bree-story-card {
+      max-width: 680px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #fefefe 0%, #fef7f3 100%);
+      border: 1px solid var(--taupe-200);
+      border-radius: 18px;
+      padding: 32px 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(61,54,49,.06);
+    }
+    .v2-bree-story-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--lime));
+    }
+    .v2-bree-story-label { font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .v2-bree-story-card h3 { font-family: var(--serif); font-size: 1.15rem; line-height: 1.35; color: var(--text); margin-bottom: 14px; }
+    .v2-bree-story-card p { font-size: .95rem; color: var(--text-soft); line-height: 1.7; margin: 0; }
+    .v2-bree-story-card p strong { color: var(--text); }
+
+    .v2-proof-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      max-width: 600px;
+      margin: 56px auto 40px;
+    }
+    .v2-proof-divider .line { flex: 1 1 auto; height: 1px; background: var(--taupe-200); }
+    .v2-proof-divider-label {
+      font-family: var(--font);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    /* ==========================================================
+       DIFFERENT — vs other agencies
+       ========================================================== */
+    .v2-different { padding: 96px 24px; background: linear-gradient(180deg, var(--ivory) 0%, var(--cream) 100%); }
+    .v2-different-inner { max-width: 760px; margin: 0 auto; }
+    .v2-different-header { text-align: center; margin-bottom: 38px; }
+    .v2-different-header h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3.4vw, 2.4rem); line-height: 1.25; letter-spacing: -0.01em; }
+    .v2-different-header h2 em { color: var(--accent); font-style: italic; }
+    .v2-different-header p { margin-top: 18px; font-size: 1rem; color: var(--text-soft); line-height: 1.8; }
+    .v2-different-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+    .v2-different-list li { background: var(--warm-white); border: 1px solid var(--taupe-200); border-radius: 14px; padding: 22px 24px; display: flex; gap: 16px; align-items: flex-start; box-shadow: var(--shadow-soft); }
+    .v2-different-list-icon { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .85rem; font-family: var(--serif); }
+    .v2-different-list-copy { font-size: .95rem; color: var(--text-soft); line-height: 1.65; }
+    .v2-different-list-copy strong { display: block; color: var(--text); font-size: 1rem; margin-bottom: 4px; font-weight: 600; }
+
+    /* ==========================================================
+       WEEKS — what we build, week by week
+       ========================================================== */
+    .v2-weeks { padding: 96px 24px; background: var(--warm-white); }
+    .v2-weeks-inner { max-width: 860px; margin: 0 auto; }
+    .v2-weeks-header { text-align: center; max-width: 640px; margin: 0 auto 44px; }
+    .v2-weeks-header h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3.4vw, 2.4rem); line-height: 1.25; letter-spacing: -0.01em; }
+    .v2-weeks-header h2 em { color: var(--accent); font-style: italic; }
+    .v2-weeks-header p { margin-top: 18px; font-size: 1rem; color: var(--text-soft); line-height: 1.8; }
+    .v2-week-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .v2-week-card { background: var(--warm-white); border: 1px solid var(--taupe-200); border-radius: 14px; padding: 28px 26px; box-shadow: var(--shadow-soft); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+    .v2-week-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(61,54,49,.08); }
+    .v2-week-label { display: inline-block; padding: 5px 12px; background: var(--accent-light); color: var(--accent); border-radius: var(--radius-pill); font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px; }
+    .v2-week-card h3 { font-family: var(--serif); font-size: 1.1rem; line-height: 1.3; color: var(--text); margin-bottom: 10px; }
+    .v2-week-card p { font-size: .92rem; color: var(--text-soft); line-height: 1.65; margin: 0; }
+
+    /* ==========================================================
+       WHO THIS CALL IS FOR — qualifier
+       ========================================================== */
+    .v2-qualifier {
+      padding: 96px 24px;
+      background: linear-gradient(180deg, var(--ivory) 0%, var(--cream) 100%);
+    }
+    .v2-qualifier-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .v2-qualifier h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .v2-qualifier h2 em { color: var(--accent); font-style: italic; }
+    .v2-qualifier-intro {
+      font-size: 1rem;
+      color: var(--text-soft);
+      line-height: 1.8;
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .v2-qualifier-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+    .v2-qualifier-list li {
+      background: var(--warm-white);
+      border: 1px solid var(--taupe-200);
+      border-radius: 12px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: .98rem;
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .v2-qualifier-list li strong { color: var(--text); }
+    .v2-qualifier-check {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--soft-green-bg);
+      border: 1.5px solid var(--soft-green-border);
+      color: var(--soft-green-icon);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: .82rem;
+      margin-top: 1px;
+    }
+
+    /* ==========================================================
+       BIO — who you'll be talking to
+       ========================================================== */
+    .v2-bio {
+      padding: 96px 24px;
+      background: var(--warm-white);
+    }
+    .v2-bio-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .v2-bio-photo-wrap {
+      position: relative;
+    }
+    .v2-bio-photo-wrap::before {
+      content: '';
+      position: absolute;
+      top: -14px; left: -14px;
+      width: 80px; height: 80px;
+      background: var(--lime);
+      border-radius: 50%;
+      opacity: .55;
+      z-index: 0;
+    }
+    .v2-bio-photo-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: -16px; right: -16px;
+      width: 90px; height: 90px;
+      background: var(--accent-light);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .v2-bio-photo {
+      position: relative;
+      z-index: 1;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      box-shadow: 0 20px 40px rgba(61,54,49,.15);
+    }
+    .v2-bio-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .v2-bio-copy h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .v2-bio-copy h2 em { color: var(--accent); font-style: italic; }
+    .v2-bio-credentials {
+      font-family: var(--font);
+      font-size: .85rem;
+      color: var(--text-soft);
+      letter-spacing: .02em;
+      margin-bottom: 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--taupe-100);
+    }
+    .v2-bio-credentials strong { color: var(--accent); font-weight: 600; }
+    .v2-bio-copy p {
+      font-size: 1rem;
+      color: var(--text-soft);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .v2-bio-copy p strong { color: var(--text); }
+    .v2-bio-signature {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-top: 8px;
+    }
+
+    /* ==========================================================
+       SECOND CTA — repeat the invitation
+       ========================================================== */
+    .v2-cta2 {
+      padding: 96px 24px;
+      background: var(--blush);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .v2-cta2::before {
+      content: '';
+      position: absolute;
+      top: -120px; left: -160px;
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, #c0bcf0 0%, transparent 70%);
+      filter: blur(60px);
+      opacity: .35;
+      pointer-events: none;
+    }
+    .v2-cta2::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; right: -120px;
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, #eeffae 0%, transparent 70%);
+      filter: blur(60px);
+      opacity: .4;
+      pointer-events: none;
+    }
+    .v2-cta2-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .v2-cta2-inner h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 22px;
+    }
+    .v2-cta2-inner h2 em { color: var(--accent); font-style: italic; }
+    .v2-cta2-inner p {
+      font-size: 1.02rem;
+      color: var(--text-soft);
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+    .v2-cta2-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 18px 40px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
+    .v2-cta2-btn:hover {
+      background: var(--accent-hover);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px var(--accent-glow);
+    }
+
+    /* ==========================================================
+       FOOTER
+       ========================================================== */
+    .footer {
+      background: var(--cream);
+      padding: 48px 24px 32px;
+      text-align: center;
+    }
+    .footer-logo { height: 32px; margin-bottom: 16px; opacity: .8; }
+    .footer p { font-size: .9rem; color: var(--text-soft); margin: 4px 0; }
+
+    /* ==========================================================
+       RESPONSIVE
+       ========================================================== */
+    @media (max-width: 900px) {
+      .v2-progress { padding: 22px 20px 18px; position: static; }
+      .v2-step-label { font-size: .7rem; max-width: 96px; }
+      .v2-step-line { margin: 0 2px 28px; min-width: 10px; }
+
+      .v2-hero { padding: 56px 20px 72px; }
+      .v2-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .v2-booking-card { position: static; }
+      .v2-hero-copy { max-width: 100%; }
+
+      .v2-honest, .v2-qualifier, .v2-bio, .v2-cta2,
+      .v2-solution, .v2-proof, .v2-different, .v2-weeks { padding: 72px 20px; }
+      .v2-pillar-grid, .v2-week-grid { grid-template-columns: 1fr; }
+      .v2-linda-proof-grid { grid-template-columns: 1fr; max-width: 360px; }
+      .v2-linda-stats { gap: 28px; padding: 24px; }
+      .v2-bio-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+      .v2-bio-photo-wrap { max-width: 220px; margin: 0 auto; }
+      .v2-bio-credentials { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQPFQDNQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- ======================== PROGRESS BAR ======================== -->
+  <div class="v2-progress">
+    <div class="v2-progress-inner">
+      <div class="v2-step v2-step--done">
+        <div class="v2-step-circle">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="v2-step-label">Guide requested</div>
+      </div>
+      <div class="v2-step-line v2-step-line--filled"></div>
+      <div class="v2-step v2-step--active">
+        <div class="v2-step-circle">2</div>
+        <div class="v2-step-label">Book your strategy call</div>
+      </div>
+      <div class="v2-step-line"></div>
+      <div class="v2-step v2-step--pending">
+        <div class="v2-step-circle">3</div>
+        <div class="v2-step-label">Get your system built</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== CONFIRMATION BANNER ======================== -->
+  <div class="v2-confirm-banner">
+    <div class="v2-confirm-banner-inner">
+      <div class="v2-confirm-banner-icon">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <span>Your <strong>4 Simple Fixes Guide</strong> is on its way to your inbox. Check your spam or promotions folder if you do not see it — sometimes it lands there.</span>
+    </div>
+  </div>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="v2-hero">
+    <div class="v2-hero-grid">
+      <!-- LEFT: Copy -->
+      <div class="v2-hero-copy">
+        <span class="v2-eyebrow"><span class="line"></span>The next step</span>
+        <h1>Your calendar should be full.<br />Let's make it <em>fill itself.</em></h1>
+
+        <p>The 4 Simple Fixes Guide is the audit. It names the four places your Meta ads funnel is leaking leads — the reason your calendar fills in waves instead of filling consistently.</p>
+
+        <p>But if you are like most people who opted in for this guide, you already know the problem. You have been trying to piece it together yourself for a while. <strong>What you actually want is for someone to just build the whole thing for you</strong> — the ads, the lead magnet, the opt-in page, the booking flow, the follow-up — so your calendar stays full without you having to touch it.</p>
+
+        <p>That is what this call is for. A 20-minute conversation to see if my team and I are the right fit to build it for you. Scroll down to learn more, or pick a time on the right.</p>
+      </div>
+
+      <!-- RIGHT: Sticky booking card -->
+      <aside class="v2-booking-card">
+        <div class="v2-booking-card-header">
+          <h3>Book your strategy call</h3>
+          <p>Pick a time that works for you.</p>
+        </div>
+
+        <!-- ========== KARTRA CALENDAR EMBED ========== -->
+        <div class="v2-booking-calendar">
+          <div class="js_kt_asset_embed js_kartra_trackable_object" data-kt-type="calendar" data-kt-embed="inline" data-kt-value="Tbm6WNfVL8Yf" data-kt-owner="7kzAqVxg"></div>
+          <script type="text/javascript" src="https://app.kartra.com/js/build/front/embed/calendar.js"></script>
+        </div>
+        <!-- ========== END KARTRA CALENDAR EMBED ========== -->
+      </aside>
+    </div>
+  </section>
+
+  <!-- ======================== HONEST SECTION ======================== -->
+  <section class="v2-honest">
+    <div class="v2-honest-inner">
+      <span class="v2-eyebrow"><span class="line"></span>A note on what to expect</span>
+      <h2>Here's what the guide will do — and <em>what it can't.</em></h2>
+
+      <p>The 4 Simple Fixes Guide is a real audit. Once you read it, you will know exactly where your current Meta ads funnel is leaking — the four specific places that cause leads to come in without bookings following. <strong>That is what it will do.</strong></p>
+
+      <p>But I want to be honest with you about what the guide cannot do on its own:</p>
+
+      <ul class="v2-cant-list">
+        <li>It cannot tell you which fix to prioritize first based on your specific offer, price point, and audience.</li>
+        <li>It cannot build the ads, lead magnet, opt-in page, booking flow, or follow-up sequences for you.</li>
+        <li>It cannot tell you if your current offer even belongs in a paid-ads funnel yet.</li>
+      </ul>
+
+      <p>That is not a failure of the guide. It is just the nature of a PDF. A PDF can name the problem. It cannot sit in a conversation with you and look at <em>your</em> numbers, <em>your</em> offer, and <em>your</em> audience — and then build the right system around all three.</p>
+
+      <div class="v2-bridge-quote">
+        The guide names the <strong>problem.</strong><br />This call is where we decide if we are the <strong>right fit</strong> to solve it for you.
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SOLUTION — what actually solves this ======================== -->
+  <section class="v2-solution">
+    <div class="v2-solution-inner">
+      <div class="v2-solution-header">
+        <span class="v2-eyebrow" style="display: inline-flex;"><span class="line"></span>What actually solves this</span>
+        <h2>The Self-Booking <em>System.</em></h2>
+        <p>After spending $544 on ads that booked zero calls, I went back to the drawing board and built something different — a system that does not rely on you chasing leads, posting daily, or following up manually. It fills the calendar <strong>for</strong> you, on three pillars.</p>
+      </div>
+
+      <div class="v2-pillar-grid">
+        <div class="v2-pillar">
+          <div class="v2-pillar-num">01</div>
+          <div class="v2-pillar-stage">Seen</div>
+          <h3>A lead magnet that attracts buyers</h3>
+          <p>Not browsers. Written and designed to filter for people who are actually ready to book a call with you.</p>
+        </div>
+        <div class="v2-pillar">
+          <div class="v2-pillar-num">02</div>
+          <div class="v2-pillar-stage">Booked</div>
+          <h3>A calendar that books itself</h3>
+          <p>An opt-in page and booking flow that send qualified leads straight to your calendar the moment they raise their hand.</p>
+        </div>
+        <div class="v2-pillar">
+          <div class="v2-pillar-num">03</div>
+          <div class="v2-pillar-stage">Paid</div>
+          <h3>An email list that follows up for you</h3>
+          <p>Automated nurture sequences that stay in front of the leads who do not book right away — so every ad dollar keeps working long after the click.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PROOF ======================== -->
+  <section class="v2-proof">
+    <div class="v2-proof-inner">
+      <div class="v2-proof-header">
+        <span class="v2-eyebrow" style="display: inline-flex;"><span class="line"></span>It works</span>
+        <h2>Linda was two weeks from turning<br /><em>her ads off entirely.</em></h2>
+      </div>
+
+      <div class="v2-linda-story">
+        <p>She had been running Meta ads for months, paying <strong>$13 per lead</strong> and watching her spend climb while her calendar stayed empty. She was doing the work — the content, the videos, the showing up online — and none of it was converting.</p>
+        <p>She was starting to wonder if she was the problem.</p>
+        <p><em>Then she found us.</em></p>
+        <p>We built her complete Self-Booking System. Her ads. Opt-in page. Booking flow. Follow-up sequence. List growth engine. <strong>Every piece connected in the right order, all inside her accounts.</strong></p>
+        <p>In the first 5 days of her system being live she received <strong>22 leads at only $3 each and booked 3 calls on autopilot.</strong></p>
+      </div>
+
+      <div class="v2-linda-proof-grid">
+        <div class="v2-linda-proof-item">
+          <img src="images/Client Results/Ad 1.png" alt="Linda's Meta ad" loading="lazy" />
+          <div class="v2-linda-proof-caption">Her ad</div>
+        </div>
+        <div class="v2-linda-proof-item">
+          <img src="images/Client Results/Her opt in page.png" alt="Linda's opt-in page" loading="lazy" />
+          <div class="v2-linda-proof-caption">Her opt-in page</div>
+        </div>
+        <div class="v2-linda-proof-item">
+          <img src="images/Client Results/Screenshot of her calendar.png" alt="Linda's calendar with booked calls" loading="lazy" />
+          <div class="v2-linda-proof-caption">Calls on her calendar</div>
+        </div>
+      </div>
+
+      <div class="v2-linda-stats">
+        <div class="v2-linda-stat">
+          <div class="v2-linda-stat-num"><span class="strike">$13</span>$3</div>
+          <div class="v2-linda-stat-label">Cost per lead</div>
+        </div>
+        <div class="v2-linda-stat">
+          <div class="v2-linda-stat-num">22</div>
+          <div class="v2-linda-stat-label">New leads</div>
+        </div>
+        <div class="v2-linda-stat">
+          <div class="v2-linda-stat-num">3</div>
+          <div class="v2-linda-stat-label">Calls in 5 days</div>
+        </div>
+      </div>
+
+      <div class="v2-linda-closing">
+        Linda opened her laptop on Monday and saw three names on her calendar she did not recognize. She did not have to post anything or manually follow up with anyone. <strong>The system was running whether she was online or not.</strong>
+      </div>
+
+      <div class="v2-proof-divider">
+        <span class="line"></span>
+        <span class="v2-proof-divider-label">And before Linda, there was me</span>
+        <span class="line"></span>
+      </div>
+
+      <div class="v2-bree-story-card">
+        <div class="v2-bree-story-label">My own story</div>
+        <h3>$544 spent with zero calls booked — to 16 calls booked in two weeks on the same budget.</h3>
+        <p>I spent $544 on Meta ads and booked <strong>zero</strong> calls. I thought my ad was the problem. I changed it. Nothing moved. It took months to realize the ad was not broken — <strong>the system behind the ad was broken.</strong> Once I built the full Self-Booking System, my next campaign booked 16 calls in two weeks on the same budget. And more importantly — it kept filling. Week after week.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== DIFFERENT ======================== -->
+  <section class="v2-different">
+    <div class="v2-different-inner">
+      <div class="v2-different-header">
+        <span class="v2-eyebrow" style="display: inline-flex;"><span class="line"></span>Why this is not the agency you already tried</span>
+        <h2>If an ads agency has burned you before,<br /><em>this is where you see the difference.</em></h2>
+        <p>Most ads agencies only touch one piece of your marketing — the ad. Everything downstream of the click is your problem. That is the exact reason your last experience did not produce bookings.</p>
+      </div>
+
+      <ul class="v2-different-list">
+        <li>
+          <span class="v2-different-list-icon">1</span>
+          <div class="v2-different-list-copy">
+            <strong>We audit the full system first — before a single ad runs.</strong>
+            Your offer, messaging, lead magnet, funnel, and follow-up all get reviewed and refined so the ads have something that actually converts behind them.
+          </div>
+        </li>
+        <li>
+          <span class="v2-different-list-icon">2</span>
+          <div class="v2-different-list-copy">
+            <strong>We build every piece — not just the ad.</strong>
+            Lead magnet, opt-in page, booking flow, email sequences, tracking, and ads. All tailored to your offer and audience. All inside your accounts.
+          </div>
+        </li>
+        <li>
+          <span class="v2-different-list-icon">3</span>
+          <div class="v2-different-list-copy">
+            <strong>We track the full funnel — not just clicks.</strong>
+            Leads, opt-ins, bookings, show-ups, closes. We report on what actually matters — revenue generated, not just cheap ad impressions.
+          </div>
+        </li>
+        <li>
+          <span class="v2-different-list-icon">4</span>
+          <div class="v2-different-list-copy">
+            <strong>You work directly with me — not an account manager.</strong>
+            Every install is overseen by Bree. Weekly check-ins. Private Slack channel. Not outsourced. Not templated. Not rushed.
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================== WEEKS — what we actually build ======================== -->
+  <section class="v2-weeks">
+    <div class="v2-weeks-inner">
+      <div class="v2-weeks-header">
+        <span class="v2-eyebrow" style="display: inline-flex;"><span class="line"></span>What we actually build</span>
+        <h2>The full install, <em>week by week.</em></h2>
+        <p>Four weeks from kickoff to your system going live. Here is what we are building for you during each one.</p>
+      </div>
+
+      <div class="v2-week-grid">
+        <div class="v2-week-card">
+          <span class="v2-week-label">Week 1 · Foundation</span>
+          <h3>Audit, messaging, and strategy</h3>
+          <p>Full-funnel audit of your current setup, refined messaging and positioning, and a custom strategy built around your offer, price point, and audience.</p>
+        </div>
+        <div class="v2-week-card">
+          <span class="v2-week-label">Week 2 · Lead capture</span>
+          <h3>Lead magnet, opt-in page, and booking flow</h3>
+          <p>We build your high-converting lead magnet, a clean opt-in page that actually converts, and the booking flow that gets qualified leads straight to your calendar.</p>
+        </div>
+        <div class="v2-week-card">
+          <span class="v2-week-label">Week 3 · Follow-up</span>
+          <h3>Automated email sequences and nurture</h3>
+          <p>Booking reminders, no-show recovery, and nurture sequences for the leads who do not book right away. The system follows up for you, forever.</p>
+        </div>
+        <div class="v2-week-card">
+          <span class="v2-week-label">Week 4 · Launch</span>
+          <h3>Meta ads built, launched, and tracked</h3>
+          <p>Ad creative, targeting, testing, and full conversion tracking — launched on a budget that makes sense for your business, with a Loom walkthrough so you understand every piece.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== QUALIFIER ======================== -->
+  <section class="v2-qualifier">
+    <div class="v2-qualifier-inner">
+      <span class="v2-eyebrow" style="display: flex; justify-content: center;"><span class="line"></span>Before you book</span>
+      <h2>Who this call is <em>for.</em></h2>
+      <p class="v2-qualifier-intro">I want to be upfront about this call so you can decide if it is worth your time. This is not a free strategy session. It is a conversation between me and a service provider who wants the whole funnel handled for them — so we can see if we are the right fit to build it. Here is who usually shows up.</p>
+
+      <ul class="v2-qualifier-list">
+        <li>
+          <span class="v2-qualifier-check">✓</span>
+          <span>You are an <strong>established service provider</strong> — coach, consultant, agent, broker, practitioner, or advisor — with a proven offer you have already sold.</span>
+        </li>
+        <li>
+          <span class="v2-qualifier-check">✓</span>
+          <span>You are <strong>done piecing it together alone.</strong> You want someone to build the whole thing, end to end, inside your accounts.</span>
+        </li>
+        <li>
+          <span class="v2-qualifier-check">✓</span>
+          <span>You are ready to invest in getting this built properly — both in the <strong>build itself</strong> and in the <strong>ad budget</strong> behind it — for long enough to let the system actually work.</span>
+        </li>
+        <li>
+          <span class="v2-qualifier-check">✓</span>
+          <span>You are ready to move on a real timeline — not six months from now, not "when things slow down."</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================== BIO ======================== -->
+  <section class="v2-bio">
+    <div class="v2-bio-inner">
+      <div class="v2-bio-photo-wrap">
+        <div class="v2-bio-photo">
+          <img src="images/Photo of Bree.jpg" alt="Bree Nweke" />
+        </div>
+      </div>
+      <div class="v2-bio-copy">
+        <span class="v2-eyebrow"><span class="line"></span>Who you'll be talking to</span>
+        <h2>Bree Nweke</h2>
+        <div class="v2-bio-credentials">
+          Founder, Perfectly Made Marketing · <strong>9+ years running Meta ads</strong> · Creator of the Self-Booking System
+        </div>
+
+        <p>I started running Meta ads in 2016 as a single mom selling life insurance, because door-knocking after 5pm was not going to work for my life. That decision accidentally turned into a methodology — the Self-Booking System — that has now been built for coaches, consultants, mortgage brokers, psychologists, and business funding experts.</p>
+
+        <p>On our call, I will ask honest questions about where you are, what you have tried, and what you actually want your calendar to look like. If we are a fit, <strong>we will talk about what it looks like to build this for you.</strong> I do not pressure anyone. But I also do not run free strategy sessions — I take this call seriously because I care about the businesses I agree to work with.</p>
+
+        <p class="v2-bio-signature">— Bree</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECOND CTA ======================== -->
+  <section class="v2-cta2">
+    <div class="v2-cta2-inner">
+      <span class="v2-eyebrow" style="display: flex; justify-content: center;"><span class="line"></span>Think this might be you?</span>
+      <h2>Let's have the <em>conversation.</em></h2>
+      <p>If everything you just read sounds like what you have been looking for, book a time below. I will see you on the call.</p>
+      <a href="#" onclick="document.querySelector('.v2-booking-card').scrollIntoView({ behavior: 'smooth', block: 'center' }); return false;" class="v2-cta2-btn">Book my call →</a>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer">
+    <img src="logo.png" alt="Perfectly Made Marketing" class="footer-logo" />
+    <p>&copy; 2026 Perfectly Made Marketing. All rights reserved.</p>
+    <p>Questions? <a href="mailto:hello@perfectlymademarketing.com">hello@perfectlymademarketing.com</a></p>
+  </footer>
+
+  <!-- ======================== LEAD EVENT + CONFETTI ======================== -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script>
+    (function() {
+      if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'lead_opted_in', page: 'book-a-call-v2' });
+
+      function fireConfetti() {
+        if (typeof confetti !== 'function') return;
+        var duration = 1000;
+        var end = Date.now() + duration;
+        var colors = ['#6b66e9', '#deff55', '#fdd8c8', '#c0bcf0', '#fef7f3'];
+        confetti({ particleCount: 120, spread: 90, startVelocity: 55, origin: { x: 0.5, y: 0.8 }, colors: colors, scalar: 1.1 });
+        (function frame() {
+          confetti({ particleCount: 4, angle: 60, spread: 65, origin: { x: 0, y: 0.7 }, colors: colors });
+          confetti({ particleCount: 4, angle: 120, spread: 65, origin: { x: 1, y: 0.7 }, colors: colors });
+          if (Date.now() < end) requestAnimationFrame(frame);
+        })();
+      }
+      if (document.readyState === 'complete') setTimeout(fireConfetti, 250);
+      else window.addEventListener('load', function() { setTimeout(fireConfetti, 250); });
+    })();
+  </script>
+</body>
+</html>
