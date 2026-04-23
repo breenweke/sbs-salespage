@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfectly Made Marketing | The Self-Booking System for Established Service Providers</title>
+  <meta name="description" content="We help established coaches, consultants, and service providers build Self-Booking Systems that fill their calendars on autopilot using Meta ads, high-converting lead funnels, and email lists they own forever." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NQPFQDNQ');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Meta Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1825521284560570'); fbq('track', 'PageView'); </script> <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1" /></noscript> <!-- End Meta Pixel Code -->
+
+  <!-- Microsoft Clarity Analytics -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wcsjkjhldk");
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ==========================================================
+       PMM HOMEPAGE — Option B: Warm Editorial Hospitality
+       Premium, personal, designed feel
+       ========================================================== */
+
+    /* Reset eyebrow centering */
+    .eyebrow.text-center { text-align: center; }
+    .eyebrow.text-center::after { margin-left: auto; margin-right: auto; }
+
+    /* --- Decorative floating shapes (subtle gradient blobs) --- */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: .55;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .blob-blush {
+      background: radial-gradient(circle, #fdd8c8 0%, transparent 70%);
+    }
+    .blob-periwinkle {
+      background: radial-gradient(circle, #c0bcf0 0%, transparent 70%);
+      opacity: .4;
+    }
+    .blob-lime {
+      background: radial-gradient(circle, #eeffae 0%, transparent 70%);
+      opacity: .55;
+    }
+
+    /* --- Signature hand-drawn accent line (SVG inline) --- */
+    .signature-swoop {
+      display: inline-block;
+      vertical-align: middle;
+      color: var(--accent);
+    }
+
+    /* --- Site nav (elegant, warm) --- */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253,251,247,.88);
+      backdrop-filter: blur(20px) saturate(150%);
+      border-bottom: 1px solid var(--taupe-200);
+      padding: 18px 24px;
+    }
+    .site-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .site-nav-logo img {
+      height: 28px;
+      width: auto;
+    }
+    .site-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .site-nav-links a {
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: .02em;
+      transition: color .2s var(--ease);
+      position: relative;
+    }
+    .site-nav-links a:not(.site-nav-cta):hover { color: var(--accent); }
+    .site-nav-cta {
+      background: var(--accent);
+      color: white !important;
+      padding: 11px 24px;
+      border-radius: var(--radius-pill);
+      font-size: .84rem !important;
+      font-weight: 600 !important;
+      transition: all .25s var(--ease);
+      box-shadow: 0 2px 8px var(--accent-glow);
+    }
+    .site-nav-cta:hover {
+      background: var(--accent-hover);
+      color: white !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+
+    /* Mobile hamburger */
+    .site-nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      color: var(--text);
+      margin-left: 12px;
+    }
+    .site-nav-toggle svg { display: block; }
+
+    /* Mobile menu panel */
+    .mobile-menu {
+      position: fixed;
+      top: 0; right: -100%;
+      width: 280px;
+      max-width: 85vw;
+      height: 100vh;
+      background: var(--warm-white);
+      box-shadow: -8px 0 40px rgba(61,54,49,.15);
+      padding: 80px 32px 40px;
+      z-index: 200;
+      transition: right .3s var(--ease);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .mobile-menu.open { right: 0; }
+    .mobile-menu a {
+      display: block;
+      padding: 14px 0;
+      font-family: var(--font);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--taupe-100);
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu a.mobile-menu-cta {
+      background: var(--accent);
+      color: white;
+      text-align: center;
+      border-radius: var(--radius-pill);
+      border: none;
+      margin-top: 16px;
+      padding: 14px 20px;
+      font-weight: 600;
+    }
+    .mobile-menu a.mobile-menu-cta:hover {
+      background: var(--accent-hover);
+      color: white;
+    }
+    .mobile-menu-close {
+      position: absolute;
+      top: 20px; right: 20px;
+      background: transparent;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    /* Mobile menu overlay */
+    .mobile-menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(26,26,26,.4);
+      backdrop-filter: blur(4px);
+      z-index: 150;
+      opacity: 0;
+      transition: opacity .3s var(--ease);
+    }
+    .mobile-menu-overlay.open {
+      display: block;
+      opacity: 1;
+    }
+
+    /* ==========================================================
+       HERO — Warm editorial split-screen
+       ========================================================== */
+    .hero-editorial {
+      background: linear-gradient(180deg, #fdf5f0 0%, #fdfbf7 100%);
+      padding: 72px 24px 120px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-editorial .blob-1 {
+      width: 460px; height: 460px;
+      top: -120px; right: -120px;
+    }
+    .hero-editorial .blob-2 {
+      width: 360px; height: 360px;
+      bottom: 60px; left: -100px;
+    }
+
+    .hero-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Hero photo frame */
+    .hero-photo-wrap {
+      position: relative;
+      max-width: 440px;
+      justify-self: center;
+    }
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute;
+      top: -20px; left: -20px;
+      width: 120px; height: 120px;
+      background: var(--lime);
+      border-radius: 50%;
+      opacity: .55;
+      z-index: 0;
+    }
+    .hero-photo-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: -24px; right: -24px;
+      width: 140px; height: 140px;
+      background: var(--accent-light);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .hero-photo {
+      position: relative;
+      z-index: 1;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(61,54,49,.18);
+      aspect-ratio: 4 / 5;
+    }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Hero copy */
+    .hero-copy { text-align: left; }
+    .hero-eyebrow {
+      display: inline-block;
+      font-family: var(--font);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--accent);
+    }
+    .hero-copy h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+      color: var(--text);
+    }
+    .hero-copy h1 em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    /* The "you're in the right place" confirm */
+    .right-place {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .right-place-text {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
+      color: var(--accent);
+      line-height: 1.3;
+    }
+    .right-place svg {
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    .hero-subhead {
+      font-size: 1.02rem;
+      color: var(--text-soft);
+      line-height: 1.8;
+      margin-bottom: 36px;
+      max-width: 440px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-cta-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 16px 32px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font);
+      font-size: .95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .25s var(--ease);
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+    .hero-cta-primary:hover {
+      background: var(--accent-hover);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
+    .hero-cta-secondary {
+      font-family: var(--font);
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--text-soft);
+      text-decoration: none;
+      border-bottom: 1px solid var(--taupe-200);
+      padding-bottom: 3px;
+      transition: color .2s, border-color .2s;
+    }
+    .hero-cta-secondary:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ==========================================================
+       SECTION — From Bree (warm signature transition)
+       ========================================================== */
+    .from-bree-section {
+      padding: 120px 24px;
+      background: var(--warm-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .from-bree-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .section-eyebrow-fancy {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .section-eyebrow-fancy .line {
+      width: 32px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .section-eyebrow-fancy span {
+      font-family: var(--font);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .from-bree-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 32px;
+    }
+    .from-bree-section h2 em { color: var(--accent); font-style: italic; }
+    .from-bree-section p {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      line-height: 1.85;
+      margin-bottom: 20px;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .from-bree-section p:last-of-type { margin-bottom: 0; }
+    .from-bree-section strong { color: var(--text); }
+
+    .bree-signature {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin-top: 28px;
+    }
+
+    /* ==========================================================
+       IMAGINE — 60/40 split with soft illustration
+       ========================================================== */
+    .imagine-split {
+      padding: 120px 24px;
+      background: linear-gradient(180deg, var(--ivory) 0%, var(--cream) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .imagine-split-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 72px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .imagine-split-copy h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin: 16px 0 24px;
+    }
+    .imagine-split-copy h2 em { color: var(--accent); font-style: italic; }
+    .imagine-split-copy p {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .imagine-split-copy p strong { color: var(--text); }
+    .imagine-split-copy .imagine-emphasis {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--accent);
+      border-left: 3px solid var(--accent);
+      padding-left: 20px;
+      margin-top: 28px;
+      line-height: 1.55;
+    }
+
+    /* Soft abstract illustration */
+    .imagine-illustration {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      max-width: 420px;
+      justify-self: center;
+      width: 100%;
+    }
+    .imagine-illustration .circle-lg {
+      position: absolute;
+      inset: 10% 10% 10% 10%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-light) 0%, #fdd8c8 100%);
+    }
+    .imagine-illustration .circle-md {
+      position: absolute;
+      top: 8%; right: 4%;
+      width: 38%; height: 38%;
+      border-radius: 50%;
+      background: var(--lime);
+      opacity: .85;
+    }
+    .imagine-illustration .circle-sm {
+      position: absolute;
+      bottom: 6%; left: 6%;
+      width: 26%; height: 26%;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: .9;
+    }
+    .imagine-illustration .ring {
+      position: absolute;
+      inset: 20% 20% 20% 20%;
+      border: 2px dashed rgba(107,102,233,.35);
+      border-radius: 50%;
+    }
+    .imagine-illustration .dot {
+      position: absolute;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--text);
+    }
+    .imagine-illustration .dot-1 { top: 18%; left: 42%; background: var(--accent); }
+    .imagine-illustration .dot-2 { bottom: 22%; right: 28%; background: var(--lime); width: 16px; height: 16px; }
+    .imagine-illustration .dot-3 { top: 52%; left: 14%; background: #fdd8c8; width: 18px; height: 18px; }
+
+    /* ==========================================================
+       FREEBIE CTA — Premium opt-in card
+       ========================================================== */
+    .freebie-section {
+      padding: 120px 24px;
+      background: var(--warm-white);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .freebie-section .blob-1 {
+      width: 480px; height: 480px;
+      top: -120px; right: -200px;
+    }
+
+    .freebie-header {
+      max-width: 680px;
+      margin: 0 auto 48px;
+      position: relative;
+      z-index: 1;
+    }
+    .freebie-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+    .freebie-header h2 em { color: var(--accent); font-style: italic; }
+
+    .freebie-card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #fefefe 0%, #fef7f3 100%);
+      border: 1px solid var(--taupe-200);
+      border-radius: 24px;
+      padding: 56px 48px;
+      box-shadow: 0 24px 60px rgba(61,54,49,.08);
+      text-align: left;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .freebie-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--lime));
+    }
+    .freebie-card-visual {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .freebie-card-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--accent-light);
+      border-radius: 50%;
+      opacity: .5;
+    }
+    .freebie-card-visual-inner {
+      position: relative;
+      width: 70%;
+      aspect-ratio: 3 / 4;
+      background: var(--warm-white);
+      border-radius: 12px;
+      box-shadow: 0 12px 32px rgba(61,54,49,.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .freebie-card-visual-inner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--lime));
+    }
+    .freebie-card-visual-eyebrow {
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .freebie-card-visual-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .freebie-card-visual-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 100%;
+    }
+    .freebie-card-visual-lines span {
+      height: 5px;
+      background: var(--taupe-100);
+      border-radius: 2px;
+    }
+    .freebie-card-visual-lines span:nth-child(1) { width: 90%; }
+    .freebie-card-visual-lines span:nth-child(2) { width: 75%; }
+    .freebie-card-visual-lines span:nth-child(3) { width: 85%; background: var(--lime); }
+    .freebie-card-visual-lines span:nth-child(4) { width: 70%; }
+
+    .freebie-card-content h3 {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 2.4vw, 1.7rem);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    .freebie-card-content p {
+      font-size: .97rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .freebie-card-content strong { color: var(--text); }
+    .freebie-card-cta {
+      display: inline-block;
+      background: var(--lime);
+      color: var(--text);
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font);
+      font-size: .92rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all .25s var(--ease);
+      box-shadow: 0 4px 16px var(--lime-glow);
+      border: none;
+      cursor: pointer;
+    }
+    .freebie-card-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--lime-glow);
+      color: var(--text);
+    }
+    .freebie-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .freebie-input {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid var(--taupe-200);
+      border-radius: var(--radius-sm);
+      font-family: var(--font);
+      font-size: .95rem;
+      color: var(--text);
+      background: var(--warm-white);
+      transition: border-color .2s var(--ease);
+      box-sizing: border-box;
+    }
+    .freebie-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .freebie-input::placeholder { color: var(--text-muted); }
+    .freebie-form .freebie-card-cta {
+      width: 100%;
+      padding: 15px 28px;
+      margin-top: 4px;
+    }
+    .freebie-card-note {
+      display: block;
+      font-size: .82rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ==========================================================
+       LINDA PROOF — editorial client spotlight
+       ========================================================== */
+    .linda-editorial {
+      padding: 120px 24px;
+      background: var(--blush);
+      position: relative;
+      overflow: hidden;
+    }
+    .linda-editorial .blob-1 {
+      width: 400px; height: 400px;
+      top: 20px; right: -120px;
+    }
+    .linda-editorial .blob-2 {
+      width: 380px; height: 380px;
+      bottom: 80px; left: -140px;
+    }
+    .linda-editorial-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .linda-editorial-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+    .linda-editorial-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .linda-editorial-header h2 em { color: var(--accent); font-style: italic; }
+
+    .linda-editorial-story {
+      max-width: 680px;
+      margin: 0 auto 44px;
+    }
+    .linda-editorial-story p {
+      font-size: 1.02rem;
+      color: var(--text-soft);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .linda-editorial-story p strong { color: var(--text); }
+
+    .linda-proof-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+      max-width: 860px;
+      margin: 0 auto 40px;
+    }
+    .linda-proof-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid var(--soft-green-border);
+      box-shadow: var(--shadow-card);
+      background: var(--warm-white);
+    }
+    .linda-proof-item img { width: 100%; display: block; }
+    .linda-proof-caption {
+      padding: 10px 14px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--soft-green-icon);
+      background: var(--soft-green-bg);
+      text-align: center;
+      border-top: 1px solid var(--soft-green-border);
+    }
+
+    .linda-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      background: var(--accent-light);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .linda-stat { text-align: center; }
+    .linda-stat-num {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .linda-stat-label {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .linda-closing {
+      max-width: 620px;
+      margin: 40px auto 0;
+      padding: 28px 32px;
+      background: var(--warm-white);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    .linda-closing strong { color: var(--accent); font-style: normal; }
+
+    /* ==========================================================
+       VALUES — what sets us apart
+       ========================================================== */
+    .values-editorial {
+      padding: 120px 24px;
+      background: var(--warm-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .values-editorial-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .values-editorial-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .values-editorial-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .values-editorial-header h2 em { color: var(--accent); font-style: italic; }
+
+    .values-editorial-inner-wide {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .comparison-grid-home {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 44px;
+    }
+    .comparison-card-home {
+      background: var(--warm-white);
+      border: 1px solid var(--taupe-200);
+      border-radius: 16px;
+      padding: 32px 32px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .comparison-card-home:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(61,54,49,.08);
+    }
+    .comparison-card-home--them {
+      background: var(--soft-red-bg);
+      border-color: var(--soft-red-border);
+    }
+    .comparison-card-home--us {
+      background: var(--soft-green-bg);
+      border-color: var(--soft-green-border);
+    }
+    .comparison-card-home h3 {
+      font-family: var(--font);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .comparison-card-home--them h3 { color: var(--soft-red-icon); }
+    .comparison-card-home--us h3 { color: var(--soft-green-icon); }
+    .comparison-card-home ul { list-style: none; }
+    .comparison-card-home li {
+      padding: 10px 0 10px 30px;
+      position: relative;
+      font-size: .95rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+    .comparison-card-home--them li::before {
+      content: '✕';
+      position: absolute; left: 0;
+      color: var(--soft-red-icon);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .comparison-card-home--us li::before {
+      content: '✓';
+      position: absolute; left: 0;
+      color: var(--soft-green-icon);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .values-closing {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 40px 32px;
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .values-closing p {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.55;
+      color: var(--text);
+      margin: 0;
+    }
+    .values-closing p strong {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    /* ==========================================================
+       FINAL CTA — premium closing
+       ========================================================== */
+    .final-cta-editorial {
+      background: linear-gradient(135deg, var(--accent) 0%, #5753d0 100%);
+      padding: 120px 24px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta-editorial::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -20%;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(255,255,255,.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .final-cta-editorial::after {
+      content: '';
+      position: absolute;
+      bottom: -30%; right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(222,255,85,.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .final-cta-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .final-cta-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .final-cta-eyebrow .line {
+      width: 32px;
+      height: 1px;
+      background: rgba(255,255,255,.5);
+    }
+    .final-cta-eyebrow span {
+      font-family: var(--font);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.85);
+    }
+    .final-cta-editorial h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      color: white;
+    }
+    .final-cta-editorial h2 em {
+      font-style: italic;
+      color: var(--lime);
+    }
+    .final-cta-editorial p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,.92);
+      margin-bottom: 40px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-final-premium {
+      display: inline-block;
+      background: var(--lime);
+      color: var(--text);
+      padding: 18px 40px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+      box-shadow: 0 8px 24px rgba(222,255,85,.35);
+    }
+    .btn-final-premium:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(222,255,85,.5);
+      color: var(--text);
+    }
+
+    /* ==========================================================
+       FOOTER
+       ========================================================== */
+    .footer {
+      background: var(--cream);
+      padding: 64px 24px 40px;
+    }
+    .footer-logo { height: 32px; margin-bottom: 20px; opacity: .8; }
+
+    /* ==========================================================
+       RESPONSIVE
+       ========================================================== */
+    @media (max-width: 900px) {
+      .site-nav-links .nav-menu-link,
+      .site-nav-links .site-nav-cta { display: none; }
+      .site-nav-toggle { display: inline-flex; align-items: center; }
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-copy { text-align: center; }
+      .hero-copy h1 { font-size: clamp(2rem, 6vw, 2.8rem); }
+      .right-place { justify-content: center; }
+      .hero-subhead { margin-left: auto; margin-right: auto; }
+      .hero-cta-row { justify-content: center; }
+      .hero-photo-wrap { max-width: 340px; justify-self: center; }
+      .imagine-split-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+      .imagine-split-copy .section-eyebrow-fancy { justify-content: center; }
+      .imagine-split-copy .imagine-emphasis { text-align: left; max-width: 520px; margin-left: auto; margin-right: auto; }
+      .imagine-illustration { max-width: 300px; }
+      .freebie-card { grid-template-columns: 1fr; gap: 32px; padding: 40px 28px; }
+      .freebie-card-visual { max-width: 240px; margin: 0 auto; }
+      .linda-proof-grid { grid-template-columns: 1fr; max-width: 360px; }
+      .linda-stats { gap: 28px; padding: 24px; }
+      .comparison-grid-home { grid-template-columns: 1fr; gap: 16px; }
+      .comparison-card-home { padding: 26px 24px; }
+      .from-bree-section, .imagine-split, .freebie-section, .linda-editorial, .values-editorial, .final-cta-editorial { padding: 72px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQPFQDNQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- ======================== SITE NAV ======================== -->
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="home.html" class="site-nav-logo">
+        <img src="logo.png" alt="Perfectly Made Marketing" />
+      </a>
+      <div class="site-nav-links">
+        <a href="home.html" class="nav-menu-link">Home</a>
+        <a href="about.html" class="nav-menu-link">About</a>
+        <a href="work-with-us.html" class="nav-menu-link">Work With Us</a>
+        <a href="https://offer.perfectlymademarketing.com/" class="nav-menu-link">Get the Course</a>
+        <a href="strategy-call.html" class="site-nav-cta">Book a Call</a>
+        <button class="site-nav-toggle" onclick="document.querySelector('.mobile-menu').classList.add('open'); document.querySelector('.mobile-menu-overlay').classList.add('open');" aria-label="Open menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay + panel -->
+  <div class="mobile-menu-overlay" onclick="document.querySelector('.mobile-menu').classList.remove('open'); this.classList.remove('open');"></div>
+  <div class="mobile-menu">
+    <button class="mobile-menu-close" onclick="document.querySelector('.mobile-menu').classList.remove('open'); document.querySelector('.mobile-menu-overlay').classList.remove('open');" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="work-with-us.html">Work With Us</a>
+    <a href="https://offer.perfectlymademarketing.com/">Get the Course</a>
+    <a href="strategy-call.html" class="mobile-menu-cta">Book a Call</a>
+  </div>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="hero-editorial">
+    <div class="blob blob-blush blob-1"></div>
+    <div class="blob blob-periwinkle blob-2"></div>
+
+    <div class="hero-grid">
+      <!-- Copy (LEFT) -->
+      <div class="hero-copy anim">
+        <span class="hero-eyebrow">Perfectly Made Marketing</span>
+        <h1>Hey coach, consultant, or service provider - want a calendar that <em>fills itself?</em></h1>
+
+        <div class="right-place">
+          <svg width="28" height="28" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 20 Q 30 5, 60 20 T 115 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none" opacity=".6"/>
+          </svg>
+          <span class="right-place-text">You are in the right place.</span>
+        </div>
+
+        <p class="hero-subhead">We build done-for-you Self-Booking Systems that fill your calendar <strong>without you posting daily, manually following up, or chasing people down in DMs</strong> — using Meta ads, high-converting lead funnels, and email lists you own forever.</p>
+
+        <div class="hero-cta-row">
+          <a href="#freebie" class="hero-cta-primary">Grab the free guide →</a>
+          <a href="strategy-call.html" class="hero-cta-secondary">Or book a strategy call →</a>
+        </div>
+      </div>
+
+      <!-- Photo (RIGHT) -->
+      <div class="hero-photo-wrap anim">
+        <div class="hero-photo">
+          <img src="images/Photo of Bree.jpg" alt="Bree Nweke, founder of Perfectly Made Marketing" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FROM BREE ======================== -->
+  <section class="from-bree-section">
+    <div class="from-bree-inner">
+      <div class="section-eyebrow-fancy">
+        <span class="line"></span>
+        <span>From Bree, the founder</span>
+        <span class="line"></span>
+      </div>
+      <h2>I know what it looks like to spend real money on ads and watch <em>nothing happen.</em></h2>
+      <p>I spent $544 on Meta ads and booked zero calls. I thought my ad was the problem. I changed it. Nothing moved. It took months to realize the ad was not broken. The system behind the ad was broken.</p>
+      <p>Once I built the full system - lead magnet, opt-in page, follow-up sequence, booking flow, every piece connected - my next campaign booked <strong>16 calls in two weeks on the same budget</strong>. And more importantly, it kept filling. Consistently. Every week.</p>
+      <p>Now my team and I build that same system for established service providers who are done trying to figure it out alone.</p>
+    </div>
+  </section>
+
+  <!-- ======================== IMAGINE THIS ======================== -->
+  <section class="imagine-split">
+    <div class="imagine-split-inner">
+      <div class="imagine-split-copy">
+        <div class="section-eyebrow-fancy">
+          <span class="line"></span>
+          <span>Picture this</span>
+        </div>
+        <h2>Imagine <em>this.</em></h2>
+        <p>Your calendar fills with booked calls every week - without you posting, chasing DMs, or sending a single follow-up message.</p>
+        <p>Your email list grows in the background so every ad dollar you spend builds an asset you own forever - not just a one-time booking.</p>
+        <p>Your weekends belong to your family again, because the system keeps running whether you are online or not.</p>
+        <div class="imagine-emphasis">And the best part? My team and I build the whole thing for you. You show up to the calls. We handle everything that happens before they book.</div>
+      </div>
+
+      <div class="imagine-illustration" aria-hidden="true">
+        <div class="circle-lg"></div>
+        <div class="circle-md"></div>
+        <div class="ring"></div>
+        <div class="circle-sm"></div>
+        <div class="dot dot-1"></div>
+        <div class="dot dot-2"></div>
+        <div class="dot dot-3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== LINDA PROOF ======================== -->
+  <section class="linda-editorial">
+    <div class="blob blob-blush blob-1"></div>
+    <div class="blob blob-periwinkle blob-2"></div>
+
+    <div class="linda-editorial-inner">
+      <div class="linda-editorial-header">
+        <div class="section-eyebrow-fancy">
+          <span class="line"></span>
+          <span>What a calendar that fills itself looks like</span>
+          <span class="line"></span>
+        </div>
+        <h2 style="margin-top: 16px;">Linda was two weeks from turning<br /><em>her ads off entirely.</em></h2>
+      </div>
+
+      <div class="linda-editorial-story">
+        <p>She had been running Meta ads for months, paying <strong>$13 per lead</strong> and watching her spend climb while her calendar stayed empty. She was doing the work - the content, the videos, the showing up online - and none of it was converting.</p>
+        <p>She was starting to wonder if she was the problem.</p>
+        <p><em>Then she found us.</em></p>
+        <p>We built her complete Self-Booking System. Her ads. Opt-in page. Booking flow. Follow-up sequence. List growth engine. <strong>Every piece connected in the right order, all inside her accounts.</strong></p>
+        <p>In the first 5 days of her system being live she received <strong>22 leads at only $3 each and booked 3 calls on autopilot.</strong></p>
+      </div>
+
+      <div class="linda-proof-grid">
+        <div class="linda-proof-item">
+          <img src="images/Client Results/Ad 1.png" alt="Linda's Meta ad" loading="lazy" />
+          <div class="linda-proof-caption">Her ad</div>
+        </div>
+        <div class="linda-proof-item">
+          <img src="images/Client Results/Her opt in page.png" alt="Linda's opt-in page" loading="lazy" />
+          <div class="linda-proof-caption">Her opt-in page</div>
+        </div>
+        <div class="linda-proof-item">
+          <img src="images/Client Results/Screenshot of her calendar.png" alt="Linda's calendar with booked calls" loading="lazy" />
+          <div class="linda-proof-caption">Calls on her calendar</div>
+        </div>
+      </div>
+
+      <div class="linda-stats">
+        <div class="linda-stat">
+          <div class="linda-stat-num"><span style="text-decoration: line-through; color: var(--text-muted); font-size: .7em; margin-right: 6px;">$13</span>$3</div>
+          <div class="linda-stat-label">Cost per lead</div>
+        </div>
+        <div class="linda-stat">
+          <div class="linda-stat-num">22</div>
+          <div class="linda-stat-label">New leads</div>
+        </div>
+        <div class="linda-stat">
+          <div class="linda-stat-num">3</div>
+          <div class="linda-stat-label">Calls in 5 days</div>
+        </div>
+      </div>
+
+      <div class="linda-closing">
+        Linda opened her laptop on Monday and saw three names on her calendar she did not recognize. She did not have to post anything or manually follow up with anyone. <strong>The system was running whether she was online or not.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== WHY THIS IS NOT THE AGENCY ======================== -->
+  <section class="values-editorial">
+    <div class="values-editorial-inner-wide">
+      <div class="values-editorial-header">
+        <div class="section-eyebrow-fancy">
+          <span class="line"></span>
+          <span>Why this is not the agency you already tried</span>
+          <span class="line"></span>
+        </div>
+        <h2 style="margin-top: 16px;">If an ads agency has burned you before,<br /><em>this is where we show you how we're different.</em></h2>
+        <p style="max-width: 680px; margin: 20px auto 0; font-size: 1rem; color: var(--text-soft); line-height: 1.75;">Most ads agencies only touch one piece of your marketing - the ad. Everything downstream of the click is your problem. That is the exact reason your last experience did not produce results, and we want to be direct about it.</p>
+      </div>
+
+      <div class="comparison-grid-home">
+        <div class="comparison-card-home comparison-card-home--them">
+          <h3>What most agencies do</h3>
+          <ul>
+            <li>Run traffic into the funnel you already have - even if it is broken</li>
+            <li>Skip the audit - never check if your offer, messaging, or landing page is actually converting</li>
+            <li>Use templates instead of building for your specific offer and audience</li>
+            <li>Focus only on ad metrics - clicks, CPL, impressions</li>
+            <li>Blame your conversion rate when bookings do not come in</li>
+            <li>Disappear after onboarding - minimal communication, no strategy check-ins</li>
+            <li>Hand off the work to junior team members you never meet</li>
+          </ul>
+        </div>
+        <div class="comparison-card-home comparison-card-home--us">
+          <h3>What we do instead</h3>
+          <ul>
+            <li>Audit the full system first - offer, messaging, lead magnet, funnel, follow-up, before a single ad runs</li>
+            <li>Refine your messaging and positioning so your ads attract buyers, not browsers</li>
+            <li>Build a high-converting lead magnet, landing pages, and email sequences tailored to your specific audience</li>
+            <li>Build, launch, and monitor the ads - but inside a system that was actually built to convert them</li>
+            <li>Track the full funnel: leads, opt-ins, bookings, show-ups, closes - not just ad clicks</li>
+            <li>Weekly check-ins and a private Slack channel - direct access to Bree, not an account manager</li>
+            <li>Every install is overseen by Bree. Not outsourced. Not templated. Not rushed.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="values-closing">
+        <p>Ads are one piece of your marketing. They do not work without the rest of the system around them. <strong>That is why you have been burned before. And that is exactly what we fix.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FINAL CTA ======================== -->
+  <section class="final-cta-editorial">
+    <div class="final-cta-inner">
+      <div class="final-cta-eyebrow">
+        <span class="line"></span>
+        <span>Ready to work together?</span>
+        <span class="line"></span>
+      </div>
+      <h2>Let's build your <em>Self-Booking System.</em></h2>
+      <p>If you are an established service provider with a proven offer - and you are tired of inconsistent bookings and starting every month from zero - this is the call.</p>
+      <a href="strategy-call.html" class="btn-final-premium">Book a strategy call →</a>
+      <div style="margin-top: 24px;">
+        <a href="install.html" style="font-family: var(--font); font-size: .92rem; font-weight: 500; color: rgba(255,255,255,.85); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.35); padding-bottom: 3px; transition: color .2s, border-color .2s;" onmouseover="this.style.color='#deff55'; this.style.borderColor='#deff55';" onmouseout="this.style.color='rgba(255,255,255,.85)'; this.style.borderColor='rgba(255,255,255,.35)';">Already know this is for you? See the full install details →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FREEBIE ======================== -->
+  <section class="freebie-section" id="freebie">
+    <div class="blob blob-periwinkle blob-1"></div>
+
+    <div class="freebie-header">
+      <div class="section-eyebrow-fancy">
+        <span class="line"></span>
+        <span>Free resource</span>
+        <span class="line"></span>
+      </div>
+      <h2 style="margin-top: 16px;">Not ready for the call?<br /><em>Start with the free guide.</em></h2>
+    </div>
+
+    <div class="freebie-card">
+      <!-- Decorative guide mockup visual -->
+      <div class="freebie-card-visual">
+        <div class="freebie-card-visual-inner">
+          <div class="freebie-card-visual-eyebrow">Free Guide</div>
+          <div class="freebie-card-visual-title">The 4 Simple Fixes</div>
+          <div class="freebie-card-visual-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="freebie-card-content">
+        <h3>The 4 Simple Fixes Guide</h3>
+        <p>The exact <strong>four places your Meta ads are leaking leads</strong> - and what to change before you spend another dollar on traffic. Based on the Self-Booking System we use with every client.</p>
+
+        <!-- ========== KARTRA OPT-IN FORM EMBED: Replace with your Kartra form embed code ========== -->
+        <form class="freebie-form" onsubmit="return false;">
+          <input type="text" name="first_name" placeholder="First name" class="freebie-input" required />
+          <input type="email" name="email" placeholder="Your best email" class="freebie-input" required />
+          <button type="submit" class="freebie-card-cta">Send me the guide →</button>
+        </form>
+        <!-- ========== END KARTRA OPT-IN FORM EMBED ========== -->
+
+        <span class="freebie-card-note">Free. Instant access.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer">
+    <div class="container text-center">
+      <img src="logo.png" alt="Perfectly Made Marketing" class="footer-logo" />
+      <p>&copy; 2026 Perfectly Made Marketing. All rights reserved.</p>
+      <p>Questions? <a href="mailto:hello@perfectlymademarketing.com">hello@perfectlymademarketing.com</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

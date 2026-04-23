@@ -520,21 +520,12 @@
       background: var(--warm-white);
       border: 1px solid var(--taupe-200);
       border-radius: var(--radius);
-      padding: 48px 36px;
+      padding: 32px 24px;
       max-width: 820px;
       margin: 36px auto 0;
-      min-height: 460px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
       box-shadow: var(--shadow-card);
     }
-    .calendar-embed-wrap p {
-      color: var(--text-muted);
-      font-size: .95rem;
-      font-style: italic;
-    }
+    .calendar-embed-wrap .js_kt_asset_embed { width: 100%; }
 
     @media (max-width: 800px) {
       .bac-meet-bree { grid-template-columns: 1fr; gap: 28px; text-align: center; }
@@ -575,8 +566,8 @@
       </div>
 
       <!-- Headline -->
-      <h1 class="anim">You know your offer works.<br /><em>You are just tired of starting every month from zero.</em></h1>
-      <p class="subhead anim">You close well when you get on calls. Your clients get real results. Your work has word-of-mouth. The problem was never your ability - it is that your calendar fills in waves instead of filling consistently, and every quiet month costs you more than the last one.</p>
+      <h1 class="anim">Your calendar should be full.<br />Let's make it <em>fill itself.</em></h1>
+      <p class="subhead anim">You close well when you get on calls. Your clients get real results. Your work has word-of-mouth. The problem was never your ability — <strong>your calendar does not fill itself because nothing is consistently filling it for you.</strong> And every quiet month costs you more than the last one.</p>
 
     </div>
     <div class="hero-wave">
@@ -617,10 +608,10 @@
         </li>
       </ul>
 
-      <p class="anim">None of those thoughts are a reflection of you. They are a reflection of something none of the courses or agencies you have paid for have actually solved for you yet.</p>
+      <p class="anim">None of those thoughts are a reflection of you. They are a reflection of the one thing no course or agency has actually built for you yet — <strong>a calendar that fills itself.</strong></p>
 
       <div class="highlight-card anim">
-        You do not need to work harder. You do not need a new offer. You need a system behind your ads that produces booked calls consistently instead of in waves. <strong>That is what is missing. And that is what I want to build for you.</strong>
+        You do not need to work harder. You do not need a new offer. You need a system that fills your calendar <em>for you</em> — consistently, on repeat, without you having to touch it. <strong>That is what is missing. And that is exactly what I want to build for you.</strong>
       </div>
 
       <div class="text-center anim" style="margin-top: 40px;">
@@ -628,9 +619,10 @@
         <h3 style="font-family: var(--serif); font-size: clamp(1.4rem, 2.8vw, 1.8rem); font-weight: 600; line-height: 1.3; margin-bottom: 20px;">Pick a time to talk with me.</h3>
       </div>
 
-      <!-- ========== KARTRA CALENDAR EMBED (inline mid-page): Replace this placeholder with your Kartra calendar embed code ========== -->
+      <!-- ========== KARTRA CALENDAR EMBED (inline mid-page) ========== -->
       <div class="calendar-embed-wrap anim">
-        <p>Kartra calendar will appear here</p>
+        <div class="js_kt_asset_embed js_kartra_trackable_object" data-kt-type="calendar" data-kt-embed="inline" data-kt-value="Tbm6WNfVL8Yf" data-kt-owner="7kzAqVxg"></div>
+        <script type="text/javascript" src="https://app.kartra.com/js/build/front/embed/calendar.js"></script>
       </div>
       <!-- ========== END KARTRA CALENDAR EMBED ========== -->
     </div>
@@ -640,7 +632,7 @@
   <section class="section section--ivory">
     <div class="container narrow">
       <p class="eyebrow anim text-center">Let's name what you've already been through</p>
-      <h2 class="anim text-center">You have tried more than most.<br /><em>None of it made your calendar consistent.</em></h2>
+      <h2 class="anim text-center">You have tried more than most.<br /><em>None of it made your calendar &amp; income consistent.</em></h2>
 
       <ul class="already-tried anim">
         <li><strong>Posting consistently on social for months, or years.</strong> You have shown up in feeds, filmed reels, written captions at 10pm, and watched engagement produce some bookings - but never reliable ones.</li>
@@ -999,9 +991,9 @@
         <h2 class="anim">Pick the time that works<br /><em>for you.</em></h2>
       </div>
 
-      <!-- ========== KARTRA CALENDAR EMBED: Replace this placeholder with your Kartra calendar embed code ========== -->
+      <!-- ========== KARTRA CALENDAR EMBED (script already loaded above) ========== -->
       <div class="calendar-embed-wrap">
-        <p>Kartra calendar will appear here</p>
+        <div class="js_kt_asset_embed js_kartra_trackable_object" data-kt-type="calendar" data-kt-embed="inline" data-kt-value="Tbm6WNfVL8Yf" data-kt-owner="7kzAqVxg"></div>
       </div>
       <!-- ========== END KARTRA CALENDAR EMBED ========== -->
 
@@ -1120,5 +1112,67 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- ======================== LEAD EVENT + CONFETTI CELEBRATION ======================== -->
+  <!-- Fires Meta Pixel Lead event (user just opted in for the lead magnet) -->
+  <!-- and drops a confetti burst to celebrate the opt-in. -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script>
+    (function() {
+      // Fire Meta Pixel Lead event
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead');
+      }
+      // Push to GTM dataLayer for Google Analytics / server-side tagging
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'lead_opted_in', page: 'book-a-call' });
+
+      // Confetti celebration — two bursts, slightly offset, brand colors
+      function fireConfetti() {
+        if (typeof confetti !== 'function') return;
+        var duration = 1000;
+        var end = Date.now() + duration;
+        var colors = ['#6b66e9', '#deff55', '#fdd8c8', '#c0bcf0', '#fef7f3'];
+
+        // Initial big burst from bottom center
+        confetti({
+          particleCount: 120,
+          spread: 90,
+          startVelocity: 55,
+          origin: { x: 0.5, y: 0.8 },
+          colors: colors,
+          scalar: 1.1
+        });
+
+        // Continuous side bursts that rain down for ~2.5s
+        (function frame() {
+          confetti({
+            particleCount: 4,
+            angle: 60,
+            spread: 65,
+            origin: { x: 0, y: 0.7 },
+            colors: colors
+          });
+          confetti({
+            particleCount: 4,
+            angle: 120,
+            spread: 65,
+            origin: { x: 1, y: 0.7 },
+            colors: colors
+          });
+          if (Date.now() < end) requestAnimationFrame(frame);
+        })();
+      }
+
+      // Wait for page to paint, then celebrate
+      if (document.readyState === 'complete') {
+        setTimeout(fireConfetti, 250);
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(fireConfetti, 250);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

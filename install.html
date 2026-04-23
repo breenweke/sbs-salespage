@@ -336,6 +336,89 @@
       .strategy-cta { padding: 28px 24px; }
       .spots-badge { font-size: .82rem; padding: 8px 16px; }
       .proof-single { max-width: 100%; }
+      .comparison-install { grid-template-columns: 1fr !important; gap: 16px !important; }
+      .comparison-install-card { padding: 26px 24px !important; }
+    }
+
+    /* Why this is not the agency — comparison grid */
+    .comparison-install {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 1040px;
+      margin: 0 auto 44px;
+    }
+    .comparison-install-card {
+      background: var(--warm-white, #fefefe);
+      border: 1px solid var(--taupe-200);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .comparison-install-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(61,54,49,.08);
+    }
+    .comparison-install-card--them {
+      background: var(--soft-red-bg);
+      border-color: var(--soft-red-border);
+    }
+    .comparison-install-card--us {
+      background: var(--soft-green-bg);
+      border-color: var(--soft-green-border);
+    }
+    .comparison-install-card h3 {
+      font-family: var(--font);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .comparison-install-card--them h3 { color: var(--soft-red-icon); }
+    .comparison-install-card--us h3 { color: var(--soft-green-icon); }
+    .comparison-install-card ul { list-style: none; padding: 0; margin: 0; }
+    .comparison-install-card li {
+      padding: 10px 0 10px 30px;
+      position: relative;
+      font-size: .95rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+    .comparison-install-card--them li::before {
+      content: '\2715';
+      position: absolute; left: 0;
+      color: var(--soft-red-icon);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .comparison-install-card--us li::before {
+      content: '\2713';
+      position: absolute; left: 0;
+      color: var(--soft-green-icon);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .comparison-install-closing {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 28px 32px;
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .comparison-install-closing p {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text);
+      margin: 0;
+    }
+    .comparison-install-closing p strong {
+      color: var(--accent);
+      font-style: normal;
     }
   </style>
 </head>
@@ -369,10 +452,10 @@
         <span>Doors are currently open</span>
       </div>
 
-      <h1 class="anim">You're getting leads.<br />But no one's <em>booking.</em></h1>
+      <h1 class="anim">Your calendar should be full.<br />Let's make it <em>fill itself.</em></h1>
 
       <div class="install-hero-copy narrow anim">
-        <p>You're a service provider who's great at what you do. Your clients get real results. But your calendar doesn't reflect that, and you're tired of the inconsistency.</p>
+        <p>You're a service provider who's great at what you do. Your clients get real results. But your calendar and income doesn't reflect that, and you're tired of the inconsistency.</p>
         <p>You've thought about running ads, building a funnel, setting up automations. But you don't have time to figure it all out. And honestly? <strong>You shouldn't have to.</strong></p>
       </div>
 
@@ -741,6 +824,48 @@
       <div class="cta-row anim" style="text-align:center">
         <a href="#pricing" class="btn btn--lg">Have it built for me</a>
         <p class="micro">30 days. A full booking system installed for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 8.5 WHY THIS IS NOT THE AGENCY ======================== -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <p class="eyebrow anim" style="text-align:center">Why this is not the agency you already tried</p>
+        <h2 class="anim" style="text-align:center">If an ads agency has burned you before,<br /><em>this is where we show you how we're different.</em></h2>
+        <p class="section-sub anim" style="text-align:center; max-width:680px; margin:20px auto 44px; font-size:1rem; line-height:1.75;">Most ads agencies only touch one piece of your marketing - the ad. Everything downstream of the click is your problem. That is the exact reason your last experience did not produce results, and we want to be direct about it.</p>
+      </div>
+
+      <div class="comparison-install anim">
+        <div class="comparison-install-card comparison-install-card--them">
+          <h3>What most agencies do</h3>
+          <ul>
+            <li>Run traffic into the funnel you already have - even if it is broken</li>
+            <li>Skip the audit - never check if your offer, messaging, or landing page is actually converting</li>
+            <li>Use templates instead of building for your specific offer and audience</li>
+            <li>Focus only on ad metrics - clicks, CPL, impressions</li>
+            <li>Blame your conversion rate when bookings do not come in</li>
+            <li>Disappear after onboarding - minimal communication, no strategy check-ins</li>
+            <li>Hand off the work to junior team members you never meet</li>
+          </ul>
+        </div>
+        <div class="comparison-install-card comparison-install-card--us">
+          <h3>What we do instead</h3>
+          <ul>
+            <li>Audit the full system first - offer, messaging, lead magnet, funnel, follow-up, before a single ad runs</li>
+            <li>Refine your messaging and positioning so your ads attract buyers, not browsers</li>
+            <li>Build a high-converting lead magnet, landing pages, and email sequences tailored to your specific audience</li>
+            <li>Build, launch, and monitor the ads - but inside a system that was actually built to convert them</li>
+            <li>Track the full funnel: leads, opt-ins, bookings, show-ups, closes - not just ad clicks</li>
+            <li>Weekly check-ins and a private Slack channel - direct access to Bree, not an account manager</li>
+            <li>Every install is overseen by Bree. Not outsourced. Not templated. Not rushed.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="comparison-install-closing anim">
+        <p>Ads are one piece of your marketing. They do not work without the rest of the system around them. <strong>That is why you have been burned before. And that is exactly what we fix.</strong></p>
       </div>
     </div>
   </section>
