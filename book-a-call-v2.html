@@ -386,7 +386,7 @@
     .v2-solution-header p strong { color: var(--text); }
     .v2-pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .v2-pillar { background: var(--warm-white); border: 1px solid var(--taupe-200); border-radius: 14px; padding: 32px 24px 28px; text-align: center; box-shadow: var(--shadow-soft); }
-    .v2-pillar-num { display: inline-block; font-family: var(--serif); font-style: italic; font-size: .95rem; color: var(--accent); margin-bottom: 4px; }
+    .v2-pillar-num { display: block; font-family: var(--serif); font-style: italic; font-size: .95rem; color: var(--accent); margin-bottom: 8px; }
     .v2-pillar-stage {
       display: inline-block;
       font-family: var(--font);
@@ -1153,8 +1153,8 @@
           if (Date.now() < end) requestAnimationFrame(frame);
         })();
       }
-      if (document.readyState === 'complete') setTimeout(fireConfetti, 250);
-      else window.addEventListener('load', function() { setTimeout(fireConfetti, 250); });
+      if (document.readyState === 'complete') fireConfetti();
+      else window.addEventListener('load', fireConfetti);
     })();
   </script>
 </body>
