@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bree Nweke — Speaker Media Kit | Perfectly Made Marketing</title>
+  <title>Speaker Media Kit | Bree Nweke — Perfectly Made Marketing</title>
   <meta name="description" content="Bree Nweke is the founder of Perfectly Made Marketing and the creator of the Self-Booking System. Available for podcast guest appearances, speaking engagements, and summits." />
 
   <!-- Open Graph for clean link previews when shared -->
@@ -18,633 +18,1200 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NQPFQDNQ');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Meta Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1825521284560570'); fbq('track', 'PageView'); </script> <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1" /></noscript> <!-- End Meta Pixel Code -->
+
+  <!-- Microsoft Clarity Analytics -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wcsjkjhldk");
+  </script>
+
   <link rel="stylesheet" href="styles.css" />
 
   <style>
     /* ==========================================================
-       MEDIA KIT — Bree Nweke
-       Single-page speaker kit. Print-ready. Sharable.
+       SPEAKER MEDIA KIT — full site page
+       Warm Editorial Hospitality system, matches home/about/etc.
        ========================================================== */
 
-    body { background: var(--cream); }
+    html { scroll-behavior: smooth; }
 
-    .mk-shell {
-      max-width: 1100px;
-      margin: 32px auto;
-      background: var(--warm-white);
-      border-radius: 18px;
-      box-shadow: 0 24px 60px rgba(61,54,49,.12);
-      overflow: hidden;
+    /* --- Decorative blobs --- */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: .55;
+      pointer-events: none;
+      z-index: 0;
     }
+    .blob-blush { background: radial-gradient(circle, #fdd8c8 0%, transparent 70%); }
+    .blob-periwinkle { background: radial-gradient(circle, #c0bcf0 0%, transparent 70%); opacity: .4; }
+    .blob-lime { background: radial-gradient(circle, #eeffae 0%, transparent 70%); opacity: .55; }
 
-    /* ============= NAME BANNER ============= */
-    .mk-banner {
+    /* --- Site nav (matches site) --- */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253,251,247,.88);
+      backdrop-filter: blur(20px) saturate(150%);
+      border-bottom: 1px solid var(--taupe-200);
+      padding: 18px 24px;
+    }
+    .site-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .site-nav-logo img { height: 28px; width: auto; }
+    .site-nav-links { display: flex; align-items: center; gap: 36px; }
+    .site-nav-links a {
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: .02em;
+      transition: color .2s var(--ease);
+    }
+    .site-nav-links a:not(.site-nav-cta):hover { color: var(--accent); }
+    .site-nav-cta {
+      background: var(--accent);
+      color: white !important;
+      padding: 11px 24px;
+      border-radius: var(--radius-pill);
+      font-size: .84rem !important;
+      font-weight: 600 !important;
+      transition: all .25s var(--ease);
+      box-shadow: 0 2px 8px var(--accent-glow);
+    }
+    .site-nav-cta:hover {
+      background: var(--accent-hover);
+      color: white !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+    .site-nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      color: var(--text);
+      margin-left: 12px;
+    }
+    .site-nav-toggle svg { display: block; }
+    .mobile-menu {
+      position: fixed;
+      top: 0; right: -100%;
+      width: 280px;
+      max-width: 85vw;
+      height: 100vh;
+      background: var(--warm-white);
+      box-shadow: -8px 0 40px rgba(61,54,49,.15);
+      padding: 80px 32px 40px;
+      z-index: 200;
+      transition: right .3s var(--ease);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .mobile-menu.open { right: 0; }
+    .mobile-menu a {
+      display: block;
+      padding: 14px 0;
+      font-family: var(--font);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--taupe-100);
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu a.mobile-menu-cta {
       background: var(--accent);
       color: white;
-      padding: 36px 40px 22px;
       text-align: center;
-      position: relative;
-    }
-    .mk-banner h1 {
-      font-family: var(--serif);
+      border-radius: var(--radius-pill);
+      border: none;
+      margin-top: 16px;
+      padding: 14px 20px;
       font-weight: 600;
-      font-size: clamp(2.4rem, 5vw, 3.4rem);
-      letter-spacing: .04em;
-      line-height: 1;
-      margin: 0 0 16px;
-      text-transform: uppercase;
     }
+    .mobile-menu a.mobile-menu-cta:hover { background: var(--accent-hover); color: white; }
+    .mobile-menu-close {
+      position: absolute;
+      top: 20px; right: 20px;
+      background: transparent;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      color: var(--text);
+    }
+    .mobile-menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(26,26,26,.4);
+      backdrop-filter: blur(4px);
+      z-index: 150;
+      opacity: 0;
+      transition: opacity .3s var(--ease);
+    }
+    .mobile-menu-overlay.open { display: block; opacity: 1; }
+
+    /* --- Reusable section eyebrow --- */
+    .mk-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .mk-eyebrow .line { width: 32px; height: 1px; background: var(--accent); }
+    .mk-eyebrow span {
+      font-family: var(--font);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* ==========================================================
+       HERO
+       ========================================================== */
+    .mk-hero {
+      padding: 64px 24px 96px;
+      background: linear-gradient(180deg, #fdf5f0 0%, #fdfbf7 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .mk-hero .blob-1 { width: 460px; height: 460px; top: -120px; right: -120px; }
+    .mk-hero .blob-2 { width: 360px; height: 360px; bottom: 60px; left: -100px; }
+
+    .mk-hero-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 72px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .mk-hero-copy { max-width: 580px; }
+    .mk-hero-copy h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin: 16px 0 22px;
+    }
+    .mk-hero-copy h1 em { font-style: italic; color: var(--accent); }
     .mk-roles {
       display: inline-flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 6px 14px;
-      font-family: var(--font);
-      font-size: .82rem;
-      font-weight: 500;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.95);
+      gap: 8px;
+      margin-bottom: 28px;
     }
-    .mk-roles span { display: inline-flex; align-items: center; gap: 14px; }
-    .mk-roles span::after {
-      content: '·';
-      opacity: .55;
-    }
-    .mk-roles span:last-child::after { display: none; }
-
-    /* ============= TAGLINE STRIP ============= */
-    .mk-tagline-strip {
-      background: var(--lime);
-      color: var(--text);
-      text-align: center;
-      padding: 14px 30px;
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: clamp(1.05rem, 2.2vw, 1.4rem);
-      font-weight: 500;
-      letter-spacing: .01em;
-    }
-
-    /* ============= MAIN BODY GRID ============= */
-    .mk-body {
-      display: grid;
-      grid-template-columns: 1.55fr 1fr;
-      gap: 0;
-    }
-    .mk-body-left {
-      padding: 36px 40px 32px;
-    }
-    .mk-body-right {
-      background: linear-gradient(180deg, #fdf5f0 0%, #fdfbf7 100%);
-      padding: 0;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .mk-photo {
-      width: 100%;
-      flex: 1 1 auto;
-      min-height: 460px;
-      background-image: url('images/Bree 3.jpg');
-      background-size: cover;
-      background-position: center top;
-    }
-    .mk-photo-caption {
-      padding: 16px 24px 20px;
-      text-align: center;
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: .92rem;
-      color: var(--text-soft);
-      background: var(--warm-white);
-      border-top: 1px solid var(--taupe-200);
-    }
-    .mk-photo-caption strong {
-      display: block;
-      font-style: normal;
-      font-family: var(--font);
-      font-weight: 600;
-      font-size: .78rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-
-    /* ============= BIO ============= */
-    .mk-bio p {
-      font-size: .98rem;
-      line-height: 1.75;
-      color: var(--text-soft);
-      margin: 0 0 14px;
-    }
-    .mk-bio p strong { color: var(--text); font-weight: 600; }
-    .mk-bio .mk-dropcap::first-letter {
-      font-family: var(--serif);
-      font-size: 3.4rem;
-      font-weight: 600;
-      float: left;
-      line-height: .85;
-      padding: 6px 10px 0 0;
-      color: var(--accent);
-    }
-
-    .mk-personal {
-      margin-top: 4px;
-      padding: 14px 18px;
-      background: var(--blush);
-      border-radius: 10px;
-      font-size: .9rem;
-      color: var(--text);
-      font-style: italic;
-      line-height: 1.55;
-    }
-
-    /* ============= SECTION TITLES ============= */
-    .mk-section-title {
+    .mk-role {
       display: inline-block;
+      padding: 6px 14px;
+      background: var(--warm-white);
+      border: 1px solid var(--taupe-200);
+      border-radius: var(--radius-pill);
       font-family: var(--font);
-      font-size: .8rem;
-      font-weight: 700;
-      letter-spacing: .18em;
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .08em;
       text-transform: uppercase;
+      color: var(--text-soft);
+    }
+    .mk-role:nth-child(odd) { color: var(--accent); border-color: var(--accent-light); }
+    .mk-tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+      color: var(--text);
+      line-height: 1.45;
+      margin-bottom: 28px;
+      padding-left: 18px;
+      border-left: 3px solid var(--lime);
+    }
+    .mk-hero-intro {
+      font-size: 1.02rem;
+      color: var(--text-soft);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .mk-hero-intro strong { color: var(--text); }
+
+    .mk-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: white;
+      padding: 16px 32px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font);
+      font-size: .95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .25s var(--ease);
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+    .mk-cta-btn:hover {
+      background: var(--accent-hover);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
+    .mk-cta-secondary {
+      display: inline-block;
+      margin-left: 18px;
+      font-family: var(--font);
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--text-soft);
+      text-decoration: none;
+      border-bottom: 1px solid var(--taupe-200);
+      padding-bottom: 3px;
+      transition: color .2s, border-color .2s;
+    }
+    .mk-cta-secondary:hover {
       color: var(--accent);
-      margin: 32px 0 14px;
-      padding-bottom: 6px;
-      border-bottom: 2px solid var(--lime);
+      border-color: var(--accent);
     }
 
-    /* ============= TOPICS ============= */
-    .mk-topics {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .mk-topics li {
+    /* Hero photo frame */
+    .mk-hero-photo-wrap {
       position: relative;
-      padding: 10px 0 10px 22px;
-      font-size: .96rem;
-      color: var(--text);
-      line-height: 1.5;
-      border-bottom: 1px dashed var(--taupe-200);
+      max-width: 460px;
+      justify-self: center;
     }
-    .mk-topics li:last-child { border-bottom: none; }
-    .mk-topics li::before {
+    .mk-hero-photo-wrap::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: 18px;
-      width: 8px;
-      height: 8px;
+      top: -22px; left: -22px;
+      width: 130px; height: 130px;
       background: var(--lime);
       border-radius: 50%;
+      opacity: .55;
+      z-index: 0;
     }
-    .mk-topics li strong {
-      display: block;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 2px;
+    .mk-hero-photo-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: -26px; right: -26px;
+      width: 150px; height: 150px;
+      background: var(--accent-light);
+      border-radius: 50%;
+      z-index: 0;
     }
-    .mk-topics li span {
-      font-size: .85rem;
-      color: var(--text-soft);
-      font-style: italic;
+    .mk-hero-photo {
+      position: relative;
+      z-index: 1;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(61,54,49,.18);
+      aspect-ratio: 4 / 5;
+    }
+    .mk-hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    /* ============= METHODOLOGY DIAGRAM ============= */
-    .mk-methodology {
-      margin-top: 18px;
-      padding: 22px 22px 24px;
-      background: linear-gradient(135deg, var(--accent-light) 0%, #f0eefd 100%);
-      border-radius: 14px;
+    /* ==========================================================
+       BIO SECTION
+       ========================================================== */
+    .mk-bio {
+      padding: 96px 24px;
+      background: var(--warm-white);
+    }
+    .mk-bio-inner {
+      max-width: 760px;
+      margin: 0 auto;
       text-align: center;
     }
-    .mk-methodology-title {
+    .mk-bio h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3.6vw, 2.5rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 32px;
+    }
+    .mk-bio h2 em { font-style: italic; color: var(--accent); }
+    .mk-bio p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text-soft);
+      margin: 0 0 20px;
+      text-align: left;
+    }
+    .mk-bio p strong { color: var(--text); font-weight: 600; }
+
+    .mk-bio-personal {
+      margin: 32px auto 0;
+      max-width: 620px;
+      padding: 22px 26px;
+      background: var(--blush);
+      border-radius: var(--radius);
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      text-align: left;
+    }
+
+    /* ==========================================================
+       METHODOLOGY + PROOF
+       ========================================================== */
+    .mk-method {
+      padding: 96px 24px;
+      background: linear-gradient(180deg, var(--ivory) 0%, var(--cream) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .mk-method .blob-1 { width: 420px; height: 420px; top: 40px; left: -180px; }
+    .mk-method .blob-2 { width: 340px; height: 340px; bottom: 80px; right: -120px; }
+
+    .mk-method-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .mk-method-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 48px;
+    }
+    .mk-method-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3.6vw, 2.5rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .mk-method-header h2 em { color: var(--accent); font-style: italic; }
+    .mk-method-header p {
+      margin-top: 16px;
+      font-size: 1rem;
+      color: var(--text-soft);
+      line-height: 1.75;
+    }
+
+    .mk-pillars {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .mk-pillar {
+      background: var(--warm-white);
+      border: 1px solid var(--taupe-200);
+      border-radius: 14px;
+      padding: 22px 16px;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .mk-pillar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(61,54,49,.08);
+    }
+    .mk-pillar-num {
+      display: block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: .9rem;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .mk-pillar-name {
+      font-family: var(--serif);
+      font-size: .98rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .mk-pillar-flow-note {
+      text-align: center;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--accent);
+      margin: 0 0 40px;
+    }
+
+    .mk-proof {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 28px 32px;
+      background: var(--soft-green-bg);
+      border: 1px solid var(--soft-green-border);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    .mk-proof-label {
       font-family: var(--font);
       font-size: .72rem;
       font-weight: 700;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 6px;
+      color: var(--soft-green-icon);
+      margin-bottom: 12px;
     }
-    .mk-methodology-name {
+    .mk-proof p {
       font-family: var(--serif);
-      font-size: 1.2rem;
-      font-weight: 600;
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.55;
       color: var(--text);
-      margin-bottom: 16px;
+      margin: 0;
+    }
+    .mk-proof p strong { color: var(--accent); font-style: normal; font-weight: 700; }
+
+    /* ==========================================================
+       SPEAKING TOPICS — 5 detailed cards
+       ========================================================== */
+    .mk-topics {
+      padding: 96px 24px;
+      background: var(--warm-white);
+    }
+    .mk-topics-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .mk-topics-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 64px;
+    }
+    .mk-topics-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.2;
       letter-spacing: -0.01em;
     }
-    .mk-methodology-name em { color: var(--accent); font-style: italic; }
-    .mk-pillars {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 8px;
-    }
-    .mk-pillar {
-      background: var(--warm-white);
-      border-radius: 8px;
-      padding: 10px 6px;
-      box-shadow: 0 4px 10px rgba(61,54,49,.06);
-    }
-    .mk-pillar-num {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: .78rem;
-      color: var(--accent);
-      margin-bottom: 4px;
-      display: block;
-    }
-    .mk-pillar-name {
-      font-family: var(--font);
-      font-size: .7rem;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.2;
-    }
-    .mk-flow {
-      margin-top: 14px;
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: .85rem;
+    .mk-topics-header h2 em { color: var(--accent); font-style: italic; }
+    .mk-topics-header p {
+      margin-top: 18px;
+      font-size: 1.02rem;
       color: var(--text-soft);
-      line-height: 1.5;
+      line-height: 1.75;
     }
 
-    /* ============= PROOF CALLOUT ============= */
-    .mk-proof {
-      margin-top: 20px;
-      padding: 20px 22px;
-      background: var(--soft-green-bg);
-      border: 1px solid var(--soft-green-border);
-      border-radius: 12px;
+    .mk-topic-card {
+      background: linear-gradient(135deg, #fefefe 0%, #fef7f3 100%);
+      border: 1px solid var(--taupe-200);
+      border-radius: 22px;
+      padding: 44px 44px 40px;
+      margin-bottom: 28px;
+      box-shadow: 0 12px 32px rgba(61,54,49,.06);
+      position: relative;
+      overflow: hidden;
     }
-    .mk-proof-label {
+    .mk-topic-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--lime));
+    }
+    .mk-topic-num {
+      display: inline-block;
+      font-family: var(--font);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 18px;
+    }
+    .mk-topic-card h3 {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+    .mk-topic-card h3 em { color: var(--accent); font-style: italic; }
+
+    .mk-pitch-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.08rem;
+      color: var(--text);
+      line-height: 1.65;
+      padding: 18px 22px;
+      background: var(--warm-white);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 26px;
+    }
+
+    .mk-topic-section-label {
+      font-family: var(--font);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 12px;
+    }
+
+    .mk-topic-cover {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 26px;
+    }
+    .mk-topic-cover li {
+      position: relative;
+      padding: 9px 0 9px 30px;
+      font-size: .98rem;
+      color: var(--text);
+      line-height: 1.6;
+      border-bottom: 1px solid rgba(61,54,49,.06);
+    }
+    .mk-topic-cover li:last-child { border-bottom: none; }
+    .mk-topic-cover li::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 18px;
+      width: 8px; height: 8px;
+      background: var(--lime);
+      border-radius: 50%;
+    }
+
+    .mk-topic-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px dashed var(--taupe-200);
+    }
+    .mk-topic-meta-block .mk-topic-meta-label {
       font-family: var(--font);
       font-size: .68rem;
       font-weight: 700;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: var(--soft-green-icon);
-      margin-bottom: 8px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
     }
-    .mk-proof-headline {
-      font-family: var(--serif);
-      font-size: 1.02rem;
-      font-weight: 500;
-      color: var(--text);
-      line-height: 1.45;
+    .mk-topic-meta-block p {
+      font-size: .92rem;
+      color: var(--text-soft);
+      line-height: 1.65;
+      margin: 0;
     }
-    .mk-proof-headline strong { font-weight: 700; color: var(--accent); }
+    .mk-topic-meta-block p strong { color: var(--text); }
 
-    /* ============= PROMO CARDS (book + YT) ============= */
-    .mk-promos {
+    .mk-listener-gift {
+      margin-top: 22px;
+      padding: 14px 20px;
+      background: var(--accent-light);
+      border-radius: 10px;
+      font-size: .9rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .mk-listener-gift strong { color: var(--accent); font-weight: 700; }
+
+    /* ==========================================================
+       FORTHCOMING PROJECTS
+       ========================================================== */
+    .mk-projects {
+      padding: 96px 24px;
+      background: var(--blush);
+      position: relative;
+      overflow: hidden;
+    }
+    .mk-projects .blob-1 { width: 400px; height: 400px; top: 20px; right: -120px; }
+    .mk-projects .blob-2 { width: 380px; height: 380px; bottom: 80px; left: -140px; }
+
+    .mk-projects-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .mk-projects-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 48px;
+    }
+    .mk-projects-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3.6vw, 2.5rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .mk-projects-header h2 em { color: var(--accent); font-style: italic; }
+    .mk-projects-header p {
+      margin-top: 16px;
+      font-size: 1rem;
+      color: var(--text-soft);
+      line-height: 1.75;
+    }
+
+    .mk-projects-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 24px;
+      gap: 22px;
     }
-    .mk-promo-card {
+    .mk-project-card {
       background: var(--warm-white);
       border: 1px solid var(--taupe-200);
-      border-radius: 12px;
-      padding: 18px 18px;
+      border-radius: 18px;
+      padding: 36px 32px;
       box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
     }
-    .mk-promo-eyebrow {
-      font-family: var(--font);
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 6px;
+    .mk-project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--lime));
     }
-    .mk-promo-title {
-      font-family: var(--serif);
-      font-size: .98rem;
-      font-weight: 600;
-      line-height: 1.3;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-    .mk-promo-meta {
-      font-family: var(--font);
-      font-size: .78rem;
-      color: var(--text-soft);
-      line-height: 1.4;
-    }
-    .mk-promo-meta strong { color: var(--text); }
-    .mk-promo-tag {
+    .mk-project-tag {
       display: inline-block;
-      margin-top: 8px;
-      padding: 3px 10px;
+      padding: 5px 12px;
       background: var(--lime);
       color: var(--text);
       border-radius: var(--radius-pill);
       font-family: var(--font);
-      font-size: .65rem;
+      font-size: .68rem;
       font-weight: 700;
-      letter-spacing: .12em;
+      letter-spacing: .14em;
       text-transform: uppercase;
+      margin-bottom: 16px;
     }
-
-    /* ============= FOOTER / CONTACT ============= */
-    .mk-footer {
-      background: var(--accent);
-      color: white;
-      padding: 28px 40px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-    }
-    .mk-footer-left {
-      flex: 1 1 300px;
-    }
-    .mk-footer-eyebrow {
-      font-family: var(--font);
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.78);
-      margin-bottom: 6px;
-    }
-    .mk-footer-h {
+    .mk-project-card h3 {
       font-family: var(--serif);
-      font-size: 1.4rem;
-      line-height: 1.2;
+      font-size: 1.25rem;
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .mk-project-card p {
+      font-size: .95rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .mk-project-card p strong { color: var(--text); }
+
+    /* ==========================================================
+       BOOK BREE — final CTA
+       ========================================================== */
+    .mk-book {
+      background: linear-gradient(135deg, var(--accent) 0%, #5753d0 100%);
+      padding: 96px 24px;
+      text-align: center;
       color: white;
-      font-weight: 500;
-      margin-bottom: 4px;
+      position: relative;
+      overflow: hidden;
     }
-    .mk-footer-h em { font-style: italic; color: var(--lime); }
-    .mk-footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 18px;
+    .mk-book::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -20%;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(255,255,255,.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .mk-book::after {
+      content: '';
+      position: absolute;
+      bottom: -30%; right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(222,255,85,.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .mk-book-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .mk-book .mk-eyebrow span { color: rgba(255,255,255,.85); }
+    .mk-book .mk-eyebrow .line { background: rgba(255,255,255,.5); }
+    .mk-book h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 22px;
+      color: white;
+    }
+    .mk-book h2 em { font-style: italic; color: var(--lime); }
+    .mk-book p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,.92);
+      margin-bottom: 36px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .mk-book-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--lime);
+      color: var(--text);
+      padding: 18px 40px;
+      border-radius: var(--radius-pill);
       font-family: var(--font);
-      font-size: .9rem;
-      color: rgba(255,255,255,.95);
-      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .25s, box-shadow .25s;
+      box-shadow: 0 8px 24px rgba(222,255,85,.4);
     }
-    .mk-footer-links a {
+    .mk-book-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(222,255,85,.55);
+      color: var(--text);
+    }
+    .mk-book-direct {
+      margin-top: 24px;
+      font-size: .92rem;
+      color: rgba(255,255,255,.85);
+    }
+    .mk-book-direct a {
       color: white;
       text-decoration: none;
       border-bottom: 1px solid rgba(255,255,255,.4);
       padding-bottom: 1px;
-      transition: border-color .2s;
     }
-    .mk-footer-links a:hover { border-color: var(--lime); }
-    .mk-footer-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--lime);
-      color: var(--text);
-      padding: 14px 24px;
-      border-radius: var(--radius-pill);
-      font-family: var(--font);
-      font-size: .9rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform .2s, box-shadow .2s;
-      box-shadow: 0 8px 18px rgba(222,255,85,.4);
-    }
-    .mk-footer-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(222,255,85,.55);
-      color: var(--text);
-    }
+    .mk-book-direct a:hover { border-color: var(--lime); }
 
-    /* ============= UTILITY: print + download buttons ============= */
-    .mk-utility-bar {
-      max-width: 1100px;
-      margin: 0 auto 12px;
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      padding: 0 16px;
+    /* ==========================================================
+       FOOTER
+       ========================================================== */
+    .footer {
+      background: var(--cream);
+      padding: 64px 24px 40px;
+      text-align: center;
     }
-    .mk-utility-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 14px;
-      background: var(--warm-white);
-      border: 1px solid var(--taupe-200);
-      border-radius: var(--radius-pill);
-      font-family: var(--font);
-      font-size: .8rem;
-      font-weight: 500;
-      color: var(--text-soft);
-      text-decoration: none;
-      cursor: pointer;
-      transition: all .2s;
-    }
-    .mk-utility-btn:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-    }
+    .footer-logo { height: 32px; margin-bottom: 20px; opacity: .8; }
+    .footer p { font-size: .9rem; color: var(--text-soft); margin: 4px 0; }
 
-    /* ============= RESPONSIVE ============= */
+    /* ==========================================================
+       RESPONSIVE
+       ========================================================== */
     @media (max-width: 900px) {
-      .mk-shell { margin: 16px 12px; border-radius: 14px; }
-      .mk-banner { padding: 26px 22px 18px; }
-      .mk-tagline-strip { font-size: 1rem; padding: 12px 20px; }
-      .mk-body { grid-template-columns: 1fr; }
-      .mk-body-left { padding: 26px 22px 22px; }
-      .mk-photo { min-height: 380px; }
-      .mk-pillars { grid-template-columns: repeat(2, 1fr); gap: 6px; }
-      .mk-promos { grid-template-columns: 1fr; }
-      .mk-footer { padding: 22px 22px; flex-direction: column; align-items: flex-start; }
-      .mk-utility-bar { padding: 0 16px; }
-    }
+      .site-nav-links .nav-menu-link,
+      .site-nav-links .site-nav-cta { display: none; }
+      .site-nav-toggle { display: inline-flex; align-items: center; }
 
-    /* ============= PRINT ============= */
-    @media print {
-      body { background: white; }
-      .mk-utility-bar { display: none; }
-      .mk-shell {
-        margin: 0;
-        box-shadow: none;
-        border-radius: 0;
-        max-width: 100%;
-      }
-      .mk-banner { background: #6b66e9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .mk-tagline-strip { background: #deff55 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .mk-footer { background: #6b66e9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .mk-photo { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .mk-hero { padding: 56px 20px 80px; }
+      .mk-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .mk-hero-photo-wrap { max-width: 320px; }
+
+      .mk-bio, .mk-method, .mk-topics, .mk-projects, .mk-book { padding: 72px 20px; }
+
+      .mk-pillars { grid-template-columns: repeat(2, 1fr); }
+      .mk-projects-grid { grid-template-columns: 1fr; }
+
+      .mk-topic-card { padding: 32px 26px 28px; }
+      .mk-topic-meta { grid-template-columns: 1fr; gap: 18px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Utility bar (print/share) -->
-  <div class="mk-utility-bar">
-    <a href="#" onclick="window.print(); return false;" class="mk-utility-btn">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-      Print or Save as PDF
-    </a>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQPFQDNQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- ======================== SITE NAV ======================== -->
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="home.html" class="site-nav-logo">
+        <img src="logo.png" alt="Perfectly Made Marketing" />
+      </a>
+      <div class="site-nav-links">
+        <a href="home.html" class="nav-menu-link">Home</a>
+        <a href="about.html" class="nav-menu-link">About</a>
+        <a href="work-with-us.html" class="nav-menu-link">Work With Us</a>
+        <a href="https://offer.perfectlymademarketing.com/" class="nav-menu-link">Get the Course</a>
+        <a href="strategy-call.html" class="site-nav-cta">Book a Call</a>
+        <button class="site-nav-toggle" onclick="document.querySelector('.mobile-menu').classList.add('open'); document.querySelector('.mobile-menu-overlay').classList.add('open');" aria-label="Open menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay + panel -->
+  <div class="mobile-menu-overlay" onclick="document.querySelector('.mobile-menu').classList.remove('open'); this.classList.remove('open');"></div>
+  <div class="mobile-menu">
+    <button class="mobile-menu-close" onclick="document.querySelector('.mobile-menu').classList.remove('open'); document.querySelector('.mobile-menu-overlay').classList.remove('open');" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="work-with-us.html">Work With Us</a>
+    <a href="https://offer.perfectlymademarketing.com/">Get the Course</a>
+    <a href="strategy-call.html" class="mobile-menu-cta">Book a Call</a>
   </div>
 
-  <article class="mk-shell">
+  <!-- ======================== HERO ======================== -->
+  <section class="mk-hero">
+    <div class="blob blob-blush blob-1"></div>
+    <div class="blob blob-periwinkle blob-2"></div>
 
-    <!-- ======== NAME BANNER ======== -->
-    <header class="mk-banner">
-      <h1>Bree Nweke</h1>
-      <div class="mk-roles">
-        <span>Wife</span>
-        <span>Mom of 3</span>
-        <span>Founder</span>
-        <span>Speaker</span>
-        <span>Methodology Creator</span>
+    <div class="mk-hero-grid">
+      <div class="mk-hero-copy">
+        <div class="mk-eyebrow">
+          <span class="line"></span>
+          <span>Speaker Media Kit</span>
+        </div>
+        <h1>Bree Nweke.</h1>
+        <div class="mk-roles">
+          <span class="mk-role">Wife</span>
+          <span class="mk-role">Mom of 3</span>
+          <span class="mk-role">Founder</span>
+          <span class="mk-role">Speaker</span>
+          <span class="mk-role">Methodology Creator</span>
+        </div>
+        <p class="mk-tagline">Teaching service providers to build a calendar that fills itself — without posting daily, chasing leads, or being the engine of their own business.</p>
+        <p class="mk-hero-intro">Founder of <strong>Perfectly Made Marketing</strong> and creator of <strong>The Self-Booking System</strong>. Available for podcast guest appearances, speaking engagements, summits, and private workshops.</p>
+
+        <a href="mailto:hello@perfectlymademarketing.com?subject=Podcast%2FSpeaking%20Inquiry%20for%20Bree%20Nweke" class="mk-cta-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+          Email Bree to book
+        </a>
+        <a href="#topics" class="mk-cta-secondary">See speaking topics →</a>
       </div>
-    </header>
 
-    <!-- ======== TAGLINE STRIP ======== -->
-    <div class="mk-tagline-strip">
-      Teaching service providers to build calendars that fill themselves.
+      <div class="mk-hero-photo-wrap">
+        <div class="mk-hero-photo">
+          <img src="images/Bree 3.jpg" alt="Bree Nweke, founder of Perfectly Made Marketing" />
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- ======== BODY ======== -->
-    <div class="mk-body">
+  <!-- ======================== BIO ======================== -->
+  <section class="mk-bio">
+    <div class="mk-bio-inner">
+      <div class="mk-eyebrow" style="display: inline-flex; justify-content: center;">
+        <span class="line"></span>
+        <span>About Bree</span>
+      </div>
+      <h2>Nine years of paid-ads pattern recognition, lived experience, and <em>stewardship-first</em> entrepreneurship.</h2>
 
-      <!-- LEFT: Bio + topics + methodology + proof + promos -->
-      <div class="mk-body-left">
+      <p>Bree Nweke is the founder of <strong>Perfectly Made Marketing</strong> and the creator of <strong>The Self-Booking System</strong> — a Meta-ads-driven methodology that helps established service providers build a calendar that fills itself, without posting daily, chasing leads in DMs, or being the engine of their own business.</p>
 
-        <div class="mk-bio">
-          <p class="mk-dropcap">Bree Nweke is a wife, mom of three, and the founder of <strong>Perfectly Made Marketing</strong>. She is the creator of <strong>The Self-Booking System</strong> — a Meta-ads-driven methodology that helps established service providers build a calendar that fills itself, without posting daily, chasing leads in DMs, or being the engine of their own business.</p>
+      <p>She began her career in 2016 as a single mom selling life insurance, where she discovered Meta ads as the only way to reach her ideal clients during the hours she could not be in front of them. After years of refining what she now calls the Self-Booking System, she has personally trained <strong>81 students</strong> through her courses and built done-for-you installs for life insurance agents, mortgage brokers, business funding experts, psychologists, therapists, and faith-led coaches and consultants.</p>
 
-          <p>Bree began her career in 2016 as a single mom selling life insurance, where she discovered Meta ads as the only way to reach her ideal clients during the hours she could not be in front of them. After years of refining what she now calls the Self-Booking System, she has personally trained <strong>81 students</strong> through her courses and built done-for-you installs for life insurance agents, mortgage brokers, business funding experts, psychologists, therapists, and faith-led coaches and consultants.</p>
+      <p>Bree speaks with the calm directness of someone who has done the work — no hype, no shaming, no marketing-bro energy. She brings <strong>nine years of paid-ads pattern recognition</strong>, the lived experience of building a business that supports a family, and a stewardship-first approach to entrepreneurship that resonates with audiences who care as much about <em>how</em> they grow as <em>what</em> they grow.</p>
 
-          <p>Bree speaks with the calm directness of someone who has done the work — no hype, no shaming, no marketing-bro energy. She brings <strong>nine years of paid-ads pattern recognition</strong>, the lived experience of building a business that supports a family, and a stewardship-first approach to entrepreneurship that resonates with audiences who care as much about <em>how</em> they grow as <em>what</em> they grow.</p>
+      <div class="mk-bio-personal">
+        Bree loves long road trips with her family, unhurried mornings, and unapologetically deep conversations about why most marketing advice is either wrong or incomplete.
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== METHODOLOGY ======================== -->
+  <section class="mk-method">
+    <div class="blob blob-lime blob-1"></div>
+    <div class="blob blob-blush blob-2"></div>
+
+    <div class="mk-method-inner">
+      <div class="mk-method-header">
+        <div class="mk-eyebrow" style="display: inline-flex;">
+          <span class="line"></span>
+          <span>The Methodology</span>
         </div>
+        <h2>The <em>Self-Booking System</em> in five pieces.</h2>
+        <p>Five components working in order. The ad is one of them — and the smallest one.</p>
+      </div>
 
-        <div class="mk-personal">
-          Bree loves long road trips with her family, unhurried mornings, and unapologetically deep conversations about why most marketing advice is either wrong or incomplete.
+      <div class="mk-pillars">
+        <div class="mk-pillar">
+          <span class="mk-pillar-num">01</span>
+          <div class="mk-pillar-name">Lead Magnet</div>
         </div>
+        <div class="mk-pillar">
+          <span class="mk-pillar-num">02</span>
+          <div class="mk-pillar-name">Opt-In Page</div>
+        </div>
+        <div class="mk-pillar">
+          <span class="mk-pillar-num">03</span>
+          <div class="mk-pillar-name">Auto-Booking</div>
+        </div>
+        <div class="mk-pillar">
+          <span class="mk-pillar-num">04</span>
+          <div class="mk-pillar-name">Email Follow-Up</div>
+        </div>
+        <div class="mk-pillar">
+          <span class="mk-pillar-num">05</span>
+          <div class="mk-pillar-name">Meta Ads</div>
+        </div>
+      </div>
 
-        <!-- Speaking topics -->
-        <div class="mk-section-title">Speaking Topics</div>
-        <ul class="mk-topics">
-          <li>
-            <strong>The Self-Booking System: How Service Providers Build a Calendar That Fills Itself</strong>
-            <span>The 5-piece methodology, walked through end-to-end, with real client results.</span>
-          </li>
-          <li>
-            <strong>The $544 That Changed My Business: Why Your Ad Is Almost Never the Problem</strong>
-            <span>The origin story + the diagnostic skill of seeing a funnel as a system.</span>
-          </li>
-          <li>
-            <strong>You Were Not Built to Be the Engine: The Mindset Shift Every Service Provider Needs</strong>
-            <span>Why most service businesses hit a ceiling — and what to replace yourself with.</span>
-          </li>
-          <li>
-            <strong>How to Vet a Marketing Agency Before You Get Burned</strong>
-            <span>The 8 questions to ask, the red flags to walk from, the structural differences that matter.</span>
-          </li>
-          <li>
-            <strong>Why Your Email List Is Worth More Than Your Booked Calls</strong>
-            <span>The compounding asset most service providers ignore — and how to build it as a byproduct.</span>
-          </li>
+      <p class="mk-pillar-flow-note">Each piece on its own does almost nothing. The five working together fill a calendar.</p>
+
+      <div class="mk-proof">
+        <div class="mk-proof-label">Real Client Result</div>
+        <p>Linda, a life insurance agent, went from <strong>$13/lead and an empty calendar</strong> to <strong>$3/lead, 22 leads, and 3 booked calls in her first 5 days</strong> after we built her Self-Booking System.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SPEAKING TOPICS ======================== -->
+  <section class="mk-topics" id="topics">
+    <div class="mk-topics-inner">
+      <div class="mk-topics-header">
+        <div class="mk-eyebrow" style="display: inline-flex;">
+          <span class="line"></span>
+          <span>Speaking Topics</span>
+        </div>
+        <h2>Five topics your audience will <em>actually use.</em></h2>
+        <p>Each topic is built around a real framework — not theory — drawn from nine years of building and breaking marketing systems for service providers. Pick whichever fits your audience best, or ask about a custom angle.</p>
+      </div>
+
+      <!-- TOPIC 1 -->
+      <article class="mk-topic-card">
+        <span class="mk-topic-num">Topic 01</span>
+        <h3>The Self-Booking System: How Service Providers Build a Calendar That <em>Fills Itself</em></h3>
+
+        <p class="mk-pitch-quote">"I'd love to walk your audience through the 5-piece methodology I've developed over 9 years of running Meta ads — the Self-Booking System — that fills service providers' calendars without them posting daily, chasing leads, or being on sales calls 24/7."</p>
+
+        <p class="mk-topic-section-label">What we'll cover</p>
+        <ul class="mk-topic-cover">
+          <li>The 5 pieces of the Self-Booking System (lead magnet → opt-in → auto-booking → email follow-up → ads) and why each one fails when missing the others</li>
+          <li>Why most service providers focus on the wrong piece — the ad — and ignore the four pieces that actually convert</li>
+          <li>A real client case study: Linda, a life insurance agent who went from $13 leads with an empty calendar to $3 leads and 3 booked calls in her first 5 days</li>
+          <li>The honest math: how to know if your business model can actually support paid ads — and what to do if it can't yet</li>
+          <li>The "every ad dollar does two jobs" principle — fills your calendar AND grows an email list you own forever</li>
         </ul>
 
-        <!-- Promos -->
-        <div class="mk-promos">
-
-          <div class="mk-promo-card">
-            <div class="mk-promo-eyebrow">Forthcoming Book</div>
-            <div class="mk-promo-title">The Self-Booking System</div>
-            <div class="mk-promo-meta">How Established Service Providers Build a Calendar That Fills Itself.<br /><strong>Coming 2026.</strong></div>
-            <span class="mk-promo-tag">In Progress</span>
+        <div class="mk-topic-meta">
+          <div class="mk-topic-meta-block">
+            <div class="mk-topic-meta-label">Audience Takeaway</div>
+            <p>Listeners walk away with a complete mental model of what a working marketing system looks like end-to-end — and a clear way to audit their own funnel to find the leak.</p>
           </div>
-
-          <div class="mk-promo-card">
-            <div class="mk-promo-eyebrow">YouTube Channel</div>
-            <div class="mk-promo-title">The Self-Booking System with Bree Nweke</div>
-            <div class="mk-promo-meta">Tutorials, case studies, and industry-specific deep dives for service providers ready to stop being the engine.</div>
-            <span class="mk-promo-tag">Launching Soon</span>
+          <div class="mk-topic-meta-block">
+            <div class="mk-topic-meta-label">Best For</div>
+            <p>Marketing &amp; agency operator podcasts · Service business growth podcasts · Mid-stage entrepreneur podcasts ($10K-$100K month audiences) · Coach &amp; consultant business podcasts</p>
           </div>
-
         </div>
 
+        <div class="mk-listener-gift">
+          <strong>Listener gift:</strong> The 4 Simple Fixes Guide — a free PDF audit that shows listeners exactly where most service providers' funnels are leaking. <em>perfectlymademarketing.com/guide</em>
+        </div>
+      </article>
+
+      <!-- TOPIC 2 -->
+      <article class="mk-topic-card">
+        <span class="mk-topic-num">Topic 02</span>
+        <h3>The $544 That Changed My Business: Why Your Ad Is <em>Almost Never</em> the Problem</h3>
+
+        <p class="mk-pitch-quote">"I spent $544 of my own money running Meta ads and got 244 leads with zero booked calls. I want to take your audience through what I learned that month — and the reframe that turned my next campaign into 16 booked calls in two weeks on the same budget."</p>
+
+        <p class="mk-topic-section-label">What we'll cover</p>
+        <ul class="mk-topic-cover">
+          <li>The full origin story — single mom selling life insurance in 2016, couldn't door-knock after 5pm because her son needed her, found Meta ads as the only way out</li>
+          <li>The five things I tried to fix the ad — and why none of them moved the needle</li>
+          <li>The exact moment I realized the ad was never the leak</li>
+          <li>The framework I built afterward: how to diagnose a funnel without staring at the ad</li>
+          <li>The two failed approaches that came before the Self-Booking System (Facebook lead forms + ads-to-calendar pages) and what each one taught me</li>
+        </ul>
+
+        <div class="mk-topic-meta">
+          <div class="mk-topic-meta-block">
+            <div class="mk-topic-meta-label">Audience Takeaway</div>
+            <p>Listeners learn the diagnostic skill of seeing a funnel as a system — and stop blaming the wrong layer for their results.</p>
+          </div>
+          <div class="mk-topic-meta-block">
+            <div class="mk-topic-meta-label">Best For</div>
+            <p>Entrepreneur journey podcasts ("how they built it" style) · Working mom &amp; second-career business podcasts · Women in business podcasts · Faith-led entrepreneur podcasts (the "I had to figure this out for my family" beat lands hard here)</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- TOPIC 3 -->
+      <article class="mk-topic-card">
+        <span class="mk-topic-num">Topic 03</span>
+        <h3>You Were Not Built to Be the Engine: The <em>Mindset Shift</em> Every Service Provider Needs</h3>
+
+        <p class="mk-pitch-quote">"Most service providers hit a ceiling because they're running on themselves — their hours, their energy, their consistency. I want to walk your audience through the mindset shift (and the system) that turns a service business from a 'high-paying job' into something that runs without you being the engine."</p>
+
+        <p class="mk-topic-section-label">What we'll cover</p>
+        <ul class="mk-topic-cover">
+          <li>Why service providers consistently get stuck at $5K-$25K/month — the structural reason, not a hustle reason</li>
+          <li>The "high-paying job" trap: the moment your business secretly stops being a business</li>
+          <li>The four private thoughts that signal you're hitting this wall: <em>"I should be further along by now" / "If I take a week off, my income disappears" / "I'm tired of starting every month from zero" / "Why is this still this hard after all these years?"</em></li>
+          <li>What it actually looks like to stop being the engine — practical, not philosophical</li>
+          <li>The role of paid traffic and an email list in becoming the steward of your business instead of its operator</li>
+        </ul>
+
+        <div class="mk-topic-meta">
+          <div class="mk-topic-meta-block">
+            <div class="mk-topic-meta-label">Audience Takeaway</div>
+            <p>Listeners walk away seeing their business through a different lens — and feeling permission to stop being the engine, with a clear sense of what should replace them.</p>
+          </div>
+          <div class="mk-topic-meta-block">
+            <div class="mk-topic-meta-label">Best For</div>
+            <p>Faith-led entrepreneur podcasts (your strongest topic for that audience) · Women in business podcasts (especially serving second-career founders) · Service provider podcasts (therapists, coaches, consultants) · Mid-career professional podcasts · Lifestyle &amp; family-aligned business podcasts</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- TOPIC 4 -->
+      <article class="mk-topic-card">
+        <span class="mk-topic-num">Topic 04</span>
+        <h3>How to Vet a Marketing Agency Before You <em>Get Burned</em></h3>
+
+        <p class="mk-pitch-quote">"More than half of the service providers I talk to have already been burned by an ads or marketing agency. I want to give your audience the exact questions to ask, the red flags to walk from, and the structural differences between a real partner and a vendor that will disappear after onboarding."</p>
+
+        <p class="mk-topic-section-label">What we'll cover</p>
+        <ul class="mk-topic-cover">
+          <li>The 7 reasons most marketing agencies fail their service-provider clients — the patterns are remarkably consistent</li>
+          <li>The 8 questions to ask any agency before signing — and what good vs. bad answers sound like</li>
+          <li>The "they only touched one piece" trap: why most agencies run ads into broken funnels and blame the conversion rate when nothing closes</li>
+          <li>What founder access actually looks like — and why it matters more than agency scale</li>
+          <li>Pricing transparency: what you should expect to pay, what's reasonable, what's not, and where most agencies inflate</li>
+        </ul>
+
+        <div class="mk-topic-meta">
+          <div class="mk-topic-meta-block">
+            <div class="mk-topic-meta-label">Audience Takeaway</div>
+            <p>Listeners walk away with a vetting framework they can use the next day — protective, practical, and honest about what to expect from outsourced marketing.</p>
+          </div>
+          <div class="mk-topic-meta-block">
+            <div class="mk-topic-meta-label">Best For</div>
+            <p>Service business podcasts whose audiences have agency PTSD · Coach &amp; consultant podcasts · Industry-specific podcasts (insurance, mortgage, therapy, legal) · Honest business / "anti-guru" podcasts · Solopreneur podcasts</p>
+          </div>
+        </div>
+
+        <div class="mk-listener-gift">
+          <strong>Listener gift:</strong> The Agency Vetting Checklist — a one-pager of the 8 questions and red flags listeners can use the next time they're shopping for marketing help.
+        </div>
+      </article>
+
+      <!-- TOPIC 5 -->
+      <article class="mk-topic-card">
+        <span class="mk-topic-num">Topic 05</span>
+        <h3>Why Your Email List Is Worth <em>More</em> Than Your Booked Calls</h3>
+
+        <p class="mk-pitch-quote">"Most service providers obsess over booked calls and ignore the asset that compounds for the next 10 years — their email list. I want to walk your audience through how to build an email list as a byproduct of your booking system, why it changes everything during slow months, and what most marketers won't tell you about owning vs renting your audience."</p>
+
+        <p class="mk-topic-section-label">What we'll cover</p>
+        <ul class="mk-topic-cover">
+          <li>Why booked calls are short-term wins — and email lists are long-term assets</li>
+          <li>The compounding math: how every campaign you run adds to a list that produces forever</li>
+          <li>Why organic alone (Instagram, TikTok, posting) cannot build the list at any speed your business can wait for</li>
+          <li>The "every ad dollar does two jobs" framework: fills your calendar this week + grows your list for every week after</li>
+          <li>What to do with your list once you have it — broadcasts, slow-month rescues, new offer launches, repeat-client touchpoints</li>
+        </ul>
+
+        <div class="mk-topic-meta">
+          <div class="mk-topic-meta-block">
+            <div class="mk-topic-meta-label">Audience Takeaway</div>
+            <p>Listeners walk away thinking about their marketing in 10-year terms instead of 30-day terms — and seeing their list as the actual business they're building.</p>
+          </div>
+          <div class="mk-topic-meta-block">
+            <div class="mk-topic-meta-label">Best For</div>
+            <p>Marketing &amp; business growth podcasts · Solopreneur podcasts · Online course creator podcasts (their audiences live and die by lists) · Email marketing podcasts (Bree as the "system before the email" angle) · Wealth-mindset business podcasts</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ======================== FORTHCOMING PROJECTS ======================== -->
+  <section class="mk-projects">
+    <div class="blob blob-blush blob-1"></div>
+    <div class="blob blob-periwinkle blob-2"></div>
+
+    <div class="mk-projects-inner">
+      <div class="mk-projects-header">
+        <div class="mk-eyebrow" style="display: inline-flex;">
+          <span class="line"></span>
+          <span>What's Coming</span>
+        </div>
+        <h2>The book and the channel that will <em>codify the methodology.</em></h2>
+        <p>Two projects in development — both designed to make the Self-Booking System the named methodology for service-provider marketing.</p>
       </div>
 
-      <!-- RIGHT: Photo + methodology diagram + proof -->
-      <div class="mk-body-right">
-        <div class="mk-photo" role="img" aria-label="Bree Nweke, founder of Perfectly Made Marketing"></div>
-        <div class="mk-photo-caption">
-          <strong>Founder · Perfectly Made Marketing</strong>
-          Creator of The Self-Booking System
+      <div class="mk-projects-grid">
+
+        <div class="mk-project-card">
+          <span class="mk-project-tag">Forthcoming Book</span>
+          <h3>The Self-Booking System</h3>
+          <p>How Established Service Providers Build a Calendar That Fills Itself.<br /><strong>Coming 2026.</strong> The full methodology in book form — origin, framework, application, and the long game.</p>
         </div>
 
-        <div style="padding: 20px 24px 26px;">
-
-          <!-- Methodology diagram -->
-          <div class="mk-methodology">
-            <div class="mk-methodology-title">The Methodology</div>
-            <div class="mk-methodology-name">The Self-Booking <em>System</em></div>
-            <div class="mk-pillars">
-              <div class="mk-pillar">
-                <span class="mk-pillar-num">01</span>
-                <div class="mk-pillar-name">Lead Magnet</div>
-              </div>
-              <div class="mk-pillar">
-                <span class="mk-pillar-num">02</span>
-                <div class="mk-pillar-name">Opt-In Page</div>
-              </div>
-              <div class="mk-pillar">
-                <span class="mk-pillar-num">03</span>
-                <div class="mk-pillar-name">Auto-Booking</div>
-              </div>
-              <div class="mk-pillar">
-                <span class="mk-pillar-num">04</span>
-                <div class="mk-pillar-name">Email Follow-Up</div>
-              </div>
-              <div class="mk-pillar">
-                <span class="mk-pillar-num">05</span>
-                <div class="mk-pillar-name">Meta Ads</div>
-              </div>
-            </div>
-            <div class="mk-flow">
-              Five pieces working together. The ad is one of them — and the smallest one.
-            </div>
-          </div>
-
-          <!-- Proof -->
-          <div class="mk-proof">
-            <div class="mk-proof-label">Real Client Result</div>
-            <div class="mk-proof-headline">Linda, a life insurance agent, went from <strong>$13/lead and an empty calendar</strong> to <strong>$3/lead, 22 leads, and 3 booked calls in her first 5 days</strong> after we built her Self-Booking System.</div>
-          </div>
-
+        <div class="mk-project-card">
+          <span class="mk-project-tag">YouTube Channel</span>
+          <h3>The Self-Booking System with Bree Nweke</h3>
+          <p>Tutorials, real client case studies, and industry-specific deep dives for service providers ready to stop being the engine. <strong>Launching soon.</strong></p>
         </div>
 
       </div>
     </div>
+  </section>
 
-    <!-- ======== FOOTER / CONTACT ======== -->
-    <footer class="mk-footer">
-      <div class="mk-footer-left">
-        <div class="mk-footer-eyebrow">Get to know Bree</div>
-        <div class="mk-footer-h">Available for podcasts, summits, &amp; <em>speaking engagements.</em></div>
-        <div class="mk-footer-links">
-          <a href="https://perfectlymademarketing.com">perfectlymademarketing.com</a>
-          <a href="mailto:hello@perfectlymademarketing.com">hello@perfectlymademarketing.com</a>
-        </div>
+  <!-- ======================== BOOK BREE ======================== -->
+  <section class="mk-book">
+    <div class="mk-book-inner">
+      <div class="mk-eyebrow" style="display: inline-flex; justify-content: center;">
+        <span class="line"></span>
+        <span>Book Bree</span>
       </div>
-      <a href="mailto:hello@perfectlymademarketing.com?subject=Podcast%2FSpeaking%20Inquiry%20for%20Bree%20Nweke" class="mk-footer-cta">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+      <h2>Available for podcasts, summits, &amp; <em>speaking engagements.</em></h2>
+      <p>If you'd like to have Bree on your podcast, your summit, or in front of your community — reach out below. She'll respond personally within two business days and bring a listener gift to make the episode even more valuable for your audience.</p>
+
+      <a href="mailto:hello@perfectlymademarketing.com?subject=Podcast%2FSpeaking%20Inquiry%20for%20Bree%20Nweke&body=Hi%20Bree%2C%0A%0AI%27d%20love%20to%20have%20you%20as%20a%20guest%20on%20%5BPodcast%2FEvent%20Name%5D.%0A%0AHere%27s%20what%20we%27re%20about%3A%20%5Bbrief%20description%5D%0A%0AOur%20audience%20is%3A%20%5Baudience%20description%5D%0A%0AI%20was%20thinking%20about%20Topic%20%23%5B__%5D%2C%20but%20open%20to%20your%20take%20on%20the%20best%20fit.%0A%0AThanks%21" class="mk-book-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
         Email Bree to book
       </a>
-    </footer>
 
-  </article>
+      <div class="mk-book-direct">
+        Or reach out directly: <a href="mailto:hello@perfectlymademarketing.com">hello@perfectlymademarketing.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer">
+    <img src="logo.png" alt="Perfectly Made Marketing" class="footer-logo" />
+    <p>&copy; 2026 Perfectly Made Marketing. All rights reserved.</p>
+    <p>Questions? <a href="mailto:hello@perfectlymademarketing.com">hello@perfectlymademarketing.com</a></p>
+  </footer>
 
 </body>
 </html>
