@@ -80,28 +80,28 @@
     .ak-countdown-bar.is-expired strong { color: #fdd8c8; }
 
     /* ==========================================================
-       GUIDE CONFIRMATION BANNER
+       IN-HERO CONFIRMATION (small, quiet — not a full banner)
        ========================================================== */
-    .ak-confirm-banner {
-      background: var(--soft-green-bg);
-      border-bottom: 1px solid var(--soft-green-border);
-      padding: 16px 24px;
-      text-align: center;
-    }
-    .ak-confirm-banner-inner {
+    .ak-hero-confirm {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      max-width: 580px;
+      margin: 0 auto 28px;
+      padding: 10px 18px;
+      background: var(--soft-green-bg);
+      border: 1px solid var(--soft-green-border);
+      border-radius: var(--radius-pill);
       font-family: var(--font);
-      font-size: .92rem;
+      font-size: .82rem;
       color: var(--text);
-      max-width: 720px;
       line-height: 1.5;
+      text-align: left;
     }
-    .ak-confirm-banner-icon {
+    .ak-hero-confirm-icon {
       flex-shrink: 0;
-      width: 26px;
-      height: 26px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: var(--soft-green-icon);
       color: white;
@@ -109,35 +109,7 @@
       align-items: center;
       justify-content: center;
     }
-    .ak-confirm-banner strong { color: var(--text); font-weight: 600; }
-
-    /* ==========================================================
-       OTO ATTENTION BANNER ("PSSSSSST")
-       ========================================================== */
-    .ak-oto-banner {
-      background: var(--lime);
-      color: var(--text);
-      padding: 18px 24px;
-      text-align: center;
-      font-family: var(--font);
-      font-size: clamp(.78rem, 1.4vw, .95rem);
-      font-weight: 700;
-      letter-spacing: .06em;
-      line-height: 1.5;
-      border-top: 2px solid rgba(61,54,49,.08);
-      border-bottom: 2px solid rgba(61,54,49,.08);
-      box-shadow: 0 4px 16px rgba(222,255,85,.35);
-    }
-    .ak-oto-banner-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      text-transform: uppercase;
-    }
-    .ak-oto-banner em {
-      font-style: italic;
-      color: var(--accent);
-      letter-spacing: .04em;
-    }
+    .ak-hero-confirm strong { color: var(--text); font-weight: 600; }
 
     /* ==========================================================
        HERO
@@ -960,24 +932,7 @@
 
   <!-- ======================== STICKY COUNTDOWN BAR ======================== -->
   <div class="ak-countdown-bar" id="ak-countdown-bar">
-    ⏳ Special 72-hour offer expires in <strong id="ak-timer">--h --m --s</strong> &nbsp;·&nbsp; Lock in $27 (regular value $147)
-  </div>
-
-  <!-- ======================== GUIDE CONFIRMATION BANNER ======================== -->
-  <div class="ak-confirm-banner">
-    <div class="ak-confirm-banner-inner">
-      <div class="ak-confirm-banner-icon">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <span>Your <strong>4 Simple Fixes Guide</strong> is on its way to your inbox. Check your spam or promotions folder if you don't see it within a few minutes.</span>
-    </div>
-  </div>
-
-  <!-- ======================== OTO ATTENTION BANNER ======================== -->
-  <div class="ak-oto-banner">
-    <div class="ak-oto-banner-inner">
-      Pssssssst! Before you go — here's a very special <em>one-time offer</em> to help with the next stage in your journey to a calendar that fills itself.
-    </div>
+    ⏳ One-time offer · Expires in <strong id="ak-timer">--h --m --s</strong> &nbsp;·&nbsp; $27 (regular value $147)
   </div>
 
   <!-- ======================== HERO ======================== -->
@@ -986,7 +941,14 @@
     <div class="blob blob-periwinkle blob-2"></div>
 
     <div class="ak-hero-inner">
-      <div class="ak-eyebrow"><span class="line"></span>Special Upgrade · 72 Hours Only<span class="line"></span></div>
+      <div class="ak-hero-confirm">
+        <div class="ak-hero-confirm-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <span>Your <strong>4 Simple Fixes Guide</strong> is on its way to your inbox. Check spam or promotions if you don't see it.</span>
+      </div>
+
+      <div class="ak-eyebrow"><span class="line"></span>Pssssssst · A One-Time Offer For You<span class="line"></span></div>
       <h1>Before you spend another dollar on Meta ads, find out exactly where your funnel is <em>leaking leads.</em></h1>
       <p class="ak-subhead">The <strong>Self-Booking Funnel Audit Kit</strong> helps established service providers audit their Meta ads funnel in under 30 minutes, identify what's blocking booked calls, and create a simple fix-it plan before sending more traffic to a broken system.</p>
 
