@@ -286,6 +286,27 @@
     }
     .v2-booking-calendar .js_kt_asset_embed { width: 100%; }
 
+    /* Fallback note under the calendar */
+    .v2-booking-fallback {
+      margin: 18px 0 0;
+      padding: 14px 16px;
+      background: var(--cream);
+      border-radius: 10px;
+      font-size: .82rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+      text-align: center;
+    }
+    .v2-booking-fallback a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent-light);
+      font-weight: 500;
+    }
+    .v2-booking-fallback a:hover {
+      border-color: var(--accent);
+    }
+
     .v2-booking-meta {
       border-top: 1px solid var(--taupe-100);
       padding-top: 18px;
@@ -893,6 +914,10 @@
           <script type="text/javascript" src="https://app.kartra.com/js/build/front/embed/calendar.js"></script>
         </div>
         <!-- ========== END KARTRA CALENDAR EMBED ========== -->
+
+        <p class="v2-booking-fallback">
+          Don't see a time that works? Email <a href="mailto:hello@perfectlymademarketing.com">hello@perfectlymademarketing.com</a> and we'll find one together.
+        </p>
       </aside>
     </div>
   </section>
