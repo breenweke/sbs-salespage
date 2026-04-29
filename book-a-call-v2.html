@@ -214,6 +214,39 @@
     .v2-hero-copy p strong { color: var(--text); }
     .v2-hero-copy p em { color: var(--accent); font-style: italic; }
 
+    /* Hero subhead — direct, larger than body paragraphs */
+    .v2-hero-copy p.v2-hero-subhead {
+      font-size: 1.08rem;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 28px;
+      max-width: 600px;
+    }
+
+    /* Hero CTA button — visible action signal */
+    .v2-hero-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--lime);
+      color: var(--text);
+      padding: 18px 36px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .01em;
+      text-decoration: none;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+      box-shadow: 0 8px 24px rgba(222,255,85,.45);
+      margin-top: 4px;
+    }
+    .v2-hero-cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(222,255,85,.6);
+      color: var(--text);
+    }
+
     /* Sticky booking card */
     .v2-booking-card {
       position: sticky;
@@ -842,13 +875,11 @@
       <!-- LEFT: Copy -->
       <div class="v2-hero-copy">
         <span class="v2-eyebrow"><span class="line"></span>The next step</span>
-        <h1>Your calendar should be full.<br />Let's make it <em>fill itself.</em></h1>
+        <h1>Why not let my team and I build the system that fills your calendar — <em>for you?</em></h1>
 
-        <p>The 4 Simple Fixes Guide is the audit. It names the four places your Meta ads funnel is leaking leads — the reason your calendar fills in waves instead of filling consistently.</p>
+        <p class="v2-hero-subhead">We build your entire Self-Booking System — the ads, the lead magnet, the opt-in page, the booking flow, the follow-up — while you stay focused on serving your clients. A 20-30 minute call is how we see if we're the right fit to build it for you.</p>
 
-        <p>But if you are like most people who opted in for this guide, you already know the problem. You have been trying to piece it together yourself for a while. <strong>What you actually want is for someone to just build the whole thing for you</strong> — the ads, the lead magnet, the opt-in page, the booking flow, the follow-up — so your calendar stays full without you having to touch it.</p>
-
-        <p>That is what this call is for. A 20–30 minute conversation to see if my team and I are the right fit to build it for you. Scroll down to learn more, or pick a time on the right.</p>
+        <a href="#" onclick="document.querySelector('.v2-booking-card').scrollIntoView({ behavior: 'smooth', block: 'center' }); return false;" class="v2-hero-cta-btn">Pick a time to talk →</a>
       </div>
 
       <!-- RIGHT: Sticky booking card -->
