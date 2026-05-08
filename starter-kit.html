@@ -1,0 +1,2510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Self-Booking System Starter Kit · Perfectly Made Marketing</title>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NQPFQDNQ');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1825521284560570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Microsoft Clarity Analytics -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "wcsjkjhldk");
+</script>
+<!-- End Microsoft Clarity -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================
+     SELF-BOOKING SYSTEM STARTER KIT — SALES PAGE
+     Conversion-optimized rebuild.
+     All class names prefixed with .sbk- to avoid
+     conflicts when embedded inside Kartra blocks.
+     ============================================ */
+
+  :root {
+    --sbk-cream: #faf6f0;
+    --sbk-ivory: #fefcf8;
+    --sbk-blush: #f4ebe0;
+    --sbk-periwinkle: #6b66e9;
+    --sbk-periwinkle-soft: #e8e7fa;
+    --sbk-periwinkle-deep: #4943c9;
+    --sbk-lime: #deff55;
+    --sbk-lime-soft: #f4ffc8;
+    --sbk-ink: #1a1a1a;
+    --sbk-body: #2a2a2a;
+    --sbk-subtle: #6b6b6b;
+    --sbk-hairline: #e5dac8;
+    --sbk-warn: #c44;
+    --sbk-warn-soft: #f9e6e6;
+
+    --sbk-serif: 'Playfair Display', Georgia, serif;
+    --sbk-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --sbk-section-py: clamp(56px, 8vw, 96px);
+    --sbk-container-px: clamp(20px, 4vw, 60px);
+  }
+
+  .sbk-page, .sbk-page * { box-sizing: border-box; }
+  /* Reset wrapped in :where() so it has zero specificity — lets all
+     the .sbk- spacing rules below actually win without needing to
+     bump their specificity individually. */
+  .sbk-page :where(p, h1, h2, h3, h4, ul, ol, li, figure, blockquote) { margin: 0; padding: 0; }
+  .sbk-page :where(ul, ol) { list-style: none; }
+
+  .sbk-page {
+    background: var(--sbk-cream);
+    font-family: var(--sbk-sans);
+    color: var(--sbk-body);
+    line-height: 1.65;
+    font-size: clamp(15px, 1.1vw, 16.5px);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    padding-bottom: 76px; /* space for sticky bar */
+  }
+  .sbk-page a { color: var(--sbk-periwinkle-deep); }
+
+  /* === BRAND BAR === */
+  .sbk-brandbar {
+    height: 8px;
+    background: linear-gradient(90deg, var(--sbk-periwinkle) 0%, var(--sbk-periwinkle) 50%, var(--sbk-lime) 50%, var(--sbk-lime) 100%);
+  }
+
+  /* === ANNOUNCEMENT BAR (replaces header) === */
+  .sbk-announcement {
+    background: var(--sbk-ivory);
+    border-bottom: 1px solid var(--sbk-hairline);
+    padding: 18px clamp(16px, 3vw, 36px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .sbk-announcement-text {
+    font-family: var(--sbk-serif);
+    font-style: italic;
+    font-size: clamp(14px, 1.4vw, 18px);
+    line-height: 1.4;
+    color: var(--sbk-ink);
+    font-weight: 500;
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .sbk-announcement-text em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 600;
+  }
+
+  /* === HERO MOCKUP IMAGE === */
+  .sbk-hero-mockup {
+    margin: 36px auto 28px;
+    max-width: 760px;
+    text-align: center;
+  }
+  .sbk-hero-mockup img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* === CONTAINER === */
+  .sbk-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--sbk-container-px);
+  }
+  .sbk-narrow { max-width: 820px; }
+
+  /* === SECTION === */
+  .sbk-section { padding: var(--sbk-section-py) 0; }
+  .sbk-section-ivory { background: var(--sbk-ivory); }
+  .sbk-section-periwinkle { background: var(--sbk-periwinkle); color: var(--sbk-cream); }
+  .sbk-section-ink { background: var(--sbk-ink); color: var(--sbk-cream); }
+  .sbk-section-tight { padding: clamp(40px, 5vw, 60px) 0; }
+
+  /* === TYPOGRAPHY === */
+  .sbk-eyebrow {
+    font-family: var(--sbk-sans);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .sbk-section-periwinkle .sbk-eyebrow,
+  .sbk-section-ink .sbk-eyebrow { color: var(--sbk-lime); }
+
+  .sbk-h1 {
+    font-family: var(--sbk-serif);
+    font-size: clamp(40px, 6.5vw, 72px);
+    font-weight: 600;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--sbk-ink);
+    margin-bottom: 22px;
+  }
+  .sbk-h1 em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+
+  .sbk-h2 {
+    font-family: var(--sbk-serif);
+    font-size: clamp(30px, 4.5vw, 50px);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.018em;
+    color: var(--sbk-ink);
+    margin-bottom: 18px;
+  }
+  .sbk-h2 em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-section-periwinkle .sbk-h2,
+  .sbk-section-ink .sbk-h2 { color: var(--sbk-cream); }
+  .sbk-section-periwinkle .sbk-h2 em,
+  .sbk-section-ink .sbk-h2 em { color: var(--sbk-lime); }
+
+  .sbk-h3 {
+    font-family: var(--sbk-serif);
+    font-size: clamp(22px, 2.6vw, 30px);
+    font-weight: 600;
+    line-height: 1.18;
+    color: var(--sbk-ink);
+    margin-bottom: 12px;
+  }
+  .sbk-h3 em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+
+  .sbk-lead {
+    font-family: var(--sbk-serif);
+    font-style: italic;
+    font-size: clamp(18px, 1.9vw, 24px);
+    line-height: 1.5;
+    color: var(--sbk-subtle);
+    margin-bottom: 48px;
+  }
+  .sbk-lead em {
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+
+  .sbk-body {
+    font-family: var(--sbk-sans);
+    font-size: clamp(15px, 1.15vw, 17px);
+    line-height: 1.8;
+    color: var(--sbk-body);
+    margin-bottom: 28px;
+  }
+  .sbk-body em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-body strong {
+    font-weight: 700;
+    color: var(--sbk-ink);
+  }
+
+  .sbk-accent {
+    width: 60px;
+    height: 4px;
+    background: var(--sbk-lime);
+    margin-bottom: 22px;
+  }
+  .sbk-accent-center { margin: 0 auto 22px; }
+
+  /* === HIGHLIGHTER (the conversion workhorse) === */
+  .sbk-hl {
+    background: linear-gradient(180deg, transparent 0%, transparent 55%, var(--sbk-lime) 55%, var(--sbk-lime) 95%, transparent 95%);
+    padding: 0 4px;
+    font-weight: 700;
+    color: var(--sbk-ink);
+    font-style: normal;
+  }
+  .sbk-hl-block {
+    background: var(--sbk-lime);
+    color: var(--sbk-ink);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-style: normal;
+    white-space: nowrap;
+  }
+
+  /* === STAT BADGE (above hero headline) === */
+  .sbk-stat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--sbk-ink);
+    color: var(--sbk-cream);
+    padding: 11px 22px;
+    border-radius: 100px;
+    font-family: var(--sbk-sans);
+    font-size: clamp(11px, 1vw, 13px);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .sbk-stat-badge::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--sbk-lime);
+    box-shadow: 0 0 0 4px rgba(222, 255, 85, 0.25);
+  }
+  .sbk-stat-badge .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--sbk-lime);
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  /* === BIG STAT (case studies) === */
+  .sbk-bigstat-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 24px;
+    align-items: center;
+    margin: 28px 0 16px;
+  }
+  .sbk-bigstat-cell {
+    text-align: center;
+  }
+  .sbk-bigstat-tag {
+    font-family: var(--sbk-sans);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .sbk-bigstat-cell.before .sbk-bigstat-tag { color: var(--sbk-warn); }
+  .sbk-bigstat-cell.after .sbk-bigstat-tag { color: var(--sbk-periwinkle-deep); }
+  .sbk-bigstat-num {
+    font-family: var(--sbk-serif);
+    font-size: clamp(40px, 7vw, 78px);
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin-bottom: 8px;
+  }
+  .sbk-bigstat-cell.before .sbk-bigstat-num { color: var(--sbk-warn); }
+  .sbk-bigstat-cell.after .sbk-bigstat-num {
+    color: var(--sbk-periwinkle-deep);
+    font-style: italic;
+  }
+  .sbk-bigstat-label {
+    font-family: var(--sbk-sans);
+    font-size: clamp(11px, 1vw, 13px);
+    color: var(--sbk-subtle);
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  .sbk-bigstat-arrow {
+    font-family: var(--sbk-serif);
+    font-size: clamp(36px, 5vw, 56px);
+    color: var(--sbk-periwinkle);
+    line-height: 1;
+    font-weight: 300;
+  }
+
+  /* === CTA BUTTON === */
+  .sbk-cta {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: var(--sbk-lime);
+    color: var(--sbk-ink);
+    text-decoration: none;
+    padding: 22px 44px;
+    border-radius: 8px;
+    border: 2px solid #b8d845;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18), inset 0 -3px 0 rgba(0, 0, 0, 0.08);
+    font-family: var(--sbk-sans);
+    font-weight: 700;
+    text-align: center;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    max-width: 100%;
+    position: relative;
+  }
+  .sbk-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22), inset 0 -3px 0 rgba(0, 0, 0, 0.08);
+    color: var(--sbk-ink);
+    text-decoration: none;
+  }
+  .sbk-cta-main {
+    font-size: clamp(15px, 1.55vw, 20px);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.15;
+    color: var(--sbk-ink);
+  }
+  .sbk-cta-main .sbk-cta-price {
+    color: var(--sbk-periwinkle-deep);
+    margin-left: 6px;
+  }
+  .sbk-cta-sub {
+    font-size: clamp(11px, 0.95vw, 13px);
+    font-weight: 600;
+    color: var(--sbk-periwinkle-deep);
+    letter-spacing: 0.04em;
+    text-transform: none;
+    line-height: 1.3;
+  }
+  /* Periwinkle CTA variant for use on lime/cream backgrounds */
+  .sbk-cta-peri {
+    background: var(--sbk-periwinkle);
+    color: var(--sbk-cream);
+    border-color: var(--sbk-periwinkle-deep);
+  }
+  .sbk-cta-peri .sbk-cta-main { color: var(--sbk-cream); }
+  .sbk-cta-peri .sbk-cta-main .sbk-cta-price { color: var(--sbk-lime); }
+  .sbk-cta-peri .sbk-cta-sub { color: var(--sbk-lime); }
+  .sbk-cta-peri:hover { color: var(--sbk-cream); }
+
+  .sbk-cta-wrap {
+    text-align: center;
+    margin: 38px 0;
+  }
+  .sbk-trust-row {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-family: var(--sbk-sans);
+    font-size: 12px;
+    color: var(--sbk-subtle);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .sbk-trust-row span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sbk-trust-row span::before {
+    content: '✓';
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 700;
+  }
+  .sbk-section-periwinkle .sbk-trust-row,
+  .sbk-section-ink .sbk-trust-row { color: var(--sbk-cream); opacity: 0.92; }
+  .sbk-section-periwinkle .sbk-trust-row span::before,
+  .sbk-section-ink .sbk-trust-row span::before { color: var(--sbk-lime); }
+
+  /* === HERO BANNER COMBO === */
+  .sbk-hero {
+    text-align: center;
+    padding-top: clamp(48px, 6vw, 72px);
+  }
+  .sbk-hero-tagline {
+    font-family: var(--sbk-serif);
+    font-size: clamp(18px, 2vw, 24px);
+    line-height: 1.4;
+    color: var(--sbk-subtle);
+    font-style: italic;
+    max-width: 820px;
+    margin: 0 auto 28px;
+  }
+  .sbk-hero-tagline em {
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-hero .sbk-h1 { max-width: 920px; margin-left: auto; margin-right: auto; }
+  .sbk-hero .sbk-lead { max-width: 820px; margin-left: auto; margin-right: auto; }
+  .sbk-hero .sbk-body { max-width: 760px; margin-left: auto; margin-right: auto; }
+
+  .sbk-disclaimer {
+    background: var(--sbk-ivory);
+    border: 1px solid var(--sbk-hairline);
+    border-left: 3px solid var(--sbk-periwinkle);
+    border-radius: 4px;
+    padding: 16px 22px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--sbk-subtle);
+    text-align: left;
+    max-width: 760px;
+    margin: 24px auto;
+  }
+  .sbk-disclaimer strong {
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 700;
+  }
+
+  /* === FOUNDER QUOTE CARD === */
+  .sbk-quote-card {
+    background: var(--sbk-ivory);
+    border: 1px solid var(--sbk-hairline);
+    border-left: 4px solid var(--sbk-periwinkle);
+    border-radius: 6px;
+    padding: clamp(24px, 3vw, 36px);
+    max-width: 800px;
+    margin: 36px auto 0;
+    text-align: left;
+    box-shadow: 0 4px 18px rgba(26, 26, 26, 0.05);
+  }
+  .sbk-quote {
+    font-family: var(--sbk-serif);
+    font-style: italic;
+    font-size: clamp(17px, 1.5vw, 21px);
+    line-height: 1.6;
+    color: var(--sbk-body);
+    margin-bottom: 36px;
+  }
+  .sbk-quote em {
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-quote-author {
+    font-family: var(--sbk-sans);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 700;
+  }
+
+  /* === STAR BULLETS === */
+  .sbk-star-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin: 32px 0;
+  }
+  .sbk-star-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-family: var(--sbk-sans);
+    font-size: clamp(15px, 1.15vw, 17px);
+    line-height: 1.65;
+    color: var(--sbk-body);
+  }
+  .sbk-star-list li::before {
+    content: '✦';
+    flex-shrink: 0;
+    font-family: var(--sbk-serif);
+    font-size: 22px;
+    color: var(--sbk-periwinkle);
+    line-height: 1.4;
+  }
+  .sbk-star-list li em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-star-list li strong {
+    color: var(--sbk-ink);
+    font-weight: 700;
+  }
+
+  /* === PULL QUOTE === */
+  .sbk-pullquote {
+    font-family: var(--sbk-serif);
+    font-style: italic;
+    font-size: clamp(26px, 4vw, 44px);
+    line-height: 1.2;
+    color: var(--sbk-ink);
+    text-align: center;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    border-top: 2px solid var(--sbk-hairline);
+    border-bottom: 2px solid var(--sbk-hairline);
+    font-weight: 500;
+  }
+  .sbk-pullquote em {
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-pullquote .sbk-hl {
+    background: linear-gradient(180deg, transparent 0%, transparent 55%, var(--sbk-lime) 55%, var(--sbk-lime) 95%, transparent 95%);
+    padding: 0 6px;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--sbk-ink);
+  }
+  .sbk-pullquote-attrib {
+    margin-top: 18px;
+    font-family: var(--sbk-sans);
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  /* === PILLAR CARDS === */
+  .sbk-pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 20px;
+    margin-top: 36px;
+  }
+  .sbk-pillar {
+    background: var(--sbk-ivory);
+    border: 1px solid var(--sbk-hairline);
+    border-top: 4px solid var(--sbk-periwinkle);
+    border-radius: 6px;
+    padding: 28px 26px;
+  }
+  .sbk-pillar-num {
+    font-family: var(--sbk-serif);
+    font-style: italic;
+    font-size: 42px;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+  .sbk-pillar h3 {
+    font-family: var(--sbk-serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--sbk-ink);
+    line-height: 1.18;
+    margin-bottom: 12px;
+  }
+  .sbk-pillar h3 em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-pillar p {
+    font-family: var(--sbk-sans);
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--sbk-body);
+  }
+  .sbk-pillar p em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+
+  /* === TRANSFORMATION GRID === */
+  .sbk-transform {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 32px;
+  }
+  .sbk-transform-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: stretch;
+  }
+  .sbk-transform-cell {
+    padding: 22px 24px;
+    border-radius: 6px;
+    border: 1px solid var(--sbk-hairline);
+  }
+  .sbk-transform-from {
+    background: var(--sbk-ivory);
+    border-left: 4px solid var(--sbk-warn);
+  }
+  .sbk-transform-to {
+    background: var(--sbk-lime-soft);
+    border-left: 4px solid var(--sbk-periwinkle);
+  }
+  .sbk-transform-tag {
+    font-family: var(--sbk-sans);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sbk-transform-from .sbk-transform-tag { color: var(--sbk-warn); }
+  .sbk-transform-to .sbk-transform-tag { color: var(--sbk-periwinkle-deep); }
+  .sbk-transform-from .sbk-transform-tag::before {
+    content: '✕';
+    background: var(--sbk-warn);
+    color: var(--sbk-cream);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+  .sbk-transform-to .sbk-transform-tag::before {
+    content: '✓';
+    background: var(--sbk-periwinkle);
+    color: var(--sbk-cream);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+  .sbk-transform-cell p {
+    font-family: var(--sbk-sans);
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--sbk-body);
+  }
+  .sbk-transform-cell p em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-transform-arrow {
+    font-family: var(--sbk-serif);
+    font-size: 32px;
+    color: var(--sbk-periwinkle);
+    align-self: center;
+    text-align: center;
+  }
+
+  /* === COURSE MOCKUP (browser-frame style) === */
+  .sbk-course-mockup {
+    max-width: 920px;
+    margin: 36px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(26, 26, 26, 0.25), 0 8px 24px rgba(26, 26, 26, 0.18);
+    background: var(--sbk-cream);
+    text-align: left;
+  }
+  .sbk-mockup-bar {
+    background: #2a2a2a;
+    padding: 11px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .sbk-mockup-dots { display: flex; gap: 7px; }
+  .sbk-mockup-dots span {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #555;
+  }
+  .sbk-mockup-dots span:nth-child(1) { background: #ff5f57; }
+  .sbk-mockup-dots span:nth-child(2) { background: #febc2e; }
+  .sbk-mockup-dots span:nth-child(3) { background: #28c840; }
+  .sbk-mockup-url {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 4px 12px;
+    font-family: var(--sbk-sans);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+    flex: 1;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+  .sbk-mockup-screen {
+    background: var(--sbk-cream);
+    padding: clamp(20px, 3vw, 36px);
+    position: relative;
+  }
+  .sbk-mockup-screen::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sbk-periwinkle) 0%, var(--sbk-periwinkle) 50%, var(--sbk-lime) 50%, var(--sbk-lime) 100%);
+  }
+  .sbk-mockup-eyebrow {
+    font-family: var(--sbk-sans);
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+  .sbk-mockup-title {
+    font-family: var(--sbk-serif);
+    font-size: clamp(20px, 2.4vw, 28px);
+    font-weight: 600;
+    color: var(--sbk-ink);
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+  .sbk-mockup-title em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-mockup-sub {
+    font-family: var(--sbk-sans);
+    font-size: 13px;
+    color: var(--sbk-subtle);
+    margin-bottom: 22px;
+    border-bottom: 1px solid var(--sbk-hairline);
+    padding-bottom: 16px;
+  }
+  .sbk-mockup-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .sbk-mockup-module {
+    background: var(--sbk-ivory);
+    border: 1px solid var(--sbk-hairline);
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: left;
+  }
+  .sbk-mockup-thumb {
+    height: 64px;
+    background: linear-gradient(135deg, var(--sbk-periwinkle) 0%, var(--sbk-periwinkle-deep) 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sbk-mockup-thumb::after {
+    content: '▶';
+    color: var(--sbk-cream);
+    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 3px;
+  }
+  .sbk-mockup-module-meta {
+    padding: 10px 12px;
+  }
+  .sbk-mockup-module-tag {
+    font-family: var(--sbk-sans);
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .sbk-mockup-module-name {
+    font-family: var(--sbk-serif);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--sbk-ink);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .sbk-mockup-module-time {
+    font-family: var(--sbk-sans);
+    font-size: 9px;
+    color: var(--sbk-subtle);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .sbk-mockup-resources {
+    background: var(--sbk-lime-soft);
+    border: 1px solid var(--sbk-lime);
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+  .sbk-mockup-resources-label {
+    font-family: var(--sbk-sans);
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .sbk-mockup-resources-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .sbk-mockup-resource {
+    background: var(--sbk-cream);
+    border: 1px solid var(--sbk-hairline);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-family: var(--sbk-sans);
+    font-size: 11px;
+    color: var(--sbk-ink);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  @media (max-width: 720px) {
+    .sbk-mockup-grid { grid-template-columns: 1fr 1fr; }
+    .sbk-mockup-resources-grid { grid-template-columns: 1fr; }
+  }
+
+  /* === INSIDE THE KIT === */
+  .sbk-inside-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 36px;
+  }
+  .sbk-inside-item {
+    background: var(--sbk-ivory);
+    border: 1px solid var(--sbk-hairline);
+    border-left: 4px solid var(--sbk-periwinkle);
+    border-radius: 6px;
+    padding: 22px 26px;
+  }
+  .sbk-inside-tag {
+    font-family: var(--sbk-sans);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sbk-inside-tag::before {
+    content: '✦';
+    color: var(--sbk-lime);
+    font-size: 14px;
+  }
+  .sbk-inside-title {
+    font-family: var(--sbk-serif);
+    font-size: clamp(20px, 2vw, 24px);
+    font-weight: 600;
+    color: var(--sbk-ink);
+    margin-bottom: 8px;
+    line-height: 1.18;
+  }
+  .sbk-inside-title em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-inside-item p {
+    font-family: var(--sbk-sans);
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--sbk-body);
+  }
+  .sbk-inside-item p em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+
+  /* === ANCHOR PRICING === */
+  .sbk-priceblock {
+    text-align: center;
+    margin: 28px 0;
+  }
+  .sbk-price-line {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .sbk-price-old {
+    font-family: var(--sbk-serif);
+    font-size: clamp(28px, 3.5vw, 42px);
+    color: var(--sbk-cream);
+    opacity: 0.55;
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+    font-weight: 500;
+  }
+  .sbk-section-ivory .sbk-price-old,
+  .sbk-section:not(.sbk-section-periwinkle):not(.sbk-section-ink) .sbk-price-old { color: var(--sbk-subtle); opacity: 0.7; }
+  .sbk-price-new {
+    font-family: var(--sbk-serif);
+    font-style: italic;
+    font-size: clamp(64px, 11vw, 132px);
+    color: var(--sbk-lime);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+  }
+  .sbk-section-ivory .sbk-price-new,
+  .sbk-section:not(.sbk-section-periwinkle):not(.sbk-section-ink) .sbk-price-new { color: var(--sbk-periwinkle-deep); }
+  .sbk-price-save {
+    display: inline-block;
+    background: var(--sbk-lime);
+    color: var(--sbk-ink);
+    font-family: var(--sbk-sans);
+    font-size: clamp(11px, 1vw, 13px);
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 7px 16px;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+
+  /* === STAT CARDS (case studies) === */
+  .sbk-case {
+    background: var(--sbk-ivory);
+    border: 1px solid var(--sbk-hairline);
+    border-radius: 8px;
+    padding: clamp(28px, 3.5vw, 44px);
+    margin-bottom: 28px;
+    box-shadow: 0 4px 22px rgba(26, 26, 26, 0.06);
+  }
+  .sbk-case-eyebrow {
+    font-family: var(--sbk-sans);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .sbk-case-title {
+    font-family: var(--sbk-serif);
+    font-size: clamp(22px, 2.6vw, 30px);
+    font-weight: 600;
+    color: var(--sbk-ink);
+    margin-bottom: 18px;
+    line-height: 1.2;
+  }
+  .sbk-case-title em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-img-placeholder {
+    background: repeating-linear-gradient(135deg, var(--sbk-cream), var(--sbk-cream) 8px, var(--sbk-blush) 8px, var(--sbk-blush) 16px);
+    border: 1.5px dashed var(--sbk-hairline);
+    border-radius: 6px;
+    padding: 36px 20px;
+    margin: 16px 0;
+    text-align: center;
+    font-family: var(--sbk-sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sbk-subtle);
+    font-weight: 600;
+  }
+  /* Real screenshot grid for case studies */
+  .sbk-screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin: 22px 0 8px;
+  }
+  .sbk-screenshot-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--sbk-hairline);
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(26, 26, 26, 0.10);
+    background: var(--sbk-cream);
+  }
+  .sbk-recap-mockup {
+    margin: 28px auto 16px;
+    max-width: 720px;
+    text-align: center;
+  }
+  .sbk-recap-mockup img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .sbk-case-note {
+    font-family: var(--sbk-serif);
+    font-style: italic;
+    font-size: clamp(15px, 1.3vw, 18px);
+    color: var(--sbk-ink);
+    text-align: center;
+    margin-top: 16px;
+    line-height: 1.4;
+  }
+  .sbk-case-note em {
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-case-attrib {
+    font-family: var(--sbk-sans);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 700;
+    margin-top: 14px;
+    text-align: center;
+  }
+
+  /* === TESTIMONIAL CARDS === */
+  .sbk-testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
+    margin-top: 36px;
+  }
+  .sbk-testimonial {
+    background: var(--sbk-cream);
+    border: 1px solid var(--sbk-hairline);
+    border-left: 3px solid var(--sbk-periwinkle);
+    border-radius: 6px;
+    padding: 28px 30px;
+    position: relative;
+  }
+  .sbk-testimonial::before {
+    content: '“';
+    position: absolute;
+    top: 8px;
+    right: 18px;
+    font-family: var(--sbk-serif);
+    font-size: 70px;
+    line-height: 1;
+    color: var(--sbk-periwinkle-soft);
+    font-style: italic;
+  }
+  .sbk-testimonial p {
+    font-family: var(--sbk-serif);
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--sbk-body);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+  .sbk-testimonial p em,
+  .sbk-testimonial p .sbk-hl {
+    color: var(--sbk-ink);
+  }
+  .sbk-testimonial cite {
+    font-family: var(--sbk-sans);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  /* === BONUS CARDS WITH STARBURST === */
+  .sbk-bonuses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 26px;
+    margin-top: 36px;
+  }
+  .sbk-bonus {
+    background: var(--sbk-lime-soft);
+    border: 2px solid #c5e842;
+    border-left: 5px solid var(--sbk-periwinkle);
+    border-radius: 8px;
+    padding: 36px 28px 30px;
+    box-shadow: 0 4px 22px rgba(107, 102, 233, 0.10);
+    position: relative;
+  }
+  .sbk-bonus-badge {
+    position: absolute;
+    top: -16px;
+    left: 22px;
+    background: var(--sbk-periwinkle);
+    color: var(--sbk-cream);
+    font-family: var(--sbk-sans);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(73, 67, 201, 0.3);
+  }
+  .sbk-bonus-badge::before { content: '🎁  '; }
+  .sbk-bonus-value {
+    position: absolute;
+    top: -14px;
+    right: 22px;
+    background: var(--sbk-cream);
+    color: var(--sbk-periwinkle-deep);
+    font-family: var(--sbk-sans);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 2px solid var(--sbk-periwinkle);
+  }
+  .sbk-bonus h3 {
+    font-family: var(--sbk-serif);
+    font-size: clamp(22px, 2.4vw, 28px);
+    font-weight: 600;
+    color: var(--sbk-ink);
+    margin-bottom: 12px;
+    line-height: 1.18;
+    margin-top: 8px;
+  }
+  .sbk-bonus h3 em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-bonus p {
+    font-family: var(--sbk-sans);
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--sbk-body);
+    margin-bottom: 12px;
+  }
+  .sbk-bonus p em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-bonus-list {
+    margin-top: 12px;
+  }
+  .sbk-bonus-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-family: var(--sbk-sans);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--sbk-body);
+    padding: 4px 0;
+  }
+  .sbk-bonus-list li::before {
+    content: '✓';
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* === RECAP STACK === */
+  .sbk-stack {
+    background: var(--sbk-ivory);
+    border: 1px solid var(--sbk-hairline);
+    border-radius: 8px;
+    padding: clamp(28px, 3vw, 44px);
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .sbk-stack-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--sbk-hairline);
+  }
+  .sbk-stack-row:last-of-type { border-bottom: none; }
+  .sbk-stack-row-label {
+    font-family: var(--sbk-sans);
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--sbk-body);
+  }
+  .sbk-stack-row-label strong {
+    color: var(--sbk-ink);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .sbk-stack-row-label em {
+    font-style: italic;
+    color: var(--sbk-subtle);
+    font-size: 13px;
+  }
+  .sbk-stack-row-value {
+    font-family: var(--sbk-sans);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--sbk-periwinkle-deep);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .sbk-stack-bonus-row .sbk-stack-row-label::before {
+    content: '🎁  ';
+  }
+  .sbk-stack-bonus-row .sbk-stack-row-value {
+    background: var(--sbk-lime-soft);
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid var(--sbk-lime);
+  }
+  .sbk-stack-total {
+    margin-top: 24px;
+    padding: 24px;
+    background: var(--sbk-ink);
+    color: var(--sbk-cream);
+    border-radius: 8px;
+    text-align: center;
+  }
+  .sbk-stack-total-line {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .sbk-stack-total-label {
+    font-family: var(--sbk-sans);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--sbk-cream);
+    opacity: 0.7;
+    font-weight: 700;
+  }
+  .sbk-stack-total-value {
+    font-family: var(--sbk-serif);
+    font-size: clamp(20px, 2.2vw, 26px);
+    color: var(--sbk-cream);
+    opacity: 0.55;
+    text-decoration: line-through;
+    font-weight: 500;
+  }
+  .sbk-stack-final {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .sbk-stack-final-label {
+    font-family: var(--sbk-sans);
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--sbk-lime);
+    font-weight: 700;
+  }
+  .sbk-stack-final-value {
+    font-family: var(--sbk-serif);
+    font-style: italic;
+    font-size: clamp(36px, 5vw, 56px);
+    color: var(--sbk-lime);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  /* === FOUNDER BIO === */
+  .sbk-founder { text-align: center; }
+  .sbk-founder-photo-wrap {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .sbk-founder-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: var(--sbk-blush);
+    border: 3px dashed var(--sbk-periwinkle);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--sbk-sans);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 700;
+    text-align: center;
+    padding: 24px;
+    line-height: 1.5;
+    box-shadow: 0 8px 28px rgba(107, 102, 233, 0.12);
+  }
+  .sbk-founder-photo::before {
+    content: '✦';
+    font-family: var(--sbk-serif);
+    font-size: 38px;
+    margin-bottom: 10px;
+    color: var(--sbk-periwinkle);
+    display: block;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+  .sbk-founder-photo-img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    border: 4px solid var(--sbk-cream);
+    box-shadow: 0 0 0 3px var(--sbk-periwinkle), 0 12px 32px rgba(107, 102, 233, 0.18);
+    display: block;
+    margin: 0 auto;
+  }
+  .sbk-founder .sbk-h2 {
+    max-width: 820px;
+    margin: 0 auto 22px;
+  }
+  .sbk-founder-body {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .sbk-founder-body p { margin-bottom: 16px; }
+  .sbk-founder-sig {
+    text-align: center;
+    margin-top: 22px;
+    font-family: var(--sbk-serif);
+    font-style: italic;
+    font-size: 24px;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 600;
+  }
+
+  /* === GUARANTEE === */
+  .sbk-guarantee {
+    background: var(--sbk-ivory);
+    border: 3px solid var(--sbk-periwinkle);
+    border-radius: 14px;
+    padding: clamp(36px, 4vw, 52px);
+    max-width: 820px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(107, 102, 233, 0.12);
+  }
+  .sbk-guarantee-seal {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--sbk-lime);
+    color: var(--sbk-ink);
+    font-family: var(--sbk-sans);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 12px 22px;
+    border-radius: 100px;
+    border: 3px solid var(--sbk-periwinkle);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+  }
+  .sbk-guarantee-seal::before {
+    content: '✓';
+    background: var(--sbk-periwinkle-deep);
+    color: var(--sbk-cream);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    letter-spacing: 0;
+    font-weight: 700;
+  }
+  .sbk-guarantee h2 {
+    font-family: var(--sbk-serif);
+    font-size: clamp(28px, 3vw, 40px);
+    margin-top: 14px;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  .sbk-guarantee p {
+    font-family: var(--sbk-sans);
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--sbk-body);
+    margin-bottom: 14px;
+  }
+  .sbk-guarantee p em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+
+  /* === WHO IS THIS FOR === */
+  .sbk-whofor-list {
+    margin: 32px 0;
+  }
+  .sbk-whofor-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--sbk-ivory);
+    border: 1px solid var(--sbk-hairline);
+    border-left: 3px solid var(--sbk-periwinkle);
+    border-radius: 4px;
+    padding: 16px 22px;
+    margin-bottom: 12px;
+    font-family: var(--sbk-sans);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--sbk-body);
+  }
+  .sbk-whofor-list li::before {
+    content: '✓';
+    color: var(--sbk-cream);
+    background: var(--sbk-periwinkle);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .sbk-whofor-list li em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+  .sbk-whofor-prompt {
+    text-align: center;
+    margin-top: 26px;
+    padding: 22px 24px;
+    background: var(--sbk-lime-soft);
+    border: 2px solid var(--sbk-lime);
+    border-radius: 8px;
+    font-family: var(--sbk-serif);
+    font-style: italic;
+    font-size: clamp(17px, 1.5vw, 22px);
+    color: var(--sbk-ink);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .sbk-whofor-prompt em {
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 600;
+  }
+
+  /* === FAQ === */
+  .sbk-faq {
+    max-width: 820px;
+    margin: 36px auto 0;
+  }
+  .sbk-faq details {
+    background: var(--sbk-ivory);
+    border: 1px solid var(--sbk-hairline);
+    border-radius: 6px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .sbk-faq details[open] {
+    border-left: 3px solid var(--sbk-periwinkle);
+  }
+  .sbk-faq summary {
+    cursor: pointer;
+    padding: 18px 24px;
+    font-family: var(--sbk-sans);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--sbk-ink);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .sbk-faq summary::-webkit-details-marker { display: none; }
+  .sbk-faq summary::after {
+    content: '+';
+    font-family: var(--sbk-serif);
+    font-size: 26px;
+    color: var(--sbk-periwinkle);
+    font-weight: 300;
+    line-height: 1;
+  }
+  .sbk-faq details[open] summary::after { content: '−'; }
+  .sbk-faq details > div {
+    padding: 0 24px 22px;
+    font-family: var(--sbk-sans);
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--sbk-body);
+  }
+  .sbk-faq details > div p { margin-bottom: 10px; }
+  .sbk-faq details > div em {
+    font-style: italic;
+    color: var(--sbk-periwinkle-deep);
+    font-weight: 500;
+  }
+
+  /* === FINAL HEARTFELT === */
+  .sbk-final { text-align: center; }
+  .sbk-final .sbk-h2 {
+    max-width: 820px;
+    margin: 0 auto 22px;
+  }
+  .sbk-final-body {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .sbk-final-body p { margin-bottom: 16px; }
+
+  /* === FOOTER === */
+  .sbk-footer {
+    background: var(--sbk-ivory);
+    padding: 36px 0;
+    border-top: 1px solid var(--sbk-hairline);
+    text-align: center;
+    font-family: var(--sbk-sans);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sbk-subtle);
+  }
+  .sbk-footer-brand {
+    color: var(--sbk-ink);
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    margin-bottom: 8px;
+  }
+  .sbk-footer-disclaimer {
+    margin-top: 14px;
+    padding-top: 18px;
+    border-top: 1px solid var(--sbk-hairline);
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--sbk-sans);
+    font-size: 10px;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: var(--sbk-subtle);
+    font-weight: 400;
+    text-align: center;
+  }
+
+  /* === STICKY BOTTOM CTA BAR === */
+  .sbk-sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: var(--sbk-ink);
+    color: var(--sbk-cream);
+    padding: 12px clamp(16px, 3vw, 36px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.22);
+    border-top: 3px solid var(--sbk-lime);
+  }
+  .sbk-sticky-left {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    font-family: var(--sbk-sans);
+    line-height: 1.2;
+  }
+  .sbk-sticky-name {
+    font-size: clamp(12px, 1.1vw, 14px);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .sbk-sticky-price {
+    font-family: var(--sbk-serif);
+    font-style: italic;
+    font-size: clamp(20px, 2.2vw, 28px);
+    color: var(--sbk-lime);
+    font-weight: 600;
+    line-height: 1;
+  }
+  .sbk-sticky-price-old {
+    font-family: var(--sbk-serif);
+    font-size: clamp(13px, 1.3vw, 16px);
+    color: var(--sbk-cream);
+    opacity: 0.5;
+    text-decoration: line-through;
+    margin-left: 4px;
+  }
+  .sbk-sticky-btn {
+    background: var(--sbk-lime);
+    color: var(--sbk-ink);
+    text-decoration: none;
+    font-family: var(--sbk-sans);
+    font-size: clamp(12px, 1.2vw, 15px);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 12px 22px;
+    border-radius: 6px;
+    border: 2px solid #b8d845;
+    white-space: nowrap;
+    transition: transform 0.15s ease;
+  }
+  .sbk-sticky-btn:hover {
+    transform: translateY(-2px);
+    color: var(--sbk-ink);
+    text-decoration: none;
+  }
+  .sbk-sticky-btn::after {
+    content: ' →';
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 720px) {
+    .sbk-pillars { grid-template-columns: 1fr; }
+    .sbk-bonuses { grid-template-columns: 1fr; }
+    .sbk-testimonials { grid-template-columns: 1fr; }
+    .sbk-transform-row { grid-template-columns: 1fr; }
+    .sbk-transform-arrow { font-size: 22px; transform: rotate(90deg); }
+    .sbk-bigstat-row { grid-template-columns: 1fr; gap: 14px; }
+    .sbk-bigstat-arrow { transform: rotate(90deg); margin: 0 auto; }
+    .sbk-cta { padding: 18px 28px; width: 100%; }
+    .sbk-kit-grid { grid-template-columns: repeat(2, 1fr); }
+    .sbk-stack-row { grid-template-columns: 1fr; gap: 4px; }
+    .sbk-stack-row-value { text-align: left; }
+    .sbk-sticky-name { display: none; }
+    .sbk-sticky-left { gap: 8px; }
+  }
+
+  /* Subtle pulse for the lime CTAs (CSS-only) */
+  @keyframes sbkPulse {
+    0%, 100% { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18), inset 0 -3px 0 rgba(0, 0, 0, 0.08); }
+    50% { box-shadow: 0 6px 28px rgba(184, 216, 69, 0.55), 0 0 0 4px rgba(222, 255, 85, 0.15), inset 0 -3px 0 rgba(0, 0, 0, 0.08); }
+  }
+  .sbk-cta:not(.sbk-cta-peri) { animation: sbkPulse 2.6s ease-in-out infinite; }
+
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQPFQDNQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="sbk-page">
+
+<!-- ========== BRAND BAR ========== -->
+<div class="sbk-brandbar"></div>
+
+<!-- ========== ANNOUNCEMENT BAR ========== -->
+<div class="sbk-announcement">
+  <p class="sbk-announcement-text">Ready for booked calls <em>on autopilot</em> &mdash; without manually following up, chasing leads, or posting all of the time?</p>
+</div>
+
+<!-- ========== HERO ========== -->
+<section class="sbk-section sbk-hero">
+  <div class="sbk-container">
+    <div class="sbk-eyebrow" style="text-align: center;">Introducing</div>
+    <h1 class="sbk-h1">The <em>Self-Booking System</em><br/>Starter Kit</h1>
+
+    <div class="sbk-hero-mockup">
+      <img src="images/Starter%20kit%20mockup.png" alt="The Self-Booking System Starter Kit — kit mockup showing course videos, templates, checklist, system map, and Custom GPT" />
+    </div>
+
+    <div class="sbk-accent sbk-accent-center"></div>
+    <p class="sbk-lead">The plug-and-play <em>lead funnel</em> kit to <span class="sbk-hl">turn cold Meta ad traffic into booked calls on autopilot</span> &mdash; so you can finally have predictable revenue without manually following up, chasing leads, or hiring a $5K/month agency.</p>
+    <p class="sbk-body">If you're a service provider already running ads <strong>OR</strong> you're about to start, and you want a system that books calls automatically &mdash; so you can stop relying on manual follow-up and start having consistent calls every week &mdash; <em>this is for you.</em></p>
+
+    <div class="sbk-disclaimer">
+      <strong>Heads up:</strong> This kit covers the exact pieces that need to be in place <em>after</em> someone clicks on your ad &mdash; so your ad spend actually turns into booked calls instead of disappearing. This kit <strong>doesn't</strong> cover ad strategy just yet, because <span class="sbk-hl">if these pieces aren't built right, even the best ads in the world won't convert.</span>
+    </div>
+
+    <div class="sbk-cta-wrap">
+      <a href="javascript:void(0);" class="sbk-cta js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="UY8qRCB1xOXc" data-kt-owner="7kzAqVxg">
+        <span class="sbk-cta-main">Get The Kit <span class="sbk-cta-price">$27</span></span>
+        <span class="sbk-cta-sub">Sign me up — I want booked calls on autopilot →</span>
+      </a>
+      <div class="sbk-trust-row">
+        <span>Instant access</span>
+        <span>Lifetime access</span>
+        <span>7-day implementation guarantee</span>
+      </div>
+    </div>
+
+    <div class="sbk-quote-card">
+      <p class="sbk-quote">&ldquo;I burned <span class="sbk-hl-block">$544 on ads</span>. Got 244 leads. Booked <strong>zero</strong> calls. Everyone told me to fix my ads &mdash; better targeting, better creative, more budget. None of it worked. Because the ads weren't the only problem. It was what happened AFTER people clicked. Once I fixed THAT? <em>16 booked calls in 2 weeks at $2 a lead.</em> Same ads. Same offer. Different system.&rdquo;</p>
+      <p class="sbk-quote-author">— Bree, founder of Perfectly Made Marketing</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 4: POSITIONING ========== -->
+<section class="sbk-section sbk-section-ivory">
+  <div class="sbk-container sbk-narrow">
+    <div class="sbk-eyebrow">The Position</div>
+    <h2 class="sbk-h2">I'm calling it &mdash; the secret isn't more ads, more posting, or more hustle. It's a system that <em>books calls FOR you,</em> on autopilot, every single week.</h2>
+    <p class="sbk-body">In fact, having a system that books calls on autopilot is <strong>THE answer</strong> to building a service-based business that grows steadily, predictably, and without you having to be in every part of the sales process manually.</p>
+    <p class="sbk-body" style="font-style: italic; color: var(--sbk-subtle);">And if that wasn't reason enough to pay attention&hellip;</p>
+
+    <ul class="sbk-star-list">
+      <li><span><span class="sbk-hl">74% of business owners</span> say automation is the #1 thing that saves them time &mdash; because the energy and hours you'd normally spend manually following up with every new lead get redirected straight back to serving clients, growing your business, or just being present in your life.</span></li>
+      <li><span>And the reason that time savings hits so hard for service providers is that <em>the moment immediately after someone opts in</em> is the highest-intent moment in your entire sales process. It's the only window where someone is actively focused on YOU. <span class="sbk-hl">When that moment is captured automatically</span> &mdash; instead of being chased manually &mdash; every lead becomes a potential booked call without you lifting a finger.</span></li>
+      <li><span>Which is why the right system captures <em>BOTH audiences at once</em> &mdash; the people who are ready to book right now AND the people who aren't quite ready yet. Most service providers force one or the other. A self-booking system gives you both, so nobody falls through the cracks and your calendar stays consistent week after week.</span></li>
+      <li><span>And once that's in place, your business stops depending on YOU being constantly available. Calls book while you're with clients, with your kids, asleep, on vacation. <span class="sbk-hl">The system runs even when you don't.</span></span></li>
+      <li><span>Which finally makes ad spend an <em>investment</em> instead of a guess. Every dollar you put into ads has a clear path to a booked call &mdash; which means you can scale with confidence instead of crossing your fingers and hoping next week is the week things click.</span></li>
+    </ul>
+
+    <p class="sbk-body" style="margin-top: 28px; font-size: clamp(16px, 1.3vw, 19px);">And all in all? When you have a system that books calls on autopilot, <em>you stop relying on hustle and start running a business that runs itself.</em></p>
+  </div>
+</section>
+
+<!-- ========== SECTION 5: THE PROBLEM ========== -->
+<section class="sbk-section">
+  <div class="sbk-container sbk-narrow">
+    <div class="sbk-eyebrow">The Problem</div>
+    <h2 class="sbk-h2">But right now, &ldquo;booked calls on autopilot&rdquo; probably feels <em>really far away.</em></h2>
+    <p class="sbk-body">Right now, you're either staring at your Ads Manager trying to figure out why what you're doing isn't producing the booked calls you actually want &mdash; or you're thinking about turning ads on for the first time and trying to figure out how to do it right so you don't waste thousands learning the hard way.</p>
+    <p class="sbk-body" style="font-style: italic; color: var(--sbk-subtle);">Annnnnnndd&hellip;</p>
+
+    <ul class="sbk-star-list">
+      <li><span>You might be sending ad clicks straight to your booking page or calendar &mdash; <span class="sbk-hl">but nobody's actually booking.</span></span></li>
+      <li><span>So you keep tweaking the ads themselves &mdash; new audiences, new copy, new images &mdash; convinced the answer's in there somewhere.</span></li>
+      <li><span>Or you switched to a Meta lead form to lower your cost per lead &mdash; and now you're stuck manually following up with every single one, only to have most of them ghost you.</span></li>
+      <li><span>Meanwhile, your cost per lead keeps creeping up, your ad spend keeps climbing, and your <span class="sbk-hl">booked-call number stays flat.</span></span></li>
+      <li><span>And if you haven't started ads yet, you're holding back &mdash; because you've watched too many service providers waste thousands on campaigns that didn't book a single call, and you don't want to be next.</span></li>
+    </ul>
+
+    <p class="sbk-body" style="margin-top: 24px;">What you actually want is to know that <em>the moment someone clicks your ad,</em> you've already put the right pieces in place &mdash; so they actually book the call instead of disappearing.</p>
+    <p class="sbk-body">And honestly? The whole thing has started to feel like guesswork.</p>
+    <p class="sbk-body">You're already doing the hard part &mdash; running a real business, serving real clients, making real money. But the part that's supposed to bring in MORE clients keeps eating ad spend without giving much back.</p>
+    <p class="sbk-body" style="font-style: italic; color: var(--sbk-subtle);">Or even worse? You're starting to wonder if running ads even works for service providers like you.</p>
+    <p class="sbk-body" style="margin-top: 22px; font-size: clamp(16px, 1.3vw, 19px);">But as someone who was once in your shoes, I am so excited to say <em>it doesn't have to be this way.</em></p>
+  </div>
+</section>
+
+<!-- ========== SECTION 6: THE SECRET SAUCE ========== -->
+<section class="sbk-section sbk-section-ivory">
+  <div class="sbk-container sbk-narrow">
+    <div class="sbk-eyebrow">The Secret Sauce</div>
+    <h2 class="sbk-h2">What if you could finally have consistent booked calls coming in week after week &mdash; PLUS know without a doubt that your <em>ad spend is being used the way it should be?</em></h2>
+    <p class="sbk-body">I, Bree, KNOW you want more booked calls &mdash; and I believe you deserve to have them coming in consistently without it depending on you manually chasing every lead or wasting ad spend.</p>
+    <p class="sbk-body">That is why I took the exact methodology I use for my done-for-you clients <em>(the same one I built after burning $544 on ads with zero booked calls)</em> and turned it into the <strong>Self-Booking System Starter Kit</strong> &mdash; the focused setup that <span class="sbk-hl">fixes the gap between an ad click and a booked call.</span></p>
+    <p class="sbk-body">It walks you through the exact pieces that need to be in place before you even think about creating an ad &mdash; the page they land on, the next step they're given, the way the highest-intent moment in your sales process gets captured.</p>
+    <p class="sbk-body">It is the <em>KEY</em> to having booked calls coming in consistently &mdash; without manually following up, chasing leads, or hoping next week is the week your ad spend finally works.</p>
+    <p class="sbk-body" style="margin-top: 22px;"><strong>AND P.S.</strong> &mdash; I'm so confident in what's inside this kit that there's a <em>7-day implementation guarantee.</em> Build it within 7 days and reach out to me for any help you might need. And if you don't see a shift in your booking rate, you get every penny back. <em style="font-size: 14px;">(More on that further down the page.)</em></p>
+  </div>
+</section>
+
+<!-- ========== SECTION 7: THE 4 PILLARS ========== -->
+<section class="sbk-section">
+  <div class="sbk-container">
+    <div class="sbk-eyebrow">The Methodology</div>
+    <h2 class="sbk-h2">Here are the 4 pillars that make this Starter Kit different from <em>any template, course, or &ldquo;how to run ads&rdquo; video</em> you've ever seen.</h2>
+
+    <div class="sbk-pillars">
+      <div class="sbk-pillar">
+        <div class="sbk-pillar-num">01.</div>
+        <h3>The <em>Highest-Intent Moment</em></h3>
+        <p>The single most valuable window in your entire sales process is the few seconds right after someone clicks &ldquo;submit&rdquo; on your form. They're paying attention. They're curious. They're ready for the next step. Most service providers waste this moment with a generic &ldquo;thanks, check your email&rdquo; page &mdash; or by leaving people with a &ldquo;we'll follow up shortly&rdquo; message that puts the work on YOU to chase them down later. <em>The Self-Booking System captures it instead, and turns it into a booked call before they ever close the tab.</em></p>
+      </div>
+
+      <div class="sbk-pillar">
+        <div class="sbk-pillar-num">02.</div>
+        <h3>The <em>Two-Path Approach</em></h3>
+        <p>Most setups force one decision: book a call OR join an email list. The Self-Booking System gives you <em>BOTH at the same time.</em> The people who are ready to book right now? They book. The people who aren't ready yet? They go on your email list and get nurtured until they are. Nobody falls through the cracks &mdash; and your calendar fills up consistently because you're not just relying on the small percentage of &ldquo;ready right now&rdquo; buyers.</p>
+      </div>
+
+      <div class="sbk-pillar">
+        <div class="sbk-pillar-num">03.</div>
+        <h3>The <em>Plug-and-Play Templates</em></h3>
+        <p>The reason most service providers stay stuck isn't because they don't know what to do &mdash; it's because they don't have the time to figure out how to do it. The kit gives you the exact templates to copy, customize, and launch in <em>one focused sitting.</em> No staring at a blank page. No piecing it together from YouTube tutorials. Just plug in your specific business details and turn it on.</p>
+      </div>
+
+      <div class="sbk-pillar">
+        <div class="sbk-pillar-num">04.</div>
+        <h3>The <em>Custom GPT</em> &mdash; trained on the methodology</h3>
+        <p>Every other &ldquo;AI funnel tool&rdquo; on the market is just regular ChatGPT with a fancier prompt. The Self-Booking System Strategist is different &mdash; it's a Custom GPT I trained personally on the methodology I use for myself and my done-for-you clients. So instead of getting generic AI copy that sounds like every other service provider, you get <em>copy built on actual buyer psychology</em> &mdash; customized to your specific business, your audience, and your offer.</p>
+      </div>
+    </div>
+
+    <p class="sbk-body" style="margin-top: 36px; max-width: 820px;">And I have taken ALL this knowledge, methodology, and years of done-for-you experience across multiple service-based industries &mdash; and poured it into the Self-Booking System Starter Kit so you can have your booking page <em>built and converting in one focused sitting,</em> all without paying $2,500+ for an agency to install it for you.</p>
+  </div>
+</section>
+
+<!-- ========== SECTION 8: TRANSFORMATION ========== -->
+<section class="sbk-section sbk-section-ivory">
+  <div class="sbk-container">
+    <div class="sbk-eyebrow">The Transformation</div>
+    <h2 class="sbk-h2">This is your business <em>with the Self-Booking System Starter Kit:</em></h2>
+
+    <div class="sbk-transform">
+      <div class="sbk-transform-row">
+        <div class="sbk-transform-cell sbk-transform-from">
+          <span class="sbk-transform-tag">From this</span>
+          <p>Waking up, opening Ads Manager first thing, and feeling that pit in your stomach when you see the cost-per-lead climbing while the booked-call number stays flat.</p>
+        </div>
+        <div class="sbk-transform-arrow">&rarr;</div>
+        <div class="sbk-transform-cell sbk-transform-to">
+          <span class="sbk-transform-tag">To this</span>
+          <p>Waking up, checking your calendar, and seeing <em>fresh booked calls that came in overnight</em> &mdash; without you needing to follow up with a single person to make it happen.</p>
+        </div>
+      </div>
+
+      <div class="sbk-transform-row">
+        <div class="sbk-transform-cell sbk-transform-from">
+          <span class="sbk-transform-tag">From this</span>
+          <p>Spending hours every week manually messaging leads who never reply &mdash; feeling like a salesperson chasing people who already disappeared.</p>
+        </div>
+        <div class="sbk-transform-arrow">&rarr;</div>
+        <div class="sbk-transform-cell sbk-transform-to">
+          <span class="sbk-transform-tag">To this</span>
+          <p>Letting the setup do the work for you &mdash; leads either book immediately or stay on your email list getting nurtured automatically. <em>No more manual chasing.</em></p>
+        </div>
+      </div>
+
+      <div class="sbk-transform-row">
+        <div class="sbk-transform-cell sbk-transform-from">
+          <span class="sbk-transform-tag">From this</span>
+          <p>Hitting &ldquo;publish&rdquo; on a new ad campaign and immediately bracing yourself for the same outcome &mdash; leads coming in at a high cost, no calls booked, and that creeping doubt that maybe you're just bad at this.</p>
+        </div>
+        <div class="sbk-transform-arrow">&rarr;</div>
+        <div class="sbk-transform-cell sbk-transform-to">
+          <span class="sbk-transform-tag">To this</span>
+          <p>Hitting &ldquo;publish&rdquo; with confidence because you KNOW what's behind the ad is built to convert &mdash; and watching the booked calls actually <em>roll in the way they were supposed to</em> from the start.</p>
+        </div>
+      </div>
+
+      <div class="sbk-transform-row">
+        <div class="sbk-transform-cell sbk-transform-from">
+          <span class="sbk-transform-tag">From this</span>
+          <p>Spending Saturday morning manually typing follow-up messages because you can't afford to let leads cool off &mdash; feeling guilty for working when you should be with your family.</p>
+        </div>
+        <div class="sbk-transform-arrow">&rarr;</div>
+        <div class="sbk-transform-cell sbk-transform-to">
+          <span class="sbk-transform-tag">To this</span>
+          <p>Spending Saturday morning <em>fully present</em> with your family because the system is doing the work that used to live on YOUR plate.</p>
+        </div>
+      </div>
+
+      <div class="sbk-transform-row">
+        <div class="sbk-transform-cell sbk-transform-from">
+          <span class="sbk-transform-tag">From this</span>
+          <p>Wondering if running ads even works for service providers like you &mdash; and quietly considering walking away from paid traffic completely.</p>
+        </div>
+        <div class="sbk-transform-arrow">&rarr;</div>
+        <div class="sbk-transform-cell sbk-transform-to">
+          <span class="sbk-transform-tag">To this</span>
+          <p>Knowing &mdash; without a doubt &mdash; that ads work when the right pieces are in place behind them. And finally being able to <em>scale your ad spend with confidence</em> instead of fear.</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align: center; margin-top: 40px; font-size: clamp(18px, 1.6vw, 22px); font-style: italic; color: var(--sbk-periwinkle-deep); font-family: var(--sbk-serif); font-weight: 600;">If you're ready to make this transformation for yourself, then&hellip;</p>
+  </div>
+</section>
+
+<!-- ========== SECTION 9: THE OFFER REVEAL (with anchor pricing & big CTA) ========== -->
+<section class="sbk-section sbk-section-periwinkle" id="offer">
+  <div class="sbk-container" style="text-align: center;">
+    <div class="sbk-eyebrow">Say Hello</div>
+    <h2 class="sbk-h2" style="max-width: 940px; margin: 0 auto 18px;">Say hello to your booked-call system with<br/><em>The Self-Booking System Starter Kit.</em></h2>
+
+    <div class="sbk-hero-mockup" style="margin: 28px auto 16px;">
+      <img src="images/Starter%20kit%20mockup.png" alt="The Self-Booking System Starter Kit — kit mockup showing course videos, templates, checklist, system map, and Custom GPT" />
+    </div>
+
+    <p style="font-family: var(--sbk-sans); font-size: clamp(15px, 1.2vw, 17px); line-height: 1.7; color: var(--sbk-cream); max-width: 760px; margin: 28px auto 0; opacity: 0.94;">Say goodbye to manually chasing leads and tweaking ads that aren't converting &mdash; and say hello to a booking page that turns ad clicks into booked calls automatically, with the exact templates, methodology, and Custom GPT to make it happen <em style="font-style: italic; color: var(--sbk-lime); font-weight: 600;">in one focused sitting.</em></p>
+
+    <div class="sbk-priceblock" id="checkout">
+      <div class="sbk-price-line">
+        <span class="sbk-price-old">$497</span>
+        <span class="sbk-price-new">$27</span>
+      </div>
+      <div class="sbk-price-save">Save $470 today</div>
+    </div>
+
+    <div class="sbk-cta-wrap" style="margin-top: 14px;">
+      <a href="javascript:void(0);" class="sbk-cta js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="UY8qRCB1xOXc" data-kt-owner="7kzAqVxg">
+        <span class="sbk-cta-main">Get Instant Access <span class="sbk-cta-price">$27</span></span>
+        <span class="sbk-cta-sub">Sign me up — I want booked calls on autopilot →</span>
+      </a>
+      <div class="sbk-trust-row">
+        <span>Introductory pricing</span>
+        <span>Instant access</span>
+        <span>Lifetime access</span>
+        <span>7-day guarantee</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 10: WHAT'S INSIDE ========== -->
+<section class="sbk-section">
+  <div class="sbk-container sbk-narrow">
+    <div class="sbk-eyebrow">What's Inside the Kit</div>
+    <h2 class="sbk-h2">Here's everything you'll <em>learn inside the kit:</em></h2>
+
+    <div class="sbk-inside-list">
+      <div class="sbk-inside-item">
+        <div class="sbk-inside-tag">Section 1</div>
+        <div class="sbk-inside-title">The <em>Self-Booking System</em></div>
+        <p>The framework that fixes the #1 reason ads aren't booking calls. You'll learn the three-stage path every booked call has to move through (and where most service providers are losing them) &mdash; so you can finally see WHY your current setup isn't producing the results you want, and what to put in place instead.</p>
+      </div>
+
+      <div class="sbk-inside-item">
+        <div class="sbk-inside-tag">Section 2</div>
+        <div class="sbk-inside-title">Why Your <em>Leads Aren't Turning Into Calls</em></div>
+        <p>The exact gap between &ldquo;lead came in&rdquo; and &ldquo;call got booked&rdquo; &mdash; and why most service providers don't even know it exists. You'll learn the four most common mistakes that cause leads to disappear after the click, so you can spot which ones are happening in YOUR setup right now and fix them before you spend another dollar on ads.</p>
+      </div>
+
+      <div class="sbk-inside-item">
+        <div class="sbk-inside-tag">Section 3</div>
+        <div class="sbk-inside-title">The <em>Missing Bridge</em></div>
+        <p>The single piece of the system that turns ad clicks into booked calls. <em>This is the IP moment of the entire kit</em> &mdash; the methodology I built after burning through ad spend with nothing to show for it. <span class="sbk-hl">Once you understand this, you'll never look at your funnel the same way again.</span></p>
+      </div>
+
+      <div class="sbk-inside-item">
+        <div class="sbk-inside-tag">Section 4</div>
+        <div class="sbk-inside-title">Build Your <em>Self-Booking Page</em></div>
+        <p>The 5-section structure to copy, customize, and launch in one focused sitting. You'll learn the exact order, the exact flow, and the exact words that turn a curious click into a booked call &mdash; including the plug-and-play template you'll use to <em>build the page in 30 minutes instead of 30 hours.</em></p>
+      </div>
+
+      <div class="sbk-inside-item">
+        <div class="sbk-inside-tag">Section 4.5</div>
+        <div class="sbk-inside-title">Make It Yours With <em>the Strategist GPT</em></div>
+        <p>How to use the Custom GPT to write your booking page copy in minutes, not hours. Forget pasting templates into ChatGPT and getting generic AI output that sounds like every other service provider on the internet. The Strategist is trained on the methodology &mdash; so the copy you get is <em>built on actual buyer psychology,</em> customized to your specific business, your audience, and your offer.</p>
+      </div>
+
+      <div class="sbk-inside-item">
+        <div class="sbk-inside-tag">Section 5</div>
+        <div class="sbk-inside-title">Install <em>+ Test</em></div>
+        <p>The 6-phase launch checklist that catches every broken piece BEFORE you spend a dollar on ads. You'll learn how to test every link, every form, every email, every redirect &mdash; so when you DO turn ads on, <em>you know what's behind them is built to convert.</em></p>
+      </div>
+
+      <div class="sbk-inside-item">
+        <div class="sbk-inside-tag">Section 6</div>
+        <div class="sbk-inside-title">What <em>Comes Next</em></div>
+        <p>How the Self-Booking System fits into the bigger picture of your business &mdash; and what's next once you're booking calls consistently. You'll see how this kit fits into the full <em>Seen &rarr; Booked &rarr; Paid</em> framework, so you know exactly where you are and what to focus on as your business grows.</p>
+      </div>
+    </div>
+
+    <div class="sbk-cta-wrap">
+      <a href="javascript:void(0);" class="sbk-cta js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="UY8qRCB1xOXc" data-kt-owner="7kzAqVxg">
+        <span class="sbk-cta-main">Get Instant Access <span class="sbk-cta-price">$27</span></span>
+        <span class="sbk-cta-sub">Sign me up — I want booked calls on autopilot →</span>
+      </a>
+      <div class="sbk-trust-row">
+        <span>Instant access</span>
+        <span>Lifetime access</span>
+        <span>7-day guarantee</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 12: SOCIAL PROOF ========== -->
+<section class="sbk-section">
+  <div class="sbk-container">
+    <div class="sbk-eyebrow" style="text-align: center;">Real Results</div>
+    <h2 class="sbk-h2" style="text-align: center; max-width: 820px; margin: 0 auto 36px;">Results like these <em>could be waiting for you.</em></h2>
+
+    <!-- FOUNDER BIG STAT CASE STUDY -->
+    <div class="sbk-case">
+      <div class="sbk-case-eyebrow">The Founder's Case Study</div>
+      <h3 class="sbk-case-title">$544 in ad spend. <em>Zero booked calls.</em><br/>Then I changed what was behind the click.</h3>
+
+      <div class="sbk-bigstat-row">
+        <div class="sbk-bigstat-cell before">
+          <span class="sbk-bigstat-tag">Before</span>
+          <div class="sbk-bigstat-num">0</div>
+          <div class="sbk-bigstat-label">booked calls<br/>from $544 ad spend</div>
+        </div>
+        <div class="sbk-bigstat-arrow">&rarr;</div>
+        <div class="sbk-bigstat-cell after">
+          <span class="sbk-bigstat-tag">After</span>
+          <div class="sbk-bigstat-num">16</div>
+          <div class="sbk-bigstat-label">booked calls in 2 weeks<br/>at <strong style="color: var(--sbk-ink);">$2/lead</strong></div>
+        </div>
+      </div>
+
+      <div class="sbk-screenshot-grid">
+        <img src="images/544.png" alt="Screenshot showing $544 spent on ads with zero booked calls" />
+        <img src="images/86%20leads%20on%20email%20list%20.jpg" alt="Screenshot showing 86 leads on email list at $2 cost per lead" />
+        <img src="images/16%20booked%20calls%20without%20posting.jpg" alt="Screenshot showing 16 booked calls in 2 weeks without posting" />
+      </div>
+
+      <p class="sbk-case-note">Same business. Same offer. Same audience. <em>Different setup behind the click.</em></p>
+      <p class="sbk-case-attrib">— Bree, founder of Perfectly Made Marketing</p>
+    </div>
+
+    <!-- CLIENT BIG STAT CASE STUDY -->
+    <div class="sbk-case">
+      <div class="sbk-case-eyebrow">Client Case Study · Life Insurance</div>
+      <h3 class="sbk-case-title">$13 down to <em>$3</em> per lead &mdash; in 5 days.</h3>
+
+      <div class="sbk-bigstat-row">
+        <div class="sbk-bigstat-cell before">
+          <span class="sbk-bigstat-tag">Before</span>
+          <div class="sbk-bigstat-num">$13</div>
+          <div class="sbk-bigstat-label">cost per lead<br/>no consistent calls</div>
+        </div>
+        <div class="sbk-bigstat-arrow">&rarr;</div>
+        <div class="sbk-bigstat-cell after">
+          <span class="sbk-bigstat-tag">After</span>
+          <div class="sbk-bigstat-num">$3</div>
+          <div class="sbk-bigstat-label">cost per lead<br/>22 leads + <strong style="color: var(--sbk-ink);">3 booked calls</strong> in 5 days</div>
+        </div>
+      </div>
+
+      <div class="sbk-screenshot-grid">
+        <img src="images/Client%20Results/Meta%20ads%20manager%20screenshot.png" alt="Linda's Meta Ads Manager dashboard showing cost per lead drop from $13 to $3" />
+        <img src="images/Client%20Results/Screenshot%20of%20her%20calendar.png" alt="Linda's calendar showing 3 booked calls in 5 days" />
+      </div>
+
+      <p class="sbk-case-attrib">Industry: Life Insurance</p>
+    </div>
+
+    <!-- BUYER TESTIMONIALS -->
+    <div class="sbk-eyebrow" style="text-align: center; margin-top: 56px;">What Kit Buyers Are Saying</div>
+
+    <div class="sbk-testimonials">
+      <div class="sbk-testimonial">
+        <p>&ldquo;I'd been running ads for almost 6 months and had pretty much convinced myself that ads just didn't work for service-based businesses like mine. After going through the Self-Booking System Starter Kit, I realized I'd been spending money to send people to a page that literally couldn't convert. Built the booking page in one afternoon. <span class="sbk-hl">Booked 4 calls the first week ads were back on.</span>&rdquo;</p>
+        <cite>— Jessica M., Business Coach</cite>
+      </div>
+      <div class="sbk-testimonial">
+        <p>&ldquo;I was about to spend $3,000+ on a funnel agency before I found this kit. The Custom GPT alone is worth way more than $27. It wrote my booking page copy in minutes and it actually sounds like me. <span class="sbk-hl">My calendar is finally booking itself.</span>&rdquo;</p>
+        <cite>— Amanda K., Marketing Consultant</cite>
+      </div>
+    </div>
+
+    <div class="sbk-cta-wrap">
+      <a href="javascript:void(0);" class="sbk-cta js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="UY8qRCB1xOXc" data-kt-owner="7kzAqVxg">
+        <span class="sbk-cta-main">Get Instant Access <span class="sbk-cta-price">$27</span></span>
+        <span class="sbk-cta-sub">Sign me up — I want booked calls on autopilot →</span>
+      </a>
+      <div class="sbk-trust-row">
+        <span>Instant access</span>
+        <span>Lifetime access</span>
+        <span>7-day guarantee</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 13: BONUSES ========== -->
+<section class="sbk-section sbk-section-ivory">
+  <div class="sbk-container">
+    <h2 class="sbk-h2" style="text-align: center; max-width: 820px; margin: 0 auto 12px;">Annnnd there's <em>bonuses too!</em></h2>
+    <p class="sbk-lead" style="text-align: center; max-width: 720px; margin: 0 auto;">Two extras included with every kit &mdash; designed to make sure no lead falls through the cracks and no copy sounds generic.</p>
+
+    <div class="sbk-bonuses">
+      <div class="sbk-bonus">
+        <span class="sbk-bonus-badge">Bonus #1</span>
+        <span class="sbk-bonus-value">$147 value</span>
+        <h3>The <em>Welcome Sequence Template</em></h3>
+        <p>If the idea of &ldquo;leads who don't book on day one go on the email list and never hear from you again&rdquo; sounds familiar &mdash; or you've never even thought about what to do with leads who don't book right away &mdash; <em>this bonus is for you.</em></p>
+        <p>By joining today, you'll receive my plug-and-play <strong>4-email Welcome Sequence Template</strong> &mdash; designed to nurture the leads who weren't ready to book the first time around and bring them back when they ARE ready.</p>
+        <p>This is the same sequence structure I use for my own business and my done-for-you clients &mdash; built to keep you top of mind, build trust, and turn &ldquo;not yet&rdquo; leads into booked calls weeks (or months) down the line.</p>
+        <p style="font-style: italic; color: var(--sbk-periwinkle-deep); font-weight: 600;">Customize the blanks. Load it into your email tool. Turn it on. Done.</p>
+      </div>
+
+      <div class="sbk-bonus">
+        <span class="sbk-bonus-badge">Bonus #2</span>
+        <span class="sbk-bonus-value">$497 value</span>
+        <h3>The <em>Self-Booking System Strategist</em> (Custom GPT)</h3>
+        <p>Are you tired of pasting templates into ChatGPT and getting back generic AI copy that sounds like every other service provider on the internet?</p>
+        <p>This bonus is your solution. The Self-Booking System Strategist is a Custom GPT I trained personally on the methodology I use for myself and my done-for-you clients &mdash; so the copy you get isn't generic AI. It's <em>copy built on actual buyer psychology,</em> customized to your specific business, your audience, and your offer.</p>
+        <p style="margin-top: 16px;">With this bonus, you'll have:</p>
+        <ul class="sbk-bonus-list">
+          <li>A full booking page copywriter in your pocket &mdash; built specifically for the Self-Booking System</li>
+          <li>Lead magnet ideas customized to your niche</li>
+          <li>Opt-in page copy that converts</li>
+          <li>The ability to critique your own existing copy and rewrite it to convert better</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 14: RECAP STACK CTA ========== -->
+<section class="sbk-section">
+  <div class="sbk-container">
+    <div class="sbk-eyebrow" style="text-align: center;">Here's Everything You Get</div>
+    <h2 class="sbk-h2" style="text-align: center; max-width: 820px; margin: 0 auto 36px;">You get all of this <em>instantly:</em></h2>
+
+    <div class="sbk-stack">
+      <div class="sbk-stack-row">
+        <div class="sbk-stack-row-label">
+          <strong>Section 1 — The Self-Booking System</strong>
+          The Starter Kit Curriculum <em>(7 step-by-step videos walking you through the entire system)</em>
+        </div>
+        <div class="sbk-stack-row-value">$197 value</div>
+      </div>
+      <div class="sbk-stack-row">
+        <div class="sbk-stack-row-label">
+          <strong>Section 2 — Why Leads Aren't Turning Into Calls</strong>
+          The 4 most common mistakes that cause leads to disappear after the click
+        </div>
+        <div class="sbk-stack-row-value">$47 value</div>
+      </div>
+      <div class="sbk-stack-row">
+        <div class="sbk-stack-row-label">
+          <strong>Section 3 — The Missing Bridge</strong>
+          The Self-Booking System Map <em>(the visual one-pager that anchors the entire framework)</em>
+        </div>
+        <div class="sbk-stack-row-value">$47 value</div>
+      </div>
+      <div class="sbk-stack-row">
+        <div class="sbk-stack-row-label">
+          <strong>Section 4 — Build Your Self-Booking Page</strong>
+          The Self-Booking Page Template + Copy Swipe File <em>(word-for-word copy for every section)</em>
+        </div>
+        <div class="sbk-stack-row-value">$147 value</div>
+      </div>
+      <div class="sbk-stack-row">
+        <div class="sbk-stack-row-label">
+          <strong>Section 5 — Install + Test</strong>
+          The Step-by-Step Setup Checklist <em>(6-phase install + launch)</em>
+        </div>
+        <div class="sbk-stack-row-value">$39 value</div>
+      </div>
+      <div class="sbk-stack-row">
+        <div class="sbk-stack-row-label">
+          <strong>Section 6 — What Comes Next</strong>
+          The Seen &rarr; Booked &rarr; Paid framework
+        </div>
+        <div class="sbk-stack-row-value">$20 value</div>
+      </div>
+
+      <div class="sbk-stack-row sbk-stack-bonus-row">
+        <div class="sbk-stack-row-label">
+          <strong>BONUS: The Welcome Sequence Template</strong>
+          4-email plug-and-play nurture sequence
+        </div>
+        <div class="sbk-stack-row-value">$147 value</div>
+      </div>
+      <div class="sbk-stack-row sbk-stack-bonus-row">
+        <div class="sbk-stack-row-label">
+          <strong>BONUS: The Self-Booking System Strategist (Custom GPT)</strong>
+          AI copywriter trained on the methodology
+        </div>
+        <div class="sbk-stack-row-value">$497 value</div>
+      </div>
+
+      <div class="sbk-recap-mockup">
+        <img src="images/Starter%20kit%20mockup.png" alt="The Self-Booking System Starter Kit — full kit mockup showing every piece included" />
+      </div>
+
+      <div class="sbk-stack-total">
+        <div class="sbk-stack-total-line">
+          <span class="sbk-stack-total-label">Total real value</span>
+          <span class="sbk-stack-total-value">$1,141+</span>
+        </div>
+        <div class="sbk-stack-final">
+          <span class="sbk-stack-final-label">Yours today for</span>
+          <span class="sbk-stack-final-value">$27</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sbk-cta-wrap">
+      <a href="javascript:void(0);" class="sbk-cta js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="UY8qRCB1xOXc" data-kt-owner="7kzAqVxg">
+        <span class="sbk-cta-main">Get All Of This <span class="sbk-cta-price">$27</span></span>
+        <span class="sbk-cta-sub">Sign me up — I want booked calls on autopilot →</span>
+      </a>
+      <div class="sbk-trust-row">
+        <span>Introductory pricing</span>
+        <span>Instant access</span>
+        <span>Lifetime access</span>
+        <span>7-day guarantee</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 16: FOUNDER BIO ========== -->
+<section class="sbk-section sbk-section-ivory sbk-founder">
+  <div class="sbk-container">
+    <div class="sbk-eyebrow" style="text-align: center;">Meet Bree</div>
+
+    <div class="sbk-founder-photo-wrap">
+      <img src="images/Photo%20of%20Bree.jpg" alt="Bree, founder of Perfectly Made Marketing" class="sbk-founder-photo-img" />
+    </div>
+
+    <h2 class="sbk-h2">So why am I the right person to <em>be helping you with this transformation?</em></h2>
+
+    <div class="sbk-founder-body">
+      <p class="sbk-body">Hi, I'm Bree &mdash; the founder of <em>Perfectly Made Marketing.</em></p>
+      <p class="sbk-body">I'm a digital marketing strategist who's spent the last several years helping coaches, consultants, financial advisors, mortgage brokers, and service providers build the systems that turn ad clicks into booked calls. But before that, I was a licensed life insurance agent &mdash; so I know both sides of the table. <em>The service provider who has to actually GET clients.</em> AND the marketer who has to build the system that brings them in.</p>
+      <p class="sbk-body">Which means I get it. I know what it's like to have a real business that you've worked hard to build, an offer that genuinely helps people, and still have weeks where the calendar barely fills up. I've sat in front of my own Ads Manager wondering if any of it was working. I've had the moment where I almost walked away from ads completely.</p>
+      <p class="sbk-body" style="margin-top: 22px; font-size: clamp(17px, 1.4vw, 20px); font-style: italic; color: var(--sbk-periwinkle-deep); font-family: var(--sbk-serif); font-weight: 600;">And that's exactly what led me to build the Self-Booking System.</p>
+      <p class="sbk-body">After burning $544 on my first round of Meta ads with zero booked calls &mdash; and watching every guru tell me to &ldquo;fix my ads&rdquo; when the ads weren't the only problem &mdash; I figured out what nobody was teaching: <span class="sbk-hl">the piece that comes AFTER the click is what determines whether ad spend actually turns into booked calls.</span></p>
+      <p class="sbk-body">Once I built the Self-Booking System for my own business, everything shifted. <strong>16 booked calls in 2 weeks at $2 per lead.</strong> Same offer. Same audience. Different setup.</p>
+      <p class="sbk-body">Then I started installing it for my done-for-you clients across multiple service-based industries &mdash; and every single time, the same shift happened. <em>The methodology works.</em></p>
+      <p class="sbk-body">So I built this Starter Kit to make sure no other service provider has to spend $544 figuring out the hard way what I already figured out for them.</p>
+      <p class="sbk-body" style="margin-top: 22px;">I believe service providers like you deserve <em>real systems built on real strategy</em> &mdash; not bro-marketing, not &ldquo;scale to 7 figures&rdquo; hype, not generic templates that don't actually convert. You deserve to spend ad dollars with confidence. You deserve booked calls that come in consistently without you chasing every lead. And you deserve to do it without sacrificing your time, your peace, or the things that matter most outside your business.</p>
+      <p class="sbk-body">So if you're ready to stop guessing and start having booked calls coming in week after week &mdash; I'd be honored to support you inside the Self-Booking System Starter Kit. I built every piece of this with you in mind, and <em>I genuinely can't wait to see what shifts in your business once it's in place.</em></p>
+    </div>
+
+    <p class="sbk-founder-sig">✨ Bree</p>
+  </div>
+</section>
+
+<!-- ========== SECTION 18: GUARANTEE ========== -->
+<section class="sbk-section">
+  <div class="sbk-container">
+    <div class="sbk-guarantee">
+      <div class="sbk-guarantee-seal">7-Day Implementation Guarantee</div>
+      <h2 class="sbk-h2">Joining is <em>risk-free.</em></h2>
+      <p>If past template purchases or course buys haven't worked out for you, I want you to confidently try the Self-Booking System Starter Kit <em>without a worry.</em></p>
+      <p><strong>Here's how it works:</strong> implement the kit within 7 days. Build your Self-Booking Page using the templates. Run your copy through the Strategist GPT. Follow the Setup Checklist. And reach out to me along the way for any help you need.</p>
+      <p>Then if your booking rate hasn't shifted? <span class="sbk-hl">Send me proof of your implementation, and I'll refund every penny.</span></p>
+      <p>Why? Because I'm so confident in what's inside this kit that I'd rather give you a full refund than have you sit with a kit you didn't use. The only thing I ask is that you actually do the work and reach out for support if you get stuck. <em>If you do, the system will deliver.</em></p>
+      <p style="font-family: var(--sbk-serif); font-style: italic; color: var(--sbk-periwinkle-deep); font-weight: 600; font-size: clamp(15px, 1.3vw, 18px); margin-top: 18px;">There's absolutely nothing to lose. You stand only to gain a setup that books calls for you on autopilot &mdash; without manually following up, chasing leads, or hoping next week is the week things finally click.</p>
+    </div>
+
+    <div class="sbk-cta-wrap">
+      <a href="javascript:void(0);" class="sbk-cta js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="UY8qRCB1xOXc" data-kt-owner="7kzAqVxg">
+        <span class="sbk-cta-main">Get The Kit <span class="sbk-cta-price">$27</span></span>
+        <span class="sbk-cta-sub">Sign me up — I want booked calls on autopilot →</span>
+      </a>
+      <div class="sbk-trust-row">
+        <span>Instant access</span>
+        <span>Lifetime access</span>
+        <span>7-day guarantee</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 20: WHO IS THIS FOR ========== -->
+<section class="sbk-section sbk-section-ivory">
+  <div class="sbk-container sbk-narrow">
+    <div class="sbk-eyebrow">Who This Is For</div>
+    <h2 class="sbk-h2">Here's who the Self-Booking System Starter Kit is <em>perfect for:</em></h2>
+
+    <ul class="sbk-whofor-list">
+      <li><span>You're a <em>service provider who books calls</em> to close clients &mdash; and your business depends on having those calls actually fill your calendar.</span></li>
+      <li><span>You're already running ads (or seriously considering it), but the gap between &ldquo;leads coming in&rdquo; and &ldquo;calls getting booked&rdquo; has been <em>frustrating you for a while now.</em></span></li>
+      <li><span>You're tired of pasting templates into ChatGPT and getting back generic AI copy that sounds like every other service provider on the internet &mdash; and you want something <em>built specifically for what you actually do.</em></span></li>
+      <li><span>You don't want to waste another month tweaking ads, retargeting different audiences, or hiring an agency you're not sure you can trust just to find out if this whole &ldquo;ads thing&rdquo; works for you.</span></li>
+      <li><span>You'd rather spend <em>one focused sitting</em> building the right setup ONCE than keep guessing for another six months &mdash; and you want a complete methodology, not just another template pack.</span></li>
+      <li><span>If you were honest with yourself and rated your current booked-call consistency on a scale of 1-10, you'd give it a <strong>7 or below</strong> &mdash; and you know there's a better way.</span></li>
+    </ul>
+
+    <p class="sbk-whofor-prompt">If you've checked many or all of those boxes, <em>this kit was built for you.</em></p>
+
+    <div class="sbk-cta-wrap">
+      <a href="javascript:void(0);" class="sbk-cta js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="UY8qRCB1xOXc" data-kt-owner="7kzAqVxg">
+        <span class="sbk-cta-main">Yes — That's Me <span class="sbk-cta-price">$27</span></span>
+        <span class="sbk-cta-sub">Sign me up — I want booked calls on autopilot →</span>
+      </a>
+      <div class="sbk-trust-row">
+        <span>Instant access</span>
+        <span>Lifetime access</span>
+        <span>7-day guarantee</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 21: FAQ ========== -->
+<section class="sbk-section">
+  <div class="sbk-container">
+    <div class="sbk-eyebrow" style="text-align: center;">FAQs</div>
+    <h2 class="sbk-h2" style="text-align: center; max-width: 820px; margin: 0 auto;">Do you have questions? <em>Here are some answers!</em></h2>
+
+    <div class="sbk-faq">
+      <details>
+        <summary>How long do I have access to the kit?</summary>
+        <div><p>You get <em>lifetime access.</em> The templates, videos, Custom GPT, Setup Checklist, System Map, and bonuses are yours to use forever. Any updates I make in the future will be added to your account at no extra cost.</p></div>
+      </details>
+      <details>
+        <summary>How quickly can I implement this?</summary>
+        <div><p>Most buyers have a working booking page live within <em>60-90 minutes.</em> The templates are plug-and-play, the Custom GPT writes your copy in minutes, and the Setup Checklist walks you through every connection step-by-step.</p></div>
+      </details>
+      <details>
+        <summary>What platform do I need to build this on?</summary>
+        <div><p>Any landing-page or funnel-building platform works. The kit has been built and tested with <strong>GoHighLevel, Wix, Kartra, ClickFunnels, and Squarespace.</strong> If you can build a webpage, you can build this.</p></div>
+      </details>
+      <details>
+        <summary>Will this work for my niche?</summary>
+        <div><p>The Self-Booking System has been installed across multiple service-based industries &mdash; and every time, the same shift happens. The methodology adapts to any consultation-based service. The Custom GPT will customize the copy specifically to your niche, your audience, and your offer.</p></div>
+      </details>
+      <details>
+        <summary>I've tried other funnel templates and courses before. Why is this different?</summary>
+        <div><p>Most templates and courses fail because they teach you WHAT to put on a page without ever explaining WHY. The Self-Booking System Starter Kit gives you <em>both</em> &mdash; the plug-and-play templates AND the buyer psychology behind every section, so you actually understand what's working (and how to adjust it as your business grows).</p></div>
+      </details>
+      <details>
+        <summary>I'm not 'tech-savvy' enough to build this. Will it still work for me?</summary>
+        <div><p>Yes. The kit was specifically designed for service providers who don't want to live inside their funnel-building software. Templates are plug-and-play. The Custom GPT writes your copy. The Setup Checklist walks you through every step. <em>If you can copy and paste and follow numbered instructions, you can build this.</em> And if you get stuck, the implementation guarantee covers you &mdash; reach out for help and I'll work through it with you.</p></div>
+      </details>
+      <details>
+        <summary>Why is this only $27 if it can transform my booking rate?</summary>
+        <div><p>Two reasons. First, this is the <em>introductory price</em> &mdash; it won't stay this low forever. Second, I priced it intentionally accessible because I want service providers to test the methodology without committing to a higher-ticket investment first. The methodology inside this kit is the same one I use for my done-for-you clients (who pay significantly more). The kit is just a focused slice of that work &mdash; scoped for self-implementation.</p></div>
+      </details>
+      <details>
+        <summary>What happens after I check out?</summary>
+        <div><p>You get <em>instant access</em> to the entire kit &mdash; templates, videos, Custom GPT link, Setup Checklist, System Map, and bonuses. Everything lands in your account immediately so you can start implementing right away.</p></div>
+      </details>
+      <details>
+        <summary>How does the 7-day implementation guarantee work?</summary>
+        <div><p>Build the system within 7 days and reach out to me for any help you need along the way. If you've genuinely implemented and your booking rate hasn't shifted, send me proof of your implementation and <em>I'll refund every penny.</em> (Full details further up the page.)</p></div>
+      </details>
+    </div>
+
+    <div class="sbk-cta-wrap">
+      <a href="javascript:void(0);" class="sbk-cta js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="UY8qRCB1xOXc" data-kt-owner="7kzAqVxg">
+        <span class="sbk-cta-main">Get The Kit <span class="sbk-cta-price">$27</span></span>
+        <span class="sbk-cta-sub">Sign me up — I want booked calls on autopilot →</span>
+      </a>
+      <div class="sbk-trust-row">
+        <span>Instant access</span>
+        <span>Lifetime access</span>
+        <span>7-day guarantee</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 22: FINAL HEARTFELT ========== -->
+<section class="sbk-section sbk-section-ivory sbk-final">
+  <div class="sbk-container">
+    <div class="sbk-eyebrow" style="text-align: center;">One Last Thing</div>
+    <h2 class="sbk-h2">You've reached the end &mdash; and since you're still here deciding if this is for you, <em>there's one last thing I'll say.</em></h2>
+
+    <div class="sbk-final-body">
+      <p class="sbk-body">No matter what you decide today &mdash; whether the Self-Booking System Starter Kit becomes part of your business or not &mdash; please don't wait another month to fix the part of your funnel that's been quietly costing you booked calls.</p>
+      <p class="sbk-body">Because you don't want to look back six months from now and think <em>&ldquo;I could have had this in place ages ago &mdash; I just kept blaming the ads.&rdquo;</em></p>
+      <p class="sbk-body" style="margin-top: 22px;">The truth is, having a setup that books calls for you on autopilot:</p>
+
+      <ul class="sbk-star-list">
+        <li><span>Is the missing piece between ad spend that disappears and ad spend that <em>actually pays you back.</em></span></li>
+        <li><span>Is one of the few things in your business that <em>compounds</em> &mdash; once it's built, it works while you sleep, while you're with your family, while you're serving clients.</span></li>
+        <li><span>AND it's something you can build TODAY, in one focused sitting, without spending another six months guessing or thousands on agencies you're not sure you can trust.</span></li>
+      </ul>
+
+      <p class="sbk-body">And your role? Is just to take the first step and put the pieces in place.</p>
+      <p class="sbk-body">That's why this kit exists &mdash; so you can stop guessing about what's broken and finally have <em>booked calls coming in consistently, week after week.</em></p>
+      <p class="sbk-body">So this is your invitation. Not a hard sell. Not a fake countdown timer. Just a real, honest invitation from someone who's been exactly where you are &mdash; and who built this specifically for service providers who deserve real systems built on real strategy.</p>
+      <p class="sbk-body" style="margin-top: 22px; font-style: italic; color: var(--sbk-periwinkle-deep); font-family: var(--sbk-serif); font-weight: 600; font-size: clamp(17px, 1.4vw, 20px);">If you're ready, I'm ready. And I genuinely can't wait to see what shifts in your business once you have this in place.</p>
+    </div>
+
+    <p class="sbk-founder-sig">✨ Bree</p>
+  </div>
+</section>
+
+<!-- ========== SECTION 23: FINAL RECAP ========== -->
+<section class="sbk-section sbk-section-ink">
+  <div class="sbk-container">
+    <div class="sbk-eyebrow" style="text-align: center;">Last Call</div>
+    <h2 class="sbk-h2" style="text-align: center; max-width: 820px; margin: 0 auto 12px;">Get the entire kit + bonuses <em>for $27 today.</em></h2>
+    <p style="font-family: var(--sbk-serif); font-style: italic; font-size: clamp(17px, 1.6vw, 22px); color: var(--sbk-cream); opacity: 0.85; text-align: center; max-width: 720px; margin: 0 auto 28px;">A <em style="color: var(--sbk-lime); font-weight: 500;">$1,141+ value</em> &mdash; yours instantly.</p>
+
+    <div class="sbk-priceblock">
+      <div class="sbk-price-line">
+        <span class="sbk-price-old">$497</span>
+        <span class="sbk-price-new">$27</span>
+      </div>
+      <div class="sbk-price-save">Save $470 today</div>
+    </div>
+
+    <div class="sbk-cta-wrap" style="margin-top: 22px;">
+      <a href="javascript:void(0);" class="sbk-cta js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="UY8qRCB1xOXc" data-kt-owner="7kzAqVxg">
+        <span class="sbk-cta-main">Get Instant Access <span class="sbk-cta-price">$27</span></span>
+        <span class="sbk-cta-sub">Sign me up — I want booked calls on autopilot →</span>
+      </a>
+      <div class="sbk-trust-row">
+        <span>Introductory pricing</span>
+        <span>Instant access</span>
+        <span>Lifetime access</span>
+        <span>7-day guarantee</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="sbk-footer">
+  <div class="sbk-container">
+    <div class="sbk-footer-brand">Perfectly Made Marketing</div>
+    <div style="margin-bottom: 18px;">© 2026 · The Self-Booking System Starter Kit</div>
+    <p class="sbk-footer-disclaimer">This site is not a part of the Facebook&trade; website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Facebook&trade; or Meta&trade; in any way. FACEBOOK&trade; and META&trade; are trademarks of Meta Platforms, Inc. Results shown are not typical and your results will vary based on your effort, your offer, your audience, and a number of other factors.</p>
+  </div>
+</footer>
+
+<!-- ========== STICKY BOTTOM CTA BAR ========== -->
+<div class="sbk-sticky">
+  <div class="sbk-sticky-left">
+    <span class="sbk-sticky-name">Self-Booking System Starter Kit</span>
+    <span class="sbk-sticky-price">$27<span class="sbk-sticky-price-old">$497</span></span>
+  </div>
+  <a href="javascript:void(0);" class="sbk-sticky-btn js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="UY8qRCB1xOXc" data-kt-owner="7kzAqVxg">Get The Kit</a>
+</div>
+
+</div>
+
+<!-- Kartra Pay embed loader — powers every CTA button via the data-kt-* attributes -->
+<script type="text/javascript" src="https://app.kartra.com/js/build/front/embed/pay.js"></script>
+
+</body>
+</html>
