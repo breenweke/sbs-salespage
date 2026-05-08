@@ -25,18 +25,11 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1825521284560570');
 fbq('track', 'PageView');
-// Thank-you page = buyer just completed the $27 Starter Kit checkout (declined the Course OTO) — fire Purchase event for the Starter Kit only
-fbq('track', 'Purchase', {value: 27.00, currency: 'USD', content_name: 'Self-Booking System Starter Kit', content_ids: ['self-booking-starter-kit'], content_type: 'product'});
-// GTM dataLayer push for the same purchase (so any GTM-configured tags fire too)
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({event: 'purchase', ecommerce: {value: 27.00, currency: 'USD', items: [{item_id: 'self-booking-starter-kit', item_name: 'Self-Booking System Starter Kit', price: 27.00, quantity: 1}]}});
+// Note: Purchase event fires inside Kartra at checkout, not on this page,
+// to avoid double-counting in Pixel/GTM reporting.
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"
-/></noscript>
-<!-- Meta Pixel Purchase noscript fallback ($27 Starter Kit) -->
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1825521284560570&ev=Purchase&cd[value]=27.00&cd[currency]=USD&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
