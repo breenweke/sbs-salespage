@@ -183,92 +183,66 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"
   .sbk-body strong { font-weight: 700; color: var(--sbk-ink); }
   .sbk-body em { font-style: italic; color: var(--sbk-periwinkle-deep); font-weight: 500; }
 
-  .sbk-next {
-    margin-top: 32px;
-    padding-top: 32px;
+  /* === FULL-PRICE COURSE CTA === */
+  .sbk-cta-wrap {
+    margin-top: 36px;
+    padding-top: 36px;
     border-top: 1px solid var(--sbk-hairline);
+    text-align: center;
   }
-  .sbk-next-title {
-    font-family: var(--sbk-sans);
-    font-size: 11px;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    color: var(--sbk-periwinkle-deep);
-    font-weight: 700;
-    margin-bottom: 18px;
-  }
-  .sbk-next-list {
-    list-style: none;
-    display: flex;
+  .sbk-cta-btn {
+    display: inline-flex;
     flex-direction: column;
-    gap: 14px;
-    max-width: 540px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  .sbk-next-list li {
-    position: relative;
-    padding: 14px 16px 14px 50px;
-    background: var(--sbk-cream);
-    border: 1px solid var(--sbk-hairline);
+    align-items: center;
+    gap: 6px;
+    background: var(--sbk-lime);
+    color: var(--sbk-ink);
+    text-decoration: none;
+    padding: 22px 44px;
     border-radius: 8px;
+    border: 2px solid #b8d845;
+    box-shadow: 0 6px 24px rgba(184, 216, 69, 0.25), inset 0 -3px 0 rgba(0, 0, 0, 0.08);
     font-family: var(--sbk-sans);
-    font-size: 14.5px;
-    line-height: 1.6;
-    color: var(--sbk-body);
-  }
-  .sbk-next-list li::before {
-    content: '';
-    position: absolute;
-    left: 16px;
-    top: 18px;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: var(--sbk-periwinkle);
-  }
-  .sbk-next-list li::after {
-    content: '→';
-    position: absolute;
-    left: 22px;
-    top: 16px;
-    color: var(--sbk-cream);
-    font-size: 13px;
     font-weight: 700;
-    font-family: var(--sbk-sans);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    animation: sbkExpiredPulse 2.6s ease-in-out infinite;
   }
-  .sbk-next-list li strong { color: var(--sbk-ink); font-weight: 700; }
-  .sbk-next-list li a {
-    color: var(--sbk-periwinkle-deep);
-    text-decoration: underline;
-    font-weight: 600;
+  .sbk-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(184, 216, 69, 0.42), inset 0 -3px 0 rgba(0, 0, 0, 0.08);
+    color: var(--sbk-ink);
+    text-decoration: none;
   }
-  .sbk-next-list li a:hover { text-decoration: none; }
-
-  .sbk-email-btn {
+  .sbk-cta-main {
+    font-size: clamp(15px, 1.6vw, 19px);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.2;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: var(--sbk-periwinkle);
-    color: var(--sbk-cream);
-    text-decoration: none;
-    padding: 16px 32px;
-    border-radius: 8px;
-    font-family: var(--sbk-sans);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-top: 32px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  .sbk-email-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(107, 102, 233, 0.32);
-    color: var(--sbk-cream);
-    text-decoration: none;
+  .sbk-cta-price {
+    background: var(--sbk-ink);
+    color: var(--sbk-lime);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: clamp(13px, 1.3vw, 16px);
+    font-weight: 800;
+    letter-spacing: 0.02em;
   }
-  .sbk-email-btn::before { content: '✉'; font-size: 16px; letter-spacing: 0; }
+  .sbk-cta-sub {
+    font-size: clamp(11px, 0.95vw, 13px);
+    font-weight: 600;
+    color: var(--sbk-periwinkle-deep);
+    letter-spacing: 0.04em;
+    text-transform: none;
+    margin-top: 4px;
+  }
+  @keyframes sbkExpiredPulse {
+    0%, 100% { box-shadow: 0 6px 24px rgba(184, 216, 69, 0.25), inset 0 -3px 0 rgba(0, 0, 0, 0.08); }
+    50% { box-shadow: 0 6px 28px rgba(184, 216, 69, 0.55), 0 0 0 6px rgba(222, 255, 85, 0.15), inset 0 -3px 0 rgba(0, 0, 0, 0.08); }
+  }
 
   /* === FOOTER === */
   .sbk-footer {
@@ -309,18 +283,14 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"
 
     <p class="sbk-body">I keep these windows strict for one reason: <strong>respect for the people who do say yes inside the deadline.</strong> If I extended it for some and not others, it stops being a real offer &mdash; and I'd rather honor the boundary I set than quietly cave on it.</p>
 
-    <p class="sbk-body">That said &mdash; <em>nothing about your business changes today.</em> You still have the full Starter Kit. You still have the methodology. You still have the path. The Course just won't be available at the $97 OTO price anymore.</p>
+    <p class="sbk-body">That said &mdash; <em>the Course itself is still available.</em> Just at the regular price now, not the $97 OTO. If you've decided you want the full system after all, you can grab it below at <strong>$197</strong> &mdash; same access, same modules, same Custom GPTs as the original offer.</p>
 
-    <div class="sbk-next">
-      <div class="sbk-next-title">Here's what to do from here</div>
-      <ul class="sbk-next-list">
-        <li><strong>Use the Starter Kit you already have.</strong> The System Map, both Page Templates, the Setup Checklist, and the Welcome Sequence Template are designed to be installed without the full Course. Open the Setup Checklist and start.</li>
-        <li><strong>Stay on the list.</strong> I'll keep sending you what I learn, what's working with clients, and any other ways into the system as they come up.</li>
-        <li><strong>If your situation genuinely changed</strong> (a real change, not just FOMO), email me directly and we'll talk. I'll always hear out a real story.</li>
-      </ul>
+    <div class="sbk-cta-wrap">
+      <a href="javascript:void(0);" class="sbk-cta-btn js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="REPLACE_WITH_FULL_PRICE_PRODUCT_ID" data-kt-owner="7kzAqVxg">
+        <span class="sbk-cta-main">Get The Course <span class="sbk-cta-price">$197</span></span>
+        <span class="sbk-cta-sub">Same modules · Same Custom GPTs · Lifetime access</span>
+      </a>
     </div>
-
-    <a href="mailto:hello@perfectlymademarketing.com?subject=About%20the%20Course%20Offer" class="sbk-email-btn">Email Bree</a>
   </div>
 </main>
 
@@ -329,6 +299,9 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"
   <div class="sbk-footer-brand">Perfectly Made Marketing</div>
   <div>© 2026 · The Self-Booking System</div>
 </footer>
+
+<!-- Kartra Pay embed loader — powers the full-price Course CTA via the data-kt-* attributes -->
+<script type="text/javascript" src="https://app.kartra.com/js/build/front/embed/pay.js"></script>
 
 </body>
 </html>
