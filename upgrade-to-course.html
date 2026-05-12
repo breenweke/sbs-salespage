@@ -146,6 +146,11 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"
     color: var(--sbk-cream);
     padding: 14px clamp(16px, 3vw, 36px);
     border-bottom: 2px solid var(--sbk-lime);
+    /* Sticky countdown — stays visible as the user scrolls */
+    position: sticky;
+    top: 0;
+    z-index: 950;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
   }
   .sbk-progress-inner {
     max-width: 900px;
