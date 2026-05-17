@@ -1,2 +1,5 @@
 node_modules/
 .claude/
+
+# Local-only files (used as previews, not part of the live site)
+thumbnail-previews.html
