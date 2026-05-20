@@ -25,11 +25,18 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1825521284560570');
 fbq('track', 'PageView');
-// Note: Purchase event fires inside Kartra at checkout, not on this page,
-// to avoid double-counting in Pixel/GTM reporting.
+// Thank-you page = buyer just completed the $197 Self-Booking System Course checkout — fire Purchase event
+fbq('track', 'Purchase', {value: 197.00, currency: 'USD', content_name: 'Self-Booking System Course', content_ids: ['self-booking-course'], content_type: 'product'});
+// GTM dataLayer push for the same purchase (so any GTM-configured tags fire too)
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({event: 'purchase', ecommerce: {value: 197.00, currency: 'USD', items: [{item_id: 'self-booking-course', item_name: 'Self-Booking System Course', price: 197.00, quantity: 1}]}});
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"
+/></noscript>
+<!-- Meta Pixel Purchase noscript fallback ($197 Course) -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1825521284560570&ev=Purchase&cd[value]=197.00&cd[currency]=USD&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
@@ -739,11 +746,6 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"
       </div>
     </div>
 
-    <div class="sbk-email-support">
-      <span class="sbk-email-support-tag">You'll Be Hearing From Me</span>
-      <h3>I'm not just dropping you a login and <em>disappearing.</em></h3>
-      <p>Over the next <strong>7-14 days</strong>, you'll get a series of short, focused emails from me. They'll <em>check in on your progress</em>, point you to the right module if you get stuck, walk you through the places most people trip up, and remind you to reach out the moment you need help. <strong>Please actually open them</strong> &mdash; they're built to keep you moving when motivation dips.</p>
-    </div>
   </div>
 </section>
 
@@ -792,7 +794,7 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"
       <p>Here's what you can expect from me over the next 7-14 days:</p>
       <p style="margin-left: 22px; padding-left: 14px; border-left: 3px solid var(--sbk-periwinkle); font-style: italic; color: var(--sbk-periwinkle-deep); font-family: var(--sbk-serif); font-weight: 500; font-size: clamp(15px, 1.3vw, 17px);">A few short emails checking in on your progress, pointing you to the right module if you're stuck, and reminding you to reach out if you need help &mdash; nothing pushy, nothing salesy.</p>
       <p>Please <strong>actually open them.</strong> Most of what derails people isn't the course itself &mdash; it's the moment they hit a snag and quietly close the browser tab. The emails are there to keep that from happening.</p>
-      <p>This system works. I've watched it work for me, for my done-for-you clients across multiple industries, and now it's <em>yours.</em> If you do the work and reach out when you need help, you'll have booked calls coming in consistently within the next 30-60 days.</p>
+      <p>This system works. I've watched it work for me, for my done-for-you clients across multiple industries, and now it's <em>yours.</em> If you do the work and reach out when you need help, you'll have booked calls coming in consistently within the next 30-60 days &mdash; <em>or sooner.</em></p>
       <p>Welcome aboard. <em>I genuinely can't wait to see what shifts in your business once this is in place.</em></p>
     </div>
 
