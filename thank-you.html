@@ -25,18 +25,18 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1825521284560570');
 fbq('track', 'PageView');
-// Thank-you page = buyer just completed the $197 Self-Booking System Course checkout — fire Purchase event
-fbq('track', 'Purchase', {value: 197.00, currency: 'USD', content_name: 'Self-Booking System Course', content_ids: ['self-booking-course'], content_type: 'product'});
+// Thank-you page = buyer just completed the $97 Self-Booking System Course checkout (the original/legacy course product, not the updated $197 version) — fire Purchase event
+fbq('track', 'Purchase', {value: 97.00, currency: 'USD', content_name: 'Self-Booking System Course (Original)', content_ids: ['self-booking-course-original'], content_type: 'product'});
 // GTM dataLayer push for the same purchase (so any GTM-configured tags fire too)
 window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({event: 'purchase', ecommerce: {value: 197.00, currency: 'USD', items: [{item_id: 'self-booking-course', item_name: 'Self-Booking System Course', price: 197.00, quantity: 1}]}});
+window.dataLayer.push({event: 'purchase', ecommerce: {value: 97.00, currency: 'USD', items: [{item_id: 'self-booking-course-original', item_name: 'Self-Booking System Course (Original)', price: 97.00, quantity: 1}]}});
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"
 /></noscript>
-<!-- Meta Pixel Purchase noscript fallback ($197 Course) -->
+<!-- Meta Pixel Purchase noscript fallback ($97 original Course) -->
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1825521284560570&ev=Purchase&cd[value]=197.00&cd[currency]=USD&noscript=1"
+src="https://www.facebook.com/tr?id=1825521284560570&ev=Purchase&cd[value]=97.00&cd[currency]=USD&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
