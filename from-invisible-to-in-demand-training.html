@@ -3,8 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Training Is Here — From Invisible to In-Demand | Perfectly Made Marketing</title>
-<meta name="description" content="Watch the From Invisible to In-Demand mini training and learn how to use the Seen, Booked, and Paid Method to grow your list and book more calls.">
+<title>Your Training Access — From Invisible to In-Demand | Perfectly Made Marketing</title>
+<meta name="description" content="Watch the From Invisible to In-Demand mini training. Your access window is open for 72 hours.">
+
+<!-- PRE-PAINT 72-HOUR TRAINING TIMER CHECK — redirects to expired page after 72 hours -->
+<script>
+(function(){
+  var KEY = 'pmm_trainingExpiry';
+  var DURATION_MS = 72 * 60 * 60 * 1000; // 72 hours
+  var now = Date.now();
+  var existing = null;
+  try { existing = localStorage.getItem(KEY); } catch(e) {}
+  if (existing) {
+    var expiry = parseInt(existing, 10);
+    if (!isNaN(expiry)) {
+      if (now >= expiry) {
+        window.location.replace('from-invisible-to-in-demand-expired.html');
+        return;
+      }
+    } else {
+      try { localStorage.setItem(KEY, String(now + DURATION_MS)); } catch(e) {}
+    }
+  } else {
+    try { localStorage.setItem(KEY, String(now + DURATION_MS)); } catch(e) {}
+  }
+})();
+</script>
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -97,6 +121,37 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></
     .warn-bar { font-size: 13px; padding: 12px 14px; }
   }
 
+  /* ACCESS COUNTDOWN BAR (under the warn bar) */
+  .access-bar {
+    position: sticky;
+    top: 47px;
+    z-index: 99;
+    background: var(--periwinkle);
+    color: #fff;
+    text-align: center;
+    padding: 11px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    letter-spacing: 0.01em;
+  }
+  .access-bar strong { font-weight: 700; }
+  .access-bar .timer-pill {
+    display: inline-block;
+    font-weight: 700;
+    background: rgba(255,255,255,0.20);
+    padding: 4px 12px;
+    border-radius: 6px;
+    margin-left: 8px;
+    font-variant-numeric: tabular-nums;
+  }
+  .access-bar.urgent { background: #b8362b; }
+  .access-bar.urgent .timer-pill { animation: warnPulse 1s ease-in-out infinite; }
+  @media (max-width: 720px) {
+    .access-bar { font-size: 12.5px; padding: 9px 14px; top: 43px; }
+    .access-bar .timer-pill { padding: 3px 9px; margin-left: 6px; }
+  }
+
   /* HERO */
   .hero {
     background: linear-gradient(180deg, var(--ivory) 0%, var(--blush) 100%);
@@ -176,6 +231,26 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></
   @keyframes fadeUp {
     0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
+  }
+  .video-options-bridge {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--periwinkle);
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 36px;
+    letter-spacing: -0.005em;
+  }
+  .video-options-bridge strong {
+    color: var(--ink);
+    font-style: normal;
+    font-weight: 600;
+  }
+  @media (max-width: 720px) {
+    .video-options-bridge { font-size: 22px; margin-bottom: 28px; }
   }
   .video-options-eyebrow {
     text-align: center;
@@ -481,6 +556,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span class="warn-icon">⚠️</span> <strong>Do not close this window —</strong> your training is below.
 </div>
 
+<!-- 72-HOUR ACCESS COUNTDOWN BAR -->
+<div class="access-bar" id="accessBar">
+  ⏰ Your <strong>training access ends in</strong> <span class="timer-pill" id="accessTimer">72:00:00</span>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
@@ -498,7 +578,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- VIDEO OPTIONS (hidden until 22:22 mark of the video) -->
-<section class="video-options-section" id="videoOptions">
+<section class="video-options-section visible" id="videoOptions">
+  <p class="video-options-bridge">Ready to get <strong>seen, booked, and paid</strong> on autopilot?</p>
   <div class="video-options-eyebrow">Choose Your Option Below</div>
   <h2 class="video-options-title">Pick the path <em>that fits you.</em></h2>
   <div class="options-grid">
@@ -506,7 +587,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="option-card">
       <div class="option-num">Option 1</div>
       <p class="option-statement">I want to build the system <em>myself.</em></p>
-      <a href="https://www.perfectlymademarketing.com/sbs" class="option-btn">Get the Self-Booking System Course →</a>
+      <a href="https://www.perfectlymademarketing.com/sbs" target="_blank" rel="noopener" class="option-btn">Get the Self-Booking System Course →</a>
     </div>
 
     <div class="option-card featured">
@@ -536,37 +617,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://app.kartra.com/video/9bejduU425rK"></script>
 
 <!-- DELAYED REVEAL — options appear after a fixed number of seconds on page -->
+<!-- LIVE 72-HOUR ACCESS COUNTDOWN -->
 <script>
-(function() {
-  // =====================================================================
-  // CHANGE THIS NUMBER TO CONTROL WHEN THE OPTIONS APPEAR
-  //   60   = 1 minute (for testing the reveal animation)
-  //   1342 = 22 minutes 22 seconds (production — matches video offer point)
-  // =====================================================================
-  var DELAY_SECONDS = 1342;
-  // =====================================================================
-
-  var optionsEl = document.getElementById('videoOptions');
-  if (!optionsEl) return;
-
-  setTimeout(function() {
-    optionsEl.classList.add('visible');
-    setTimeout(function() {
-      optionsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 600);
-    try {
-      if (typeof fbq === 'function') {
-        fbq('trackCustom', 'VideoMilestone_22_22', { training: 'From Invisible to In-Demand' });
-      }
-    } catch(e) {}
-    try {
-      (window.dataLayer = window.dataLayer || []).push({
-        event: 'video_milestone',
-        milestone: '22:22',
-        training: 'from-invisible-to-in-demand'
-      });
-    } catch(e) {}
-  }, DELAY_SECONDS * 1000);
+(function(){
+  var KEY = 'pmm_trainingExpiry';
+  var bar = document.getElementById('accessBar');
+  var timerEl = document.getElementById('accessTimer');
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function tick() {
+    var expiry;
+    try { expiry = parseInt(localStorage.getItem(KEY), 10); } catch(e) {}
+    if (!expiry || isNaN(expiry)) return;
+    var remaining = expiry - Date.now();
+    if (remaining <= 0) {
+      window.location.replace('from-invisible-to-in-demand-expired.html');
+      return;
+    }
+    var hours = Math.floor(remaining / 3600000);
+    var minutes = Math.floor((remaining % 3600000) / 60000);
+    var seconds = Math.floor((remaining % 60000) / 1000);
+    if (timerEl) timerEl.textContent = pad(hours) + ':' + pad(minutes) + ':' + pad(seconds);
+    if (bar) {
+      if (remaining < 6 * 60 * 60 * 1000) bar.classList.add('urgent');
+      else bar.classList.remove('urgent');
+    }
+  }
+  tick();
+  setInterval(tick, 1000);
 })();
 </script>
 

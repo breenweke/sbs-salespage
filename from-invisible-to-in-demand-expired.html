@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The 48-Hour Offer Has Closed | Perfectly Made Marketing</title>
-<meta name="description" content="The 48-hour Custom Meta Ads + Funnel Audit offer has closed. The audit is still available at its regular price.">
+<title>Training Access Has Expired | Perfectly Made Marketing</title>
+<meta name="description" content="Your 72-hour access window to the From Invisible to In-Demand training has closed.">
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -46,9 +46,11 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></
   :root {
     --periwinkle: #6b66e9;
     --periwinkle-deep: #4943c9;
+    --periwinkle-soft: #e8e7fa;
     --lime: #deff55;
     --cream: #faf6f0;
     --blush: #f7f3ec;
+    --ivory: #fefcf8;
     --ink: #1a1a1a;
     --body: #2a2a2a;
     --subtle: #6b6b6b;
@@ -58,15 +60,19 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></
   body {
     font-family: 'DM Sans', sans-serif;
     color: var(--body);
-    background: #fff;
+    background: linear-gradient(180deg, var(--ivory) 0%, var(--blush) 100%);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
   .container {
-    max-width: 640px;
+    max-width: 680px;
     margin: 0 auto;
     padding: 90px 24px 60px;
     text-align: center;
+    flex: 1;
   }
   .eyebrow {
     display: inline-block;
@@ -82,12 +88,12 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></
   }
   h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    font-weight: 600;
-    line-height: 1.15;
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 1.1;
     color: var(--ink);
     margin-bottom: 24px;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
   }
   h1 em {
     font-style: italic;
@@ -99,36 +105,57 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></
     color: var(--body);
     margin-bottom: 18px;
     line-height: 1.6;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  p.note {
-    font-size: 16px;
-    color: var(--subtle);
-    margin-bottom: 36px;
-    line-height: 1.6;
-    font-style: italic;
+  p.lede strong { color: var(--ink); }
+  .options {
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 460px;
   }
-  .cta-button {
-    display: inline-block;
+  .opt-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     background: var(--periwinkle);
     color: #fff;
-    font-size: 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
     font-weight: 700;
-    padding: 20px 40px;
+    letter-spacing: 0.04em;
+    padding: 20px 32px;
     border-radius: 10px;
     text-decoration: none;
-    transition: transform 0.15s, box-shadow 0.2s;
-    margin-bottom: 12px;
+    transition: transform 0.18s, background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 12px 30px rgba(107,102,233,0.22);
   }
-  .cta-button:hover {
+  .opt-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 26px rgba(107,102,233,0.25);
     background: var(--periwinkle-deep);
+    box-shadow: 0 18px 40px rgba(74,67,201,0.32);
   }
-  .cta-fine {
-    display: block;
+  .opt-btn.lime {
+    background: var(--lime);
+    color: var(--ink);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.14);
+  }
+  .opt-btn.lime:hover {
+    background: var(--ink);
+    color: #fff;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.24);
+  }
+  .opt-btn .arrow { font-size: 18px; }
+  .opt-note {
+    text-align: center;
     font-size: 14px;
     color: var(--subtle);
-    margin-top: 8px;
+    font-style: italic;
+    margin: 24px 0 8px;
   }
   .secondary-link {
     display: block;
@@ -147,12 +174,14 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></
     padding: 32px 24px;
     font-size: 13px;
     color: var(--subtle);
+    background: var(--ivory);
+    border-top: 1px solid var(--hairline);
   }
   @media (max-width: 600px) {
     .container { padding: 60px 20px 40px; }
-    h1 { font-size: 34px; }
+    h1 { font-size: 36px; }
     p.lede { font-size: 17px; }
-    .cta-button { font-size: 16px; padding: 18px 32px; }
+    .opt-btn { font-size: 15px; padding: 18px 26px; }
   }
 </style>
 </head>
@@ -162,15 +191,17 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="container">
-  <div class="eyebrow">The 48 Hours Have Passed</div>
-  <h1>The special offer has <em>closed.</em></h1>
-  <p class="lede">The $197 Custom Meta Ads + Funnel Audit offer was available for 48 hours after you downloaded the free guide — and that window has now closed.</p>
-  <p class="lede" style="margin-bottom: 32px;">You can still grab the Custom Meta Ads + Funnel Audit below at its regular price of <strong>$397</strong>.</p>
-  <a href="javascript:void(0);" class="cta-button js_kt_asset_embed js_kartra_trackable_object" data-kt-type="pay" data-kt-embed="popup" data-kt-value="GlOZC4i7nfoQ" data-kt-owner="7kzAqVxg">Get the Custom Audit · $397</a>
-  <span class="cta-fine">Same audit, same Zoom call. Just at the regular price.</span>
-</div>
+  <div class="eyebrow">Your 72 Hours Have Passed</div>
+  <h1>Your training access has <em>expired.</em></h1>
+  <p class="lede">The free <strong>From Invisible to In-Demand</strong> training was available for 72 hours after you first accessed it — and that window has now closed.</p>
+  <p class="lede" style="margin-bottom: 32px;">If you're ready to skip the trial-and-error and let me grow your list for you, the next step is below.</p>
 
-<script type="text/javascript" src="https://app.kartra.com/js/build/front/embed/pay.js"></script>
+  <div class="options">
+    <a href="leads-on-demand.html" class="opt-btn lime">Help Me Get Leads on Demand <span class="arrow">→</span></a>
+  </div>
+
+  <p class="secondary-link">Or — <a href="index.html">head back to the main site →</a></p>
+</div>
 
 <footer>
   <div style="margin-bottom: 10px;">
