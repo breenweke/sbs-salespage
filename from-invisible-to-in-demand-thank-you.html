@@ -541,25 +541,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- KARTRA VIDEO SCRIPT -->
 <script src="https://app.kartra.com/video/9bejduU425rK"></script>
 
-<!-- VIDEO MILESTONE WATCHER — reveals options at 22:22 of actual playtime -->
+<!-- DELAYED REVEAL — options appear after a fixed number of seconds on page -->
 <script>
 (function() {
-  var TARGET_SECONDS = 22 * 60 + 22; // 22:22 -> 1342 seconds
-  var VIDEO_ID = '9bejduU425rK';
-  var DEBUG = false; // flip to true to see Kartra events in the console
-  var revealed = false;
+  // =====================================================================
+  // CHANGE THIS NUMBER TO CONTROL WHEN THE OPTIONS APPEAR
+  //   60   = 1 minute (for testing the reveal animation)
+  //   1342 = 22 minutes 22 seconds (production — matches video offer point)
+  // =====================================================================
+  var DELAY_SECONDS = 60;
+  // =====================================================================
+
   var optionsEl = document.getElementById('videoOptions');
+  if (!optionsEl) return;
 
-  // Track accumulated play time across pause/resume cycles
-  var playStartedAt = null;
-  var accumulatedMs = 0;
-  var watchInterval = null;
-
-  function reveal() {
-    if (revealed || !optionsEl) return;
-    revealed = true;
+  setTimeout(function() {
     optionsEl.classList.add('visible');
-    if (watchInterval) { clearInterval(watchInterval); watchInterval = null; }
     setTimeout(function() {
       optionsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 600);
@@ -575,79 +572,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         training: 'from-invisible-to-in-demand'
       });
     } catch(e) {}
-  }
-
-  function checkProgress() {
-    if (revealed) return;
-    var elapsed = accumulatedMs;
-    if (playStartedAt !== null) elapsed += (Date.now() - playStartedAt);
-    if (elapsed >= TARGET_SECONDS * 1000) reveal();
-  }
-
-  function startPlayTimer() {
-    if (revealed || playStartedAt !== null) return;
-    playStartedAt = Date.now();
-    if (!watchInterval) watchInterval = setInterval(checkProgress, 500);
-  }
-
-  function stopPlayTimer() {
-    if (playStartedAt === null) return;
-    accumulatedMs += (Date.now() - playStartedAt);
-    playStartedAt = null;
-  }
-
-  // Extract a message string regardless of shape
-  function getMessageType(data) {
-    if (typeof data === 'string') return data;
-    if (data && typeof data === 'object') {
-      return data.type || data.event || data.action || data.name || data.message || null;
-    }
-    return null;
-  }
-
-  window.addEventListener('message', function(event) {
-    if (revealed) return;
-    var data = event && event.data;
-    var msgType = getMessageType(data);
-    if (DEBUG && msgType) console.log('[Kartra msg]', msgType, data);
-    if (!msgType || typeof msgType !== 'string') return;
-
-    // Kartra fires: kt-video-play-{ID}, kt-video-play-sticky-{ID}, kt-video-pause-{ID}, kt-video-complete-{ID}
-    if (msgType.indexOf('kt-video-play-' + VIDEO_ID) === 0 ||
-        msgType.indexOf('kt-video-play-sticky-' + VIDEO_ID) === 0) {
-      startPlayTimer();
-    } else if (msgType.indexOf('kt-video-pause-' + VIDEO_ID) === 0) {
-      stopPlayTimer();
-    } else if (msgType.indexOf('kt-video-complete-' + VIDEO_ID) === 0) {
-      // Safety net — if they watch to the end without hitting 22:22 first, reveal anyway
-      reveal();
-    }
-    // Generic catch-all for any unknown Kartra play/pause variations
-    else if (msgType.indexOf('kt-video-play') === 0) {
-      startPlayTimer();
-    } else if (msgType.indexOf('kt-video-pause') === 0) {
-      stopPlayTimer();
-    } else if (msgType.indexOf('kt-video-complete') === 0) {
-      reveal();
-    }
-  });
-
-  // Failsafe — also try attaching to a native <video> element if Kartra ever embeds one directly
-  var pollCount = 0;
-  var pollInterval = setInterval(function() {
-    if (revealed || pollCount > 30) { clearInterval(pollInterval); return; }
-    var videos = document.querySelectorAll('video');
-    for (var i = 0; i < videos.length; i++) {
-      var v = videos[i];
-      if (!v.dataset.milestoneTracked) {
-        v.dataset.milestoneTracked = 'true';
-        v.addEventListener('timeupdate', function(e) {
-          if (e.target.currentTime >= TARGET_SECONDS) reveal();
-        });
-      }
-    }
-    pollCount++;
-  }, 1500);
+  }, DELAY_SECONDS * 1000);
 })();
 </script>
 
