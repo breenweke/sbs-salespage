@@ -541,32 +541,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- KARTRA VIDEO SCRIPT -->
 <script src="https://app.kartra.com/video/9bejduU425rK"></script>
 
-<!-- VIDEO MILESTONE WATCHER — reveals options at 22:22 -->
+<!-- VIDEO MILESTONE WATCHER — reveals options at 22:22 of actual playtime -->
 <script>
 (function() {
   var TARGET_SECONDS = 22 * 60 + 22; // 22:22 -> 1342 seconds
+  var VIDEO_ID = '9bejduU425rK';
+  var DEBUG = false; // flip to true to see Kartra events in the console
   var revealed = false;
   var optionsEl = document.getElementById('videoOptions');
+
+  // Track accumulated play time across pause/resume cycles
+  var playStartedAt = null;
+  var accumulatedMs = 0;
+  var watchInterval = null;
 
   function reveal() {
     if (revealed || !optionsEl) return;
     revealed = true;
     optionsEl.classList.add('visible');
-    // Smooth scroll the options into view shortly after they appear
+    if (watchInterval) { clearInterval(watchInterval); watchInterval = null; }
     setTimeout(function() {
       optionsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 600);
-    // Fire tracking events
     try {
       if (typeof fbq === 'function') {
-        fbq('trackCustom', 'VideoMilestone_22_22', {
-          training: 'From Invisible to In-Demand'
-        });
+        fbq('trackCustom', 'VideoMilestone_22_22', { training: 'From Invisible to In-Demand' });
       }
     } catch(e) {}
     try {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
+      (window.dataLayer = window.dataLayer || []).push({
         event: 'video_milestone',
         milestone: '22:22',
         training: 'from-invisible-to-in-demand'
@@ -574,49 +577,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     } catch(e) {}
   }
 
-  // METHOD 1 — Attach to any native HTML5 <video> elements (works if Kartra injects a video tag)
-  function attachToVideo() {
+  function checkProgress() {
+    if (revealed) return;
+    var elapsed = accumulatedMs;
+    if (playStartedAt !== null) elapsed += (Date.now() - playStartedAt);
+    if (elapsed >= TARGET_SECONDS * 1000) reveal();
+  }
+
+  function startPlayTimer() {
+    if (revealed || playStartedAt !== null) return;
+    playStartedAt = Date.now();
+    if (!watchInterval) watchInterval = setInterval(checkProgress, 500);
+  }
+
+  function stopPlayTimer() {
+    if (playStartedAt === null) return;
+    accumulatedMs += (Date.now() - playStartedAt);
+    playStartedAt = null;
+  }
+
+  // Extract a message string regardless of shape
+  function getMessageType(data) {
+    if (typeof data === 'string') return data;
+    if (data && typeof data === 'object') {
+      return data.type || data.event || data.action || data.name || data.message || null;
+    }
+    return null;
+  }
+
+  window.addEventListener('message', function(event) {
+    if (revealed) return;
+    var data = event && event.data;
+    var msgType = getMessageType(data);
+    if (DEBUG && msgType) console.log('[Kartra msg]', msgType, data);
+    if (!msgType || typeof msgType !== 'string') return;
+
+    // Kartra fires: kt-video-play-{ID}, kt-video-play-sticky-{ID}, kt-video-pause-{ID}, kt-video-complete-{ID}
+    if (msgType.indexOf('kt-video-play-' + VIDEO_ID) === 0 ||
+        msgType.indexOf('kt-video-play-sticky-' + VIDEO_ID) === 0) {
+      startPlayTimer();
+    } else if (msgType.indexOf('kt-video-pause-' + VIDEO_ID) === 0) {
+      stopPlayTimer();
+    } else if (msgType.indexOf('kt-video-complete-' + VIDEO_ID) === 0) {
+      // Safety net — if they watch to the end without hitting 22:22 first, reveal anyway
+      reveal();
+    }
+    // Generic catch-all for any unknown Kartra play/pause variations
+    else if (msgType.indexOf('kt-video-play') === 0) {
+      startPlayTimer();
+    } else if (msgType.indexOf('kt-video-pause') === 0) {
+      stopPlayTimer();
+    } else if (msgType.indexOf('kt-video-complete') === 0) {
+      reveal();
+    }
+  });
+
+  // Failsafe — also try attaching to a native <video> element if Kartra ever embeds one directly
+  var pollCount = 0;
+  var pollInterval = setInterval(function() {
+    if (revealed || pollCount > 30) { clearInterval(pollInterval); return; }
     var videos = document.querySelectorAll('video');
     for (var i = 0; i < videos.length; i++) {
       var v = videos[i];
       if (!v.dataset.milestoneTracked) {
         v.dataset.milestoneTracked = 'true';
         v.addEventListener('timeupdate', function(e) {
-          if (e.target.currentTime >= TARGET_SECONDS) {
-            reveal();
-          }
+          if (e.target.currentTime >= TARGET_SECONDS) reveal();
         });
       }
     }
-  }
-
-  // Re-check every 1.5s for ~30s in case Kartra injects the video lazily
-  var pollCount = 0;
-  var pollInterval = setInterval(function() {
-    if (revealed || pollCount > 20) {
-      clearInterval(pollInterval);
-      return;
-    }
-    attachToVideo();
     pollCount++;
   }, 1500);
-
-  // METHOD 2 — Listen for postMessage events from the Kartra player iframe (fallback)
-  window.addEventListener('message', function(event) {
-    if (revealed) return;
-    if (!event || !event.data) return;
-    var data = event.data;
-    if (typeof data !== 'object') return;
-    // Try several known property shapes for current time
-    var t = null;
-    if (typeof data.currentTime === 'number') t = data.currentTime;
-    else if (typeof data.time === 'number') t = data.time;
-    else if (data.detail && typeof data.detail.currentTime === 'number') t = data.detail.currentTime;
-    else if (data.payload && typeof data.payload.currentTime === 'number') t = data.payload.currentTime;
-    if (t !== null && t >= TARGET_SECONDS) {
-      reveal();
-    }
-  });
 })();
 </script>
 
