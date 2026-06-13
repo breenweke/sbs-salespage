@@ -51,13 +51,6 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1825521284560570');
 fbq('track', 'PageView');
 fbq('track', 'Lead');
-fbq('track', 'ViewContent', {
-  content_ids: ['custom-meta-ads-funnel-audit'],
-  content_name: 'Custom Meta Ads + Funnel Audit',
-  content_type: 'product',
-  value: 197.00,
-  currency: 'USD'
-});
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></noscript>
@@ -159,12 +152,41 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></
     padding: 0 24px;
   }
 
+  /* ENTRANCE ACCENT LINE */
+  .page-top-accent {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    z-index: 200;
+    background: linear-gradient(90deg, var(--periwinkle) 0%, var(--periwinkle-deep) 45%, var(--lime) 100%);
+    transform-origin: left center;
+    animation: drawLineX 900ms cubic-bezier(.22,.94,.34,1) both;
+  }
+  @keyframes drawLineX {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes drawUnderline {
+    to { background-size: 100% 4px; }
+  }
+  @keyframes softPulse {
+    0%, 100% { box-shadow: 0 4px 14px rgba(107,102,233,0.10); }
+    50%      { box-shadow: 0 6px 22px rgba(107,102,233,0.22); }
+  }
+
   /* INBOX CONFIRMATION */
   .inbox-banner {
     background: var(--lime-soft);
     border-bottom: 1px solid var(--hairline);
     padding: 24px 20px;
     text-align: center;
+    opacity: 0;
+    animation: fadeUp 700ms cubic-bezier(.22,.94,.34,1) forwards;
+    animation-delay: 200ms;
   }
   .inbox-banner p {
     font-size: 16px;
@@ -180,7 +202,7 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></
     padding: 60px 0 50px;
     text-align: center;
   }
-  .eyebrow {
+  .hero .eyebrow {
     display: inline-block;
     background: var(--lime);
     color: var(--ink);
@@ -191,6 +213,10 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></
     padding: 10px 22px;
     border-radius: 999px;
     margin-bottom: 22px;
+    opacity: 0;
+    animation: fadeUp 600ms cubic-bezier(.22,.94,.34,1) forwards,
+               softPulse 3.6s ease-in-out 1900ms infinite;
+    animation-delay: 600ms, 1900ms;
   }
   h1 {
     font-family: 'Playfair Display', serif;
@@ -203,11 +229,21 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    opacity: 0;
+    animation: fadeUp 850ms cubic-bezier(.22,.94,.34,1) forwards;
+    animation-delay: 850ms;
   }
   h1 em {
     font-style: italic;
     color: var(--periwinkle);
     font-weight: 500;
+    background-image: linear-gradient(to right, var(--lime), var(--lime));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0 4px;
+    padding-bottom: 6px;
+    animation: drawUnderline 850ms cubic-bezier(.22,.94,.34,1) forwards;
+    animation-delay: 1700ms;
   }
   .hero-lede {
     font-size: 19px;
@@ -215,6 +251,26 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></
     max-width: 620px;
     margin: 0 auto 0;
     line-height: 1.6;
+    opacity: 0;
+    animation: fadeUp 650ms cubic-bezier(.22,.94,.34,1) forwards;
+  }
+  .hero-lede:nth-of-type(1) { animation-delay: 1200ms; }
+  .hero-lede:nth-of-type(2) { animation-delay: 1350ms; }
+  .hero-lede:nth-of-type(3) { animation-delay: 1500ms; }
+  .hero-lede:nth-of-type(4) { animation-delay: 1650ms; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .page-top-accent,
+    .inbox-banner,
+    .hero .eyebrow,
+    .hero h1,
+    .hero h1 em,
+    .hero-lede {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      background-size: 100% 4px !important;
+    }
   }
 
   /* PAIN POINTS */
@@ -715,10 +771,13 @@ src="https://www.facebook.com/tr?id=1825521284560570&ev=PageView&noscript=1"/></
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQPFQDNQ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
+<!-- TOP ACCENT LINE (entrance) -->
+<div class="page-top-accent" aria-hidden="true"></div>
+
 <!-- INBOX CONFIRMATION -->
 <div class="inbox-banner">
   <p>📬 Your <strong>15-Minute Meta Ads + Funnel Audit Checklist</strong> is headed to your inbox now.</p>
-  <p style="margin-top: 6px;">If you don't see it within 10 minutes, check your promotions or spam folder.</p>
+  <p style="margin-top: 6px;">If you don't see it within 10 minutes, check your promotions or spam folder — Google likes to hide it there sometimes.</p>
 </div>
 
 <!-- HERO -->
