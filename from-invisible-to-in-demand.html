@@ -385,7 +385,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="hero-sub">A free mini training for Kingdom Driven coaches and consultants who want more warm leads and booked calls — without posting every day, relying only on referrals, or sending cold DMs.</p>
 
     <!-- KARTRA OPT-IN FORM (direct embed) -->
-    <div class="form-card">
+    <div class="form-card" id="optin-form">
       <div class="kartra_optin_containerdc6a6489640ca02b0d42dabeb8e46bb7"></div>
       <script src="https://app.kartra.com/optin/tPLOf2nwbQCp"></script>
       <p class="trust-line">Free. No spam. Unsubscribe anytime.</p>
@@ -444,7 +444,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="final-cta">
   <h2>Ready to go from invisible to <em>in-demand?</em></h2>
   <p>Get the full training delivered to your inbox and walk through the same simple path I used to grow my list and book calls — without posting every day, relying only on referrals, or sending cold DMs.</p>
-  <button class="final-cta-btn" onclick="var f=document.querySelector('.form-card');f.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){var i=f.querySelector('input[name=first_name]');if(i)i.focus({preventScroll:true});},650);">Send Me the Training</button>
+  <a href="#optin-form" class="final-cta-btn" onclick="return scrollToOptin(event);">Send Me the Training</a>
   <p class="final-cta-trust">Free. No spam. Unsubscribe anytime.</p>
 </section>
 
@@ -455,6 +455,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   &copy; 2026 Perfectly Made Marketing. All rights reserved.
 </footer>
+
+<!-- Robust scroll-to-form helper for the final CTA button -->
+<script>
+  function scrollToOptin(e) {
+    try {
+      var target = document.getElementById('optin-form');
+      if (!target) return true; // let the href="#optin-form" do the work
+      if (e && e.preventDefault) e.preventDefault();
+      var y = target.getBoundingClientRect().top + window.pageYOffset - 40;
+      try {
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      } catch (ignored) {
+        window.scrollTo(0, y);
+      }
+      setTimeout(function() {
+        try {
+          var input = target.querySelector('input[type="text"]:not([style*="display: none"]), input[type="email"]');
+          if (input && input.focus) input.focus({ preventScroll: true });
+        } catch (ignored) {}
+      }, 700);
+      return false;
+    } catch (ignored) {
+      return true; // fall back to native anchor jump
+    }
+  }
+</script>
 
 </body>
 </html>

@@ -457,7 +457,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="hero-sub">Download <strong>The 15-Minute Meta Ads + Funnel Audit</strong> and quickly spot the gaps in your campaigns and funnel that may be costing you leads, sales, and ad spend.</p>
 
     <!-- KARTRA OPT-IN FORM (direct embed) -->
-    <div class="form-card">
+    <div class="form-card" id="optin-form">
       <div class="kartra_optin_container877a9ba7a98f75b90a9d49f53f15a858"></div>
       <script src="https://app.kartra.com/optin/iaSVMfndj79c"></script>
       <p class="trust-line">Free. No spam. Unsubscribe anytime.</p>
@@ -541,7 +541,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="final-cta">
   <h2>Ready to find the <em>leak?</em></h2>
   <p>Grab the free 15-Minute Meta Ads + Funnel Audit Checklist and walk through the same checkpoints I use to review campaigns for my clients — and finally know what to look at first.</p>
-  <button class="final-cta-btn" onclick="var f=document.querySelector('.form-card');f.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){var i=f.querySelector('input[name=first_name]');if(i)i.focus({preventScroll:true});},650);">Yes, Send Me the Audit Checklist</button>
+  <a href="#optin-form" class="final-cta-btn" onclick="return scrollToOptin(event);">Yes, Send Me the Audit Checklist</a>
   <p class="final-cta-trust">Free. No spam. Unsubscribe anytime.</p>
 </section>
 
@@ -552,6 +552,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   &copy; 2026 Perfectly Made Marketing. All rights reserved.
 </footer>
+
+<!-- Robust scroll-to-form helper for the final CTA button -->
+<script>
+  function scrollToOptin(e) {
+    try {
+      var target = document.getElementById('optin-form');
+      if (!target) return true; // let the href="#optin-form" do the work
+      if (e && e.preventDefault) e.preventDefault();
+      var y = target.getBoundingClientRect().top + window.pageYOffset - 40;
+      try {
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      } catch (ignored) {
+        window.scrollTo(0, y);
+      }
+      setTimeout(function() {
+        try {
+          var input = target.querySelector('input[type="text"]:not([style*="display: none"]), input[type="email"]');
+          if (input && input.focus) input.focus({ preventScroll: true });
+        } catch (ignored) {}
+      }, 700);
+      return false;
+    } catch (ignored) {
+      return true; // fall back to native anchor jump
+    }
+  }
+</script>
 
 </body>
 </html>
